@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/student/s101153258/rtos/lab_1",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/lab_1/include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/lab_1.elf.dir/src/main.c.obj -c /home/student/s101153258/rtos/lab_1/src/main.c",
+  "file": "/home/student/s101153258/rtos/lab_1/src/main.c",
+  "output": "CMakeFiles/lab_1.elf.dir/src/main.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/lab_1",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/lab_1/include -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/lab_1.elf.dir/src/startup_ARMCM3.S.obj -c /home/student/s101153258/rtos/lab_1/src/startup_ARMCM3.S",
+  "file": "/home/student/s101153258/rtos/lab_1/src/startup_ARMCM3.S",
+  "output": "CMakeFiles/lab_1.elf.dir/src/startup_ARMCM3.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/lab_1",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/lab_1/include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/lab_1.elf.dir/src/uart.c.obj -c /home/student/s101153258/rtos/lab_1/src/uart.c",
+  "file": "/home/student/s101153258/rtos/lab_1/src/uart.c",
+  "output": "CMakeFiles/lab_1.elf.dir/src/uart.c.obj"
+}
+]
