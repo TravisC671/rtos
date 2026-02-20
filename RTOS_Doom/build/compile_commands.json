@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/AXI_timer.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/AXI_timer.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/AXI_timer.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/AXI_timer.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/hello_task.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/hello_task.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/hello_task.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/hello_task.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/main.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/main.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/main.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/main.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/startup_ARMCM3.S.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/startup_ARMCM3.S",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/startup_ARMCM3.S",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/startup_ARMCM3.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/stats_task.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/stats_task.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/stats_task.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/stats_task.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/list.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/list.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/list.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/list.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3/port.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3/port.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/MemMang/heap_3.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/MemMang/heap_3.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/queue.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/queue.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/queue.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/queue.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/stream_buffer.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/stream_buffer.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/stream_buffer.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/stream_buffer.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom/build",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/tasks.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/tasks.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/tasks.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/tasks.c.obj"
+}
+]

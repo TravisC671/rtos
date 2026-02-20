@@ -168,150 +168,6 @@ Lab_3_code.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/build
 .PHONY : Lab_3_code.elf/fast
 
-FreeRTOS/FreeRTOS-Kernel/list.obj: FreeRTOS/FreeRTOS-Kernel/list.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/list.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/list.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/list.i: FreeRTOS/FreeRTOS-Kernel/list.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/list.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.c.i
-
-FreeRTOS/FreeRTOS-Kernel/list.s: FreeRTOS/FreeRTOS-Kernel/list.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/list.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/list.c.s
-
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.obj: FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.i: FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.i
-
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.s: FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c.s
-
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.obj: FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.i: FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.i
-
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.s: FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.c.s
-
-FreeRTOS/FreeRTOS-Kernel/queue.obj: FreeRTOS/FreeRTOS-Kernel/queue.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/queue.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/queue.i: FreeRTOS/FreeRTOS-Kernel/queue.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/queue.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.c.i
-
-FreeRTOS/FreeRTOS-Kernel/queue.s: FreeRTOS/FreeRTOS-Kernel/queue.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/queue.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/queue.c.s
-
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.obj: FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.i: FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.i
-
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.s: FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/stream_buffer.c.s
-
-FreeRTOS/FreeRTOS-Kernel/tasks.obj: FreeRTOS/FreeRTOS-Kernel/tasks.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.obj
-
-# target to build an object file
-FreeRTOS/FreeRTOS-Kernel/tasks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/tasks.c.obj
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.c.obj
-
-FreeRTOS/FreeRTOS-Kernel/tasks.i: FreeRTOS/FreeRTOS-Kernel/tasks.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.i
-
-# target to preprocess a source file
-FreeRTOS/FreeRTOS-Kernel/tasks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/tasks.c.i
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.c.i
-
-FreeRTOS/FreeRTOS-Kernel/tasks.s: FreeRTOS/FreeRTOS-Kernel/tasks.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.s
-
-# target to generate assembly for a file
-FreeRTOS/FreeRTOS-Kernel/tasks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/FreeRTOS/FreeRTOS-Kernel/tasks.c.s
-.PHONY : FreeRTOS/FreeRTOS-Kernel/tasks.c.s
-
 src/AXI_timer.obj: src/AXI_timer.c.obj
 .PHONY : src/AXI_timer.obj
 
@@ -359,30 +215,6 @@ src/UART_16550.s: src/UART_16550.c.s
 src/UART_16550.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/src/UART_16550.c.s
 .PHONY : src/UART_16550.c.s
-
-src/echo_task.obj: src/echo_task.c.obj
-.PHONY : src/echo_task.obj
-
-# target to build an object file
-src/echo_task.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/src/echo_task.c.obj
-.PHONY : src/echo_task.c.obj
-
-src/echo_task.i: src/echo_task.c.i
-.PHONY : src/echo_task.i
-
-# target to preprocess a source file
-src/echo_task.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/src/echo_task.c.i
-.PHONY : src/echo_task.c.i
-
-src/echo_task.s: src/echo_task.c.s
-.PHONY : src/echo_task.s
-
-# target to generate assembly for a file
-src/echo_task.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_3_code.elf.dir/build.make CMakeFiles/Lab_3_code.elf.dir/src/echo_task.c.s
-.PHONY : src/echo_task.c.s
 
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
@@ -476,33 +308,12 @@ help:
 	@echo "... realclean"
 	@echo "... tarfile"
 	@echo "... Lab_3_code.elf"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/list.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/list.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/list.s"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.s"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_3.s"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/queue.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/queue.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/queue.s"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/stream_buffer.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/stream_buffer.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/stream_buffer.s"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/tasks.obj"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/tasks.i"
-	@echo "... FreeRTOS/FreeRTOS-Kernel/tasks.s"
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
 	@echo "... src/UART_16550.obj"
 	@echo "... src/UART_16550.i"
 	@echo "... src/UART_16550.s"
-	@echo "... src/echo_task.obj"
-	@echo "... src/echo_task.i"
-	@echo "... src/echo_task.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
