@@ -336,6 +336,54 @@ src/AXI_timer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/AXI_timer.c.s
 .PHONY : src/AXI_timer.c.s
 
+src/UART_16550.obj: src/UART_16550.c.obj
+.PHONY : src/UART_16550.obj
+
+# target to build an object file
+src/UART_16550.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.obj
+.PHONY : src/UART_16550.c.obj
+
+src/UART_16550.i: src/UART_16550.c.i
+.PHONY : src/UART_16550.i
+
+# target to preprocess a source file
+src/UART_16550.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.i
+.PHONY : src/UART_16550.c.i
+
+src/UART_16550.s: src/UART_16550.c.s
+.PHONY : src/UART_16550.s
+
+# target to generate assembly for a file
+src/UART_16550.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.s
+.PHONY : src/UART_16550.c.s
+
+src/doom_task.obj: src/doom_task.c.obj
+.PHONY : src/doom_task.obj
+
+# target to build an object file
+src/doom_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.obj
+.PHONY : src/doom_task.c.obj
+
+src/doom_task.i: src/doom_task.c.i
+.PHONY : src/doom_task.i
+
+# target to preprocess a source file
+src/doom_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.i
+.PHONY : src/doom_task.c.i
+
+src/doom_task.s: src/doom_task.c.s
+.PHONY : src/doom_task.s
+
+# target to generate assembly for a file
+src/doom_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.s
+.PHONY : src/doom_task.c.s
+
 src/doomgeneric/am_map.obj: src/doomgeneric/am_map.c.obj
 .PHONY : src/doomgeneric/am_map.obj
 
@@ -2328,6 +2376,30 @@ src/doomgeneric/z_zone.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.s
 .PHONY : src/doomgeneric/z_zone.c.s
 
+src/doomgeneric_freertos.obj: src/doomgeneric_freertos.c.obj
+.PHONY : src/doomgeneric_freertos.obj
+
+# target to build an object file
+src/doomgeneric_freertos.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.obj
+.PHONY : src/doomgeneric_freertos.c.obj
+
+src/doomgeneric_freertos.i: src/doomgeneric_freertos.c.i
+.PHONY : src/doomgeneric_freertos.i
+
+# target to preprocess a source file
+src/doomgeneric_freertos.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.i
+.PHONY : src/doomgeneric_freertos.c.i
+
+src/doomgeneric_freertos.s: src/doomgeneric_freertos.c.s
+.PHONY : src/doomgeneric_freertos.s
+
+# target to generate assembly for a file
+src/doomgeneric_freertos.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.s
+.PHONY : src/doomgeneric_freertos.c.s
+
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
@@ -2441,6 +2513,12 @@ help:
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
+	@echo "... src/UART_16550.obj"
+	@echo "... src/UART_16550.i"
+	@echo "... src/UART_16550.s"
+	@echo "... src/doom_task.obj"
+	@echo "... src/doom_task.i"
+	@echo "... src/doom_task.s"
 	@echo "... src/doomgeneric/am_map.obj"
 	@echo "... src/doomgeneric/am_map.i"
 	@echo "... src/doomgeneric/am_map.s"
@@ -2690,6 +2768,9 @@ help:
 	@echo "... src/doomgeneric/z_zone.obj"
 	@echo "... src/doomgeneric/z_zone.i"
 	@echo "... src/doomgeneric/z_zone.s"
+	@echo "... src/doomgeneric_freertos.obj"
+	@echo "... src/doomgeneric_freertos.i"
+	@echo "... src/doomgeneric_freertos.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"

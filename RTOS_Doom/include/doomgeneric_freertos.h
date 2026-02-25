@@ -1,5 +1,7 @@
 #ifndef DOOMGENERIC_FREERTOS_H
 #define DOOMGENERIC_FREERTOS_H
+#include <FreeRTOS.h>
+#include <task.h>
 
 #define CMAP256
 

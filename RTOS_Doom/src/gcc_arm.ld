@@ -1,9 +1,9 @@
 
 __ROM_BASE = 0x00000000;
-__ROM_SIZE = 0x00020000;
+__ROM_SIZE = 0x00040000;
 
 __RAM_BASE = 0x20000000;
-__RAM_SIZE = 0x00020000;
+__RAM_SIZE = 0x00200000;
 
 /* we will put the stack at the end of RAM so it can grow downwards */
 __STACK_SIZE = 0x00000400;

@@ -7,6 +7,18 @@
 },
 {
   "directory": "/home/student/s101153258/rtos/RTOS_Doom",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/UART_16550.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/UART_16550.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/doom_task.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/doom_task.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom",
   "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/am_map.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric/am_map.c",
   "file": "/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric/am_map.c",
   "output": "CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/am_map.c.obj"
@@ -502,6 +514,12 @@
   "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric/z_zone.c",
   "file": "/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric/z_zone.c",
   "output": "CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/RTOS_Doom",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/student/s101153258/rtos/RTOS_Doom/include -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/include -I/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric -I/home/student/s101153258/rtos/RTOS_Doom/FreeRTOS/portable/GCC/ARM_CM3 -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/CMSIS/Core/Include -I/home/student/s101153258/rtos/RTOS_Doom/CMSIS/Device/ARM/ARMCM3/Include -g -std=gnu11 -mcpu=cortex-m3 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.obj -c /home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric_freertos.c",
+  "file": "/home/student/s101153258/rtos/RTOS_Doom/src/doomgeneric_freertos.c",
+  "output": "CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/RTOS_Doom",

@@ -8,14 +8,13 @@
 
 // "screen /dev/ttyUSB1 9600"
 
-
-int main( void )
+int main( int argc, char **argv )
 {
   TaskHandle_t hello_handle = NULL;
   TaskHandle_t stats_handle = NULL;
 
-  NVIC_SetPriority(UART0_IRQ,0x6); // priority for UART
   NVIC_SetPriority(UART1_IRQ,0x6); // priority for UART
+  NVIC_SetPriority(UART0_IRQ,0x6); // priority for UART
 
   // Intitialize all UARTS
   UART_16550_init();
@@ -23,21 +22,15 @@ int main( void )
   // Configure UART0 for 9600/N/8/2
   UART_16550_configure(UART0,9600,UART_PARITY_NONE,8,2);
   UART_16550_configure(UART1,9600,UART_PARITY_NONE,8,2);
-  
-  /* Create the task without using any dynamic memory allocation. */
-  hello_handle = xTaskCreateStatic(hello_task,"hello",HELLO_STACK_SIZE,
-				   NULL,3,hello_stack,&hello_TCB);
-			      
-  /* Create the task without using any dynamic memory allocation. */
-  stats_handle = xTaskCreateStatic(stats_task,"stats",STATS_STACK_SIZE,
-				   NULL,2,stats_stack,&stats_TCB);
-			      
+
   /* start the scheduler */
   vTaskStartScheduler();
 
   /* we should never get to this point, but if we do, go into infinite
      loop */
-  while(1);
+  while(1) {
+    doomgeneric_Tick();
+  }
 }
 
 

@@ -76,4 +76,10 @@ BaseType_t UART_16550_read_string(int UART,
 				  int maxLength,
 				  TickType_t xTicksToWait);
 
+// Return the number of characters available
+int UART_16550_chars_available(int UART_number);
+
+// Flush the UART receiver
+void UART_16550_flush_rx(int UART_number);
+
 #endif
