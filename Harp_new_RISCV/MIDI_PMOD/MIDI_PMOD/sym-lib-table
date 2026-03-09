@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MIDI")(type "KiCad")(uri "${KIPRJMOD}/libraries/61PC5FS.kicad_sym")(options "")(descr ""))
+)

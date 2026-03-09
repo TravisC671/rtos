@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "RISC-V Remote Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Harp_new_RISCV.elf",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/opt/Xilinx/2025.1/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gdb",
+            "miDebuggerServerAddress": "localhost:3004",
+            "stopAtEntry": true,
+            "postRemoteConnectCommands": [
+                {
+                    "description": "Load ELF to target",
+                    "text": "load",
+                    "ignoreFailures": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,827 @@
+16:10:10 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+16:10:10 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis
+16:10:10 INFO  : Platform platform creation started.
+16:10:10 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+16:10:10 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt
+16:10:11 INFO  : [INFO]: Initializing repositories
+16:10:11 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+16:10:11 INFO  : Successfully created repository data at /tmp/rigel_lopper_s1011532583476807297879436999
+16:10:11 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s10115325812581227805379809128 -r /tmp/rigel_lopper_s1011532583476807297879436999/.repo.yaml
+16:10:11 INFO  : Embedded Template List generated successfully
+16:10:11 INFO  : bash, -c, empyro repo -st   /opt/Xilinx/2025.1/Vitis/data/embeddedsw
+16:10:12 INFO  : [INFO]: Initializing repositories
+16:10:12 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+16:10:12 INFO  : Successfully created repository data at /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata
+16:10:12 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s10115325816611339175373951592 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:10:12 INFO  : Embedded Template List generated successfully
+16:10:13 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+16:10:13 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt
+16:10:13 INFO  : -board_dts 
+16:10:13 INFO  : -include_dts 
+16:10:13 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+16:10:13 INFO  : -zocl disable
+16:10:13 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+16:10:13 INFO  : SDT generated successfully
+16:10:13 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+16:10:13 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+16:10:13 INFO  : CPU List generated successfully
+16:10:13 INFO  : SDT generated successfully.
+16:10:13 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/platform
+16:10:13 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:10:13 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:10:19 INFO  : [INFO]: Starting domain creation
+16:10:19 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+16:10:19 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:10:19 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:10:19 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:10:19 INFO  : Domain standalone_microblaze_riscv_0 added successfully.
+16:10:19 INFO  : Platform creation finished successfully.
+16:10:19 INFO  : Platform Quick Build initiated.
+16:10:19 INFO  : Generating Export directory
+16:10:20 INFO  : Generated platform metadata for creating application(s) based on platform platform.
+16:10:45 INFO  : bash, -c, empyro validate_bsp -t empty_application -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:10:46 INFO  : Successfully validated template empty_application
+16:11:27 INFO  : lopper command to create baremetal application :empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/app_component/src -t empty_application -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n app_component -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:11:27 INFO  : bash, -c, empyro validate_bsp -t empty_application -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:11:28 INFO  : Successfully validated template empty_application
+16:11:28 INFO  : bash, -c, empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/app_component/src -t empty_application -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n app_component -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:11:29 INFO  : [INFO]: Generating Linker script for empty_application
+16:11:29 INFO  : [INFO]: Successfully Created Application sources at /home/student/s101153258/rtos/doom_vitis/app_component/src
+16:11:29 INFO  : Successfully created Application /home/student/s101153258/rtos/doom_vitis/app_component/src
+16:11:29 INFO  : The hardware specification used by project '/home/student/s101153258/rtos/doom_vitis/app_component' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+16:11:29 INFO  : The updated bitstream files are copied from platform to folder '/home/student/s101153258/rtos/doom_vitis/app_component/_ide/bitstream' in project '/home/student/s101153258/rtos/doom_vitis/app_component'.
+16:11:29 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/app_component
+16:12:24 INFO  : Terminating Vitis C++ Server
+16:12:24 INFO  : Vitis C++ Server terminated
+16:12:59 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+16:12:59 INFO  : [INFO]: Initializing repositories
+16:12:59 INFO  : [INFO]: Successfully set the EmbeddedSW path, refer .repo.yaml for more details.
+16:12:59 INFO  : Successfully created repository data at /tmp/rigel_lopper_s10115325816675148064394996916
+16:12:59 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s1011532585308310647862144700 -r /tmp/rigel_lopper_s10115325816675148064394996916/.repo.yaml
+16:13:00 INFO  : Embedded Template List generated successfully
+16:13:00 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s10115325812822584476060266268 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:13:00 INFO  : Embedded Template List generated successfully
+16:13:45 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+16:13:45 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+16:13:45 INFO  : CPU List generated successfully
+16:15:47 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:15:47 INFO  : Supported Library List generated.
+16:16:35 INFO  : Updating Examples in Driver /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:16:35 INFO  : bash, -c, empyro load_example -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:16:37 INFO  : [INFO]: Loading Valid Example names for BSP
+16:16:37 INFO  : -- The C compiler identification is GNU 13.3.0
+16:16:37 INFO  : -- The CXX compiler identification is GNU 13.3.0
+16:16:37 INFO  : -- Detecting C compiler ABI info
+16:16:37 INFO  : -- Detecting C compiler ABI info - done
+16:16:37 INFO  : -- Check for working C compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gcc - skipped
+16:16:37 INFO  : -- Detecting C compile features
+16:16:37 INFO  : -- Detecting C compile features - done
+16:16:37 INFO  : -- Detecting CXX compiler ABI info
+16:16:37 INFO  : -- Detecting CXX compiler ABI info - done
+16:16:37 INFO  : -- Check for working CXX compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-g++ - skipped
+16:16:37 INFO  : -- Detecting CXX compile features
+16:16:37 INFO  : -- Detecting CXX compile features - done
+16:16:37 INFO  : -- Configuring done
+16:16:37 INFO  : -- Generating done
+16:16:37 INFO  : -- Build files have been written to: /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/exmetadata
+16:16:37 INFO  : [INFO]: Gathering examples metadata
+16:16:37 INFO  : [INFO]: Successfully loaded all the valid examples for the BSP
+16:16:37 INFO  : Updated Examples in Driver
+16:18:15 INFO  : Regenerating BSP 
+16:18:15 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:18:15 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:18:15 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:18:15 INFO  : Domain reconfigured successfully
+16:18:15 INFO  : lopper command to regenerate BSP :empyro regen_bsp -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:15 INFO  : bash, -c, empyro regen_bsp -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:22 INFO  : [INFO]: Regenerating bsp
+16:18:22 INFO  : [INFO]: Starting domain creation
+16:18:22 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+16:18:22 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:18:22 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:18:22 INFO  : -- Configuring done
+16:18:22 INFO  : -- Generating done
+16:18:22 INFO  : -- Build files have been written to: /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/gen_bsp
+16:18:22 INFO  : [INFO]: Regenerated BSP successfully.
+16:18:22 INFO  : BSP regenerated successfully
+16:18:22 INFO  : BSP regeneration finished successfully
+16:18:22 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:23 INFO  : Supported Library List generated.
+16:19:59 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/freertos_domain/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:19:59 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/freertos_domain/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:20:05 INFO  : [INFO]: Starting domain creation
+16:20:05 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+16:20:05 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:20:05 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/freertos_domain/bsp
+16:20:05 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/freertos_domain/bsp
+16:20:34 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:20:34 INFO  : Supported Library List generated.
+15:26:07 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:26:07 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis
+15:26:07 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s101153258660698024571647062 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:26:08 INFO  : Embedded Template List generated successfully
+15:26:33 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+15:26:33 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+15:26:33 INFO  : CPU List generated successfully
+15:26:48 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:26:48 INFO  : Supported Library List generated.
+15:27:02 INFO  : Updating Examples in Driver /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:27:02 INFO  : bash, -c, empyro load_example -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:27:04 INFO  : [INFO]: Loading Valid Example names for BSP
+15:27:04 INFO  : -- The C compiler identification is GNU 13.3.0
+15:27:04 INFO  : -- The CXX compiler identification is GNU 13.3.0
+15:27:04 INFO  : -- Detecting C compiler ABI info
+15:27:04 INFO  : -- Detecting C compiler ABI info - done
+15:27:04 INFO  : -- Check for working C compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gcc - skipped
+15:27:04 INFO  : -- Detecting C compile features
+15:27:04 INFO  : -- Detecting C compile features - done
+15:27:04 INFO  : -- Detecting CXX compiler ABI info
+15:27:04 INFO  : -- Detecting CXX compiler ABI info - done
+15:27:04 INFO  : -- Check for working CXX compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-g++ - skipped
+15:27:04 INFO  : -- Detecting CXX compile features
+15:27:04 INFO  : -- Detecting CXX compile features - done
+15:27:04 INFO  : -- Configuring done
+15:27:04 INFO  : -- Generating done
+15:27:04 INFO  : -- Build files have been written to: /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/exmetadata
+15:27:04 INFO  : [INFO]: Gathering examples metadata
+15:27:04 INFO  : [INFO]: Successfully loaded all the valid examples for the BSP
+15:27:04 INFO  : Updated Examples in Driver
+15:28:05 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:28:05 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:28:07 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:28:07 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:28:07 INFO  : -board_dts 
+15:28:07 INFO  : -include_dts 
+15:28:07 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:28:07 INFO  : -zocl disable
+15:28:07 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:28:07 INFO  : SDT generated successfully
+15:28:07 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:28:07 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:28:08 INFO  : CPU List generated successfully
+15:50:11 INFO  : Terminating Vitis C++ Server
+15:50:11 INFO  : Vitis C++ Server terminated
+15:50:31 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:50:31 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s1011532581431760100636992383 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:31 INFO  : Embedded Template List generated successfully
+15:50:47 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:50:47 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:50:50 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:50:50 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:50:50 INFO  : -board_dts 
+15:50:50 INFO  : -include_dts 
+15:50:50 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:50:50 INFO  : -zocl disable
+15:50:50 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:50:50 INFO  : SDT generated successfully
+15:50:50 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:50:50 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:50:50 INFO  : CPU List generated successfully
+15:51:04 INFO  : Platform platform creation started.
+15:51:05 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+15:51:05 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+15:51:05 INFO  : CPU List generated successfully
+15:51:05 INFO  : SDT generated successfully.
+15:51:05 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/platform
+15:51:05 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:51:05 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:51:12 INFO  : [INFO]: Starting domain creation
+15:51:12 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+15:51:12 INFO  : [INFO]: Generating required metadata from domain specific DT
+15:51:12 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:51:12 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:51:12 INFO  : Domain standalone_microblaze_riscv_0 added successfully.
+15:51:12 INFO  : Platform creation finished successfully.
+15:51:12 INFO  : Platform Quick Build initiated.
+15:51:12 INFO  : Generating Export directory
+15:51:12 INFO  : Generated platform metadata for creating application(s) based on platform platform.
+16:01:59 INFO  : Terminating Vitis C++ Server
+15:02:59 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:02:59 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s1011532583725658119408867334 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:02:59 INFO  : Embedded Template List generated successfully
+15:03:32 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+15:03:32 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/sdt/system-top.dts
+15:03:33 INFO  : CPU List generated successfully
+15:06:15 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:06:15 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:06:17 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:06:17 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:06:17 INFO  : -board_dts 
+15:06:17 INFO  : -include_dts 
+15:06:17 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:06:17 INFO  : -zocl disable
+15:06:17 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:06:17 INFO  : SDT generated successfully
+15:06:17 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:06:17 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:06:17 INFO  : CPU List generated successfully
+15:06:43 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:06:43 INFO  : Supported Library List generated.
+15:07:51 INFO  : Updating Examples in Driver /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:07:51 INFO  : bash, -c, empyro load_example -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:07:53 INFO  : [INFO]: Loading Valid Example names for BSP
+15:07:53 INFO  : -- The C compiler identification is GNU 13.3.0
+15:07:53 INFO  : -- The CXX compiler identification is GNU 13.3.0
+15:07:53 INFO  : -- Detecting C compiler ABI info
+15:07:53 INFO  : -- Detecting C compiler ABI info - done
+15:07:53 INFO  : -- Check for working C compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gcc - skipped
+15:07:53 INFO  : -- Detecting C compile features
+15:07:53 INFO  : -- Detecting C compile features - done
+15:07:53 INFO  : -- Detecting CXX compiler ABI info
+15:07:53 INFO  : -- Detecting CXX compiler ABI info - done
+15:07:53 INFO  : -- Check for working CXX compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-g++ - skipped
+15:07:53 INFO  : -- Detecting CXX compile features
+15:07:53 INFO  : -- Detecting CXX compile features - done
+15:07:53 INFO  : -- Configuring done
+15:07:53 INFO  : -- Generating done
+15:07:53 INFO  : -- Build files have been written to: /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/exmetadata
+15:07:53 INFO  : [INFO]: Gathering examples metadata
+15:07:53 INFO  : [INFO]: Successfully loaded all the valid examples for the BSP
+15:07:53 INFO  : Updated Examples in Driver
+15:23:29 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:23:29 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:23:32 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:23:32 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:23:32 INFO  : -board_dts 
+15:23:32 INFO  : -include_dts 
+15:23:32 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:23:32 INFO  : -zocl disable
+15:23:32 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:23:32 INFO  : SDT generated successfully
+15:23:32 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:23:32 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:23:32 INFO  : CPU List generated successfully
+15:32:12 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:32:12 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:32:14 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:32:14 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:32:14 INFO  : -board_dts 
+15:32:14 INFO  : -include_dts 
+15:32:14 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:32:14 INFO  : -zocl disable
+15:32:14 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:32:14 INFO  : SDT generated successfully
+15:32:14 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:32:14 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:32:15 INFO  : CPU List generated successfully
+15:32:18 INFO  : Platform freertos creation started.
+15:32:19 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/freertos/hw/sdt/system-top.dts
+15:32:19 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/freertos/hw/sdt/system-top.dts
+15:32:19 INFO  : CPU List generated successfully
+15:32:19 INFO  : SDT generated successfully.
+15:32:19 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/freertos
+15:32:19 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/freertos/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/freertos/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:32:19 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/freertos/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/freertos/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:32:25 INFO  : [INFO]: Starting domain creation
+15:32:25 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+15:32:25 INFO  : [INFO]: Generating required metadata from domain specific DT
+15:32:25 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/freertos/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:32:25 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/freertos/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:32:25 INFO  : Domain standalone_microblaze_riscv_0 added successfully.
+15:32:25 INFO  : Platform creation finished successfully.
+15:32:25 INFO  : Platform Quick Build initiated.
+15:32:26 INFO  : Generating Export directory
+15:32:26 INFO  : Generated platform metadata for creating application(s) based on platform freertos.
+15:32:55 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/freertos/export/freertos/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:32:56 ERROR : [baremetal_validate_comp_xlnx.py][ERROR]: ERROR: hello_world requires at least one serial hardware instance to be present
+15:32:56 ERROR : ERROR: hello_world requires at least one serial hardware instance to be present
+15:32:56 ERROR : [ERROR]: Command 'lopper -O /home/student/s101153258/rtos/doom_vitis/freertos/export/freertos/sw/standalone_microblaze_riscv_0 -i /home/student/s101153258/rtos/doom_vitis/freertos/export/freertos/sw/standalone_microblaze_riscv_0/lop-config.dts -f /home/student/s101153258/rtos/doom_vitis/freertos/export/freertos/sw/standalone_microblaze_riscv_0/hw_artifacts/microblaze_riscv_0_baremetal.dts' returned non-zero exit status 1.
+15:32:56 ERROR : [ERROR]: HW validation assist failed
+15:32:56 ERROR : Invalid Template  'hello_world' selected for Domain 'standalone_microblaze_riscv_0'.
+15:51:25 INFO  : Terminating Vitis C++ Server
+15:51:25 INFO  : Vitis C++ Server terminated
+15:49:42 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:49:42 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis
+15:49:42 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s10115325817842728338781950353 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:49:43 INFO  : Embedded Template List generated successfully
+15:50:12 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+15:50:12 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:50:14 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+15:50:14 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+15:50:14 INFO  : -board_dts 
+15:50:14 INFO  : -include_dts 
+15:50:14 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+15:50:14 INFO  : -zocl disable
+15:50:14 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+15:50:14 INFO  : SDT generated successfully
+15:50:14 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:50:14 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+15:50:14 INFO  : CPU List generated successfully
+15:50:19 INFO  : Platform platform creation started.
+15:50:19 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+15:50:19 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+15:50:19 INFO  : CPU List generated successfully
+15:50:19 INFO  : SDT generated successfully.
+15:50:19 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/platform
+15:50:20 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:20 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:26 INFO  : [INFO]: Starting domain creation
+15:50:26 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+15:50:26 INFO  : [INFO]: Generating required metadata from domain specific DT
+15:50:26 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:50:26 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:50:26 INFO  : Domain standalone_microblaze_riscv_0 added successfully.
+15:50:26 INFO  : Platform creation finished successfully.
+15:50:26 INFO  : Platform Quick Build initiated.
+15:50:26 INFO  : Generating Export directory
+15:50:26 INFO  : Generated platform metadata for creating application(s) based on platform platform.
+15:50:48 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:49 INFO  : Successfully validated template hello_world
+15:50:51 INFO  : lopper command to create baremetal application :empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/hello_world/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n hello_world -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:51 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:51 INFO  : Successfully validated template hello_world
+15:50:51 INFO  : bash, -c, empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/hello_world/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n hello_world -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:50:56 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+15:50:56 INFO  : [INFO]: Generating Linker script for hello_world
+15:50:56 INFO  : [INFO]: Successfully Created Application sources at /home/student/s101153258/rtos/doom_vitis/hello_world/src
+15:50:56 INFO  : Successfully created Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+15:50:56 INFO  : The hardware specification used by project '/home/student/s101153258/rtos/doom_vitis/hello_world' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+15:50:56 INFO  : The updated bitstream files are copied from platform to folder '/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream' in project '/home/student/s101153258/rtos/doom_vitis/hello_world'.
+15:50:56 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/hello_world
+15:52:39 INFO  : XSDB server has started successfully from frontend.
+15:52:39 INFO  : It has taken  2secs.
+15:52:40 INFO  : Connection to XSDB Server established.
+15:52:40 INFO  : It has taken  1secs.
+15:52:40 INFO  : connect -url tcp:127.0.0.1:3121
+15:52:40 INFO  : Done
+15:52:40 INFO  : bpremove -all
+15:52:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:52:43 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:52:43 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:52:43 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+15:52:43 INFO  : 
+15:52:43 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:52:43 INFO  : rst -system
+15:52:46 INFO  : after 3000
+15:52:46 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:52:46 INFO  : rst -processor
+15:52:46 ERROR : couldn't open "/home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf": no such file or directory
+15:52:46 ERROR : Failed to initialize the hardware couldn't open "/home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf": no such file or directory
+15:53:49 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+15:53:49 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:49 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:49 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:49 INFO  : Domain reconfigured successfully
+15:53:49 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:49 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:49 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:53:51 INFO  : Domain build successfully
+15:53:51 INFO  : Generating Export directory
+15:53:51 INFO  : Platform Build Finished successfully.
+15:53:51 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:53:51 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:53:51 INFO  : [INFO]: Retargeting app
+15:53:51 INFO  : [INFO]: Updating link libraries based on new domain
+15:53:51 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+15:53:52 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:53:55 INFO  : connect -url tcp:127.0.0.1:3121
+15:53:55 INFO  : bpremove -all
+15:53:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:53:57 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:54:00 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+15:54:38 INFO  : connect -url tcp:127.0.0.1:3121
+15:54:38 INFO  : bpremove -all
+15:54:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:54:40 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:54:40 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:54:40 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+15:54:40 INFO  : 
+15:54:40 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:54:40 INFO  : rst -system
+15:54:43 INFO  : after 3000
+15:54:43 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+15:54:43 INFO  : rst -processor
+15:54:43 INFO  : dow /home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf
+15:54:43 INFO  : con
+15:54:44 INFO  : Testing the connection for 127.0.0.1
+15:55:07 INFO  : disconnect
+15:55:12 INFO  : connect -url tcp:127.0.0.1:3121
+15:55:12 INFO  : bpremove -all
+15:55:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:55:14 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:55:17 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+15:57:05 INFO  : connect -url tcp:127.0.0.1:3121
+15:57:05 INFO  : bpremove -all
+15:57:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:57:13 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:57:16 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+15:58:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:59:06 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+15:59:06 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:06 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:06 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:06 INFO  : Domain reconfigured successfully
+15:59:06 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:06 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:06 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+15:59:07 INFO  : Domain build successfully
+15:59:07 INFO  : Generating Export directory
+15:59:07 INFO  : Platform Build Finished successfully.
+15:59:07 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:59:07 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:59:07 INFO  : [INFO]: Retargeting app
+15:59:07 INFO  : [INFO]: Updating link libraries based on new domain
+15:59:07 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+15:59:07 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+15:59:32 INFO  : connect -url tcp:127.0.0.1:3121
+15:59:32 INFO  : bpremove -all
+15:59:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+15:59:40 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+15:59:43 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:01:16 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:01:16 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:16 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:16 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:16 INFO  : Domain reconfigured successfully
+16:01:16 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:16 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:16 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:17 INFO  : Domain build successfully
+16:01:17 INFO  : Generating Export directory
+16:01:17 INFO  : Platform Build Finished successfully.
+16:01:24 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:01:24 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : Domain reconfigured successfully
+16:01:24 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:01:24 INFO  : Domain build successfully
+16:01:24 INFO  : Generating Export directory
+16:01:24 INFO  : Platform Build Finished successfully.
+16:01:24 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:01:24 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:01:25 INFO  : [INFO]: Retargeting app
+16:01:25 INFO  : [INFO]: Updating link libraries based on new domain
+16:01:25 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:01:25 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:01:27 INFO  : connect -url tcp:127.0.0.1:3121
+16:01:27 INFO  : bpremove -all
+16:01:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:01:35 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:01:38 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:02:25 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:02:25 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : Domain reconfigured successfully
+16:02:25 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:02:25 INFO  : Domain build successfully
+16:02:25 INFO  : Generating Export directory
+16:02:26 INFO  : Platform Build Finished successfully.
+16:02:26 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:02:26 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:02:26 INFO  : [INFO]: Retargeting app
+16:02:26 INFO  : [INFO]: Updating link libraries based on new domain
+16:02:26 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:02:26 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:02:28 INFO  : connect -url tcp:127.0.0.1:3121
+16:02:28 INFO  : bpremove -all
+16:02:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:02:30 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:02:33 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:05:12 INFO  : Using sdt generation script from /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl
+16:05:12 INFO  : bash, -c, sdtgen /opt/Xilinx/2025.1/Vitis/vitis-server/scripts/platformutil.tcl /home/student/s101153258/microblazeV_doom/project_wrapper.xsa /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+16:05:14 INFO  : -xsa /home/student/s101153258/microblazeV_doom/project_wrapper.xsa
+16:05:14 INFO  : -dir /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt
+16:05:14 INFO  : -board_dts 
+16:05:14 INFO  : -include_dts 
+16:05:14 INFO  : -repo /opt/Xilinx/2025.1/data/system-device-tree-xlnx
+16:05:14 INFO  : -zocl disable
+16:05:14 INFO  : INFO: [Hsi 55-2053] elapsed time for repository (/opt/Xilinx/2025.1/Vitis/data/embeddedsw) loading 0 seconds
+16:05:14 INFO  : SDT generated successfully
+16:05:14 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+16:05:14 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/.rigel_lopper_temp_platform/project_wrapper/hw/sdt/system-top.dts
+16:05:14 INFO  : CPU List generated successfully
+16:05:18 INFO  : Platform platform creation started.
+16:05:18 INFO  : Lopper command for cpu List generation: lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+16:05:18 INFO  : bash, -c, lopper --enhanced --werror -f -O /home/student/s101153258/rtos/doom_vitis/.rigel_lopper -i lop-cpu-oslist.dts /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts
+16:05:18 INFO  : CPU List generated successfully
+16:05:18 INFO  : SDT generated successfully.
+16:05:18 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/platform
+16:05:18 INFO  : lopper command to generate BSP :empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:05:18 INFO  : bash, -c, empyro create_bsp -w /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp -p microblaze_riscv_0 -o standalone -s /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -t empty_application -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:05:24 INFO  : [INFO]: Starting domain creation
+16:05:24 INFO  : [INFO]: Generating Domain-specific DTS for microblaze_riscv_0
+16:05:24 INFO  : [INFO]: Generating required metadata from domain specific DT
+16:05:24 INFO  : [INFO]: Successfully created Domain at /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:05:24 INFO  : Successfully Generated Domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:05:24 INFO  : Domain standalone_microblaze_riscv_0 added successfully.
+16:05:24 INFO  : Platform creation finished successfully.
+16:05:24 INFO  : Platform Quick Build initiated.
+16:05:24 INFO  : Generating Export directory
+16:05:25 INFO  : Generated platform metadata for creating application(s) based on platform platform.
+16:05:28 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:05:28 INFO  : Supported Library List generated.
+16:05:43 INFO  : Updating Examples in Driver /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:05:43 INFO  : bash, -c, empyro load_example -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:05:44 INFO  : [INFO]: Loading Valid Example names for BSP
+16:05:44 INFO  : -- The C compiler identification is GNU 13.3.0
+16:05:44 INFO  : -- The CXX compiler identification is GNU 13.3.0
+16:05:44 INFO  : -- Detecting C compiler ABI info
+16:05:44 INFO  : -- Detecting C compiler ABI info - done
+16:05:44 INFO  : -- Check for working C compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-gcc - skipped
+16:05:44 INFO  : -- Detecting C compile features
+16:05:44 INFO  : -- Detecting C compile features - done
+16:05:44 INFO  : -- Detecting CXX compiler ABI info
+16:05:44 INFO  : -- Detecting CXX compiler ABI info - done
+16:05:44 INFO  : -- Check for working CXX compiler: /opt/Xilinx/2025.1/Vitis/gnu/riscv/lin/riscv64-unknown-elf/bin/riscv64-unknown-elf-g++ - skipped
+16:05:44 INFO  : -- Detecting CXX compile features
+16:05:44 INFO  : -- Detecting CXX compile features - done
+16:05:44 INFO  : -- Configuring done
+16:05:44 INFO  : -- Generating done
+16:05:44 INFO  : -- Build files have been written to: /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp/libsrc/build_configs/exmetadata
+16:05:44 INFO  : [INFO]: Gathering examples metadata
+16:05:44 INFO  : [INFO]: Successfully loaded all the valid examples for the BSP
+16:05:44 INFO  : Updated Examples in Driver
+16:06:14 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:06:15 INFO  : Successfully validated template hello_world
+16:06:19 INFO  : lopper command to create baremetal application :empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/hello_world/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n hello_world -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:06:19 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:06:20 INFO  : Successfully validated template hello_world
+16:06:20 INFO  : bash, -c, empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/hello_world/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n hello_world -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:06:22 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+16:06:22 INFO  : [INFO]: Generating Linker script for hello_world
+16:06:22 INFO  : [INFO]: Successfully Created Application sources at /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:06:22 INFO  : Successfully created Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:06:22 INFO  : The hardware specification used by project '/home/student/s101153258/rtos/doom_vitis/hello_world' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+16:06:22 INFO  : The updated bitstream files are copied from platform to folder '/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream' in project '/home/student/s101153258/rtos/doom_vitis/hello_world'.
+16:06:22 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/hello_world
+16:07:34 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:07:34 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:34 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:34 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:34 INFO  : Domain reconfigured successfully
+16:07:34 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:34 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:34 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:07:35 INFO  : Domain build successfully
+16:07:35 INFO  : Generating Export directory
+16:07:36 INFO  : Platform Build Finished successfully.
+16:07:36 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:07:36 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:07:36 INFO  : [INFO]: Retargeting app
+16:07:36 INFO  : [INFO]: Updating link libraries based on new domain
+16:07:36 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:07:36 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:08:09 INFO  : connect -url tcp:127.0.0.1:3121
+16:08:09 INFO  : bpremove -all
+16:08:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:08:11 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:08:11 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:08:12 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+16:08:12 INFO  : 
+16:08:12 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:08:12 INFO  : rst -system
+16:08:15 INFO  : after 3000
+16:08:15 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:08:15 INFO  : rst -processor
+16:08:15 INFO  : dow /home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf
+16:08:15 INFO  : con
+16:08:16 INFO  : Testing the connection for 127.0.0.1
+16:09:27 INFO  : connect -url tcp:127.0.0.1:3121
+16:09:27 INFO  : bpremove -all
+16:09:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:09:29 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:09:29 INFO  : disconnect
+16:09:29 ERROR : Failed to initialize the hardware Invalid target. Use "connect" command to connect to hw_server/TCF agent
+16:09:56 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:09:56 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:56 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:56 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:56 INFO  : Domain reconfigured successfully
+16:09:56 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:56 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:56 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:09:57 INFO  : Domain build successfully
+16:09:57 INFO  : Generating Export directory
+16:09:57 INFO  : Platform Build Finished successfully.
+16:09:57 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:09:57 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:09:57 INFO  : [INFO]: Retargeting app
+16:09:57 INFO  : [INFO]: Updating link libraries based on new domain
+16:09:57 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/hello_world/src
+16:09:57 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/hello_world/src -b /home/student/s101153258/rtos/doom_vitis/hello_world/build
+16:09:59 INFO  : connect -url tcp:127.0.0.1:3121
+16:09:59 INFO  : bpremove -all
+16:09:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:10:01 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:10:01 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:10:02 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+16:10:02 INFO  : 
+16:10:02 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:10:02 INFO  : rst -system
+16:10:05 INFO  : after 3000
+16:10:05 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:10:05 INFO  : rst -processor
+16:10:05 INFO  : dow /home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf
+16:10:05 INFO  : con
+16:10:06 INFO  : Testing the connection for 127.0.0.1
+16:12:25 INFO  : connect -url tcp:127.0.0.1:3121
+16:12:25 INFO  : bpremove -all
+16:12:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:12:28 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:12:28 INFO  : disconnect
+16:12:28 ERROR : Failed to initialize the hardware Invalid target. Use "connect" command to connect to hw_server/TCF agent
+16:12:49 INFO  : connect -url tcp:127.0.0.1:3121
+16:12:49 INFO  : bpremove -all
+16:12:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:12:51 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/hello_world/_ide/bitstream/project_wrapper.bit"
+16:12:51 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:12:51 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+16:12:51 INFO  : 
+16:12:51 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:12:51 INFO  : rst -system
+16:12:54 INFO  : after 3000
+16:12:54 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:12:54 INFO  : rst -processor
+16:12:55 INFO  : dow /home/student/s101153258/rtos/doom_vitis/hello_world/build/hello_world.elf
+16:12:55 INFO  : bpadd main
+16:12:55 INFO  : con
+16:12:56 INFO  : Testing the connection for 127.0.0.1
+16:13:45 INFO  : disconnect
+16:18:02 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:03 INFO  : Successfully validated template hello_world
+16:18:05 INFO  : lopper command to create baremetal application :empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/freertos/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n freertos -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:05 INFO  : bash, -c, empyro validate_bsp -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:06 INFO  : Successfully validated template hello_world
+16:18:06 INFO  : bash, -c, empyro create_app --src_dir /home/student/s101153258/rtos/doom_vitis/freertos/src -t hello_world -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -n freertos -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:18:08 INFO  : [INFO]: Generating Hardware Metadata for hello_world
+16:18:08 INFO  : [INFO]: Generating Linker script for hello_world
+16:18:08 INFO  : [INFO]: Successfully Created Application sources at /home/student/s101153258/rtos/doom_vitis/freertos/src
+16:18:08 INFO  : Successfully created Application /home/student/s101153258/rtos/doom_vitis/freertos/src
+16:18:08 INFO  : The hardware specification used by project '/home/student/s101153258/rtos/doom_vitis/freertos' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+16:18:08 INFO  : The updated bitstream files are copied from platform to folder '/home/student/s101153258/rtos/doom_vitis/freertos/_ide/bitstream' in project '/home/student/s101153258/rtos/doom_vitis/freertos'.
+16:18:08 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis/freertos
+16:19:16 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:19:16 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:16 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:16 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:16 INFO  : Domain reconfigured successfully
+16:19:16 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:16 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:16 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:17 INFO  : Domain build successfully
+16:19:17 INFO  : Generating Export directory
+16:19:17 INFO  : Platform Build Finished successfully.
+16:19:17 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:17 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:17 INFO  : [INFO]: Retargeting app
+16:19:17 INFO  : [INFO]: Updating link libraries based on new domain
+16:19:17 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/freertos/src
+16:19:17 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:20 INFO  : connect -url tcp:127.0.0.1:3121
+16:19:20 INFO  : bpremove -all
+16:19:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:19:23 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/freertos/_ide/bitstream/project_wrapper.bit"
+16:19:26 ERROR : Failed to initialize the hardware Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:19:42 INFO  : BSP build will be initiated for Domain standalone_microblaze_riscv_0
+16:19:42 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:42 INFO  : lopper command to reconfigure BSP :empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:42 INFO  : bash, -c, empyro reconfig_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:42 INFO  : Domain reconfigured successfully
+16:19:42 INFO  : Generating BSP for the domain /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:42 INFO  : lopper command to build BSP :empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:42 INFO  : bash, -c, empyro build_bsp -d /home/student/s101153258/rtos/doom_vitis/platform/microblaze_riscv_0/standalone_microblaze_riscv_0/bsp
+16:19:43 INFO  : Domain build successfully
+16:19:43 INFO  : Generating Export directory
+16:19:43 INFO  : Platform Build Finished successfully.
+16:19:43 INFO  : lopper command to retarget baremetal application :empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:43 INFO  : bash, -c, empyro retarget_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -d /home/student/s101153258/rtos/doom_vitis/platform/export/platform/sw/standalone_microblaze_riscv_0 -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:43 INFO  : [INFO]: Retargeting app
+16:19:43 INFO  : [INFO]: Updating link libraries based on new domain
+16:19:43 INFO  : Successfully retargeted Application /home/student/s101153258/rtos/doom_vitis/freertos/src
+16:19:43 INFO  : bash, -c, empyro build_app -s /home/student/s101153258/rtos/doom_vitis/freertos/src -b /home/student/s101153258/rtos/doom_vitis/freertos/build
+16:19:48 INFO  : connect -url tcp:127.0.0.1:3121
+16:19:48 INFO  : bpremove -all
+16:19:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:19:50 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/freertos/_ide/bitstream/project_wrapper.bit"
+16:19:50 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:19:51 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+16:19:51 INFO  : 
+16:19:51 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:19:51 INFO  : rst -system
+16:19:54 INFO  : after 3000
+16:19:54 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:19:54 INFO  : rst -processor
+16:19:54 INFO  : dow /home/student/s101153258/rtos/doom_vitis/freertos/build/freertos.elf
+16:19:54 INFO  : con
+16:19:55 INFO  : Testing the connection for 127.0.0.1
+16:19:59 INFO  : connect -url tcp:127.0.0.1:3121
+16:19:59 INFO  : bpremove -all
+16:19:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:20:01 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/freertos/_ide/bitstream/project_wrapper.bit"
+16:20:01 INFO  : disconnect
+16:20:01 ERROR : Failed to initialize the hardware Invalid target. Use "connect" command to connect to hw_server/TCF agent
+16:20:08 INFO  : Terminating Vitis C++ Server
+16:20:08 INFO  : Vitis C++ Server terminated
+16:20:08 INFO  : connection terminated
+16:20:08 INFO  : connection terminated
+16:20:33 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+16:20:33 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis
+16:20:33 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s1011532583920058135679916566 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+16:20:33 INFO  : Embedded Template List generated successfully
+16:20:39 INFO  : XSDB server has started successfully from frontend.
+16:20:39 INFO  : It has taken  2secs.
+16:20:40 INFO  : Connection to XSDB Server established.
+16:20:40 INFO  : It has taken  1secs.
+16:20:40 INFO  : connect -url tcp:127.0.0.1:3121
+16:20:40 INFO  : Done
+16:20:40 INFO  : bpremove -all
+16:20:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BE3886A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BE3886A-13631093-0"}' command is executed.
+16:20:42 INFO  : Device configured successfully with "/home/student/s101153258/rtos/doom_vitis/freertos/_ide/bitstream/project_wrapper.bit"
+16:20:42 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:20:42 INFO  : loadhw -hw /home/student/s101153258/rtos/doom_vitis/platform/export/platform/hw/project_wrapper.xsa  -regs
+16:20:42 INFO  : 
+16:20:42 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:20:42 INFO  : rst -system
+16:20:45 INFO  : after 3000
+16:20:46 INFO  : targets -set -nocase -filter {name =~ "*Hart**#0"}
+16:20:46 INFO  : rst -processor
+16:20:46 INFO  : dow /home/student/s101153258/rtos/doom_vitis/freertos/build/freertos.elf
+16:20:46 INFO  : con
+16:20:47 INFO  : Testing the connection for 127.0.0.1
+16:24:19 INFO  : disconnect
+16:47:20 INFO  : Terminating Vitis C++ Server
+15:18:26 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:18:27 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s10115325817791470350597273703 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:18:27 INFO  : Embedded Template List generated successfully
+15:35:07 INFO  : updated workspace path: /home/student/s101153258/rtos/doom_vitis
+15:35:07 INFO  : created .gitignore file for the project /home/student/s101153258/rtos/doom_vitis
+15:35:07 INFO  : bash, -c, empyro get_template_data -d /tmp/rigel_lopper_s1011532587101851444290449267 -r /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:35:07 INFO  : Embedded Template List generated successfully
+15:35:17 INFO  : bash, -c, lopper -O  . /home/student/s101153258/rtos/doom_vitis/platform/hw/sdt/system-top.dts -- baremetal_getsupported_comp_xlnx microblaze_riscv_0 /home/student/s101153258/rtos/doom_vitis/_ide/.wsdata/.repo.yaml
+15:35:18 INFO  : Supported Library List generated.

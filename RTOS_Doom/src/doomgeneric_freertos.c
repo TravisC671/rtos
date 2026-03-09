@@ -23,10 +23,10 @@ int DG_GetKey(int* pressed, unsigned char* key) {
 
 }
 
-void DG_Init();
+void DG_Init() {}
 
 //flip buffer switch, all the the pixels should have been written directly to buffer
-void DG_DrawFrame();
+void DG_DrawFrame() {}
 
 //this should never be used
 void DG_SetWindowTitle(const char * title) {}

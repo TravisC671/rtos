@@ -1,0 +1,27 @@
+APB_PWM_LED_0:
+- APB_PWM_LED
+- None
+axi_bram_ctrl_0:
+- axi_bram_ctrl
+- bram
+axi_bram_ctrl_1:
+- axi_bram_ctrl
+- bram
+axi_gpio_0:
+- axi_gpio
+- gpio
+axi_gpio_1:
+- axi_gpio
+- gpio
+axi_gpio_2:
+- axi_gpio
+- gpio
+axi_intc_0:
+- axi_intc
+- intc
+axi_uart16550_0:
+- axi_uart16550
+- uartns550
+axi_uart16550_1:
+- axi_uart16550
+- uartns550

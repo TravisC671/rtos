@@ -1,0 +1,206 @@
+/* This code produces music using the Karplus-Strong algorithm.
+   Author: Larry Pyeatt
+   Date: 11-1-2012 (revised 9-6-2021)
+   (C) All rights reserved
+
+   This code uses the Karplus-Strong algorithm to simulate a
+   stringed instrument.  It sounds similar to a harp.
+
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <time.h>
+#include <math.h>
+/* random.h/random.c provide a simple Pseudo-Random Number
+   Generator (PRNG). The SEGGER PRNG was not very good, so we use
+   random.h/random.c instead. If your system has a good PRNG,
+   then you can use it. Just take out this line and change the
+   calls to myrand later in this file to use your system PRNG. */
+#include <random.h>
+#include <string.h>
+#include <ks.h>
+
+/* if note is a midi number, then the frequency is: 
+   hz = 440*pow(2,(note-69.0)/12.0), and the array size needed is
+   SAMPLE_RATE/Hz This lookup table translates midi numbers to the
+   array size.  The first midi number is 21, which is A0 (A at
+   octave 0).  The two lowest octaves take too much space, and the
+   upper octaves become inaccurate, so we will take four octaves
+   from the middle.
+*/
+
+int16_t array_size[] = {
+		971,916,865,816,771,727,686,648,612,577,545,514,
+		485,458,432,408,385,364,343,324,306,289,272,257,
+		243,229,216,204,193,182,172,162,153,144,136,129,
+		121,115,108,102,96,91,86,81,76,72,68,64,
+		61,57,54,51,48,45,43,40,38,36,34,32,
+		30,29,27,26,24,23,21,20};
+
+// The Karplus-Strong buffers starting at midi note 28
+#define FIRST_MIDI 28
+#define LAST_MIDI 95
+
+int16_t E1[971];
+int16_t F1[916];
+int16_t F1s[865];
+int16_t G1[816];
+int16_t G1s[771];
+int16_t A1[727];
+int16_t A1s[686];
+int16_t B1[648];
+int16_t C2[612];
+int16_t C2s[577];
+int16_t D2[545];
+int16_t D2s[514];
+int16_t E2[485];
+int16_t F2[458];
+int16_t F2s[432];
+int16_t G2[408];
+int16_t G2s[385];
+int16_t A2[364];
+int16_t A2s[343];
+int16_t B2[324];
+int16_t C3[306];
+int16_t C3s[289];
+int16_t D3[272];
+int16_t D3s[257];
+int16_t E3[243];
+int16_t F3[229];
+int16_t F3s[216];
+int16_t G3[204];
+int16_t G3s[193];
+int16_t A3[182];
+int16_t A3s[172];
+int16_t B3[162];
+int16_t C4[153];
+int16_t C4s[144];
+int16_t D4[136];
+int16_t D4s[129];
+int16_t E4[121];
+int16_t F4[115];
+int16_t F4s[108];
+int16_t G4[102];
+int16_t G4s[96];
+int16_t A4[91];
+int16_t A4s[86];
+int16_t B4[81];
+int16_t C5[76];
+int16_t C5s[72];
+int16_t D5[68];
+int16_t D5s[64];
+int16_t E5[61];
+int16_t F5[57];
+int16_t F5s[54];
+int16_t G5[51];
+int16_t G5s[48];
+int16_t A5[45];
+int16_t A5s[43];
+int16_t B5[40];
+int16_t C6[38];
+int16_t C6s[36];
+int16_t D6[34];
+int16_t D6s[32];
+int16_t E6[30];
+int16_t F6[29];
+int16_t F6s[27];
+int16_t G6[26];
+int16_t G6s[24];
+int16_t A6[23];
+int16_t A6s[21];
+int16_t B6[20];
+
+// an array of pointers to the buffers, so that we can access them
+// as a 2D array.
+int16_t *buffer[] = {
+		E1,F1,F1s,G1,G1s,A1,A1s,B1,C2,C2s,D2,D2s,
+		E2,F2,F2s,G2,G2s,A2,A2s,B2,C3,C3s,D3,D3s,
+		E3,F3,F3s,G3,G3s,A3,A3s,B3,C4,C4s,D4,D4s,
+		E4,F4,F4s,G4,G4s,A4,A4s,B4,C5,C5s,D5,D5s,
+		E5,F5,F5s,G5,G5s,A5,A5s,B5,C6,C6s,D6,D6s,
+		E6,F6,F6s,G6,G6s,A6,A6s,B6};
+
+// array for keeping track of our position in each buffer.
+int16_t position[68] = {0};
+
+// array for timeouts for each buffer.
+int32_t timer[68] = {0};
+
+// Plucking a string is simulated by filling the array with
+// random numbers between -0.5 and +0.5. 
+void ks_string_pluck(int16_t midi_num, int16_t volume)
+{
+  int index;
+  int32_t tmp; // using 32 bits makes the multiply work
+  int i;
+  if((midi_num >= FIRST_MIDI)&&(midi_num <= LAST_MIDI))
+    {
+      index = midi_num - FIRST_MIDI;
+      for(i=0;i<array_size[index];i++)
+        {
+          // Create a random S(15,16) between -0.5 and 0.5.
+          // The implementation of rand() on SEGGER Embedded
+          // Studio is not very good, so I use a version that
+          // I wrote.
+          tmp = myrand();
+          tmp>>=17; // tmp is now an S(15,16) between -0.5 and 0.5
+           // multiply by volume and convert to S(0,15)
+           tmp = (volume * tmp)>>17;
+           buffer[index][i] = tmp;  // store in buffer
+        }
+      timer[midi_num-FIRST_MIDI]=64*array_size[midi_num-FIRST_MIDI];
+    }
+}
+
+void ks_play_1_ms(int16_t *data)
+{
+  static int32_t tmp_buffer[AUDIO_BUFFER_LENGTH]; // this function is not re-entrant
+  int i,j;
+  int32_t temp;
+  int nextpos;
+  int32_t value;
+  int32_t fact = 0xFEEE;  // 0.995819091796875 as a U(0,16)
+  int32_t cposition;
+  int32_t csize;
+  // clear the temporary buffer
+  memset(tmp_buffer,0,sizeof(int32_t) * AUDIO_BUFFER_LENGTH);
+  // generate another millsecond of sound for each active string,
+  // adding them together in tmp_buffer.
+  for(j = 0; j <= LAST_MIDI-FIRST_MIDI; j++)
+    {
+      if(timer[j] > 0)
+	{
+	  cposition = position[j];
+	  csize = array_size[j];
+	  //if(s->timer>0)
+	  for(i=0; i < AUDIO_BUFFER_LENGTH; i++)
+	    {
+	      // update each active string and add its output to the sum
+	      nextpos = (cposition+1) % csize;
+	      // calculate value as an S(0,31) 
+	      value=(fact*(buffer[j][cposition]+buffer[j][nextpos]))>>1;
+	      value >>= 16;  // convert to S(0,15)
+	      buffer[j][cposition] = value;
+	      tmp_buffer[i] += value;
+	      cposition = nextpos;
+	    }
+	  position[j] = cposition;
+	  timer[j]--;
+	}
+    } 
+  // copy the results from tmp_buffer to data.
+  for(i=0; i < AUDIO_BUFFER_LENGTH; i++)
+    {
+      temp = tmp_buffer[i];
+      // We know that temp is an S(16,15), but after summing all of
+      // of the strings, it could be too large for the bit depth.
+      // Shift right  and saturate to the bit depth.
+      asm("ssat %0,#12,%1, asr #3"
+	  : "=r" (temp)
+	  : "r" (temp)
+	  );
+      // store the sample in output buffer
+      data[i] = (int16_t)temp;
+    }
+}

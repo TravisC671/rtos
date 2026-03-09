@@ -4,6 +4,7 @@
 2. Set up the init function to configure the vga driver
 3. Set up video so that it writes to the vga buffer's address space [here](./src/doomgeneric/doomgeneric.c#21)
 4. Configure the command line arguments properly. most likely leave them blank
+5. Get RiscV gcc compiler
 
 # OPTIONAL
 

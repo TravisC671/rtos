@@ -336,6 +336,2070 @@ src/AXI_timer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/AXI_timer.c.s
 .PHONY : src/AXI_timer.c.s
 
+src/UART_16550.obj: src/UART_16550.c.obj
+.PHONY : src/UART_16550.obj
+
+# target to build an object file
+src/UART_16550.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.obj
+.PHONY : src/UART_16550.c.obj
+
+src/UART_16550.i: src/UART_16550.c.i
+.PHONY : src/UART_16550.i
+
+# target to preprocess a source file
+src/UART_16550.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.i
+.PHONY : src/UART_16550.c.i
+
+src/UART_16550.s: src/UART_16550.c.s
+.PHONY : src/UART_16550.s
+
+# target to generate assembly for a file
+src/UART_16550.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/UART_16550.c.s
+.PHONY : src/UART_16550.c.s
+
+src/doom_task.obj: src/doom_task.c.obj
+.PHONY : src/doom_task.obj
+
+# target to build an object file
+src/doom_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.obj
+.PHONY : src/doom_task.c.obj
+
+src/doom_task.i: src/doom_task.c.i
+.PHONY : src/doom_task.i
+
+# target to preprocess a source file
+src/doom_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.i
+.PHONY : src/doom_task.c.i
+
+src/doom_task.s: src/doom_task.c.s
+.PHONY : src/doom_task.s
+
+# target to generate assembly for a file
+src/doom_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doom_task.c.s
+.PHONY : src/doom_task.c.s
+
+src/doomgeneric/am_map.obj: src/doomgeneric/am_map.c.obj
+.PHONY : src/doomgeneric/am_map.obj
+
+# target to build an object file
+src/doomgeneric/am_map.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/am_map.c.obj
+.PHONY : src/doomgeneric/am_map.c.obj
+
+src/doomgeneric/am_map.i: src/doomgeneric/am_map.c.i
+.PHONY : src/doomgeneric/am_map.i
+
+# target to preprocess a source file
+src/doomgeneric/am_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/am_map.c.i
+.PHONY : src/doomgeneric/am_map.c.i
+
+src/doomgeneric/am_map.s: src/doomgeneric/am_map.c.s
+.PHONY : src/doomgeneric/am_map.s
+
+# target to generate assembly for a file
+src/doomgeneric/am_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/am_map.c.s
+.PHONY : src/doomgeneric/am_map.c.s
+
+src/doomgeneric/d_event.obj: src/doomgeneric/d_event.c.obj
+.PHONY : src/doomgeneric/d_event.obj
+
+# target to build an object file
+src/doomgeneric/d_event.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_event.c.obj
+.PHONY : src/doomgeneric/d_event.c.obj
+
+src/doomgeneric/d_event.i: src/doomgeneric/d_event.c.i
+.PHONY : src/doomgeneric/d_event.i
+
+# target to preprocess a source file
+src/doomgeneric/d_event.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_event.c.i
+.PHONY : src/doomgeneric/d_event.c.i
+
+src/doomgeneric/d_event.s: src/doomgeneric/d_event.c.s
+.PHONY : src/doomgeneric/d_event.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_event.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_event.c.s
+.PHONY : src/doomgeneric/d_event.c.s
+
+src/doomgeneric/d_items.obj: src/doomgeneric/d_items.c.obj
+.PHONY : src/doomgeneric/d_items.obj
+
+# target to build an object file
+src/doomgeneric/d_items.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_items.c.obj
+.PHONY : src/doomgeneric/d_items.c.obj
+
+src/doomgeneric/d_items.i: src/doomgeneric/d_items.c.i
+.PHONY : src/doomgeneric/d_items.i
+
+# target to preprocess a source file
+src/doomgeneric/d_items.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_items.c.i
+.PHONY : src/doomgeneric/d_items.c.i
+
+src/doomgeneric/d_items.s: src/doomgeneric/d_items.c.s
+.PHONY : src/doomgeneric/d_items.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_items.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_items.c.s
+.PHONY : src/doomgeneric/d_items.c.s
+
+src/doomgeneric/d_iwad.obj: src/doomgeneric/d_iwad.c.obj
+.PHONY : src/doomgeneric/d_iwad.obj
+
+# target to build an object file
+src/doomgeneric/d_iwad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_iwad.c.obj
+.PHONY : src/doomgeneric/d_iwad.c.obj
+
+src/doomgeneric/d_iwad.i: src/doomgeneric/d_iwad.c.i
+.PHONY : src/doomgeneric/d_iwad.i
+
+# target to preprocess a source file
+src/doomgeneric/d_iwad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_iwad.c.i
+.PHONY : src/doomgeneric/d_iwad.c.i
+
+src/doomgeneric/d_iwad.s: src/doomgeneric/d_iwad.c.s
+.PHONY : src/doomgeneric/d_iwad.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_iwad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_iwad.c.s
+.PHONY : src/doomgeneric/d_iwad.c.s
+
+src/doomgeneric/d_loop.obj: src/doomgeneric/d_loop.c.obj
+.PHONY : src/doomgeneric/d_loop.obj
+
+# target to build an object file
+src/doomgeneric/d_loop.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_loop.c.obj
+.PHONY : src/doomgeneric/d_loop.c.obj
+
+src/doomgeneric/d_loop.i: src/doomgeneric/d_loop.c.i
+.PHONY : src/doomgeneric/d_loop.i
+
+# target to preprocess a source file
+src/doomgeneric/d_loop.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_loop.c.i
+.PHONY : src/doomgeneric/d_loop.c.i
+
+src/doomgeneric/d_loop.s: src/doomgeneric/d_loop.c.s
+.PHONY : src/doomgeneric/d_loop.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_loop.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_loop.c.s
+.PHONY : src/doomgeneric/d_loop.c.s
+
+src/doomgeneric/d_main.obj: src/doomgeneric/d_main.c.obj
+.PHONY : src/doomgeneric/d_main.obj
+
+# target to build an object file
+src/doomgeneric/d_main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_main.c.obj
+.PHONY : src/doomgeneric/d_main.c.obj
+
+src/doomgeneric/d_main.i: src/doomgeneric/d_main.c.i
+.PHONY : src/doomgeneric/d_main.i
+
+# target to preprocess a source file
+src/doomgeneric/d_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_main.c.i
+.PHONY : src/doomgeneric/d_main.c.i
+
+src/doomgeneric/d_main.s: src/doomgeneric/d_main.c.s
+.PHONY : src/doomgeneric/d_main.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_main.c.s
+.PHONY : src/doomgeneric/d_main.c.s
+
+src/doomgeneric/d_mode.obj: src/doomgeneric/d_mode.c.obj
+.PHONY : src/doomgeneric/d_mode.obj
+
+# target to build an object file
+src/doomgeneric/d_mode.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_mode.c.obj
+.PHONY : src/doomgeneric/d_mode.c.obj
+
+src/doomgeneric/d_mode.i: src/doomgeneric/d_mode.c.i
+.PHONY : src/doomgeneric/d_mode.i
+
+# target to preprocess a source file
+src/doomgeneric/d_mode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_mode.c.i
+.PHONY : src/doomgeneric/d_mode.c.i
+
+src/doomgeneric/d_mode.s: src/doomgeneric/d_mode.c.s
+.PHONY : src/doomgeneric/d_mode.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_mode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_mode.c.s
+.PHONY : src/doomgeneric/d_mode.c.s
+
+src/doomgeneric/d_net.obj: src/doomgeneric/d_net.c.obj
+.PHONY : src/doomgeneric/d_net.obj
+
+# target to build an object file
+src/doomgeneric/d_net.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_net.c.obj
+.PHONY : src/doomgeneric/d_net.c.obj
+
+src/doomgeneric/d_net.i: src/doomgeneric/d_net.c.i
+.PHONY : src/doomgeneric/d_net.i
+
+# target to preprocess a source file
+src/doomgeneric/d_net.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_net.c.i
+.PHONY : src/doomgeneric/d_net.c.i
+
+src/doomgeneric/d_net.s: src/doomgeneric/d_net.c.s
+.PHONY : src/doomgeneric/d_net.s
+
+# target to generate assembly for a file
+src/doomgeneric/d_net.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/d_net.c.s
+.PHONY : src/doomgeneric/d_net.c.s
+
+src/doomgeneric/doomdef.obj: src/doomgeneric/doomdef.c.obj
+.PHONY : src/doomgeneric/doomdef.obj
+
+# target to build an object file
+src/doomgeneric/doomdef.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomdef.c.obj
+.PHONY : src/doomgeneric/doomdef.c.obj
+
+src/doomgeneric/doomdef.i: src/doomgeneric/doomdef.c.i
+.PHONY : src/doomgeneric/doomdef.i
+
+# target to preprocess a source file
+src/doomgeneric/doomdef.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomdef.c.i
+.PHONY : src/doomgeneric/doomdef.c.i
+
+src/doomgeneric/doomdef.s: src/doomgeneric/doomdef.c.s
+.PHONY : src/doomgeneric/doomdef.s
+
+# target to generate assembly for a file
+src/doomgeneric/doomdef.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomdef.c.s
+.PHONY : src/doomgeneric/doomdef.c.s
+
+src/doomgeneric/doomgeneric.obj: src/doomgeneric/doomgeneric.c.obj
+.PHONY : src/doomgeneric/doomgeneric.obj
+
+# target to build an object file
+src/doomgeneric/doomgeneric.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomgeneric.c.obj
+.PHONY : src/doomgeneric/doomgeneric.c.obj
+
+src/doomgeneric/doomgeneric.i: src/doomgeneric/doomgeneric.c.i
+.PHONY : src/doomgeneric/doomgeneric.i
+
+# target to preprocess a source file
+src/doomgeneric/doomgeneric.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomgeneric.c.i
+.PHONY : src/doomgeneric/doomgeneric.c.i
+
+src/doomgeneric/doomgeneric.s: src/doomgeneric/doomgeneric.c.s
+.PHONY : src/doomgeneric/doomgeneric.s
+
+# target to generate assembly for a file
+src/doomgeneric/doomgeneric.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomgeneric.c.s
+.PHONY : src/doomgeneric/doomgeneric.c.s
+
+src/doomgeneric/doomstat.obj: src/doomgeneric/doomstat.c.obj
+.PHONY : src/doomgeneric/doomstat.obj
+
+# target to build an object file
+src/doomgeneric/doomstat.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomstat.c.obj
+.PHONY : src/doomgeneric/doomstat.c.obj
+
+src/doomgeneric/doomstat.i: src/doomgeneric/doomstat.c.i
+.PHONY : src/doomgeneric/doomstat.i
+
+# target to preprocess a source file
+src/doomgeneric/doomstat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomstat.c.i
+.PHONY : src/doomgeneric/doomstat.c.i
+
+src/doomgeneric/doomstat.s: src/doomgeneric/doomstat.c.s
+.PHONY : src/doomgeneric/doomstat.s
+
+# target to generate assembly for a file
+src/doomgeneric/doomstat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/doomstat.c.s
+.PHONY : src/doomgeneric/doomstat.c.s
+
+src/doomgeneric/dstrings.obj: src/doomgeneric/dstrings.c.obj
+.PHONY : src/doomgeneric/dstrings.obj
+
+# target to build an object file
+src/doomgeneric/dstrings.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dstrings.c.obj
+.PHONY : src/doomgeneric/dstrings.c.obj
+
+src/doomgeneric/dstrings.i: src/doomgeneric/dstrings.c.i
+.PHONY : src/doomgeneric/dstrings.i
+
+# target to preprocess a source file
+src/doomgeneric/dstrings.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dstrings.c.i
+.PHONY : src/doomgeneric/dstrings.c.i
+
+src/doomgeneric/dstrings.s: src/doomgeneric/dstrings.c.s
+.PHONY : src/doomgeneric/dstrings.s
+
+# target to generate assembly for a file
+src/doomgeneric/dstrings.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dstrings.c.s
+.PHONY : src/doomgeneric/dstrings.c.s
+
+src/doomgeneric/dummy.obj: src/doomgeneric/dummy.c.obj
+.PHONY : src/doomgeneric/dummy.obj
+
+# target to build an object file
+src/doomgeneric/dummy.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dummy.c.obj
+.PHONY : src/doomgeneric/dummy.c.obj
+
+src/doomgeneric/dummy.i: src/doomgeneric/dummy.c.i
+.PHONY : src/doomgeneric/dummy.i
+
+# target to preprocess a source file
+src/doomgeneric/dummy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dummy.c.i
+.PHONY : src/doomgeneric/dummy.c.i
+
+src/doomgeneric/dummy.s: src/doomgeneric/dummy.c.s
+.PHONY : src/doomgeneric/dummy.s
+
+# target to generate assembly for a file
+src/doomgeneric/dummy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/dummy.c.s
+.PHONY : src/doomgeneric/dummy.c.s
+
+src/doomgeneric/f_finale.obj: src/doomgeneric/f_finale.c.obj
+.PHONY : src/doomgeneric/f_finale.obj
+
+# target to build an object file
+src/doomgeneric/f_finale.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_finale.c.obj
+.PHONY : src/doomgeneric/f_finale.c.obj
+
+src/doomgeneric/f_finale.i: src/doomgeneric/f_finale.c.i
+.PHONY : src/doomgeneric/f_finale.i
+
+# target to preprocess a source file
+src/doomgeneric/f_finale.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_finale.c.i
+.PHONY : src/doomgeneric/f_finale.c.i
+
+src/doomgeneric/f_finale.s: src/doomgeneric/f_finale.c.s
+.PHONY : src/doomgeneric/f_finale.s
+
+# target to generate assembly for a file
+src/doomgeneric/f_finale.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_finale.c.s
+.PHONY : src/doomgeneric/f_finale.c.s
+
+src/doomgeneric/f_wipe.obj: src/doomgeneric/f_wipe.c.obj
+.PHONY : src/doomgeneric/f_wipe.obj
+
+# target to build an object file
+src/doomgeneric/f_wipe.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_wipe.c.obj
+.PHONY : src/doomgeneric/f_wipe.c.obj
+
+src/doomgeneric/f_wipe.i: src/doomgeneric/f_wipe.c.i
+.PHONY : src/doomgeneric/f_wipe.i
+
+# target to preprocess a source file
+src/doomgeneric/f_wipe.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_wipe.c.i
+.PHONY : src/doomgeneric/f_wipe.c.i
+
+src/doomgeneric/f_wipe.s: src/doomgeneric/f_wipe.c.s
+.PHONY : src/doomgeneric/f_wipe.s
+
+# target to generate assembly for a file
+src/doomgeneric/f_wipe.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/f_wipe.c.s
+.PHONY : src/doomgeneric/f_wipe.c.s
+
+src/doomgeneric/g_game.obj: src/doomgeneric/g_game.c.obj
+.PHONY : src/doomgeneric/g_game.obj
+
+# target to build an object file
+src/doomgeneric/g_game.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/g_game.c.obj
+.PHONY : src/doomgeneric/g_game.c.obj
+
+src/doomgeneric/g_game.i: src/doomgeneric/g_game.c.i
+.PHONY : src/doomgeneric/g_game.i
+
+# target to preprocess a source file
+src/doomgeneric/g_game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/g_game.c.i
+.PHONY : src/doomgeneric/g_game.c.i
+
+src/doomgeneric/g_game.s: src/doomgeneric/g_game.c.s
+.PHONY : src/doomgeneric/g_game.s
+
+# target to generate assembly for a file
+src/doomgeneric/g_game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/g_game.c.s
+.PHONY : src/doomgeneric/g_game.c.s
+
+src/doomgeneric/gusconf.obj: src/doomgeneric/gusconf.c.obj
+.PHONY : src/doomgeneric/gusconf.obj
+
+# target to build an object file
+src/doomgeneric/gusconf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/gusconf.c.obj
+.PHONY : src/doomgeneric/gusconf.c.obj
+
+src/doomgeneric/gusconf.i: src/doomgeneric/gusconf.c.i
+.PHONY : src/doomgeneric/gusconf.i
+
+# target to preprocess a source file
+src/doomgeneric/gusconf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/gusconf.c.i
+.PHONY : src/doomgeneric/gusconf.c.i
+
+src/doomgeneric/gusconf.s: src/doomgeneric/gusconf.c.s
+.PHONY : src/doomgeneric/gusconf.s
+
+# target to generate assembly for a file
+src/doomgeneric/gusconf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/gusconf.c.s
+.PHONY : src/doomgeneric/gusconf.c.s
+
+src/doomgeneric/hu_lib.obj: src/doomgeneric/hu_lib.c.obj
+.PHONY : src/doomgeneric/hu_lib.obj
+
+# target to build an object file
+src/doomgeneric/hu_lib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_lib.c.obj
+.PHONY : src/doomgeneric/hu_lib.c.obj
+
+src/doomgeneric/hu_lib.i: src/doomgeneric/hu_lib.c.i
+.PHONY : src/doomgeneric/hu_lib.i
+
+# target to preprocess a source file
+src/doomgeneric/hu_lib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_lib.c.i
+.PHONY : src/doomgeneric/hu_lib.c.i
+
+src/doomgeneric/hu_lib.s: src/doomgeneric/hu_lib.c.s
+.PHONY : src/doomgeneric/hu_lib.s
+
+# target to generate assembly for a file
+src/doomgeneric/hu_lib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_lib.c.s
+.PHONY : src/doomgeneric/hu_lib.c.s
+
+src/doomgeneric/hu_stuff.obj: src/doomgeneric/hu_stuff.c.obj
+.PHONY : src/doomgeneric/hu_stuff.obj
+
+# target to build an object file
+src/doomgeneric/hu_stuff.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_stuff.c.obj
+.PHONY : src/doomgeneric/hu_stuff.c.obj
+
+src/doomgeneric/hu_stuff.i: src/doomgeneric/hu_stuff.c.i
+.PHONY : src/doomgeneric/hu_stuff.i
+
+# target to preprocess a source file
+src/doomgeneric/hu_stuff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_stuff.c.i
+.PHONY : src/doomgeneric/hu_stuff.c.i
+
+src/doomgeneric/hu_stuff.s: src/doomgeneric/hu_stuff.c.s
+.PHONY : src/doomgeneric/hu_stuff.s
+
+# target to generate assembly for a file
+src/doomgeneric/hu_stuff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/hu_stuff.c.s
+.PHONY : src/doomgeneric/hu_stuff.c.s
+
+src/doomgeneric/i_cdmus.obj: src/doomgeneric/i_cdmus.c.obj
+.PHONY : src/doomgeneric/i_cdmus.obj
+
+# target to build an object file
+src/doomgeneric/i_cdmus.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_cdmus.c.obj
+.PHONY : src/doomgeneric/i_cdmus.c.obj
+
+src/doomgeneric/i_cdmus.i: src/doomgeneric/i_cdmus.c.i
+.PHONY : src/doomgeneric/i_cdmus.i
+
+# target to preprocess a source file
+src/doomgeneric/i_cdmus.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_cdmus.c.i
+.PHONY : src/doomgeneric/i_cdmus.c.i
+
+src/doomgeneric/i_cdmus.s: src/doomgeneric/i_cdmus.c.s
+.PHONY : src/doomgeneric/i_cdmus.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_cdmus.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_cdmus.c.s
+.PHONY : src/doomgeneric/i_cdmus.c.s
+
+src/doomgeneric/i_endoom.obj: src/doomgeneric/i_endoom.c.obj
+.PHONY : src/doomgeneric/i_endoom.obj
+
+# target to build an object file
+src/doomgeneric/i_endoom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_endoom.c.obj
+.PHONY : src/doomgeneric/i_endoom.c.obj
+
+src/doomgeneric/i_endoom.i: src/doomgeneric/i_endoom.c.i
+.PHONY : src/doomgeneric/i_endoom.i
+
+# target to preprocess a source file
+src/doomgeneric/i_endoom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_endoom.c.i
+.PHONY : src/doomgeneric/i_endoom.c.i
+
+src/doomgeneric/i_endoom.s: src/doomgeneric/i_endoom.c.s
+.PHONY : src/doomgeneric/i_endoom.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_endoom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_endoom.c.s
+.PHONY : src/doomgeneric/i_endoom.c.s
+
+src/doomgeneric/i_input.obj: src/doomgeneric/i_input.c.obj
+.PHONY : src/doomgeneric/i_input.obj
+
+# target to build an object file
+src/doomgeneric/i_input.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_input.c.obj
+.PHONY : src/doomgeneric/i_input.c.obj
+
+src/doomgeneric/i_input.i: src/doomgeneric/i_input.c.i
+.PHONY : src/doomgeneric/i_input.i
+
+# target to preprocess a source file
+src/doomgeneric/i_input.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_input.c.i
+.PHONY : src/doomgeneric/i_input.c.i
+
+src/doomgeneric/i_input.s: src/doomgeneric/i_input.c.s
+.PHONY : src/doomgeneric/i_input.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_input.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_input.c.s
+.PHONY : src/doomgeneric/i_input.c.s
+
+src/doomgeneric/i_joystick.obj: src/doomgeneric/i_joystick.c.obj
+.PHONY : src/doomgeneric/i_joystick.obj
+
+# target to build an object file
+src/doomgeneric/i_joystick.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_joystick.c.obj
+.PHONY : src/doomgeneric/i_joystick.c.obj
+
+src/doomgeneric/i_joystick.i: src/doomgeneric/i_joystick.c.i
+.PHONY : src/doomgeneric/i_joystick.i
+
+# target to preprocess a source file
+src/doomgeneric/i_joystick.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_joystick.c.i
+.PHONY : src/doomgeneric/i_joystick.c.i
+
+src/doomgeneric/i_joystick.s: src/doomgeneric/i_joystick.c.s
+.PHONY : src/doomgeneric/i_joystick.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_joystick.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_joystick.c.s
+.PHONY : src/doomgeneric/i_joystick.c.s
+
+src/doomgeneric/i_scale.obj: src/doomgeneric/i_scale.c.obj
+.PHONY : src/doomgeneric/i_scale.obj
+
+# target to build an object file
+src/doomgeneric/i_scale.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_scale.c.obj
+.PHONY : src/doomgeneric/i_scale.c.obj
+
+src/doomgeneric/i_scale.i: src/doomgeneric/i_scale.c.i
+.PHONY : src/doomgeneric/i_scale.i
+
+# target to preprocess a source file
+src/doomgeneric/i_scale.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_scale.c.i
+.PHONY : src/doomgeneric/i_scale.c.i
+
+src/doomgeneric/i_scale.s: src/doomgeneric/i_scale.c.s
+.PHONY : src/doomgeneric/i_scale.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_scale.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_scale.c.s
+.PHONY : src/doomgeneric/i_scale.c.s
+
+src/doomgeneric/i_sound.obj: src/doomgeneric/i_sound.c.obj
+.PHONY : src/doomgeneric/i_sound.obj
+
+# target to build an object file
+src/doomgeneric/i_sound.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_sound.c.obj
+.PHONY : src/doomgeneric/i_sound.c.obj
+
+src/doomgeneric/i_sound.i: src/doomgeneric/i_sound.c.i
+.PHONY : src/doomgeneric/i_sound.i
+
+# target to preprocess a source file
+src/doomgeneric/i_sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_sound.c.i
+.PHONY : src/doomgeneric/i_sound.c.i
+
+src/doomgeneric/i_sound.s: src/doomgeneric/i_sound.c.s
+.PHONY : src/doomgeneric/i_sound.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_sound.c.s
+.PHONY : src/doomgeneric/i_sound.c.s
+
+src/doomgeneric/i_system.obj: src/doomgeneric/i_system.c.obj
+.PHONY : src/doomgeneric/i_system.obj
+
+# target to build an object file
+src/doomgeneric/i_system.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_system.c.obj
+.PHONY : src/doomgeneric/i_system.c.obj
+
+src/doomgeneric/i_system.i: src/doomgeneric/i_system.c.i
+.PHONY : src/doomgeneric/i_system.i
+
+# target to preprocess a source file
+src/doomgeneric/i_system.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_system.c.i
+.PHONY : src/doomgeneric/i_system.c.i
+
+src/doomgeneric/i_system.s: src/doomgeneric/i_system.c.s
+.PHONY : src/doomgeneric/i_system.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_system.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_system.c.s
+.PHONY : src/doomgeneric/i_system.c.s
+
+src/doomgeneric/i_timer.obj: src/doomgeneric/i_timer.c.obj
+.PHONY : src/doomgeneric/i_timer.obj
+
+# target to build an object file
+src/doomgeneric/i_timer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_timer.c.obj
+.PHONY : src/doomgeneric/i_timer.c.obj
+
+src/doomgeneric/i_timer.i: src/doomgeneric/i_timer.c.i
+.PHONY : src/doomgeneric/i_timer.i
+
+# target to preprocess a source file
+src/doomgeneric/i_timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_timer.c.i
+.PHONY : src/doomgeneric/i_timer.c.i
+
+src/doomgeneric/i_timer.s: src/doomgeneric/i_timer.c.s
+.PHONY : src/doomgeneric/i_timer.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_timer.c.s
+.PHONY : src/doomgeneric/i_timer.c.s
+
+src/doomgeneric/i_video.obj: src/doomgeneric/i_video.c.obj
+.PHONY : src/doomgeneric/i_video.obj
+
+# target to build an object file
+src/doomgeneric/i_video.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_video.c.obj
+.PHONY : src/doomgeneric/i_video.c.obj
+
+src/doomgeneric/i_video.i: src/doomgeneric/i_video.c.i
+.PHONY : src/doomgeneric/i_video.i
+
+# target to preprocess a source file
+src/doomgeneric/i_video.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_video.c.i
+.PHONY : src/doomgeneric/i_video.c.i
+
+src/doomgeneric/i_video.s: src/doomgeneric/i_video.c.s
+.PHONY : src/doomgeneric/i_video.s
+
+# target to generate assembly for a file
+src/doomgeneric/i_video.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/i_video.c.s
+.PHONY : src/doomgeneric/i_video.c.s
+
+src/doomgeneric/icon.obj: src/doomgeneric/icon.c.obj
+.PHONY : src/doomgeneric/icon.obj
+
+# target to build an object file
+src/doomgeneric/icon.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/icon.c.obj
+.PHONY : src/doomgeneric/icon.c.obj
+
+src/doomgeneric/icon.i: src/doomgeneric/icon.c.i
+.PHONY : src/doomgeneric/icon.i
+
+# target to preprocess a source file
+src/doomgeneric/icon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/icon.c.i
+.PHONY : src/doomgeneric/icon.c.i
+
+src/doomgeneric/icon.s: src/doomgeneric/icon.c.s
+.PHONY : src/doomgeneric/icon.s
+
+# target to generate assembly for a file
+src/doomgeneric/icon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/icon.c.s
+.PHONY : src/doomgeneric/icon.c.s
+
+src/doomgeneric/info.obj: src/doomgeneric/info.c.obj
+.PHONY : src/doomgeneric/info.obj
+
+# target to build an object file
+src/doomgeneric/info.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/info.c.obj
+.PHONY : src/doomgeneric/info.c.obj
+
+src/doomgeneric/info.i: src/doomgeneric/info.c.i
+.PHONY : src/doomgeneric/info.i
+
+# target to preprocess a source file
+src/doomgeneric/info.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/info.c.i
+.PHONY : src/doomgeneric/info.c.i
+
+src/doomgeneric/info.s: src/doomgeneric/info.c.s
+.PHONY : src/doomgeneric/info.s
+
+# target to generate assembly for a file
+src/doomgeneric/info.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/info.c.s
+.PHONY : src/doomgeneric/info.c.s
+
+src/doomgeneric/m_argv.obj: src/doomgeneric/m_argv.c.obj
+.PHONY : src/doomgeneric/m_argv.obj
+
+# target to build an object file
+src/doomgeneric/m_argv.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_argv.c.obj
+.PHONY : src/doomgeneric/m_argv.c.obj
+
+src/doomgeneric/m_argv.i: src/doomgeneric/m_argv.c.i
+.PHONY : src/doomgeneric/m_argv.i
+
+# target to preprocess a source file
+src/doomgeneric/m_argv.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_argv.c.i
+.PHONY : src/doomgeneric/m_argv.c.i
+
+src/doomgeneric/m_argv.s: src/doomgeneric/m_argv.c.s
+.PHONY : src/doomgeneric/m_argv.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_argv.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_argv.c.s
+.PHONY : src/doomgeneric/m_argv.c.s
+
+src/doomgeneric/m_bbox.obj: src/doomgeneric/m_bbox.c.obj
+.PHONY : src/doomgeneric/m_bbox.obj
+
+# target to build an object file
+src/doomgeneric/m_bbox.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_bbox.c.obj
+.PHONY : src/doomgeneric/m_bbox.c.obj
+
+src/doomgeneric/m_bbox.i: src/doomgeneric/m_bbox.c.i
+.PHONY : src/doomgeneric/m_bbox.i
+
+# target to preprocess a source file
+src/doomgeneric/m_bbox.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_bbox.c.i
+.PHONY : src/doomgeneric/m_bbox.c.i
+
+src/doomgeneric/m_bbox.s: src/doomgeneric/m_bbox.c.s
+.PHONY : src/doomgeneric/m_bbox.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_bbox.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_bbox.c.s
+.PHONY : src/doomgeneric/m_bbox.c.s
+
+src/doomgeneric/m_cheat.obj: src/doomgeneric/m_cheat.c.obj
+.PHONY : src/doomgeneric/m_cheat.obj
+
+# target to build an object file
+src/doomgeneric/m_cheat.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_cheat.c.obj
+.PHONY : src/doomgeneric/m_cheat.c.obj
+
+src/doomgeneric/m_cheat.i: src/doomgeneric/m_cheat.c.i
+.PHONY : src/doomgeneric/m_cheat.i
+
+# target to preprocess a source file
+src/doomgeneric/m_cheat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_cheat.c.i
+.PHONY : src/doomgeneric/m_cheat.c.i
+
+src/doomgeneric/m_cheat.s: src/doomgeneric/m_cheat.c.s
+.PHONY : src/doomgeneric/m_cheat.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_cheat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_cheat.c.s
+.PHONY : src/doomgeneric/m_cheat.c.s
+
+src/doomgeneric/m_config.obj: src/doomgeneric/m_config.c.obj
+.PHONY : src/doomgeneric/m_config.obj
+
+# target to build an object file
+src/doomgeneric/m_config.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_config.c.obj
+.PHONY : src/doomgeneric/m_config.c.obj
+
+src/doomgeneric/m_config.i: src/doomgeneric/m_config.c.i
+.PHONY : src/doomgeneric/m_config.i
+
+# target to preprocess a source file
+src/doomgeneric/m_config.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_config.c.i
+.PHONY : src/doomgeneric/m_config.c.i
+
+src/doomgeneric/m_config.s: src/doomgeneric/m_config.c.s
+.PHONY : src/doomgeneric/m_config.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_config.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_config.c.s
+.PHONY : src/doomgeneric/m_config.c.s
+
+src/doomgeneric/m_controls.obj: src/doomgeneric/m_controls.c.obj
+.PHONY : src/doomgeneric/m_controls.obj
+
+# target to build an object file
+src/doomgeneric/m_controls.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_controls.c.obj
+.PHONY : src/doomgeneric/m_controls.c.obj
+
+src/doomgeneric/m_controls.i: src/doomgeneric/m_controls.c.i
+.PHONY : src/doomgeneric/m_controls.i
+
+# target to preprocess a source file
+src/doomgeneric/m_controls.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_controls.c.i
+.PHONY : src/doomgeneric/m_controls.c.i
+
+src/doomgeneric/m_controls.s: src/doomgeneric/m_controls.c.s
+.PHONY : src/doomgeneric/m_controls.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_controls.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_controls.c.s
+.PHONY : src/doomgeneric/m_controls.c.s
+
+src/doomgeneric/m_fixed.obj: src/doomgeneric/m_fixed.c.obj
+.PHONY : src/doomgeneric/m_fixed.obj
+
+# target to build an object file
+src/doomgeneric/m_fixed.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_fixed.c.obj
+.PHONY : src/doomgeneric/m_fixed.c.obj
+
+src/doomgeneric/m_fixed.i: src/doomgeneric/m_fixed.c.i
+.PHONY : src/doomgeneric/m_fixed.i
+
+# target to preprocess a source file
+src/doomgeneric/m_fixed.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_fixed.c.i
+.PHONY : src/doomgeneric/m_fixed.c.i
+
+src/doomgeneric/m_fixed.s: src/doomgeneric/m_fixed.c.s
+.PHONY : src/doomgeneric/m_fixed.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_fixed.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_fixed.c.s
+.PHONY : src/doomgeneric/m_fixed.c.s
+
+src/doomgeneric/m_menu.obj: src/doomgeneric/m_menu.c.obj
+.PHONY : src/doomgeneric/m_menu.obj
+
+# target to build an object file
+src/doomgeneric/m_menu.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_menu.c.obj
+.PHONY : src/doomgeneric/m_menu.c.obj
+
+src/doomgeneric/m_menu.i: src/doomgeneric/m_menu.c.i
+.PHONY : src/doomgeneric/m_menu.i
+
+# target to preprocess a source file
+src/doomgeneric/m_menu.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_menu.c.i
+.PHONY : src/doomgeneric/m_menu.c.i
+
+src/doomgeneric/m_menu.s: src/doomgeneric/m_menu.c.s
+.PHONY : src/doomgeneric/m_menu.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_menu.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_menu.c.s
+.PHONY : src/doomgeneric/m_menu.c.s
+
+src/doomgeneric/m_misc.obj: src/doomgeneric/m_misc.c.obj
+.PHONY : src/doomgeneric/m_misc.obj
+
+# target to build an object file
+src/doomgeneric/m_misc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_misc.c.obj
+.PHONY : src/doomgeneric/m_misc.c.obj
+
+src/doomgeneric/m_misc.i: src/doomgeneric/m_misc.c.i
+.PHONY : src/doomgeneric/m_misc.i
+
+# target to preprocess a source file
+src/doomgeneric/m_misc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_misc.c.i
+.PHONY : src/doomgeneric/m_misc.c.i
+
+src/doomgeneric/m_misc.s: src/doomgeneric/m_misc.c.s
+.PHONY : src/doomgeneric/m_misc.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_misc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_misc.c.s
+.PHONY : src/doomgeneric/m_misc.c.s
+
+src/doomgeneric/m_random.obj: src/doomgeneric/m_random.c.obj
+.PHONY : src/doomgeneric/m_random.obj
+
+# target to build an object file
+src/doomgeneric/m_random.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_random.c.obj
+.PHONY : src/doomgeneric/m_random.c.obj
+
+src/doomgeneric/m_random.i: src/doomgeneric/m_random.c.i
+.PHONY : src/doomgeneric/m_random.i
+
+# target to preprocess a source file
+src/doomgeneric/m_random.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_random.c.i
+.PHONY : src/doomgeneric/m_random.c.i
+
+src/doomgeneric/m_random.s: src/doomgeneric/m_random.c.s
+.PHONY : src/doomgeneric/m_random.s
+
+# target to generate assembly for a file
+src/doomgeneric/m_random.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/m_random.c.s
+.PHONY : src/doomgeneric/m_random.c.s
+
+src/doomgeneric/memio.obj: src/doomgeneric/memio.c.obj
+.PHONY : src/doomgeneric/memio.obj
+
+# target to build an object file
+src/doomgeneric/memio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/memio.c.obj
+.PHONY : src/doomgeneric/memio.c.obj
+
+src/doomgeneric/memio.i: src/doomgeneric/memio.c.i
+.PHONY : src/doomgeneric/memio.i
+
+# target to preprocess a source file
+src/doomgeneric/memio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/memio.c.i
+.PHONY : src/doomgeneric/memio.c.i
+
+src/doomgeneric/memio.s: src/doomgeneric/memio.c.s
+.PHONY : src/doomgeneric/memio.s
+
+# target to generate assembly for a file
+src/doomgeneric/memio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/memio.c.s
+.PHONY : src/doomgeneric/memio.c.s
+
+src/doomgeneric/mus2mid.obj: src/doomgeneric/mus2mid.c.obj
+.PHONY : src/doomgeneric/mus2mid.obj
+
+# target to build an object file
+src/doomgeneric/mus2mid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/mus2mid.c.obj
+.PHONY : src/doomgeneric/mus2mid.c.obj
+
+src/doomgeneric/mus2mid.i: src/doomgeneric/mus2mid.c.i
+.PHONY : src/doomgeneric/mus2mid.i
+
+# target to preprocess a source file
+src/doomgeneric/mus2mid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/mus2mid.c.i
+.PHONY : src/doomgeneric/mus2mid.c.i
+
+src/doomgeneric/mus2mid.s: src/doomgeneric/mus2mid.c.s
+.PHONY : src/doomgeneric/mus2mid.s
+
+# target to generate assembly for a file
+src/doomgeneric/mus2mid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/mus2mid.c.s
+.PHONY : src/doomgeneric/mus2mid.c.s
+
+src/doomgeneric/p_ceilng.obj: src/doomgeneric/p_ceilng.c.obj
+.PHONY : src/doomgeneric/p_ceilng.obj
+
+# target to build an object file
+src/doomgeneric/p_ceilng.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_ceilng.c.obj
+.PHONY : src/doomgeneric/p_ceilng.c.obj
+
+src/doomgeneric/p_ceilng.i: src/doomgeneric/p_ceilng.c.i
+.PHONY : src/doomgeneric/p_ceilng.i
+
+# target to preprocess a source file
+src/doomgeneric/p_ceilng.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_ceilng.c.i
+.PHONY : src/doomgeneric/p_ceilng.c.i
+
+src/doomgeneric/p_ceilng.s: src/doomgeneric/p_ceilng.c.s
+.PHONY : src/doomgeneric/p_ceilng.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_ceilng.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_ceilng.c.s
+.PHONY : src/doomgeneric/p_ceilng.c.s
+
+src/doomgeneric/p_doors.obj: src/doomgeneric/p_doors.c.obj
+.PHONY : src/doomgeneric/p_doors.obj
+
+# target to build an object file
+src/doomgeneric/p_doors.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_doors.c.obj
+.PHONY : src/doomgeneric/p_doors.c.obj
+
+src/doomgeneric/p_doors.i: src/doomgeneric/p_doors.c.i
+.PHONY : src/doomgeneric/p_doors.i
+
+# target to preprocess a source file
+src/doomgeneric/p_doors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_doors.c.i
+.PHONY : src/doomgeneric/p_doors.c.i
+
+src/doomgeneric/p_doors.s: src/doomgeneric/p_doors.c.s
+.PHONY : src/doomgeneric/p_doors.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_doors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_doors.c.s
+.PHONY : src/doomgeneric/p_doors.c.s
+
+src/doomgeneric/p_enemy.obj: src/doomgeneric/p_enemy.c.obj
+.PHONY : src/doomgeneric/p_enemy.obj
+
+# target to build an object file
+src/doomgeneric/p_enemy.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_enemy.c.obj
+.PHONY : src/doomgeneric/p_enemy.c.obj
+
+src/doomgeneric/p_enemy.i: src/doomgeneric/p_enemy.c.i
+.PHONY : src/doomgeneric/p_enemy.i
+
+# target to preprocess a source file
+src/doomgeneric/p_enemy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_enemy.c.i
+.PHONY : src/doomgeneric/p_enemy.c.i
+
+src/doomgeneric/p_enemy.s: src/doomgeneric/p_enemy.c.s
+.PHONY : src/doomgeneric/p_enemy.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_enemy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_enemy.c.s
+.PHONY : src/doomgeneric/p_enemy.c.s
+
+src/doomgeneric/p_floor.obj: src/doomgeneric/p_floor.c.obj
+.PHONY : src/doomgeneric/p_floor.obj
+
+# target to build an object file
+src/doomgeneric/p_floor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_floor.c.obj
+.PHONY : src/doomgeneric/p_floor.c.obj
+
+src/doomgeneric/p_floor.i: src/doomgeneric/p_floor.c.i
+.PHONY : src/doomgeneric/p_floor.i
+
+# target to preprocess a source file
+src/doomgeneric/p_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_floor.c.i
+.PHONY : src/doomgeneric/p_floor.c.i
+
+src/doomgeneric/p_floor.s: src/doomgeneric/p_floor.c.s
+.PHONY : src/doomgeneric/p_floor.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_floor.c.s
+.PHONY : src/doomgeneric/p_floor.c.s
+
+src/doomgeneric/p_inter.obj: src/doomgeneric/p_inter.c.obj
+.PHONY : src/doomgeneric/p_inter.obj
+
+# target to build an object file
+src/doomgeneric/p_inter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_inter.c.obj
+.PHONY : src/doomgeneric/p_inter.c.obj
+
+src/doomgeneric/p_inter.i: src/doomgeneric/p_inter.c.i
+.PHONY : src/doomgeneric/p_inter.i
+
+# target to preprocess a source file
+src/doomgeneric/p_inter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_inter.c.i
+.PHONY : src/doomgeneric/p_inter.c.i
+
+src/doomgeneric/p_inter.s: src/doomgeneric/p_inter.c.s
+.PHONY : src/doomgeneric/p_inter.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_inter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_inter.c.s
+.PHONY : src/doomgeneric/p_inter.c.s
+
+src/doomgeneric/p_lights.obj: src/doomgeneric/p_lights.c.obj
+.PHONY : src/doomgeneric/p_lights.obj
+
+# target to build an object file
+src/doomgeneric/p_lights.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_lights.c.obj
+.PHONY : src/doomgeneric/p_lights.c.obj
+
+src/doomgeneric/p_lights.i: src/doomgeneric/p_lights.c.i
+.PHONY : src/doomgeneric/p_lights.i
+
+# target to preprocess a source file
+src/doomgeneric/p_lights.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_lights.c.i
+.PHONY : src/doomgeneric/p_lights.c.i
+
+src/doomgeneric/p_lights.s: src/doomgeneric/p_lights.c.s
+.PHONY : src/doomgeneric/p_lights.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_lights.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_lights.c.s
+.PHONY : src/doomgeneric/p_lights.c.s
+
+src/doomgeneric/p_map.obj: src/doomgeneric/p_map.c.obj
+.PHONY : src/doomgeneric/p_map.obj
+
+# target to build an object file
+src/doomgeneric/p_map.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_map.c.obj
+.PHONY : src/doomgeneric/p_map.c.obj
+
+src/doomgeneric/p_map.i: src/doomgeneric/p_map.c.i
+.PHONY : src/doomgeneric/p_map.i
+
+# target to preprocess a source file
+src/doomgeneric/p_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_map.c.i
+.PHONY : src/doomgeneric/p_map.c.i
+
+src/doomgeneric/p_map.s: src/doomgeneric/p_map.c.s
+.PHONY : src/doomgeneric/p_map.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_map.c.s
+.PHONY : src/doomgeneric/p_map.c.s
+
+src/doomgeneric/p_maputl.obj: src/doomgeneric/p_maputl.c.obj
+.PHONY : src/doomgeneric/p_maputl.obj
+
+# target to build an object file
+src/doomgeneric/p_maputl.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_maputl.c.obj
+.PHONY : src/doomgeneric/p_maputl.c.obj
+
+src/doomgeneric/p_maputl.i: src/doomgeneric/p_maputl.c.i
+.PHONY : src/doomgeneric/p_maputl.i
+
+# target to preprocess a source file
+src/doomgeneric/p_maputl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_maputl.c.i
+.PHONY : src/doomgeneric/p_maputl.c.i
+
+src/doomgeneric/p_maputl.s: src/doomgeneric/p_maputl.c.s
+.PHONY : src/doomgeneric/p_maputl.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_maputl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_maputl.c.s
+.PHONY : src/doomgeneric/p_maputl.c.s
+
+src/doomgeneric/p_mobj.obj: src/doomgeneric/p_mobj.c.obj
+.PHONY : src/doomgeneric/p_mobj.obj
+
+# target to build an object file
+src/doomgeneric/p_mobj.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_mobj.c.obj
+.PHONY : src/doomgeneric/p_mobj.c.obj
+
+src/doomgeneric/p_mobj.i: src/doomgeneric/p_mobj.c.i
+.PHONY : src/doomgeneric/p_mobj.i
+
+# target to preprocess a source file
+src/doomgeneric/p_mobj.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_mobj.c.i
+.PHONY : src/doomgeneric/p_mobj.c.i
+
+src/doomgeneric/p_mobj.s: src/doomgeneric/p_mobj.c.s
+.PHONY : src/doomgeneric/p_mobj.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_mobj.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_mobj.c.s
+.PHONY : src/doomgeneric/p_mobj.c.s
+
+src/doomgeneric/p_plats.obj: src/doomgeneric/p_plats.c.obj
+.PHONY : src/doomgeneric/p_plats.obj
+
+# target to build an object file
+src/doomgeneric/p_plats.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_plats.c.obj
+.PHONY : src/doomgeneric/p_plats.c.obj
+
+src/doomgeneric/p_plats.i: src/doomgeneric/p_plats.c.i
+.PHONY : src/doomgeneric/p_plats.i
+
+# target to preprocess a source file
+src/doomgeneric/p_plats.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_plats.c.i
+.PHONY : src/doomgeneric/p_plats.c.i
+
+src/doomgeneric/p_plats.s: src/doomgeneric/p_plats.c.s
+.PHONY : src/doomgeneric/p_plats.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_plats.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_plats.c.s
+.PHONY : src/doomgeneric/p_plats.c.s
+
+src/doomgeneric/p_pspr.obj: src/doomgeneric/p_pspr.c.obj
+.PHONY : src/doomgeneric/p_pspr.obj
+
+# target to build an object file
+src/doomgeneric/p_pspr.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_pspr.c.obj
+.PHONY : src/doomgeneric/p_pspr.c.obj
+
+src/doomgeneric/p_pspr.i: src/doomgeneric/p_pspr.c.i
+.PHONY : src/doomgeneric/p_pspr.i
+
+# target to preprocess a source file
+src/doomgeneric/p_pspr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_pspr.c.i
+.PHONY : src/doomgeneric/p_pspr.c.i
+
+src/doomgeneric/p_pspr.s: src/doomgeneric/p_pspr.c.s
+.PHONY : src/doomgeneric/p_pspr.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_pspr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_pspr.c.s
+.PHONY : src/doomgeneric/p_pspr.c.s
+
+src/doomgeneric/p_saveg.obj: src/doomgeneric/p_saveg.c.obj
+.PHONY : src/doomgeneric/p_saveg.obj
+
+# target to build an object file
+src/doomgeneric/p_saveg.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_saveg.c.obj
+.PHONY : src/doomgeneric/p_saveg.c.obj
+
+src/doomgeneric/p_saveg.i: src/doomgeneric/p_saveg.c.i
+.PHONY : src/doomgeneric/p_saveg.i
+
+# target to preprocess a source file
+src/doomgeneric/p_saveg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_saveg.c.i
+.PHONY : src/doomgeneric/p_saveg.c.i
+
+src/doomgeneric/p_saveg.s: src/doomgeneric/p_saveg.c.s
+.PHONY : src/doomgeneric/p_saveg.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_saveg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_saveg.c.s
+.PHONY : src/doomgeneric/p_saveg.c.s
+
+src/doomgeneric/p_setup.obj: src/doomgeneric/p_setup.c.obj
+.PHONY : src/doomgeneric/p_setup.obj
+
+# target to build an object file
+src/doomgeneric/p_setup.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_setup.c.obj
+.PHONY : src/doomgeneric/p_setup.c.obj
+
+src/doomgeneric/p_setup.i: src/doomgeneric/p_setup.c.i
+.PHONY : src/doomgeneric/p_setup.i
+
+# target to preprocess a source file
+src/doomgeneric/p_setup.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_setup.c.i
+.PHONY : src/doomgeneric/p_setup.c.i
+
+src/doomgeneric/p_setup.s: src/doomgeneric/p_setup.c.s
+.PHONY : src/doomgeneric/p_setup.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_setup.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_setup.c.s
+.PHONY : src/doomgeneric/p_setup.c.s
+
+src/doomgeneric/p_sight.obj: src/doomgeneric/p_sight.c.obj
+.PHONY : src/doomgeneric/p_sight.obj
+
+# target to build an object file
+src/doomgeneric/p_sight.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_sight.c.obj
+.PHONY : src/doomgeneric/p_sight.c.obj
+
+src/doomgeneric/p_sight.i: src/doomgeneric/p_sight.c.i
+.PHONY : src/doomgeneric/p_sight.i
+
+# target to preprocess a source file
+src/doomgeneric/p_sight.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_sight.c.i
+.PHONY : src/doomgeneric/p_sight.c.i
+
+src/doomgeneric/p_sight.s: src/doomgeneric/p_sight.c.s
+.PHONY : src/doomgeneric/p_sight.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_sight.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_sight.c.s
+.PHONY : src/doomgeneric/p_sight.c.s
+
+src/doomgeneric/p_spec.obj: src/doomgeneric/p_spec.c.obj
+.PHONY : src/doomgeneric/p_spec.obj
+
+# target to build an object file
+src/doomgeneric/p_spec.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_spec.c.obj
+.PHONY : src/doomgeneric/p_spec.c.obj
+
+src/doomgeneric/p_spec.i: src/doomgeneric/p_spec.c.i
+.PHONY : src/doomgeneric/p_spec.i
+
+# target to preprocess a source file
+src/doomgeneric/p_spec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_spec.c.i
+.PHONY : src/doomgeneric/p_spec.c.i
+
+src/doomgeneric/p_spec.s: src/doomgeneric/p_spec.c.s
+.PHONY : src/doomgeneric/p_spec.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_spec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_spec.c.s
+.PHONY : src/doomgeneric/p_spec.c.s
+
+src/doomgeneric/p_switch.obj: src/doomgeneric/p_switch.c.obj
+.PHONY : src/doomgeneric/p_switch.obj
+
+# target to build an object file
+src/doomgeneric/p_switch.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_switch.c.obj
+.PHONY : src/doomgeneric/p_switch.c.obj
+
+src/doomgeneric/p_switch.i: src/doomgeneric/p_switch.c.i
+.PHONY : src/doomgeneric/p_switch.i
+
+# target to preprocess a source file
+src/doomgeneric/p_switch.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_switch.c.i
+.PHONY : src/doomgeneric/p_switch.c.i
+
+src/doomgeneric/p_switch.s: src/doomgeneric/p_switch.c.s
+.PHONY : src/doomgeneric/p_switch.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_switch.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_switch.c.s
+.PHONY : src/doomgeneric/p_switch.c.s
+
+src/doomgeneric/p_telept.obj: src/doomgeneric/p_telept.c.obj
+.PHONY : src/doomgeneric/p_telept.obj
+
+# target to build an object file
+src/doomgeneric/p_telept.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_telept.c.obj
+.PHONY : src/doomgeneric/p_telept.c.obj
+
+src/doomgeneric/p_telept.i: src/doomgeneric/p_telept.c.i
+.PHONY : src/doomgeneric/p_telept.i
+
+# target to preprocess a source file
+src/doomgeneric/p_telept.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_telept.c.i
+.PHONY : src/doomgeneric/p_telept.c.i
+
+src/doomgeneric/p_telept.s: src/doomgeneric/p_telept.c.s
+.PHONY : src/doomgeneric/p_telept.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_telept.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_telept.c.s
+.PHONY : src/doomgeneric/p_telept.c.s
+
+src/doomgeneric/p_tick.obj: src/doomgeneric/p_tick.c.obj
+.PHONY : src/doomgeneric/p_tick.obj
+
+# target to build an object file
+src/doomgeneric/p_tick.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_tick.c.obj
+.PHONY : src/doomgeneric/p_tick.c.obj
+
+src/doomgeneric/p_tick.i: src/doomgeneric/p_tick.c.i
+.PHONY : src/doomgeneric/p_tick.i
+
+# target to preprocess a source file
+src/doomgeneric/p_tick.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_tick.c.i
+.PHONY : src/doomgeneric/p_tick.c.i
+
+src/doomgeneric/p_tick.s: src/doomgeneric/p_tick.c.s
+.PHONY : src/doomgeneric/p_tick.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_tick.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_tick.c.s
+.PHONY : src/doomgeneric/p_tick.c.s
+
+src/doomgeneric/p_user.obj: src/doomgeneric/p_user.c.obj
+.PHONY : src/doomgeneric/p_user.obj
+
+# target to build an object file
+src/doomgeneric/p_user.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_user.c.obj
+.PHONY : src/doomgeneric/p_user.c.obj
+
+src/doomgeneric/p_user.i: src/doomgeneric/p_user.c.i
+.PHONY : src/doomgeneric/p_user.i
+
+# target to preprocess a source file
+src/doomgeneric/p_user.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_user.c.i
+.PHONY : src/doomgeneric/p_user.c.i
+
+src/doomgeneric/p_user.s: src/doomgeneric/p_user.c.s
+.PHONY : src/doomgeneric/p_user.s
+
+# target to generate assembly for a file
+src/doomgeneric/p_user.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/p_user.c.s
+.PHONY : src/doomgeneric/p_user.c.s
+
+src/doomgeneric/r_bsp.obj: src/doomgeneric/r_bsp.c.obj
+.PHONY : src/doomgeneric/r_bsp.obj
+
+# target to build an object file
+src/doomgeneric/r_bsp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_bsp.c.obj
+.PHONY : src/doomgeneric/r_bsp.c.obj
+
+src/doomgeneric/r_bsp.i: src/doomgeneric/r_bsp.c.i
+.PHONY : src/doomgeneric/r_bsp.i
+
+# target to preprocess a source file
+src/doomgeneric/r_bsp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_bsp.c.i
+.PHONY : src/doomgeneric/r_bsp.c.i
+
+src/doomgeneric/r_bsp.s: src/doomgeneric/r_bsp.c.s
+.PHONY : src/doomgeneric/r_bsp.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_bsp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_bsp.c.s
+.PHONY : src/doomgeneric/r_bsp.c.s
+
+src/doomgeneric/r_data.obj: src/doomgeneric/r_data.c.obj
+.PHONY : src/doomgeneric/r_data.obj
+
+# target to build an object file
+src/doomgeneric/r_data.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_data.c.obj
+.PHONY : src/doomgeneric/r_data.c.obj
+
+src/doomgeneric/r_data.i: src/doomgeneric/r_data.c.i
+.PHONY : src/doomgeneric/r_data.i
+
+# target to preprocess a source file
+src/doomgeneric/r_data.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_data.c.i
+.PHONY : src/doomgeneric/r_data.c.i
+
+src/doomgeneric/r_data.s: src/doomgeneric/r_data.c.s
+.PHONY : src/doomgeneric/r_data.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_data.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_data.c.s
+.PHONY : src/doomgeneric/r_data.c.s
+
+src/doomgeneric/r_draw.obj: src/doomgeneric/r_draw.c.obj
+.PHONY : src/doomgeneric/r_draw.obj
+
+# target to build an object file
+src/doomgeneric/r_draw.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_draw.c.obj
+.PHONY : src/doomgeneric/r_draw.c.obj
+
+src/doomgeneric/r_draw.i: src/doomgeneric/r_draw.c.i
+.PHONY : src/doomgeneric/r_draw.i
+
+# target to preprocess a source file
+src/doomgeneric/r_draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_draw.c.i
+.PHONY : src/doomgeneric/r_draw.c.i
+
+src/doomgeneric/r_draw.s: src/doomgeneric/r_draw.c.s
+.PHONY : src/doomgeneric/r_draw.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_draw.c.s
+.PHONY : src/doomgeneric/r_draw.c.s
+
+src/doomgeneric/r_main.obj: src/doomgeneric/r_main.c.obj
+.PHONY : src/doomgeneric/r_main.obj
+
+# target to build an object file
+src/doomgeneric/r_main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_main.c.obj
+.PHONY : src/doomgeneric/r_main.c.obj
+
+src/doomgeneric/r_main.i: src/doomgeneric/r_main.c.i
+.PHONY : src/doomgeneric/r_main.i
+
+# target to preprocess a source file
+src/doomgeneric/r_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_main.c.i
+.PHONY : src/doomgeneric/r_main.c.i
+
+src/doomgeneric/r_main.s: src/doomgeneric/r_main.c.s
+.PHONY : src/doomgeneric/r_main.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_main.c.s
+.PHONY : src/doomgeneric/r_main.c.s
+
+src/doomgeneric/r_plane.obj: src/doomgeneric/r_plane.c.obj
+.PHONY : src/doomgeneric/r_plane.obj
+
+# target to build an object file
+src/doomgeneric/r_plane.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_plane.c.obj
+.PHONY : src/doomgeneric/r_plane.c.obj
+
+src/doomgeneric/r_plane.i: src/doomgeneric/r_plane.c.i
+.PHONY : src/doomgeneric/r_plane.i
+
+# target to preprocess a source file
+src/doomgeneric/r_plane.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_plane.c.i
+.PHONY : src/doomgeneric/r_plane.c.i
+
+src/doomgeneric/r_plane.s: src/doomgeneric/r_plane.c.s
+.PHONY : src/doomgeneric/r_plane.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_plane.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_plane.c.s
+.PHONY : src/doomgeneric/r_plane.c.s
+
+src/doomgeneric/r_segs.obj: src/doomgeneric/r_segs.c.obj
+.PHONY : src/doomgeneric/r_segs.obj
+
+# target to build an object file
+src/doomgeneric/r_segs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_segs.c.obj
+.PHONY : src/doomgeneric/r_segs.c.obj
+
+src/doomgeneric/r_segs.i: src/doomgeneric/r_segs.c.i
+.PHONY : src/doomgeneric/r_segs.i
+
+# target to preprocess a source file
+src/doomgeneric/r_segs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_segs.c.i
+.PHONY : src/doomgeneric/r_segs.c.i
+
+src/doomgeneric/r_segs.s: src/doomgeneric/r_segs.c.s
+.PHONY : src/doomgeneric/r_segs.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_segs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_segs.c.s
+.PHONY : src/doomgeneric/r_segs.c.s
+
+src/doomgeneric/r_sky.obj: src/doomgeneric/r_sky.c.obj
+.PHONY : src/doomgeneric/r_sky.obj
+
+# target to build an object file
+src/doomgeneric/r_sky.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_sky.c.obj
+.PHONY : src/doomgeneric/r_sky.c.obj
+
+src/doomgeneric/r_sky.i: src/doomgeneric/r_sky.c.i
+.PHONY : src/doomgeneric/r_sky.i
+
+# target to preprocess a source file
+src/doomgeneric/r_sky.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_sky.c.i
+.PHONY : src/doomgeneric/r_sky.c.i
+
+src/doomgeneric/r_sky.s: src/doomgeneric/r_sky.c.s
+.PHONY : src/doomgeneric/r_sky.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_sky.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_sky.c.s
+.PHONY : src/doomgeneric/r_sky.c.s
+
+src/doomgeneric/r_things.obj: src/doomgeneric/r_things.c.obj
+.PHONY : src/doomgeneric/r_things.obj
+
+# target to build an object file
+src/doomgeneric/r_things.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_things.c.obj
+.PHONY : src/doomgeneric/r_things.c.obj
+
+src/doomgeneric/r_things.i: src/doomgeneric/r_things.c.i
+.PHONY : src/doomgeneric/r_things.i
+
+# target to preprocess a source file
+src/doomgeneric/r_things.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_things.c.i
+.PHONY : src/doomgeneric/r_things.c.i
+
+src/doomgeneric/r_things.s: src/doomgeneric/r_things.c.s
+.PHONY : src/doomgeneric/r_things.s
+
+# target to generate assembly for a file
+src/doomgeneric/r_things.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/r_things.c.s
+.PHONY : src/doomgeneric/r_things.c.s
+
+src/doomgeneric/s_sound.obj: src/doomgeneric/s_sound.c.obj
+.PHONY : src/doomgeneric/s_sound.obj
+
+# target to build an object file
+src/doomgeneric/s_sound.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/s_sound.c.obj
+.PHONY : src/doomgeneric/s_sound.c.obj
+
+src/doomgeneric/s_sound.i: src/doomgeneric/s_sound.c.i
+.PHONY : src/doomgeneric/s_sound.i
+
+# target to preprocess a source file
+src/doomgeneric/s_sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/s_sound.c.i
+.PHONY : src/doomgeneric/s_sound.c.i
+
+src/doomgeneric/s_sound.s: src/doomgeneric/s_sound.c.s
+.PHONY : src/doomgeneric/s_sound.s
+
+# target to generate assembly for a file
+src/doomgeneric/s_sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/s_sound.c.s
+.PHONY : src/doomgeneric/s_sound.c.s
+
+src/doomgeneric/sha1.obj: src/doomgeneric/sha1.c.obj
+.PHONY : src/doomgeneric/sha1.obj
+
+# target to build an object file
+src/doomgeneric/sha1.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sha1.c.obj
+.PHONY : src/doomgeneric/sha1.c.obj
+
+src/doomgeneric/sha1.i: src/doomgeneric/sha1.c.i
+.PHONY : src/doomgeneric/sha1.i
+
+# target to preprocess a source file
+src/doomgeneric/sha1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sha1.c.i
+.PHONY : src/doomgeneric/sha1.c.i
+
+src/doomgeneric/sha1.s: src/doomgeneric/sha1.c.s
+.PHONY : src/doomgeneric/sha1.s
+
+# target to generate assembly for a file
+src/doomgeneric/sha1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sha1.c.s
+.PHONY : src/doomgeneric/sha1.c.s
+
+src/doomgeneric/sounds.obj: src/doomgeneric/sounds.c.obj
+.PHONY : src/doomgeneric/sounds.obj
+
+# target to build an object file
+src/doomgeneric/sounds.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sounds.c.obj
+.PHONY : src/doomgeneric/sounds.c.obj
+
+src/doomgeneric/sounds.i: src/doomgeneric/sounds.c.i
+.PHONY : src/doomgeneric/sounds.i
+
+# target to preprocess a source file
+src/doomgeneric/sounds.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sounds.c.i
+.PHONY : src/doomgeneric/sounds.c.i
+
+src/doomgeneric/sounds.s: src/doomgeneric/sounds.c.s
+.PHONY : src/doomgeneric/sounds.s
+
+# target to generate assembly for a file
+src/doomgeneric/sounds.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/sounds.c.s
+.PHONY : src/doomgeneric/sounds.c.s
+
+src/doomgeneric/st_lib.obj: src/doomgeneric/st_lib.c.obj
+.PHONY : src/doomgeneric/st_lib.obj
+
+# target to build an object file
+src/doomgeneric/st_lib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_lib.c.obj
+.PHONY : src/doomgeneric/st_lib.c.obj
+
+src/doomgeneric/st_lib.i: src/doomgeneric/st_lib.c.i
+.PHONY : src/doomgeneric/st_lib.i
+
+# target to preprocess a source file
+src/doomgeneric/st_lib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_lib.c.i
+.PHONY : src/doomgeneric/st_lib.c.i
+
+src/doomgeneric/st_lib.s: src/doomgeneric/st_lib.c.s
+.PHONY : src/doomgeneric/st_lib.s
+
+# target to generate assembly for a file
+src/doomgeneric/st_lib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_lib.c.s
+.PHONY : src/doomgeneric/st_lib.c.s
+
+src/doomgeneric/st_stuff.obj: src/doomgeneric/st_stuff.c.obj
+.PHONY : src/doomgeneric/st_stuff.obj
+
+# target to build an object file
+src/doomgeneric/st_stuff.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_stuff.c.obj
+.PHONY : src/doomgeneric/st_stuff.c.obj
+
+src/doomgeneric/st_stuff.i: src/doomgeneric/st_stuff.c.i
+.PHONY : src/doomgeneric/st_stuff.i
+
+# target to preprocess a source file
+src/doomgeneric/st_stuff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_stuff.c.i
+.PHONY : src/doomgeneric/st_stuff.c.i
+
+src/doomgeneric/st_stuff.s: src/doomgeneric/st_stuff.c.s
+.PHONY : src/doomgeneric/st_stuff.s
+
+# target to generate assembly for a file
+src/doomgeneric/st_stuff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/st_stuff.c.s
+.PHONY : src/doomgeneric/st_stuff.c.s
+
+src/doomgeneric/statdump.obj: src/doomgeneric/statdump.c.obj
+.PHONY : src/doomgeneric/statdump.obj
+
+# target to build an object file
+src/doomgeneric/statdump.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/statdump.c.obj
+.PHONY : src/doomgeneric/statdump.c.obj
+
+src/doomgeneric/statdump.i: src/doomgeneric/statdump.c.i
+.PHONY : src/doomgeneric/statdump.i
+
+# target to preprocess a source file
+src/doomgeneric/statdump.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/statdump.c.i
+.PHONY : src/doomgeneric/statdump.c.i
+
+src/doomgeneric/statdump.s: src/doomgeneric/statdump.c.s
+.PHONY : src/doomgeneric/statdump.s
+
+# target to generate assembly for a file
+src/doomgeneric/statdump.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/statdump.c.s
+.PHONY : src/doomgeneric/statdump.c.s
+
+src/doomgeneric/tables.obj: src/doomgeneric/tables.c.obj
+.PHONY : src/doomgeneric/tables.obj
+
+# target to build an object file
+src/doomgeneric/tables.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/tables.c.obj
+.PHONY : src/doomgeneric/tables.c.obj
+
+src/doomgeneric/tables.i: src/doomgeneric/tables.c.i
+.PHONY : src/doomgeneric/tables.i
+
+# target to preprocess a source file
+src/doomgeneric/tables.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/tables.c.i
+.PHONY : src/doomgeneric/tables.c.i
+
+src/doomgeneric/tables.s: src/doomgeneric/tables.c.s
+.PHONY : src/doomgeneric/tables.s
+
+# target to generate assembly for a file
+src/doomgeneric/tables.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/tables.c.s
+.PHONY : src/doomgeneric/tables.c.s
+
+src/doomgeneric/v_video.obj: src/doomgeneric/v_video.c.obj
+.PHONY : src/doomgeneric/v_video.obj
+
+# target to build an object file
+src/doomgeneric/v_video.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/v_video.c.obj
+.PHONY : src/doomgeneric/v_video.c.obj
+
+src/doomgeneric/v_video.i: src/doomgeneric/v_video.c.i
+.PHONY : src/doomgeneric/v_video.i
+
+# target to preprocess a source file
+src/doomgeneric/v_video.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/v_video.c.i
+.PHONY : src/doomgeneric/v_video.c.i
+
+src/doomgeneric/v_video.s: src/doomgeneric/v_video.c.s
+.PHONY : src/doomgeneric/v_video.s
+
+# target to generate assembly for a file
+src/doomgeneric/v_video.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/v_video.c.s
+.PHONY : src/doomgeneric/v_video.c.s
+
+src/doomgeneric/w_checksum.obj: src/doomgeneric/w_checksum.c.obj
+.PHONY : src/doomgeneric/w_checksum.obj
+
+# target to build an object file
+src/doomgeneric/w_checksum.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_checksum.c.obj
+.PHONY : src/doomgeneric/w_checksum.c.obj
+
+src/doomgeneric/w_checksum.i: src/doomgeneric/w_checksum.c.i
+.PHONY : src/doomgeneric/w_checksum.i
+
+# target to preprocess a source file
+src/doomgeneric/w_checksum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_checksum.c.i
+.PHONY : src/doomgeneric/w_checksum.c.i
+
+src/doomgeneric/w_checksum.s: src/doomgeneric/w_checksum.c.s
+.PHONY : src/doomgeneric/w_checksum.s
+
+# target to generate assembly for a file
+src/doomgeneric/w_checksum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_checksum.c.s
+.PHONY : src/doomgeneric/w_checksum.c.s
+
+src/doomgeneric/w_file.obj: src/doomgeneric/w_file.c.obj
+.PHONY : src/doomgeneric/w_file.obj
+
+# target to build an object file
+src/doomgeneric/w_file.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file.c.obj
+.PHONY : src/doomgeneric/w_file.c.obj
+
+src/doomgeneric/w_file.i: src/doomgeneric/w_file.c.i
+.PHONY : src/doomgeneric/w_file.i
+
+# target to preprocess a source file
+src/doomgeneric/w_file.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file.c.i
+.PHONY : src/doomgeneric/w_file.c.i
+
+src/doomgeneric/w_file.s: src/doomgeneric/w_file.c.s
+.PHONY : src/doomgeneric/w_file.s
+
+# target to generate assembly for a file
+src/doomgeneric/w_file.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file.c.s
+.PHONY : src/doomgeneric/w_file.c.s
+
+src/doomgeneric/w_file_stdc.obj: src/doomgeneric/w_file_stdc.c.obj
+.PHONY : src/doomgeneric/w_file_stdc.obj
+
+# target to build an object file
+src/doomgeneric/w_file_stdc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file_stdc.c.obj
+.PHONY : src/doomgeneric/w_file_stdc.c.obj
+
+src/doomgeneric/w_file_stdc.i: src/doomgeneric/w_file_stdc.c.i
+.PHONY : src/doomgeneric/w_file_stdc.i
+
+# target to preprocess a source file
+src/doomgeneric/w_file_stdc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file_stdc.c.i
+.PHONY : src/doomgeneric/w_file_stdc.c.i
+
+src/doomgeneric/w_file_stdc.s: src/doomgeneric/w_file_stdc.c.s
+.PHONY : src/doomgeneric/w_file_stdc.s
+
+# target to generate assembly for a file
+src/doomgeneric/w_file_stdc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_file_stdc.c.s
+.PHONY : src/doomgeneric/w_file_stdc.c.s
+
+src/doomgeneric/w_main.obj: src/doomgeneric/w_main.c.obj
+.PHONY : src/doomgeneric/w_main.obj
+
+# target to build an object file
+src/doomgeneric/w_main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_main.c.obj
+.PHONY : src/doomgeneric/w_main.c.obj
+
+src/doomgeneric/w_main.i: src/doomgeneric/w_main.c.i
+.PHONY : src/doomgeneric/w_main.i
+
+# target to preprocess a source file
+src/doomgeneric/w_main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_main.c.i
+.PHONY : src/doomgeneric/w_main.c.i
+
+src/doomgeneric/w_main.s: src/doomgeneric/w_main.c.s
+.PHONY : src/doomgeneric/w_main.s
+
+# target to generate assembly for a file
+src/doomgeneric/w_main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_main.c.s
+.PHONY : src/doomgeneric/w_main.c.s
+
+src/doomgeneric/w_wad.obj: src/doomgeneric/w_wad.c.obj
+.PHONY : src/doomgeneric/w_wad.obj
+
+# target to build an object file
+src/doomgeneric/w_wad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_wad.c.obj
+.PHONY : src/doomgeneric/w_wad.c.obj
+
+src/doomgeneric/w_wad.i: src/doomgeneric/w_wad.c.i
+.PHONY : src/doomgeneric/w_wad.i
+
+# target to preprocess a source file
+src/doomgeneric/w_wad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_wad.c.i
+.PHONY : src/doomgeneric/w_wad.c.i
+
+src/doomgeneric/w_wad.s: src/doomgeneric/w_wad.c.s
+.PHONY : src/doomgeneric/w_wad.s
+
+# target to generate assembly for a file
+src/doomgeneric/w_wad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/w_wad.c.s
+.PHONY : src/doomgeneric/w_wad.c.s
+
+src/doomgeneric/wi_stuff.obj: src/doomgeneric/wi_stuff.c.obj
+.PHONY : src/doomgeneric/wi_stuff.obj
+
+# target to build an object file
+src/doomgeneric/wi_stuff.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/wi_stuff.c.obj
+.PHONY : src/doomgeneric/wi_stuff.c.obj
+
+src/doomgeneric/wi_stuff.i: src/doomgeneric/wi_stuff.c.i
+.PHONY : src/doomgeneric/wi_stuff.i
+
+# target to preprocess a source file
+src/doomgeneric/wi_stuff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/wi_stuff.c.i
+.PHONY : src/doomgeneric/wi_stuff.c.i
+
+src/doomgeneric/wi_stuff.s: src/doomgeneric/wi_stuff.c.s
+.PHONY : src/doomgeneric/wi_stuff.s
+
+# target to generate assembly for a file
+src/doomgeneric/wi_stuff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/wi_stuff.c.s
+.PHONY : src/doomgeneric/wi_stuff.c.s
+
+src/doomgeneric/z_zone.obj: src/doomgeneric/z_zone.c.obj
+.PHONY : src/doomgeneric/z_zone.obj
+
+# target to build an object file
+src/doomgeneric/z_zone.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.obj
+.PHONY : src/doomgeneric/z_zone.c.obj
+
+src/doomgeneric/z_zone.i: src/doomgeneric/z_zone.c.i
+.PHONY : src/doomgeneric/z_zone.i
+
+# target to preprocess a source file
+src/doomgeneric/z_zone.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.i
+.PHONY : src/doomgeneric/z_zone.c.i
+
+src/doomgeneric/z_zone.s: src/doomgeneric/z_zone.c.s
+.PHONY : src/doomgeneric/z_zone.s
+
+# target to generate assembly for a file
+src/doomgeneric/z_zone.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric/z_zone.c.s
+.PHONY : src/doomgeneric/z_zone.c.s
+
+src/doomgeneric_freertos.obj: src/doomgeneric_freertos.c.obj
+.PHONY : src/doomgeneric_freertos.obj
+
+# target to build an object file
+src/doomgeneric_freertos.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.obj
+.PHONY : src/doomgeneric_freertos.c.obj
+
+src/doomgeneric_freertos.i: src/doomgeneric_freertos.c.i
+.PHONY : src/doomgeneric_freertos.i
+
+# target to preprocess a source file
+src/doomgeneric_freertos.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.i
+.PHONY : src/doomgeneric_freertos.c.i
+
+src/doomgeneric_freertos.s: src/doomgeneric_freertos.c.s
+.PHONY : src/doomgeneric_freertos.s
+
+# target to generate assembly for a file
+src/doomgeneric_freertos.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.s
+.PHONY : src/doomgeneric_freertos.c.s
+
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
@@ -449,6 +2513,264 @@ help:
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
+	@echo "... src/UART_16550.obj"
+	@echo "... src/UART_16550.i"
+	@echo "... src/UART_16550.s"
+	@echo "... src/doom_task.obj"
+	@echo "... src/doom_task.i"
+	@echo "... src/doom_task.s"
+	@echo "... src/doomgeneric/am_map.obj"
+	@echo "... src/doomgeneric/am_map.i"
+	@echo "... src/doomgeneric/am_map.s"
+	@echo "... src/doomgeneric/d_event.obj"
+	@echo "... src/doomgeneric/d_event.i"
+	@echo "... src/doomgeneric/d_event.s"
+	@echo "... src/doomgeneric/d_items.obj"
+	@echo "... src/doomgeneric/d_items.i"
+	@echo "... src/doomgeneric/d_items.s"
+	@echo "... src/doomgeneric/d_iwad.obj"
+	@echo "... src/doomgeneric/d_iwad.i"
+	@echo "... src/doomgeneric/d_iwad.s"
+	@echo "... src/doomgeneric/d_loop.obj"
+	@echo "... src/doomgeneric/d_loop.i"
+	@echo "... src/doomgeneric/d_loop.s"
+	@echo "... src/doomgeneric/d_main.obj"
+	@echo "... src/doomgeneric/d_main.i"
+	@echo "... src/doomgeneric/d_main.s"
+	@echo "... src/doomgeneric/d_mode.obj"
+	@echo "... src/doomgeneric/d_mode.i"
+	@echo "... src/doomgeneric/d_mode.s"
+	@echo "... src/doomgeneric/d_net.obj"
+	@echo "... src/doomgeneric/d_net.i"
+	@echo "... src/doomgeneric/d_net.s"
+	@echo "... src/doomgeneric/doomdef.obj"
+	@echo "... src/doomgeneric/doomdef.i"
+	@echo "... src/doomgeneric/doomdef.s"
+	@echo "... src/doomgeneric/doomgeneric.obj"
+	@echo "... src/doomgeneric/doomgeneric.i"
+	@echo "... src/doomgeneric/doomgeneric.s"
+	@echo "... src/doomgeneric/doomstat.obj"
+	@echo "... src/doomgeneric/doomstat.i"
+	@echo "... src/doomgeneric/doomstat.s"
+	@echo "... src/doomgeneric/dstrings.obj"
+	@echo "... src/doomgeneric/dstrings.i"
+	@echo "... src/doomgeneric/dstrings.s"
+	@echo "... src/doomgeneric/dummy.obj"
+	@echo "... src/doomgeneric/dummy.i"
+	@echo "... src/doomgeneric/dummy.s"
+	@echo "... src/doomgeneric/f_finale.obj"
+	@echo "... src/doomgeneric/f_finale.i"
+	@echo "... src/doomgeneric/f_finale.s"
+	@echo "... src/doomgeneric/f_wipe.obj"
+	@echo "... src/doomgeneric/f_wipe.i"
+	@echo "... src/doomgeneric/f_wipe.s"
+	@echo "... src/doomgeneric/g_game.obj"
+	@echo "... src/doomgeneric/g_game.i"
+	@echo "... src/doomgeneric/g_game.s"
+	@echo "... src/doomgeneric/gusconf.obj"
+	@echo "... src/doomgeneric/gusconf.i"
+	@echo "... src/doomgeneric/gusconf.s"
+	@echo "... src/doomgeneric/hu_lib.obj"
+	@echo "... src/doomgeneric/hu_lib.i"
+	@echo "... src/doomgeneric/hu_lib.s"
+	@echo "... src/doomgeneric/hu_stuff.obj"
+	@echo "... src/doomgeneric/hu_stuff.i"
+	@echo "... src/doomgeneric/hu_stuff.s"
+	@echo "... src/doomgeneric/i_cdmus.obj"
+	@echo "... src/doomgeneric/i_cdmus.i"
+	@echo "... src/doomgeneric/i_cdmus.s"
+	@echo "... src/doomgeneric/i_endoom.obj"
+	@echo "... src/doomgeneric/i_endoom.i"
+	@echo "... src/doomgeneric/i_endoom.s"
+	@echo "... src/doomgeneric/i_input.obj"
+	@echo "... src/doomgeneric/i_input.i"
+	@echo "... src/doomgeneric/i_input.s"
+	@echo "... src/doomgeneric/i_joystick.obj"
+	@echo "... src/doomgeneric/i_joystick.i"
+	@echo "... src/doomgeneric/i_joystick.s"
+	@echo "... src/doomgeneric/i_scale.obj"
+	@echo "... src/doomgeneric/i_scale.i"
+	@echo "... src/doomgeneric/i_scale.s"
+	@echo "... src/doomgeneric/i_sound.obj"
+	@echo "... src/doomgeneric/i_sound.i"
+	@echo "... src/doomgeneric/i_sound.s"
+	@echo "... src/doomgeneric/i_system.obj"
+	@echo "... src/doomgeneric/i_system.i"
+	@echo "... src/doomgeneric/i_system.s"
+	@echo "... src/doomgeneric/i_timer.obj"
+	@echo "... src/doomgeneric/i_timer.i"
+	@echo "... src/doomgeneric/i_timer.s"
+	@echo "... src/doomgeneric/i_video.obj"
+	@echo "... src/doomgeneric/i_video.i"
+	@echo "... src/doomgeneric/i_video.s"
+	@echo "... src/doomgeneric/icon.obj"
+	@echo "... src/doomgeneric/icon.i"
+	@echo "... src/doomgeneric/icon.s"
+	@echo "... src/doomgeneric/info.obj"
+	@echo "... src/doomgeneric/info.i"
+	@echo "... src/doomgeneric/info.s"
+	@echo "... src/doomgeneric/m_argv.obj"
+	@echo "... src/doomgeneric/m_argv.i"
+	@echo "... src/doomgeneric/m_argv.s"
+	@echo "... src/doomgeneric/m_bbox.obj"
+	@echo "... src/doomgeneric/m_bbox.i"
+	@echo "... src/doomgeneric/m_bbox.s"
+	@echo "... src/doomgeneric/m_cheat.obj"
+	@echo "... src/doomgeneric/m_cheat.i"
+	@echo "... src/doomgeneric/m_cheat.s"
+	@echo "... src/doomgeneric/m_config.obj"
+	@echo "... src/doomgeneric/m_config.i"
+	@echo "... src/doomgeneric/m_config.s"
+	@echo "... src/doomgeneric/m_controls.obj"
+	@echo "... src/doomgeneric/m_controls.i"
+	@echo "... src/doomgeneric/m_controls.s"
+	@echo "... src/doomgeneric/m_fixed.obj"
+	@echo "... src/doomgeneric/m_fixed.i"
+	@echo "... src/doomgeneric/m_fixed.s"
+	@echo "... src/doomgeneric/m_menu.obj"
+	@echo "... src/doomgeneric/m_menu.i"
+	@echo "... src/doomgeneric/m_menu.s"
+	@echo "... src/doomgeneric/m_misc.obj"
+	@echo "... src/doomgeneric/m_misc.i"
+	@echo "... src/doomgeneric/m_misc.s"
+	@echo "... src/doomgeneric/m_random.obj"
+	@echo "... src/doomgeneric/m_random.i"
+	@echo "... src/doomgeneric/m_random.s"
+	@echo "... src/doomgeneric/memio.obj"
+	@echo "... src/doomgeneric/memio.i"
+	@echo "... src/doomgeneric/memio.s"
+	@echo "... src/doomgeneric/mus2mid.obj"
+	@echo "... src/doomgeneric/mus2mid.i"
+	@echo "... src/doomgeneric/mus2mid.s"
+	@echo "... src/doomgeneric/p_ceilng.obj"
+	@echo "... src/doomgeneric/p_ceilng.i"
+	@echo "... src/doomgeneric/p_ceilng.s"
+	@echo "... src/doomgeneric/p_doors.obj"
+	@echo "... src/doomgeneric/p_doors.i"
+	@echo "... src/doomgeneric/p_doors.s"
+	@echo "... src/doomgeneric/p_enemy.obj"
+	@echo "... src/doomgeneric/p_enemy.i"
+	@echo "... src/doomgeneric/p_enemy.s"
+	@echo "... src/doomgeneric/p_floor.obj"
+	@echo "... src/doomgeneric/p_floor.i"
+	@echo "... src/doomgeneric/p_floor.s"
+	@echo "... src/doomgeneric/p_inter.obj"
+	@echo "... src/doomgeneric/p_inter.i"
+	@echo "... src/doomgeneric/p_inter.s"
+	@echo "... src/doomgeneric/p_lights.obj"
+	@echo "... src/doomgeneric/p_lights.i"
+	@echo "... src/doomgeneric/p_lights.s"
+	@echo "... src/doomgeneric/p_map.obj"
+	@echo "... src/doomgeneric/p_map.i"
+	@echo "... src/doomgeneric/p_map.s"
+	@echo "... src/doomgeneric/p_maputl.obj"
+	@echo "... src/doomgeneric/p_maputl.i"
+	@echo "... src/doomgeneric/p_maputl.s"
+	@echo "... src/doomgeneric/p_mobj.obj"
+	@echo "... src/doomgeneric/p_mobj.i"
+	@echo "... src/doomgeneric/p_mobj.s"
+	@echo "... src/doomgeneric/p_plats.obj"
+	@echo "... src/doomgeneric/p_plats.i"
+	@echo "... src/doomgeneric/p_plats.s"
+	@echo "... src/doomgeneric/p_pspr.obj"
+	@echo "... src/doomgeneric/p_pspr.i"
+	@echo "... src/doomgeneric/p_pspr.s"
+	@echo "... src/doomgeneric/p_saveg.obj"
+	@echo "... src/doomgeneric/p_saveg.i"
+	@echo "... src/doomgeneric/p_saveg.s"
+	@echo "... src/doomgeneric/p_setup.obj"
+	@echo "... src/doomgeneric/p_setup.i"
+	@echo "... src/doomgeneric/p_setup.s"
+	@echo "... src/doomgeneric/p_sight.obj"
+	@echo "... src/doomgeneric/p_sight.i"
+	@echo "... src/doomgeneric/p_sight.s"
+	@echo "... src/doomgeneric/p_spec.obj"
+	@echo "... src/doomgeneric/p_spec.i"
+	@echo "... src/doomgeneric/p_spec.s"
+	@echo "... src/doomgeneric/p_switch.obj"
+	@echo "... src/doomgeneric/p_switch.i"
+	@echo "... src/doomgeneric/p_switch.s"
+	@echo "... src/doomgeneric/p_telept.obj"
+	@echo "... src/doomgeneric/p_telept.i"
+	@echo "... src/doomgeneric/p_telept.s"
+	@echo "... src/doomgeneric/p_tick.obj"
+	@echo "... src/doomgeneric/p_tick.i"
+	@echo "... src/doomgeneric/p_tick.s"
+	@echo "... src/doomgeneric/p_user.obj"
+	@echo "... src/doomgeneric/p_user.i"
+	@echo "... src/doomgeneric/p_user.s"
+	@echo "... src/doomgeneric/r_bsp.obj"
+	@echo "... src/doomgeneric/r_bsp.i"
+	@echo "... src/doomgeneric/r_bsp.s"
+	@echo "... src/doomgeneric/r_data.obj"
+	@echo "... src/doomgeneric/r_data.i"
+	@echo "... src/doomgeneric/r_data.s"
+	@echo "... src/doomgeneric/r_draw.obj"
+	@echo "... src/doomgeneric/r_draw.i"
+	@echo "... src/doomgeneric/r_draw.s"
+	@echo "... src/doomgeneric/r_main.obj"
+	@echo "... src/doomgeneric/r_main.i"
+	@echo "... src/doomgeneric/r_main.s"
+	@echo "... src/doomgeneric/r_plane.obj"
+	@echo "... src/doomgeneric/r_plane.i"
+	@echo "... src/doomgeneric/r_plane.s"
+	@echo "... src/doomgeneric/r_segs.obj"
+	@echo "... src/doomgeneric/r_segs.i"
+	@echo "... src/doomgeneric/r_segs.s"
+	@echo "... src/doomgeneric/r_sky.obj"
+	@echo "... src/doomgeneric/r_sky.i"
+	@echo "... src/doomgeneric/r_sky.s"
+	@echo "... src/doomgeneric/r_things.obj"
+	@echo "... src/doomgeneric/r_things.i"
+	@echo "... src/doomgeneric/r_things.s"
+	@echo "... src/doomgeneric/s_sound.obj"
+	@echo "... src/doomgeneric/s_sound.i"
+	@echo "... src/doomgeneric/s_sound.s"
+	@echo "... src/doomgeneric/sha1.obj"
+	@echo "... src/doomgeneric/sha1.i"
+	@echo "... src/doomgeneric/sha1.s"
+	@echo "... src/doomgeneric/sounds.obj"
+	@echo "... src/doomgeneric/sounds.i"
+	@echo "... src/doomgeneric/sounds.s"
+	@echo "... src/doomgeneric/st_lib.obj"
+	@echo "... src/doomgeneric/st_lib.i"
+	@echo "... src/doomgeneric/st_lib.s"
+	@echo "... src/doomgeneric/st_stuff.obj"
+	@echo "... src/doomgeneric/st_stuff.i"
+	@echo "... src/doomgeneric/st_stuff.s"
+	@echo "... src/doomgeneric/statdump.obj"
+	@echo "... src/doomgeneric/statdump.i"
+	@echo "... src/doomgeneric/statdump.s"
+	@echo "... src/doomgeneric/tables.obj"
+	@echo "... src/doomgeneric/tables.i"
+	@echo "... src/doomgeneric/tables.s"
+	@echo "... src/doomgeneric/v_video.obj"
+	@echo "... src/doomgeneric/v_video.i"
+	@echo "... src/doomgeneric/v_video.s"
+	@echo "... src/doomgeneric/w_checksum.obj"
+	@echo "... src/doomgeneric/w_checksum.i"
+	@echo "... src/doomgeneric/w_checksum.s"
+	@echo "... src/doomgeneric/w_file.obj"
+	@echo "... src/doomgeneric/w_file.i"
+	@echo "... src/doomgeneric/w_file.s"
+	@echo "... src/doomgeneric/w_file_stdc.obj"
+	@echo "... src/doomgeneric/w_file_stdc.i"
+	@echo "... src/doomgeneric/w_file_stdc.s"
+	@echo "... src/doomgeneric/w_main.obj"
+	@echo "... src/doomgeneric/w_main.i"
+	@echo "... src/doomgeneric/w_main.s"
+	@echo "... src/doomgeneric/w_wad.obj"
+	@echo "... src/doomgeneric/w_wad.i"
+	@echo "... src/doomgeneric/w_wad.s"
+	@echo "... src/doomgeneric/wi_stuff.obj"
+	@echo "... src/doomgeneric/wi_stuff.i"
+	@echo "... src/doomgeneric/wi_stuff.s"
+	@echo "... src/doomgeneric/z_zone.obj"
+	@echo "... src/doomgeneric/z_zone.i"
+	@echo "... src/doomgeneric/z_zone.s"
+	@echo "... src/doomgeneric_freertos.obj"
+	@echo "... src/doomgeneric_freertos.i"
+	@echo "... src/doomgeneric_freertos.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
