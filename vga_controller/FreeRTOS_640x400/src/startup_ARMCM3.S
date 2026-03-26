@@ -49,14 +49,27 @@ __Vectors:
         .long    xPortSysTickHandler        /*  -1 SysTick Handler */
 
         /* Interrupts */
-        .long    AXI_TIMER_0_ISR            /*   0 Interrupt 0 */
-        .long    AXI_TIMER_1_ISR            /*   1 Interrupt 1 */
-        .long    Interrupt2_Handler         /*   2 Interrupt 2 */
-        .long    Interrupt3_Handler         /*   3 Interrupt 3 */
-        .long    Interrupt4_Handler         /*   4 Interrupt 4 */
-        .long    UART0_handler              /*   5 Interrupt 5 */
-        .long    UART1_handler              /*   6 Interrupt 6 */
-        .long    Interrupt7_Handler         /*   7 Interrupt 7 */
+	.long    Interrupt0_Handler         /*   Interrupt 0 */
+	.long    Interrupt1_Handler         /*   Interrupt 1 */
+	.long    Interrupt2_Handler         /*   Interrupt 2 */
+	.long    Interrupt3_Handler         /*   Interrupt 3 */
+	.long    Interrupt4_Handler         /*   Interrupt 4 */
+	.long    Interrupt5_Handler         /*   Interrupt 5 */
+	.long    Interrupt6_Handler         /*   Interrupt 6 */
+	.long    VGA_IRQHandler             /*   Interrupt 7 */
+	.long    Interrupt7_Handler         /*   Interrupt 8 */
+	.long    Interrupt8_Handler         /*   Interrupt 9 */
+	.long    Interrupt9_Handler         /*   Interrupt 10 */
+
+	
+	// .long    AXI_TIMER_0_ISR            /*   Interrupt 0 */
+        // .long    AXI_TIMER_1_ISR            /*   1 Interrupt 1 */
+        // .long    Interrupt2_Handler         /*   2 Interrupt 2 */
+        // .long    Interrupt3_Handler         /*   3 Interrupt 3 */
+        // .long    PM_handler                 /*   4 Interrupt 4 */
+        // .long    UART0_handler              /*   5 Interrupt 5 */
+        // .long    UART1_handler              /*   6 Interrupt 6 */
+        // .long    Interrupt7_Handler         /*   7 Interrupt 7 */
         //.long    Interrupt8_Handler         /*   8 Interrupt 8 */
         //.long    Interrupt9_Handler         /*   9 Interrupt 9 */
 
@@ -166,10 +179,13 @@ Default_Handler:
         Set_Default_Handler  MemManage_Handler
         Set_Default_Handler  BusFault_Handler
         Set_Default_Handler  UsageFault_Handler
-        Set_Default_Handler  SVC_Handler
+        /* SVC_Handler, PendSV_Handler, and SysTick_Handler are NOT given weak
+         * defaults here.  The vector table installs the FreeRTOS-specific names
+         * vPortSVCHandler, xPortPendSVHandler, and xPortSysTickHandler for those
+         * slots (provided by FreeRTOS/portable/GCC/ARM_CM3/port.c).  A missing
+         * definition is intentionally a hard linker error.
+         */
         Set_Default_Handler  DebugMon_Handler
-        Set_Default_Handler  PendSV_Handler
-        Set_Default_Handler  SysTick_Handler
 
         Set_Default_Handler  Interrupt0_Handler
         Set_Default_Handler  Interrupt1_Handler
@@ -191,14 +207,14 @@ Default_Handler:
 	.set \DUMMY_Name, Default_Handler
 	.endm
 	
-	provide_DUMMY _close
-	provide_DUMMY _getpid
-	provide_DUMMY _kill
-	provide_DUMMY _lseek
-	provide_DUMMY _read
-	provide_DUMMY _write
-	provide_DUMMY _fstat_r
-	provide_DUMMY _isatty_r
+	// provide_DUMMY _close
+	// provide_DUMMY _getpid
+	// provide_DUMMY _kill
+	// provide_DUMMY _lseek
+	// provide_DUMMY _read
+	// provide_DUMMY _write
+	// provide_DUMMY _fstat_r
+	// provide_DUMMY _isatty_r
         
 	
 

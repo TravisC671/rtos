@@ -1,0 +1,25 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../AXI_master_simulation.vhdl" \
+"../../../../../vga_pkg.vhdl" \
+"../../../../../axi_mem_arbiter.vhdl" \
+"../../../../../axi_write_fsm.vhdl" \
+"../../../../../axi_read_fsm.vhdl" \
+"../../../../../vga_generic_register.vhdl" \
+"../../../../../axi_write_datapath.vhdl" \
+"../../../../../axi_read_datapath.vhdl" \
+"../../../../../axi_slave.vhdl" \
+"../../../../../axi_peripheral_bus.vhdl" \
+"../../../../../framebuffer_bram.vhdl" \
+"../../../../../interrupt_controller.vhdl" \
+"../../../../../palette_ram.vhdl" \
+"../../../../../register_bank.vhdl" \
+"../../../../../vga_unsigned_register.vhdl" \
+"../../../../../vga_hv_counters.vhdl" \
+"../../../../../vga_timing_gen.vhdl" \
+"../../../../../vga_pixel_pipeline.vhdl" \
+"../../../../../vga_controller.vhdl" \
+"../../../../../vga_controller_tb_comprehensive.vhdl" \
+
+# Do not sort compile order
+nosort

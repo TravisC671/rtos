@@ -12,16 +12,18 @@
 //
 // Include CMSIS for your device, or comment this out and set the
 // parameters manually
-#include <ARMCM3.h> 
+// #include <ARMCM3.h>
+//#include <Device.h>
+//#include <core_cm3.h>
 // __NVIC_PRIO_BITS will be specified when CMSIS is being used. BUT
 //  ONLY IF YOU INCLUDE THE CMSIS HEADER PREVIOUSLY
-#ifdef __NVIC_PRIO_BITS
-  #define configPRIO_BITS	                         __NVIC_PRIO_BITS
-#else
-  #define configPRIO_BITS				 3
-#endif
+// #ifdef __NVIC_PRIO_BITS
+/*   #define configPRIO_BITS	                         __NVIC_PRIO_BITS */
+/* #else */
+/*   #define configPRIO_BITS				 3 */
+/* #endif */
 
-#define configENABLE_TRUSTZONE  0
+/* #define configENABLE_TRUSTZONE  0 */
 
 // The ARM Cortex supports nested interrupts. (Higher priority
 // interrupts can interrupt lower priority interrupts). ISRs that call
@@ -30,7 +32,7 @@
 // lower priority. Our CPU has 3 bits of priority in the NVIC, so the
 // following 0x80 actually translates to 0xb100. ISRs at priority 4,
 // 5, 6, and 7 can call FreeRTOS API functions.
-#define configMAX_SYSCALL_INTERRUPT_PRIORITY    0x80
+// #define configMAX_SYSCALL_INTERRUPT_PRIORITY    0x80
 
 //-----------------------------------------------------------
 // START OF MAIN FREERTOS CONFIGURATION
@@ -39,15 +41,32 @@
 // read the FreeRTOS source code files to learn about features that
 // are not included in the documentation.
 
+// RISC V specific
+// configMTIME_BASE_ADDRESS and configMTIMECMP_BASE_ADDRESS must be
+// defined in FreeRTOSConfig.h.  Set them to zero if there is no MTIME
+// (machine time) clock.
+
+
+
+#define configMTIME_BASE_ADDRESS     (0x44A00000)
+#define configMTIMECMP_BASE_ADDRESS  (0x44A00008)
+#define MTIME_RATE_HZ                ((unsigned long)100000000)
+#define configTICK_CLOCK_HZ          ((unsigned long)100000000)
+#define portasmHAS_CLINT              0
+// for RISCV
+#include <stddef.h>
+#include <interrupts.h>
+#include <portmacro.h>
+
 #define projCOVERAGE_TEST                          0
 
 #define configQUEUE_REGISTRY_SIZE                 20
 #define configUSE_PREEMPTION                       1
 #define configUSE_TIME_SLICING                     0
-#define configUSE_PORT_OPTIMISED_TASK_SELECTION    0
-#define configCPU_CLOCK_HZ          ((unsigned long)50000000)
+// #define configUSE_PORT_OPTIMISED_TASK_SELECTION    0
+#define configCPU_CLOCK_HZ          ((unsigned long)100000000)
 #define configTICK_RATE_HZ          ((TickType_t)1000)
-#define configMINIMAL_STACK_SIZE    ((unsigned short)256)
+#define configMINIMAL_STACK_SIZE    ((unsigned short)1024)
 
 /* HEAP SCHEME is either 
    1 (only alloc), 
@@ -62,31 +81,32 @@
     Heap Limit (default __HeapLimit): end address of heap
     Heap size (default __heap_size): size of the heap memory in bytes */
 
-#define configUSE_HEAP_SCHEME                            (3)
+#define configUSE_HEAP_SCHEME                            (6)
 
 /* TOTAL_HEAP_SIZE is not used with heap scheme 6 */
 #define configTOTAL_HEAP_SIZE                            ((size_t)(0x8000))
 
 #define configSUPPORT_DYNAMIC_ALLOCATION                 1
 
-#define configUSE_NEWLIB_REENTRANT                       0
+#define configUSE_NEWLIB_REENTRANT                       1
 #define configMAX_TASK_NAME_LEN                          ( 16 )
 #define configUSE_16_BIT_TICKS                           0
 #define configIDLE_SHOULD_YIELD                          0
 #define configUSE_CO_ROUTINES                            0
 
-#define configMAX_PRIORITIES                             (10)
+#define configMAX_PRIORITIES                             (16)
 #define configMAX_CO_ROUTINE_PRIORITIES                  (2)
 #define configTIMER_QUEUE_LENGTH                         20
 #define configTIMER_TASK_PRIORITY                    (configMAX_PRIORITIES - 1)
 #define configUSE_COUNTING_SEMAPHORES                    0
 #define configSUPPORT_STATIC_ALLOCATION                  1
 #define configSTREAM_BUFFER_TRIGGER_LEVEL_TEST_MARGIN    2
-#define configCHECK_FOR_STACK_OVERFLOW			 0
+#define configCHECK_FOR_STACK_OVERFLOW                   1
 
-//#define configUSE_MALLOC_FAILED_HOOK                     1
-//extern void malloc_failed();
-//#define vApplicationMallocFailedHook(x)     malloc_failed()
+
+#define configUSE_MALLOC_FAILED_HOOK                     1
+extern void malloc_failed();
+#define vApplicationMallocFailedHook(x)     malloc_failed()
 
 #define configUSE_IDLE_HOOK                              0
 #define configUSE_TICK_HOOK                              0
@@ -94,8 +114,7 @@
 
 
 void vAssertCalled( unsigned line, const char * const filename );
-//#define configASSERT_DEFINED                             1
-//#define configASSERT( x )    if( ( x ) == 0 ) vAssertCalled()
+#define configASSERT( x )    if( ( x ) == 0 ) vAssertCalled(__LINE__, __FILE__)
 
 /* Define to trap certain errors in application code during development. */
 #define ASSERT( x ) if( ( x ) == 0 ) vAssertCalled( __LINE__, __FILE__);
@@ -105,8 +124,8 @@ void vAssertCalled( unsigned line, const char * const filename );
 
 #define configUSE_MUTEXES                         1
 #define configUSE_RECURSIVE_MUTEXES               1
-#define configUSE_TIMERS                          0
-#define configTIMER_TASK_STACK_DEPTH              (256)
+#define configUSE_TIMERS                          1
+#define configTIMER_TASK_STACK_DEPTH              (512)
 
 // Set up everything needed for statistics reporting.  All af the
 // following must be set to get the runtime stats task to run

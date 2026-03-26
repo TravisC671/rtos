@@ -1,0 +1,12 @@
+
+{ 
+    crc :  1145899754949170774  , 
+    ccp_crc :  0  , 
+    cmdline : " --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot vga_controller_tb_comprehensive_behav xil_defaultlib.vga_controller_tb_comprehensive" , 
+    buildDate : "May 21 2025" , 
+    buildTime : "22:59:56" , 
+    linkCmd : "/opt/Xilinx/2025.1/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/g++ -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/vga_controller_tb_comprehensive_behav/xsimk\"   \"xsim.dir/vga_controller_tb_comprehensive_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/vga_controller_tb_comprehensive_behav/obj/xsim_1.lnx64.o\" \"xsim.dir/vga_controller_tb_comprehensive_behav/obj/xsim_2.lnx64.o\" -L\"/opt/Xilinx/2025.1/Vivado/lib/lnx64.o\" -lxv_simulator_kernel    -L/opt/Xilinx/2025.1/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -Wl,--disable-new-dtags -Wl,-rpath=/opt/Xilinx/2025.1/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -lxv_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

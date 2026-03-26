@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <doomgeneric_freertos.h>
 
 #ifndef DOOMGENERIC_RESX
 #define DOOMGENERIC_RESX 640

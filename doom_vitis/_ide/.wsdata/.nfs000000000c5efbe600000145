@@ -21964,3 +21964,13 @@ There is no document for breakpointinput:vs.editor.ICodeEditor%3A6
     at /opt/Xilinx/2025.1/Vitis/ide/electron-app/lnx64/resources/app/lib/backend/19.js:1:38603
     at /opt/Xilinx/2025.1/Vitis/ide/electron-app/lnx64/resources/app/lib/backend/19.js:1:15380
     at s.invoke (/opt/Xilinx/2025.1/Vitis/ide/electron-app/lnx64/resources/app/lib/backend/19.js:1:15470) 
+2026-03-11 13:38:51 [debug] : RIGEL SERVER Cannot send datagram packet to /151.159.91.1 
+2026-03-11 13:38:51 [debug] : RIGEL SERVER java.io.IOException: Operation not permitted 
+2026-03-11 13:38:51 [debug] : RIGEL SERVER at java.base/java.net.PlainDatagramSocketImpl.send0(Native Method) 
+2026-03-11 13:38:51 [debug] : RIGEL SERVER at java.base/java.net.AbstractPlainDatagramSocketImpl.send(AbstractPlainDatagramSocketImpl.java:155)
+	at java.base/java.net.DatagramSocket.send(DatagramSocket.java:695)
+	at org.eclipse.tcf.internal.services.local.LocatorService.sendDatagramPacket(LocatorService.java:973)
+	at org.eclipse.tcf.internal.services.local.LocatorService.sendPeersRequest(LocatorService.java:1064)
+	at org.eclipse.tcf.internal.services.local.LocatorService$7.run(LocatorService.java:749)
+	at org.eclipse.tcf.init.EventQueue.run(EventQueue.java:68)
+	at java.base/java.lang.Thread.run(Thread.java:829) 

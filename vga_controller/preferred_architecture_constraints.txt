@@ -1,0 +1,12 @@
+There is a comment block for "global" internal signals.
+
+The concurrent statements to assign values to global internal signals are here.
+
+There is a comment block before each register instantiation
+
+Each register instantiation (entity instantiation, component instantiation, or direct instantiation) is followed immediatly by the code that produces the next value for that register.
+
+There is a comment block before the outputs.
+
+The output port logic is here.
+

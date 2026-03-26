@@ -1,0 +1,130 @@
+//------------------------------------------------------------------------------
+// Copyright (c) 2026 Larry D. Pyeatt
+// All rights reserved.
+//------------------------------------------------------------------------------
+// Render Task - 320x200 Double-Buffered Mode
+//
+// Draws the next animation frame directly into the hardware back buffer
+// (the half of the VGA framebuffer that is NOT currently being scanned out).
+// No intermediate RAM buffer and no memcpy are needed.
+//
+// Execution flow
+// --------------
+//   1. Block on back_buf_queue until the ISR delivers the index of the
+//      buffer to draw into.  This happens once per VSYNC (~14.3 ms).
+//   2. Compute a pointer to the correct hardware buffer half.
+//   3. Render the frame in-place.
+//   4. Loop — the frame will be flipped to front on the next VSYNC.
+//
+// If rendering takes longer than one VSYNC period the ISR will overwrite
+// the stale queue entry (xQueueOverwriteFromISR), so the render task
+// always works on the most recently assigned buffer and naturally drops
+// frames rather than accumulating latency.
+//------------------------------------------------------------------------------
+
+#include "vga_driver.h"
+#include <string.h>
+
+//------------------------------------------------------------------------------
+// Graphics primitives
+// All operate on a caller-supplied buffer pointer so they work regardless
+// of which hardware buffer is currently the back buffer.
+//------------------------------------------------------------------------------
+
+static void clear_buffer(uint8_t *buf, uint8_t color)
+{
+  memset(buf, color, FRAMEBUFFER_SIZE);
+}
+
+static void set_pixel(uint8_t *buf, uint16_t x, uint16_t y, uint8_t color)
+{
+  if (x < FRAMEBUFFER_WIDTH && y < FRAMEBUFFER_HEIGHT)
+    buf[y * FRAMEBUFFER_WIDTH + x] = color;
+}
+
+static void draw_rect(uint8_t *buf,
+                      uint16_t x, uint16_t y,
+                      uint16_t w, uint16_t h, uint8_t color)
+{
+  for (uint16_t dy = 0; dy < h; dy++)
+    for (uint16_t dx = 0; dx < w; dx++)
+      set_pixel(buf, x + dx, y + dy, color);
+}
+
+static void draw_hline(uint8_t *buf,
+                       uint16_t x, uint16_t y, uint16_t length, uint8_t color)
+{
+  for (uint16_t dx = 0; dx < length; dx++)
+    set_pixel(buf, x + dx, y, color);
+}
+
+static void draw_vline(uint8_t *buf,
+                       uint16_t x, uint16_t y, uint16_t length, uint8_t color)
+{
+  for (uint16_t dy = 0; dy < length; dy++)
+    set_pixel(buf, x, y + dy, color);
+}
+
+//------------------------------------------------------------------------------
+// render_task
+//------------------------------------------------------------------------------
+
+void render_task(void *pvParameters)
+{
+  (void)pvParameters;
+
+  // Pointers to the two hardware buffer halves.
+  uint8_t * const hw_buf[2] = {
+    (uint8_t *)VGA_FRAMEBUFFER_BUF0,
+    (uint8_t *)VGA_FRAMEBUFFER_BUF1
+  };
+
+  // Animation state
+  uint16_t box_x = 0;
+  uint16_t box_y = 0;
+  int16_t  dx    = 2;
+  int16_t  dy    = 1;
+
+  // Box dimensions — scaled for 320x200
+  const uint16_t BOX_W = 32;
+  const uint16_t BOX_H = 32;
+
+  for (;;)
+    {
+      // Wait for the ISR to tell us which buffer to draw into.
+      uint8_t back_idx;
+      xQueueReceive(back_buf_queue, &back_idx, portMAX_DELAY);
+
+      uint8_t *back = hw_buf[back_idx];
+
+      // --- Render frame into back buffer ---
+
+      // Clear to background (palette index 0 = black)
+      clear_buffer(back, 0);
+
+      // Draw the bouncing box (palette index 31 = bright red)
+      draw_rect(back, box_x, box_y, BOX_W, BOX_H, 31);
+
+      // Draw a white border around the screen (palette index 15 = white)
+      draw_hline(back, 0, 0,                    FRAMEBUFFER_WIDTH,  15);
+      draw_hline(back, 0, FRAMEBUFFER_HEIGHT-1, FRAMEBUFFER_WIDTH,  15);
+      draw_vline(back, 0, 0,                    FRAMEBUFFER_HEIGHT, 15);
+      draw_vline(back, FRAMEBUFFER_WIDTH-1, 0,  FRAMEBUFFER_HEIGHT, 15);
+
+      // --- Update animation state for next frame ---
+
+      box_x += dx;
+      box_y += dy;
+
+      // Clamp and bounce off right/bottom edges (account for box size)
+      if ((int16_t)box_x <= 0)
+        { box_x = 0; dx = -dx; }
+      else if (box_x >= FRAMEBUFFER_WIDTH - BOX_W)
+        { box_x = FRAMEBUFFER_WIDTH - BOX_W; dx = -dx; }
+
+      if ((int16_t)box_y <= 0)
+        { box_y = 0; dy = -dy; }
+      else if (box_y >= FRAMEBUFFER_HEIGHT - BOX_H)
+        { box_y = FRAMEBUFFER_HEIGHT - BOX_H; dy = -dy; }
+    }
+}

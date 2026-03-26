@@ -2,6 +2,7 @@
 #define DOOMGENERIC_FREERTOS_H
 #include <FreeRTOS.h>
 #include <task.h>
+#include <device_addrs.h>
 
 #define CMAP256
 

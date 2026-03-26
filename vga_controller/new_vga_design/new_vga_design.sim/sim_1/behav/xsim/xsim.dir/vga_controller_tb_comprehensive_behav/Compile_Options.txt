@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "vga_controller_tb_comprehensive_behav" "xil_defaultlib.vga_controller_tb_comprehensive" -log "elaborate.log" 

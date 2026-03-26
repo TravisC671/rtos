@@ -28,9 +28,7 @@ int main( int argc, char **argv )
 
   /* we should never get to this point, but if we do, go into infinite
      loop */
-  while(1) {
-    doomgeneric_Tick();
-  }
+  while(1) {}
 }
 
 

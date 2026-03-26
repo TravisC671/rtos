@@ -2448,14 +2448,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/startup_ARMCM3.obj: src/startup_ARMCM3.S.obj
-.PHONY : src/startup_ARMCM3.obj
-
-# target to build an object file
-src/startup_ARMCM3.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/startup_ARMCM3.S.obj
-.PHONY : src/startup_ARMCM3.S.obj
-
 src/stats_task.obj: src/stats_task.c.obj
 .PHONY : src/stats_task.obj
 
@@ -2777,7 +2769,6 @@ help:
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/startup_ARMCM3.obj"
 	@echo "... src/stats_task.obj"
 	@echo "... src/stats_task.i"
 	@echo "... src/stats_task.s"

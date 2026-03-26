@@ -89,6 +89,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/ARM_CM3
   ${CMAKE_SOURCE_DIR}/CMSIS/CMSIS/Core/Include
   ${CMAKE_SOURCE_DIR}/CMSIS/Device/ARM/ARMCM3/Include
+  ${CMAKE_SOURCE_DIR}/Microblaze_V
 )
 
 # list of FreeRTOS sources that we need

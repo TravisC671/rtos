@@ -80,7 +80,15 @@ int usemouse = 0;
 #ifdef CMAP256
 
 boolean palette_changed;
-struct color colors[256];
+// struct color colors[256];
+
+// The hardware packs two 12-bit RGB entries per 32-bit word:
+//   bits [11: 0]  even entry (colour index 2n)
+//   bits [27:16]  odd  entry (colour index 2n+1)
+//   bits [31:28] and [15:12] are unused (RAZ/WI -- masked on write by hardware)
+// We must use 32-bit word writes; sub-word (halfword/byte) writes would
+// trigger the AXI RMW path which is unreliable for distributed (LUT) RAM.
+volatile uint32_t *colors = (volatile uint32_t *)VGA_PALETTE_BASE;
 
 #else  // CMAP256
 
@@ -130,8 +138,27 @@ typedef struct
 
 // Palette converted to RGB565
 
-static uint16_t rgb565_palette[256];
+// static uint16_t rgb565_palette[256];
+static uint16_t rgb444_palette[256];
 
+/* helper function to get the color */
+struct color get_color(uint8_t index) {
+    struct color c;
+    uint32_t color_entry = colors[index >> 1];
+    //odd entry
+    if (index & 0x01) {
+        color_entry >>= 16;
+    }
+
+    c.r = color_entry >> 8;
+    c.g = color_entry >> 4;
+    c.b = color_entry;
+    //this might not be right
+    c.a = 0;
+    return c;
+}
+
+/*
 void cmap_to_rgb565(uint16_t * out, uint8_t * in, int in_pixels)
 {
     int i, j;
@@ -140,7 +167,7 @@ void cmap_to_rgb565(uint16_t * out, uint8_t * in, int in_pixels)
 
     for (i = 0; i < in_pixels; i++)
     {
-        c = colors[*in]; 
+        c = get_color(*in); 
         r = ((uint16_t)(c.r >> 3)) << 11;
         g = ((uint16_t)(c.g >> 2)) << 5;
         b = ((uint16_t)(c.b >> 3)) << 0;
@@ -151,8 +178,9 @@ void cmap_to_rgb565(uint16_t * out, uint8_t * in, int in_pixels)
             out++;
         }
     }
-}
+} */
 
+/*
 void cmap_to_fb(uint8_t *out, uint8_t *in, int in_pixels)
 {
     int i, k;
@@ -200,7 +228,7 @@ void cmap_to_fb(uint8_t *out, uint8_t *in, int in_pixels)
 
         in++;
     }
-}
+} */
 
 void I_InitGraphics (void)
 {
@@ -401,6 +429,7 @@ void I_SetPalette (byte* palette)
 	//	palette += 3;
 	//}
     
+    //this is super duper important
 
     /* performance boost:
      * map to the right pixel format over here! */
