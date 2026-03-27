@@ -3,6 +3,7 @@
 #include <FreeRTOS.h>
 #include <task.h>
 #include <device_addrs.h>
+#include <vga_driver.h>
 
 #define CMAP256
 

@@ -2,17 +2,24 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
+SET(CMAKE_SYSTEM_PROCESSOR microblaze-v) # Can be 'microblaze-v' or similar
 
 # specify cross compilers and tools
-set(CMAKE_C_COMPILER arm-none-eabi-gcc)
-set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
-set(CMAKE_ASM_COMPILER arm-none-eabi-gcc)
-set(CMAKE_LD arm-none-eabi-ld)
-set(CMAKE_AR arm-none-eabi-ar)
-set(CMAKE_OBJCOPY arm-none-eabi-objcopy)
-set(CMAKE_OBJDUMP arm-none-eabi-objdump)
-set(SIZE arm-none-eabi-size)
+set(CMAKE_C_COMPILER riscv32-unknown-elf-gcc)
+set(CMAKE_CXX_COMPILER riscv32-unknown-elf-g++)
+set(CMAKE_ASM_COMPILER riscv32-unknown-elf-gcc)
+set(CMAKE_LD riscv32-unknown-elf-ld)
+set(CMAKE_AR riscv32-unknown-elf-ar)
+set(CMAKE_OBJCOPY riscv32-unknown-elf-objcopy)
+set(CMAKE_OBJDUMP riscv32-unknown-elf-objdump)
+set(SIZE riscv32-unknown-elf-size)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
+# Enable compiler-based dependency tracking for cross-compilation.
+# Without this, CMake does not detect header changes and skips
+# recompilation of affected source files.
+set(CMAKE_C_DEPENDS_USE_COMPILER TRUE)
+set(CMAKE_CXX_DEPENDS_USE_COMPILER TRUE)
 
 # project settings
 get_filename_component(DirName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
@@ -22,7 +29,12 @@ set(CMAKE_C_STANDARD 11)
 set(PROJECT_BINARY_DIR ${DirName}/bin)
 
 # set the target CPU
-set(MCPU cortex-m3)
+# set(MCPU cortex-m3)
+
+SET(CPU_ARCH_FLAGS "-march=rv32imc_zicsr -mabi=ilp32 -mstrict-align")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CPU_ARCH_FLAGS}")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CPU_ARCH_FLAGS}")
+SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${CPU_ARCH_FLAGS}")
 
 # add a custom target to run make clean, then clean up cmake output
 add_custom_target(realclean
@@ -44,10 +56,9 @@ add_custom_target(extra-clean
 # out FreeRTOS and CMSIS
 add_custom_target(tarfile
   COMMAND make extra-clean
-  COMMAND cd ..\; tar --exclude='CMakeCache.txt' --exclude='CMakeFiles/*' --exclude='CMSIS/*' --exclude='FreeRTOS/*' --exclude=src/UART_16550.c --exclude='Makefile' -czf ${DirName}.tgz ${DirName}\;
+  COMMAND /bin/bash -c "pushd ..\; tar --exclude='CMakeCache.txt' --exclude='CMakeFiles/*' --exclude='CMSIS/*' --exclude='FreeRTOS/*' --exclude='CMSIS' --exclude='FreeRTOS' --exclude='Makefile' -czf ${DirName}.tgz ${DirName}\; popd"
   COMMENT Make realclean, then create a tgz file in the parent directory
   )
-
 
 #Uncomment for hardware floating point
 #add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
@@ -57,38 +68,45 @@ add_custom_target(tarfile
 #Uncomment for software floating point
 #add_compile_options(-mfloat-abi=soft)
 
-add_compile_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
+# add_compile_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # uncomment to mitigate c++17 absolute addresses warnings
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register")
 
+
 # Choose optimization level.
 
-# Option 1: Debugger will follow your C code
-message(STATUS "Minimal optimization, include debug info")
-add_compile_options(-g)
+# Option 1: Optimize for debugging (keeps debug-friendly structure,
+# but enables optimizations that don't interfere with debugging)
+# message(STATUS "Optimize for debugging, with debug info")
+# add_compile_options(-Og -g)
 
 # Option 2: Debugger may "jump around" in your C code   
-#     message(STATUS "Maximum optimization for speed, include debug info")
-#     add_compile_options(-Ofast -g)
+#message(STATUS "Maximum optimization for speed, with debug info")
+#add_compile_options(-Ofast -g)
 
 # Option 3:
-#     message(STATUS "Maximum optimization for size, no debug info")
-#     add_compile_options(-Os)
+#message(STATUS "Maximum optimization for size, with debug info")
+#add_compile_options(-Os -g)
 
-# Option 4: 
+# Option 4:
+# message(STATUS "Maximum optimization for size, no debug info")
+add_compile_options(-Os)
+
+# Option 5: 
 #     message(STATUS "Maximum optimization for speed, no debug info")
-#     add_compile_options(-Ofast)
+#add_compile_options(-Ofast)
+
+add_compile_options(-DUSE_FREERTOS)
 
 # List of directories containing header files.
 include_directories( 
   ${CMAKE_SOURCE_DIR}/include
   ${CMAKE_SOURCE_DIR}/FreeRTOS/include
   ${CMAKE_SOURCE_DIR}/src/doomgeneric
-  ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/ARM_CM3
-  ${CMAKE_SOURCE_DIR}/CMSIS/CMSIS/Core/Include
-  ${CMAKE_SOURCE_DIR}/CMSIS/Device/ARM/ARMCM3/Include
+  ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V
+  ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions
   ${CMAKE_SOURCE_DIR}/Microblaze_V
 )
 
@@ -99,8 +117,8 @@ file(GLOB FREERTOS_SOURCES
    "${CMAKE_SOURCE_DIR}/FreeRTOS/queue.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/mutex.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/stream_buffer.c"
-   "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/ARM_CM3/port.c"
-   "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_3.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/port.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/portASM.S"
 # add more as needed
 )  
 
@@ -113,18 +131,23 @@ file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/doom_task.c"
   "${CMAKE_SOURCE_DIR}/src/doomgeneric_freertos.c"
   "${CMAKE_SOURCE_DIR}/src/AXI_timer.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
   "${CMAKE_SOURCE_DIR}/src/UART_16550.c"
-  "${CMAKE_SOURCE_DIR}/src/startup_ARMCM3.S"
   "${CMAKE_SOURCE_DIR}/src/doomgeneric/*.c"
+  "${CMAKE_SOURCE_DIR}/src/newlib_functions.c"
+  "${CMAKE_SOURCE_DIR}/src/heap_useNewlib.c"
+  "${CMAKE_SOURCE_DIR}/Microblaze_V/interrupts.c"
+  "${CMAKE_SOURCE_DIR}/Microblaze_V/trap_handler.S"
+  "${CMAKE_SOURCE_DIR}/Microblaze_V/startup_RISCV.S"
 )
 
 # Define our linker script
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_arm.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
 
 # Additional options for the GNU linker
+add_link_options(-Wl,-wrap=malloc -Wl,-wrap=_malloc_r)
 add_link_options(-Wl,-gc-sections,--print-memory-usage)
 add_link_options(-Wl,-Map=bin/${PROJECT_NAME}.map)
-add_link_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT} --specs=nosys.specs -nostartfiles)
 
 # Define our target executable, and everything that it depends on
@@ -135,12 +158,27 @@ set(ELF_FILE ${PROJECT_NAME}.elf)
 set(HEX_FILE ${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_NAME}.bin)
 set(MAP_FILE ${PROJECT_NAME}.map)
+set(DIS_FILE ${PROJECT_NAME}.dis)
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+        COMMENT "Creating ${HEX_FILE}"
         COMMAND ${CMAKE_OBJCOPY} -Oihex bin/${ELF_FILE} bin/${HEX_FILE}
+	)
+
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+	COMMENT "Creating ${BIN_FILE}"
         COMMAND ${CMAKE_OBJCOPY} -Obinary bin/${ELF_FILE} bin/${BIN_FILE}
-        COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}
-        COMMENT "Building ${HEX_FILE} Building ${BIN_FILE}")
+	)
+
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+	COMMENT "Creating ${DIS_FILE}"
+	COMMAND ${CMAKE_OBJDUMP} -dS bin/${ELF_FILE} > bin/${DIS_FILE}
+	)
+
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+	COMMENT "Memory Report"
+	COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}
+ 	)
 
 set_property(
   TARGET ${PROJECT_NAME}.elf

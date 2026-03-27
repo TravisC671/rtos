@@ -192,53 +192,37 @@ FreeRTOS/list.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/list.c.s
 .PHONY : FreeRTOS/list.c.s
 
-FreeRTOS/portable/GCC/ARM_CM3/port.obj: FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.obj
+FreeRTOS/portable/GCC/RISC-V/port.obj: FreeRTOS/portable/GCC/RISC-V/port.c.obj
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.obj
 
 # target to build an object file
-FreeRTOS/portable/GCC/ARM_CM3/port.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
+FreeRTOS/portable/GCC/RISC-V/port.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.obj
 
-FreeRTOS/portable/GCC/ARM_CM3/port.i: FreeRTOS/portable/GCC/ARM_CM3/port.c.i
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.i
+FreeRTOS/portable/GCC/RISC-V/port.i: FreeRTOS/portable/GCC/RISC-V/port.c.i
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.i
 
 # target to preprocess a source file
-FreeRTOS/portable/GCC/ARM_CM3/port.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.i
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.i
+FreeRTOS/portable/GCC/RISC-V/port.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.i
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.i
 
-FreeRTOS/portable/GCC/ARM_CM3/port.s: FreeRTOS/portable/GCC/ARM_CM3/port.c.s
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.s
+FreeRTOS/portable/GCC/RISC-V/port.s: FreeRTOS/portable/GCC/RISC-V/port.c.s
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.s
 
 # target to generate assembly for a file
-FreeRTOS/portable/GCC/ARM_CM3/port.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.s
-.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.s
+FreeRTOS/portable/GCC/RISC-V/port.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.s
+.PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.s
 
-FreeRTOS/portable/MemMang/heap_3.obj: FreeRTOS/portable/MemMang/heap_3.c.obj
-.PHONY : FreeRTOS/portable/MemMang/heap_3.obj
+FreeRTOS/portable/GCC/RISC-V/portASM.obj: FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
+.PHONY : FreeRTOS/portable/GCC/RISC-V/portASM.obj
 
 # target to build an object file
-FreeRTOS/portable/MemMang/heap_3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj
-.PHONY : FreeRTOS/portable/MemMang/heap_3.c.obj
-
-FreeRTOS/portable/MemMang/heap_3.i: FreeRTOS/portable/MemMang/heap_3.c.i
-.PHONY : FreeRTOS/portable/MemMang/heap_3.i
-
-# target to preprocess a source file
-FreeRTOS/portable/MemMang/heap_3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.i
-.PHONY : FreeRTOS/portable/MemMang/heap_3.c.i
-
-FreeRTOS/portable/MemMang/heap_3.s: FreeRTOS/portable/MemMang/heap_3.c.s
-.PHONY : FreeRTOS/portable/MemMang/heap_3.s
-
-# target to generate assembly for a file
-FreeRTOS/portable/MemMang/heap_3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.s
-.PHONY : FreeRTOS/portable/MemMang/heap_3.c.s
+FreeRTOS/portable/GCC/RISC-V/portASM.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
+.PHONY : FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 
 FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
 .PHONY : FreeRTOS/queue.obj
@@ -311,6 +295,70 @@ FreeRTOS/tasks.s: FreeRTOS/tasks.c.s
 FreeRTOS/tasks.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/tasks.c.s
 .PHONY : FreeRTOS/tasks.c.s
+
+FreeRTOS/timers.obj: FreeRTOS/timers.c.obj
+.PHONY : FreeRTOS/timers.obj
+
+# target to build an object file
+FreeRTOS/timers.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/timers.c.obj
+.PHONY : FreeRTOS/timers.c.obj
+
+FreeRTOS/timers.i: FreeRTOS/timers.c.i
+.PHONY : FreeRTOS/timers.i
+
+# target to preprocess a source file
+FreeRTOS/timers.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/timers.c.i
+.PHONY : FreeRTOS/timers.c.i
+
+FreeRTOS/timers.s: FreeRTOS/timers.c.s
+.PHONY : FreeRTOS/timers.s
+
+# target to generate assembly for a file
+FreeRTOS/timers.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/timers.c.s
+.PHONY : FreeRTOS/timers.c.s
+
+Microblaze_V/interrupts.obj: Microblaze_V/interrupts.c.obj
+.PHONY : Microblaze_V/interrupts.obj
+
+# target to build an object file
+Microblaze_V/interrupts.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.obj
+.PHONY : Microblaze_V/interrupts.c.obj
+
+Microblaze_V/interrupts.i: Microblaze_V/interrupts.c.i
+.PHONY : Microblaze_V/interrupts.i
+
+# target to preprocess a source file
+Microblaze_V/interrupts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.i
+.PHONY : Microblaze_V/interrupts.c.i
+
+Microblaze_V/interrupts.s: Microblaze_V/interrupts.c.s
+.PHONY : Microblaze_V/interrupts.s
+
+# target to generate assembly for a file
+Microblaze_V/interrupts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.s
+.PHONY : Microblaze_V/interrupts.c.s
+
+Microblaze_V/startup_RISCV.obj: Microblaze_V/startup_RISCV.S.obj
+.PHONY : Microblaze_V/startup_RISCV.obj
+
+# target to build an object file
+Microblaze_V/startup_RISCV.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/startup_RISCV.S.obj
+.PHONY : Microblaze_V/startup_RISCV.S.obj
+
+Microblaze_V/trap_handler.obj: Microblaze_V/trap_handler.S.obj
+.PHONY : Microblaze_V/trap_handler.obj
+
+# target to build an object file
+Microblaze_V/trap_handler.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/trap_handler.S.obj
+.PHONY : Microblaze_V/trap_handler.S.obj
 
 src/AXI_timer.obj: src/AXI_timer.c.obj
 .PHONY : src/AXI_timer.obj
@@ -2400,6 +2448,30 @@ src/doomgeneric_freertos.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.s
 .PHONY : src/doomgeneric_freertos.c.s
 
+src/heap_useNewlib.obj: src/heap_useNewlib.c.obj
+.PHONY : src/heap_useNewlib.obj
+
+# target to build an object file
+src/heap_useNewlib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.obj
+.PHONY : src/heap_useNewlib.c.obj
+
+src/heap_useNewlib.i: src/heap_useNewlib.c.i
+.PHONY : src/heap_useNewlib.i
+
+# target to preprocess a source file
+src/heap_useNewlib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.i
+.PHONY : src/heap_useNewlib.c.i
+
+src/heap_useNewlib.s: src/heap_useNewlib.c.s
+.PHONY : src/heap_useNewlib.s
+
+# target to generate assembly for a file
+src/heap_useNewlib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.s
+.PHONY : src/heap_useNewlib.c.s
+
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
@@ -2448,6 +2520,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/newlib_functions.obj: src/newlib_functions.c.obj
+.PHONY : src/newlib_functions.obj
+
+# target to build an object file
+src/newlib_functions.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.obj
+.PHONY : src/newlib_functions.c.obj
+
+src/newlib_functions.i: src/newlib_functions.c.i
+.PHONY : src/newlib_functions.i
+
+# target to preprocess a source file
+src/newlib_functions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.i
+.PHONY : src/newlib_functions.c.i
+
+src/newlib_functions.s: src/newlib_functions.c.s
+.PHONY : src/newlib_functions.s
+
+# target to generate assembly for a file
+src/newlib_functions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.s
+.PHONY : src/newlib_functions.c.s
+
 src/stats_task.obj: src/stats_task.c.obj
 .PHONY : src/stats_task.obj
 
@@ -2487,12 +2583,10 @@ help:
 	@echo "... FreeRTOS/list.obj"
 	@echo "... FreeRTOS/list.i"
 	@echo "... FreeRTOS/list.s"
-	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.obj"
-	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.i"
-	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.s"
-	@echo "... FreeRTOS/portable/MemMang/heap_3.obj"
-	@echo "... FreeRTOS/portable/MemMang/heap_3.i"
-	@echo "... FreeRTOS/portable/MemMang/heap_3.s"
+	@echo "... FreeRTOS/portable/GCC/RISC-V/port.obj"
+	@echo "... FreeRTOS/portable/GCC/RISC-V/port.i"
+	@echo "... FreeRTOS/portable/GCC/RISC-V/port.s"
+	@echo "... FreeRTOS/portable/GCC/RISC-V/portASM.obj"
 	@echo "... FreeRTOS/queue.obj"
 	@echo "... FreeRTOS/queue.i"
 	@echo "... FreeRTOS/queue.s"
@@ -2502,6 +2596,14 @@ help:
 	@echo "... FreeRTOS/tasks.obj"
 	@echo "... FreeRTOS/tasks.i"
 	@echo "... FreeRTOS/tasks.s"
+	@echo "... FreeRTOS/timers.obj"
+	@echo "... FreeRTOS/timers.i"
+	@echo "... FreeRTOS/timers.s"
+	@echo "... Microblaze_V/interrupts.obj"
+	@echo "... Microblaze_V/interrupts.i"
+	@echo "... Microblaze_V/interrupts.s"
+	@echo "... Microblaze_V/startup_RISCV.obj"
+	@echo "... Microblaze_V/trap_handler.obj"
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
@@ -2763,12 +2865,18 @@ help:
 	@echo "... src/doomgeneric_freertos.obj"
 	@echo "... src/doomgeneric_freertos.i"
 	@echo "... src/doomgeneric_freertos.s"
+	@echo "... src/heap_useNewlib.obj"
+	@echo "... src/heap_useNewlib.i"
+	@echo "... src/heap_useNewlib.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/newlib_functions.obj"
+	@echo "... src/newlib_functions.i"
+	@echo "... src/newlib_functions.s"
 	@echo "... src/stats_task.obj"
 	@echo "... src/stats_task.i"
 	@echo "... src/stats_task.s"

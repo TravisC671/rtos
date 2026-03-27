@@ -14,6 +14,7 @@
 #include <device_addrs.h>
 #include <semphr.h>
 #include <stream_buffer.h>
+#include <task.h>
 
 // -----------------------------------------------------------------------
 // No other code needs to see the internals of this UART driver, so we
@@ -152,7 +153,7 @@ typedef enum
 typedef struct
 {
   UART_16550_t *dev;              // Base address of the UART device
-  unsigned interrupt_number;      // NVIC IRQ number for this UART
+  unsigned interrupt_number;      // Interrupt ctlr IRQ number for this UART
   StreamBufferHandle_t RX_buffer; // stream buffer for received data
   StreamBufferHandle_t TX_buffer; // stream buffer for data to be transmitted
   SemaphoreHandle_t RX_mutex;     // Recursive mutex for the receiver
@@ -173,12 +174,12 @@ static UART_16550_descriptor_t uart[] = {
 // END of UART definitions and descriptor definitions.
 // -----------------------------------------------------------------------
 
-//             BEGINNING OF CODE
+//             BEGINNING OF CODE 
 
 /*****************************************************************************/
 // This function is the ISR for transmitter interrupts.
 static void handle_tx_interrupt(UART_16550_descriptor_t *device,
-                                BaseType_t *HigherPriorityTaskWoken)
+				BaseType_t *HigherPriorityTaskWoken)
 {
   char buf[16];
   int bytes_received;
@@ -186,62 +187,62 @@ static void handle_tx_interrupt(UART_16550_descriptor_t *device,
   // empty.  We must decide what to do based on the current state of
   // the transmitter software state machine.
   switch (device->tx_state)
-  {
-
-  case TX_BUFFER:
-    // If the software state machine is in the TX_BUFFER state, then
-    // You can move up to 16 bytes from the transmit stream buffer
-    // to the transmit FIFO.  Move as many bytes as you can.
-    bytes_received = xStreamBufferReceiveFromISR(device->TX_buffer,
-                                                 buf,
-                                                 16,
-                                                 HigherPriorityTaskWoken);
-    for (int i = 0; i < bytes_received; i++)
-      device->dev->THR = buf[i];
-    // If the stream buffer is empty, change the state of the
-    // transmitter software state machine.
-    if (xStreamBufferIsEmpty(device->TX_buffer) == pdTRUE)
     {
-      //   If you moved some bytes to the FIFO, then the new state is
-      //   TX_FIFO.
+      
+    case TX_BUFFER:
+      // If the software state machine is in the TX_BUFFER state, then
+      // You can move up to 16 bytes from the transmit stream buffer
+      // to the transmit FIFO.  Move as many bytes as you can.
+      bytes_received = xStreamBufferReceiveFromISR(device->TX_buffer,
+						   buf,
+						   16,
+						   HigherPriorityTaskWoken);
+    for (int i = 0; i < bytes_received; i++)
+	device->dev->THR = buf[i];
+      // If the stream buffer is empty, change the state of the
+      // transmitter software state machine.
+    if (xStreamBufferIsEmpty(device->TX_buffer) == pdTRUE)
+	{
+	  //   If you moved some bytes to the FIFO, then the new state is
+	  //   TX_FIFO.
       if (bytes_received)
-        device->tx_state = TX_FIFO;
-      //   Otherwise, the new state is TX_EMPTY. Optionally, disable
-      //   the transmitter interrupt.
-      else
-      {
-        device->tx_state = TX_EMPTY;
-        device->dev->IER.ETBEI = 0; // disable Xmit interrupt
-      }
+	    device->tx_state = TX_FIFO;
+	  //   Otherwise, the new state is TX_EMPTY. Optionally, disable
+	  //   the transmitter interrupt.
+	  else
+	    {
+	      device->tx_state = TX_EMPTY;
+	      device->dev->IER.ETBEI = 0; // disable Xmit interrupt
+	    }
+	}
+      break;
+
+    case TX_FIFO:
+      // If the software state machine is in the TX_FIFO state then we
+      // know that the FIFO just became empty and there is nothing in
+      // the stream buffer (If there was something in the buffer, the
+      // state would be TX_BUFFER). We can change the state to
+      // TX_EMPTY and optionally disable the transmit interrupt.
+      device->tx_state = TX_EMPTY;
+      device->dev->IER.ETBEI = 0; // disable transmit interrupt
+      break;
+
+    case TX_EMPTY:
+      // If the state is TX_EMPTY, then we have nothing to do.  This
+      // should never happen, so hang in an infinite loop for
+      // debugging.
+    while (1)
+      ;
+      device->dev->IER.ETBEI = 0; // disable transmit interrupt
+      break;
+              
+    default:
+      // Somehow the ISR got called in an invalid tx_state. This
+      // should never happen, so hang in an infinite loop for
+      // debugging.
+    while (1)
+      ;
     }
-    break;
-
-  case TX_FIFO:
-    // If the software state machine is in the TX_FIFO state then we
-    // know that the FIFO just became empty and there is nothing in
-    // the stream buffer (If there was something in the buffer, the
-    // state would be TX_BUFFER). We can change the state to
-    // TX_EMPTY and optionally disable the transmit interrupt.
-    device->tx_state = TX_EMPTY;
-    device->dev->IER.ETBEI = 0; // disable transmit interrupt
-    break;
-
-  case TX_EMPTY:
-    // If the state is TX_EMPTY, then we have nothing to do.  This
-    // should never happen, so hang in an infinite loop for
-    // debugging.
-    while (1)
-      ;
-    device->dev->IER.ETBEI = 0; // disable transmit interrupt
-    break;
-
-  default:
-    // Somehow the ISR got called in an invalid tx_state. This
-    // should never happen, so hang in an infinite loop for
-    // debugging.
-    while (1)
-      ;
-  }
 }
 
 /*****************************************************************************/
@@ -253,7 +254,7 @@ static BaseType_t UART_handler(UART_16550_descriptor_t *device)
   uint8_t ch;
   BaseType_t HigherPriorityTaskWoken = 0;
   BaseType_t result;
-
+    
   // This device could have more than one interrupt active. It will
   // prioritize them and we can handle them one at a time.
 
@@ -266,43 +267,43 @@ static BaseType_t UART_handler(UART_16550_descriptor_t *device)
 
   // Repeat while this device has more interrupts to service
   while (!iir.INTPEND) // use local variable to check INTPEND. INTPEND
-                       // is active low!
-  {
-    switch (iir.INTID2) // use local variable to check INTID2
+		       // is active low!
     {
-    case 0b010: // Received Data Available
-    case 0b110: // Character Timeout
-                // Move as many characters as possible from the UART FIFO to
-                // the RX stream buffer
+    switch (iir.INTID2) // use local variable to check INTID2
+        {
+        case 0b010: // Received Data Available
+        case 0b110: // Character Timeout
+          // Move as many characters as possible from the UART FIFO to
+          // the RX stream buffer
       while (device->dev->LSR.DR)
-      {
-        ch = device->dev->RBR;
-        result = xStreamBufferSendFromISR(device->RX_buffer,
-                                          &ch,
-                                          1,
-                                          &HigherPriorityTaskWoken);
-      }
-      break;
+            {
+              ch = device->dev->RBR;
+              result = xStreamBufferSendFromISR(device->RX_buffer,
+						&ch,
+						1,
+						&HigherPriorityTaskWoken);
+            }
+	  break;
 
-    case 0b001: // Transmitter Holding Register Empty
-      // Call a function to handle the transmitter interrupt.
-      // This makes the code a little easier to read and manage.
+        case 0b001: // Transmitter Holding Register Empty
+	  // Call a function to handle the transmitter interrupt.
+	  // This makes the code a little easier to read and manage.
       handle_tx_interrupt(device, &HigherPriorityTaskWoken);
-      break;
+          break;
 
-    default:
-      // We got an interrupt from a source that should not be enabled.
+        default: 
+          // We got an interrupt from a source that should not be enabled.
       while (1)
         ;
+        }
+      
+      // Re-read all of the bits of the IIR into our local variable.
+      iir = device->dev->IIR;
     }
-
-    // Re-read all of the bits of the IIR into our local variable.
-    iir = device->dev->IIR;
-  }
-
+  
   // The interrupts should now be clear in the device, and now we must
-  // clear the interrupt in the NVIC.
-  NVIC_ClearPendingIRQ(device->interrupt_number);
+  // clear the interrupt in the interrupt controller.
+  INTC_ClearPendingIRQ(device->interrupt_number);
 
   return HigherPriorityTaskWoken;
 }
@@ -310,7 +311,7 @@ static BaseType_t UART_handler(UART_16550_descriptor_t *device)
 /*****************************************************************************/
 // This is the ISR for UART0. Put this function in the interrupt
 // vector table.
-void UART0_handler()
+void UART0_handler() 
 { // pass pointer to uart0 descriptor to the real handler function
   BaseType_t hptw = UART_handler(uart);
   // If reading or writing a stream buffer has unblockd a task with
@@ -322,9 +323,9 @@ void UART0_handler()
 /*****************************************************************************/
 // This is the ISR for UART1. Put this function in the interrupt
 // vector table.
-void UART1_handler()
+void UART1_handler() 
 { // pass pointer to uart1 descriptor to the real handler function
-  BaseType_t hptw = UART_handler(uart + 1);
+  BaseType_t hptw = UART_handler(uart+1);
   // If reading or writing a stream buffer has unblockd a task with
   // higher priority than the one currently running, then run the
   // scheduler.
@@ -350,28 +351,28 @@ void UART_16550_init()
   static StaticSemaphore_t TX_mutex[NUM_UARTS];
   // Create the stream buffers and mutexes using static allocation.
   for (int i = 0; i < NUM_UARTS; i++)
-  {
-    uart[i].RX_buffer =
+    {
+      uart[i].RX_buffer =
         xStreamBufferCreateStatic(UART_16550_RX_BUFFER_SIZE, 1,
                                   RX_buffer_data[i], &RX_buffer[i]);
-    uart[i].TX_buffer =
+      uart[i].TX_buffer =
         xStreamBufferCreateStatic(UART_16550_TX_BUFFER_SIZE, 1,
                                   TX_buffer_data[i], &TX_buffer[i]);
-    uart[i].RX_mutex =
-        xSemaphoreCreateRecursiveMutexStatic(&RX_mutex[i]);
-    uart[i].TX_mutex =
-        xSemaphoreCreateRecursiveMutexStatic(&TX_mutex[i]);
-  }
+      uart[i].RX_mutex =
+	xSemaphoreCreateRecursiveMutexStatic(&RX_mutex[i]);
+      uart[i].TX_mutex =
+	xSemaphoreCreateRecursiveMutexStatic(&TX_mutex[i]);
+    }
 #else
   // Create the stream buffers and mutexes using dynamic
   // allocation. They will be stored in the heap.
   for (int i = 0; i < NUM_UARTS; i++)
-  {
+    {
     uart[i].RX_buffer = xStreamBufferCreate(UART_16550_RX_BUFFER_SIZE, 1);
     uart[i].TX_buffer = xStreamBufferCreate(UART_16550_TX_BUFFER_SIZE, 1);
-    uart[i].RX_mutex = xSemaphoreCreateRecursiveMutex();
-    uart[i].TX_mutex = xSemaphoreCreateRecursiveMutex();
-  }
+      uart[i].RX_mutex = xSemaphoreCreateRecursiveMutex();
+      uart[i].TX_mutex = xSemaphoreCreateRecursiveMutex();
+    }
 #endif
 
   // In some cases, we may want to mMake sure that all of the bits in
@@ -404,7 +405,7 @@ void UART_16550_configure(int UART, int baud, int parity, int bits, int stop_bit
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
-
+  
   // Calculate the baud rate divisor
   unsigned divisor = UART_16550_clk / (baud << 4);
   // Extremely high baud rates have too much error and just won't work.
@@ -413,8 +414,8 @@ void UART_16550_configure(int UART, int baud, int parity, int bits, int stop_bit
   ASSERT(divisor < 1 << 16);
 
   // Write the baud rate divisor
-  LCR_t lcr;
-  lcr.DLAB = 1; // prepare to write baud rate divisor
+  LCR_t lcr = {0};
+  lcr.DLAB = 1;           // prepare to write baud rate divisor
   uart[UART].dev->LCR = lcr;
   uart[UART].dev->DLL = divisor & 0xFF; // write low byte
   uart[UART].dev->DLH = divisor >> 8;   // write high byte
@@ -425,13 +426,13 @@ void UART_16550_configure(int UART, int baud, int parity, int bits, int stop_bit
   if (parity == UART_PARITY_NONE)
     lcr.PEN = 0; // No parity bit
   else
-  {
+    {
     if (parity == UART_PARITY_EVEN)
       lcr.EPS = 1; // Set even
-    else
+      else
       lcr.EPS = 0; // Set odd
     lcr.PEN = 1;   // Enable parity bit
-  }
+    }
 
   // Set the number of data bits
   ASSERT(bits > 4 && bits < 9);
@@ -450,7 +451,7 @@ void UART_16550_configure(int UART, int baud, int parity, int bits, int stop_bit
   fcr.XF_reset = 1;
   fcr.FIFOEN = 1;
   uart[UART].dev->FCR = fcr;
-
+  
   // Enable receiver and transmitter interrupts. Disable line control
   // and modem status interrupts.  You cannot read from the IER, so we
   // set up a local variable and write it all at once.
@@ -461,15 +462,15 @@ void UART_16550_configure(int UART, int baud, int parity, int bits, int stop_bit
   ier.EDSSI = 0;             // disable modem status interrupt
   uart[UART].dev->IER = ier; // disable modem status interrupt
 
-  // Enable interrupts on the NVIC
-  NVIC_EnableIRQ(uart[UART].interrupt_number);
+  // Enable interrupts on the interrupt controller
+  INTC_EnableIRQ(uart[UART].interrupt_number);
 }
 
 /*****************************************************************************/
 /* Acquire the given UART transmitter mutex so that no other task can
    write to it. Returns pdPASS if the lock is acquired. */
 BaseType_t UART_16550_tx_lock(int UART,
-                              TickType_t xTicksToWait)
+			      TickType_t xTicksToWait)
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
@@ -478,7 +479,7 @@ BaseType_t UART_16550_tx_lock(int UART,
 
 /*****************************************************************************/
 /* Unlock the given UART transmitter so that other tasks can write to
-   it. */
+   it. */ 
 void UART_16550_tx_unlock(int UART)
 {
   // Assert that the uart number is good.
@@ -492,8 +493,8 @@ void UART_16550_tx_unlock(int UART)
 // origial non-interrupt-driven version of put char.  Use this for
 // parts 1, 2 and 3 of the lab.
 BaseType_t UART_16550_put_char(int UART,
-                               char c,
-                               TickType_t xTicksToWait)
+			       char c,
+			       TickType_t xTicksToWait)
 {
   // This is the original code.  There is a #define at the top of this
   // file that selects this implementation.  Comment or delete that
@@ -513,7 +514,7 @@ BaseType_t UART_16550_put_char(int UART,
 
   // Release the mutex.
 
-  // ------------ Insert code here
+// ------------ Insert code here
 
   return pdPASS;
 }
@@ -523,13 +524,13 @@ BaseType_t UART_16550_put_char(int UART,
 // Interrupt-diven version of put_char. Use this for parts 4 and 5 of
 // the lab.
 BaseType_t UART_16550_put_char(int UART,
-                               char c,
-                               TickType_t xTicksToWait)
+			       char c,
+			       TickType_t xTicksToWait)
 {
 
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
-
+  
   // We must call VPortExitCritical() before exiting this function,
   // but we MAY call it early.  We must only call it ONCE. So lets
   // create a local flag to keep track of when we are in the critical
@@ -542,91 +543,91 @@ BaseType_t UART_16550_put_char(int UART,
   // cannot interfere ( the ISR can sill interrupt us).
   result = xSemaphoreTakeRecursive(my_uart->TX_mutex, portMAX_DELAY);
   if (result == pdPASS)
-  {
-    // Enter a CRITICAL SECTION, so that even the ISR cannot interrupt us
-    vPortEnterCritical();
-
-    // Make decisions based on the current state of the transmit
-    // software state machine.
-    switch (uart[UART].tx_state)
     {
-    case TX_EMPTY:
-      // If the software state machine is in the TX_EMPTY state, then
-      // write our character directly to the UART FIFO, and change the
-      // transmit software state machine state to TX_FIFO to indicate
-      // that there is data in the UART FIFO, but the transmit stream
-      // buffer is empty.
-      my_uart->dev->THR = c;
-      my_uart->dev->IER.ETBEI = 1; // enable transmit interrupt
-      my_uart->tx_state = TX_FIFO;
-      break;
-    case TX_FIFO:
-      // If the software state machine is in the TX_FIFO state, then
-      // write the character to the transmit stream buffer and change
-      // the software state machine state to TX_BUFFER to indicated
-      // that there is data in the transmit stream buffer.
+      // Enter a CRITICAL SECTION, so that even the ISR cannot interrupt us
+      portENTER_CRITICAL();
 
-      // The next statement should never block because we know that
-      // the stream buffer is empty. (We are in TX_FIFO state).
+      // Make decisions based on the current state of the transmit
+      // software state machine.
+    switch (uart[UART].tx_state)
+	{
+	case TX_EMPTY:
+	  // If the software state machine is in the TX_EMPTY state, then
+	  // write our character directly to the UART FIFO, and change the
+	  // transmit software state machine state to TX_FIFO to indicate
+	  // that there is data in the UART FIFO, but the transmit stream
+	  // buffer is empty.
+	  my_uart->dev->THR = c;
+	  my_uart->dev->IER.ETBEI = 1; // enable transmit interrupt
+	  my_uart->tx_state = TX_FIFO;
+	  break;
+	case TX_FIFO:
+	  // If the software state machine is in the TX_FIFO state, then
+	  // write the character to the transmit stream buffer and change
+	  // the software state machine state to TX_BUFFER to indicated
+	  // that there is data in the transmit stream buffer.
+
+	  // The next statement should never block because we know that
+	  // the stream buffer is empty. (We are in TX_FIFO state).
       xStreamBufferSend(my_uart->TX_buffer, &c, 1, portMAX_DELAY);
-      my_uart->tx_state = TX_BUFFER;
-      my_uart->dev->IER.ETBEI = 1; // enable transmit interrupt
-      break;
-    case TX_BUFFER:
-      // If the state is TX_BUFFER, then find out how much space is
-      // available in the transmit stream buffer.
+	  my_uart->tx_state = TX_BUFFER;
+	  my_uart->dev->IER.ETBEI = 1; // enable transmit interrupt
+	  break;
+	case TX_BUFFER:
+	  // If the state is TX_BUFFER, then find out how much space is
+	  // available in the transmit stream buffer.
       if (xStreamBufferSpacesAvailable(my_uart->TX_buffer))
-        //   If the buffer is not full then we can write our
-        //   character to it and continue.
+	    //   If the buffer is not full then we can write our
+	    //   character to it and continue.
         xStreamBufferSend(my_uart->TX_buffer, &c, 1, portMAX_DELAY);
-      else
-      {
-        // Otherwise, things get a bit trickier.  The stream buffer
-        // is full, so a write to the stream buffer could block this
-        // task (depending on the value of xTicksToWait).  We are in
-        // a critical section, so if this task blocks, then no
-        // interrupts will get processed. If no interrupts are
-        // processed, then there is no way that the stream buffer
-        // can be read. If the stream buffer is never read, then
-        // this task will never be unblocked.  We MUST exit the
-        // critical section NOW, and then attempt to write to the
-        // stream buffer.  If it blocks, only this thread
-        // blocks. The system continues to get interrupts and
-        // continues to run whatever tasks are runnable.  The ISR
-        // will eventually read from the stream buffer and unblock
-        // this task so that it can unlock the mutex and let other
-        // tasks write to the UART.
-
-        // Change the still_in_critical_section variable to 0, to
-        // indicate that we left the critical section early.
-        still_in_critical_section = 0;
-
-        // Exit the critical section so the ISR can eventually move
-        // data out of the buffer and unblock this thread.
-        vPortExitCritical();
-
-        // Write our character to the stream buffer, using the
-        // timeout value that was passed in to this function, and
-        // return the result of that write at the end of this
-        // function.
+	  else
+	    {
+	      // Otherwise, things get a bit trickier.  The stream buffer
+	      // is full, so a write to the stream buffer could block this
+	      // task (depending on the value of xTicksToWait).  We are in
+	      // a critical section, so if this task blocks, then no
+	      // interrupts will get processed. If no interrupts are
+	      // processed, then there is no way that the stream buffer
+	      // can be read. If the stream buffer is never read, then
+	      // this task will never be unblocked.  We MUST exit the
+	      // critical section NOW, and then attempt to write to the
+	      // stream buffer.  If it blocks, only this thread
+	      // blocks. The system continues to get interrupts and
+	      // continues to run whatever tasks are runnable.  The ISR
+	      // will eventually read from the stream buffer and unblock
+	      // this task so that it can unlock the mutex and let other
+	      // tasks write to the UART.
+	
+	      // Change the still_in_critical_section variable to 0, to
+	      // indicate that we left the critical section early.
+	      still_in_critical_section = 0;
+	  
+	      // Exit the critical section so the ISR can eventually move
+	      // data out of the buffer and unblock this thread.
+	      portEXIT_CRITICAL();
+	  
+	      // Write our character to the stream buffer, using the
+	      // timeout value that was passed in to this function, and
+	      // return the result of that write at the end of this
+	      // function.
         result = xStreamBufferSend(my_uart->TX_buffer, &c, 1, xTicksToWait);
-      }
-      break;
-    default:
+	    }
+	  break;
+	default:
       while (1)
         ; // Illegal tx_state.  Go into infinite loop for
-      // debugging.
-      break;
-    }
+	  // debugging.
+	  break;
+	}
 
-    // If we are still in the critical section, exit the critical
-    // section.
+      // If we are still in the critical section, exit the critical
+      // section.
     if (still_in_critical_section)
-      vPortExitCritical();
+      portEXIT_CRITICAL();
 
-    // Release the mutex.
-    xSemaphoreGiveRecursive(my_uart->TX_mutex);
-  }
+      // Release the mutex.
+      xSemaphoreGiveRecursive(my_uart->TX_mutex);
+    }
   // Return pdPASS or pdFAIL.
   return result;
 }
@@ -636,8 +637,8 @@ BaseType_t UART_16550_put_char(int UART,
 /*****************************************************************************/
 /* Write a string to the UART. */
 BaseType_t UART_16550_write_string(int UART,
-                                   char *s,
-                                   TickType_t xTicksToWait)
+				   char *s,
+				   TickType_t xTicksToWait)
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
@@ -646,13 +647,13 @@ BaseType_t UART_16550_write_string(int UART,
   // get it)
   result = xSemaphoreTakeRecursive(uart[UART].TX_mutex, xTicksToWait);
   if (result == pdPASS)
-  {
-    // Use the put char function to send characters.  This could be
-    // greatly improved.
+    {
+      // Use the put char function to send characters.  This could be
+      // greatly improved.
     if (s != NULL)
-      while (*s != 0 && result == pdPASS)
+	while (*s != 0 && result == pdPASS)
         result = UART_16550_put_char(UART, *(s++), xTicksToWait);
-  }
+    }
   // release the TX mutex
   xSemaphoreGiveRecursive(uart[UART].TX_mutex);
   return result;
@@ -662,7 +663,7 @@ BaseType_t UART_16550_write_string(int UART,
 /* Lock the given UART receiver, so that no other task can read
    from it  Returns pdPASS if the lock is acquired. */
 BaseType_t UART_16550_rx_lock(int UART,
-                              TickType_t xTicksToWait)
+			      TickType_t xTicksToWait)
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
@@ -671,7 +672,7 @@ BaseType_t UART_16550_rx_lock(int UART,
 
 /*****************************************************************************/
 /* Unlock the given UART receiver so that other tasks can read from
-   it. */
+   it. */ 
 void UART_16550_rx_unlock(int UART)
 {
   // Assert that the uart number is good.
@@ -682,7 +683,7 @@ void UART_16550_rx_unlock(int UART)
 /*****************************************************************************/
 /* Try to read a character from the UART */
 BaseType_t UART_16550_get_char(int UART, char *ch,
-                               TickType_t xTicksToWait)
+			       TickType_t xTicksToWait)
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
@@ -691,14 +692,14 @@ BaseType_t UART_16550_get_char(int UART, char *ch,
   // get it)
   result = xSemaphoreTakeRecursive(uart[UART].RX_mutex, xTicksToWait);
   if (result == pdPASS)
-  {
-    // Attempt to read a character from the receive (RX) stream buffer
-    // using xTicksToWait. It could fail (time out), so keep the value
-    // returned in a local variable.
-    result = xStreamBufferReceive(uart[UART].RX_buffer, ch, 1, xTicksToWait);
-    // Release the mutex.
-    xSemaphoreGiveRecursive(uart[UART].RX_mutex);
-  }
+    {
+      // Attempt to read a character from the receive (RX) stream buffer
+      // using xTicksToWait. It could fail (time out), so keep the value
+      // returned in a local variable.
+      result = xStreamBufferReceive(uart[UART].RX_buffer,ch,1,xTicksToWait);
+      // Release the mutex.
+      xSemaphoreGiveRecursive(uart[UART].RX_mutex);
+    }
   // Return the value we got from the attempt to read.
   return result;
 }
@@ -706,9 +707,9 @@ BaseType_t UART_16550_get_char(int UART, char *ch,
 /*****************************************************************************/
 /* Try to read a string from the UART */
 BaseType_t UART_16550_read_string(int UART,
-                                  char *s,
-                                  int maxLength,
-                                  TickType_t xTicksToWait)
+				  char *s,
+				  int maxLength,
+				  TickType_t xTicksToWait)
 {
   // Assert that the uart number is good.
   ASSERT(UART >= 0 && UART < NUM_UARTS);
@@ -719,20 +720,20 @@ BaseType_t UART_16550_read_string(int UART,
   // get it)
   result = xSemaphoreTakeRecursive(uart[UART].RX_mutex, xTicksToWait);
   if (result == pdPASS)
-  {
-    do
     {
+      do
+	{
       result = UART_16550_get_char(UART, &c, xTicksToWait);
       if (result == pdPASS)
-        *(s++) = (c == '\n') || (c == '\r') ? 0 : c;
-      length++;
+	    *(s++) = (c == '\n') || (c == '\r') ? 0 : c;
+	  length++;
     } while (c != '\n' && c != '\r' && length < maxLength && result == pdPASS);
-    // make sure it is null terminated
+      // make sure it is null terminated
     if (length == maxLength)
       s[length - 1] = 0;
-    // release the mutex
-    xSemaphoreGiveRecursive(uart[UART].RX_mutex);
-  }
+      // release the mutex
+      xSemaphoreGiveRecursive(uart[UART].RX_mutex);
+    }
   return result;
 }
 

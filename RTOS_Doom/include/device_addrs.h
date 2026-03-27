@@ -1,30 +1,34 @@
 // This file contains the addresses and interrupt numbers
 // for every device on the CENG 448 RTOS system.
 
+// IRQ number for the RISC-V Machine Timer
+#define MTIME_IRQ         0
 // IRQ number for AXI Timer 0
-#define TIMER0_IRQ        0
+#define TIMER0_IRQ        1
 // IRQ number for AXI Timer 1
-#define TIMER1_IRQ        1
-// IRQ number for GPIO 0 (push buttons)
-#define GPIO0_IRQ         2
-// IRQ number for GPIO 1 (slide switches and pmod header GPIO)
-#define GPIO1_IRQ         3
+#define TIMER1_IRQ        2
 // IRQ number for the PM device
-#define PM_IRQ            4
+#define PM_IRQ            3
+// IRQ number for GPIO 0 (push buttons)
+#define GPIO0_IRQ         4
+// IRQ number for GPIO 1 (slide switches and pmod header GPIO)
+#define GPIO1_IRQ         5
 // IRQ number for UART 0 
-#define UART0_IRQ         5 
+#define UART0_IRQ         6 
 // IRQ number for UART 1
-#define UART1_IRQ         6
-// IRQ number for VGA adapter
-#define VGA_IRQ           7
+#define UART1_IRQ         7
+// IRQ number for the VGA Controller
+#define VGA_IRQ           8
+// IRQ number for the SD Card Controller
+#define SD_IRQ            9
 
-// base address for the graphics controller
-#define VGA_BASE     ((void*)0x48000000)
+// The MTIME timer is used for systicks
+#define MTIME_TIMER  ((void*)0x44A00000)  
 
 // There are four hardware timers (two devices with two channels
-// each). The timer that provides systicks is separate and part of the
-// Cortex-M3 core. For more information on the timers, read the AXI
-// Timer LogiCORE Product Guide.
+// each). The timer that provides systicks is separate. For more
+// information on the timers, read the AXI Timer LogiCORE Product
+// Guide.
 // AXI timer 0
 #define TIMER0       ((void*)0x41C00000)  // AXI timer with two channels
 // AXI timer 1
@@ -73,38 +77,38 @@
 // Our system includes the PM device designed in CENG 242 (Digital
 // Systems), configured for 5 channels.
 // PM channel 0 is connected to the audio jack.
-#define PMaudio_ctrl    ((void*)0x44A00000) // PM control register
-#define PMaudio_div     ((void*)0x44A00004) // PM clock divider register
-#define PMaudio_base    ((void*)0x44A00008) // PM base freq div register
-#define PMaudio_duty    ((void*)0x44A0000C) // PM duty cycle register
+#define PMaudio_ctrl    ((void*)0x44A30000) // PM control register
+#define PMaudio_div     ((void*)0x44A30004) // PM clock divider register
+#define PMaudio_base    ((void*)0x44A30008) // PM base freq div register
+#define PMaudio_duty    ((void*)0x44A3000C) // PM duty cycle register
 // The rest of them are routed to PMOD header JB.
 // Channel 1 PM output is on JB 1
 // Channel 1 PM enabled signal is on JB 7
-#define PM1_ctrl    ((void*)0x44A00010) // PM control register
-#define PM1_div     ((void*)0x44A00014) // PM clock divider register
-#define PM1_base    ((void*)0x44A00018) // PM base frequency div register
-#define PM1_duty    ((void*)0x44A0001C) // PM duty cycle register
+#define PM1_ctrl    ((void*)0x44A30010) // PM control register
+#define PM1_div     ((void*)0x44A30014) // PM clock divider register
+#define PM1_base    ((void*)0x44A30018) // PM base frequency div register
+#define PM1_duty    ((void*)0x44A3001C) // PM duty cycle register
 
 // Channel 2 PM output is on JB 2
 // Channel 2 PM enabled signal is on JB 8
-#define PM2_ctrl    ((void*)0x44A00020) // PM control register
-#define PM2_div     ((void*)0x44A00024) // PM clock divider register
-#define PM2_base    ((void*)0x44A00028) // PM base frequency div register
-#define PM2_duty    ((void*)0x44A0002C) // PM duty cycle register
+#define PM2_ctrl    ((void*)0x44A30020) // PM control register
+#define PM2_div     ((void*)0x44A30024) // PM clock divider register
+#define PM2_base    ((void*)0x44A30028) // PM base frequency div register
+#define PM2_duty    ((void*)0x44A3002C) // PM duty cycle register
 
 // Channel 3 PM output is on JB 3
 // Channel 3 PM enabled signal is on JB 9
-#define PM3_ctrl    ((void*)0x44A00030) // PM control register
-#define PM3_div     ((void*)0x44A00034) // PM clock divider register
-#define PM3_base    ((void*)0x44A00038) // PM base frequency div register
-#define PM3_duty    ((void*)0x44A0003C) // PM duty cycle register
+#define PM3_ctrl    ((void*)0x44A30030) // PM control register
+#define PM3_div     ((void*)0x44A30034) // PM clock divider register
+#define PM3_base    ((void*)0x44A30038) // PM base frequency div register
+#define PM3_duty    ((void*)0x44A3003C) // PM duty cycle register
 
 // Channel 4 PM output is on JB 10
 // Channel 4 PM enabled signal is on JB 10
-#define PM4_ctrl    ((void*)0x44A00040) // PM control register
-#define PM4_div     ((void*)0x44A00044) // PM clock divider register
-#define PM4_base    ((void*)0x44A00048) // PM base frequency div register
-#define PM4_duty    ((void*)0x44A0004C) // PM duty cycle register
+#define PM4_ctrl    ((void*)0x44A30040) // PM control register
+#define PM4_div     ((void*)0x44A30044) // PM clock divider register
+#define PM4_base    ((void*)0x44A30048) // PM base frequency div register
+#define PM4_duty    ((void*)0x44A3004C) // PM duty cycle register
 
 // 16550D UARTs.  For more information, For more information on the
 // UARTs, read the AXI UART LogiCORE Product Guide.
@@ -130,3 +134,15 @@
 // UART1 TXD is on PMOD header JC pin 2
 #define UART1_base     ((void*)0x44A20000) 
 
+
+// VGA Controller
+#define VGA_BASE         ((void*)0x48000000)
+
+// SD Card Controller
+#define SD_BASE          ((void*)0x44A40000)
+
+// The  MTIME counter is at  ((void*)0x44A00000) defined in FreeRTOSConfig.h
+// The  MCMP  register is at ((void*)0x44A00008) defined in FreeRTOSConfig.h
+
+// The AXI interrupt controller
+#define AXI_INTC_BASE        ((void*)0x41200000)

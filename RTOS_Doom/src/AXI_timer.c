@@ -2,6 +2,7 @@
 #include <task.h>
 #include <device_addrs.h>
 #include <AXI_timer.h>
+#include <interrupts.h>
 
 
 // In the following functions, "timer" refers to the specific timer
@@ -64,7 +65,7 @@ typedef struct{
   void (*handler[2])(); // Each individual timer can have its own hander
   // Each individual timer (channel) has its own unique base address.
   volatile AXI_timer_t *device[2]; 
-  int NVIC_IRQ_NUM;  // The IRQ pin that this timer is tied to.
+  int IRQ_NUM;  // The IRQ pin that this timer is tied to.
 }AXI_timer_device_t;
 
 // Now we can create an array of timer devices.  Each entry in this
@@ -80,7 +81,7 @@ static volatile AXI_timer_device_t timer_device[NUM_AXI_TIMERS/2] = {
 // has two timers in it, so we have to check them both to see where
 // the interrupt is coming from.  It is possible that they are BOTH
 // signalling an interrupt.
-void AXI_timer_handler(volatile AXI_timer_device_t *device)
+void AXI_timer_handler(volatile AXI_timer_device_t *device) 
 {
   int i;
   // Examine the device to see which timer is signalling an interrupt.
@@ -103,9 +104,9 @@ void AXI_timer_handler(volatile AXI_timer_device_t *device)
           device->device[i]->TCSR.bits.TINT = 1;
         }
     }
-  // clear the interrupt in the Cortex M3 NVIC. Timer 0 is on hardware
+  // clear the interrupt in the Cortex M3 timer. Timer 0 is on hardware
   // interrupt 0
-  NVIC_ClearPendingIRQ(device->NVIC_IRQ_NUM);
+  INTC_ClearPendingIRQ(device->IRQ_NUM);
 }
 
 
@@ -228,7 +229,7 @@ void AXI_TIMER_enable_interrupt(unsigned int timer)
   ASSERT(timer<NUM_AXI_TIMERS);
   ASSERT(timer_device[dev].owner[channel] == xTaskGetCurrentTaskHandle());
   timer_device[dev].device[channel]->TCSR.bits.ENIT = 1; // enable interrupts
-  NVIC_EnableIRQ(timer_device[dev].NVIC_IRQ_NUM);
+  INTC_EnableIRQ(timer_device[dev].IRQ_NUM);
 }
 
 // Disable the timer interrupt  
@@ -242,7 +243,7 @@ void AXI_TIMER_disable_interrupt(unsigned int timer)
   ASSERT(timer_device[dev].owner[channel] == xTaskGetCurrentTaskHandle());
   timer_device[dev].device[channel]->TCSR.bits.ENIT = 0; // disable interrupts
   // TODO: If the other channel also has interrupts disabled, then
-  // turn off interrupts in the NVIC
+  // turn off interrupts in the interrupt controller.
 }
 
 // In the following two functions, value is set in clock cycles. Use
@@ -261,7 +262,7 @@ void AXI_TIMER_set_repeating(unsigned int timer, int count)
   timer_device[dev].device[channel]->TLR = count;
   timer_device[dev].device[channel]->TCR = count;
   timer_device[dev].device[channel]->TCSR.TCSR = 0x1D2;
-  NVIC_EnableIRQ(timer_device[dev].NVIC_IRQ_NUM);
+  INTC_EnableIRQ(timer_device[dev].IRQ_NUM);
 }
 
 // Configure and start the timer give a single interrupt and then stop.
@@ -276,7 +277,7 @@ void AXI_TIMER_set_oneshot(unsigned int timer, int count)
   timer_device[dev].device[channel]->TLR = count;
   timer_device[dev].device[channel]->TCR = count;
   timer_device[dev].device[channel]->TCSR.TCSR = 0x1C2;
-  NVIC_EnableIRQ(timer_device[dev].NVIC_IRQ_NUM);
+  INTC_EnableIRQ(timer_device[dev].IRQ_NUM);
 }
 
 // The timers also have a PWM mode, which we may want to support

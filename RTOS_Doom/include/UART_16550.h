@@ -1,6 +1,9 @@
 #ifndef UART_16550_h
 #define UART_16550_h
 
+#include <stddef.h>
+#include <stdint.h>
+#include <FreeRTOSConfig.h>
 #include <FreeRTOS.h>
 
 #define UART0 0
@@ -9,7 +12,7 @@
 // This file defines the API for the 16550 UART driver.
 
 // uart is driven by the system clock
-#define UART_16550_clk 50000000
+#define UART_16550_clk 100000000
 
 #define UART_PARITY_NONE 0
 #define UART_PARITY_EVEN 1
@@ -19,6 +22,11 @@
 // should be called once during the OS initialisation phase of
 // bootup/reset.
 void UART_16550_init();
+
+// Interrupt handlers.  We have two UARTS.
+void UART0_handler();
+void UART1_handler();
+
 
 /* Set the baud, rate, parity, bits per frame, and number of stop bits
  * for the given UART.

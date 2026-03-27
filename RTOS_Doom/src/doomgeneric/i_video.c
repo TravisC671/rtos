@@ -291,15 +291,15 @@ void I_InitGraphics (void)
 
 
 #endif  // CMAP256
-
-    printf("I_InitGraphics: framebuffer: x_res: %d, y_res: %d, x_virtual: %d, y_virtual: %d, bpp: %d\n",
+/*
+    printf("I_InitGraphics: framebuffer: x_res: %ld, y_res: %ld, x_virtual: %ld, y_virtual: %ld, bpp: %ld\n",
             s_Fb.xres, s_Fb.yres, s_Fb.xres_virtual, s_Fb.yres_virtual, s_Fb.bits_per_pixel);
 
     printf("I_InitGraphics: framebuffer: RGBA: %d%d%d%d, red_off: %d, green_off: %d, blue_off: %d, transp_off: %d\n",
             s_Fb.red.length, s_Fb.green.length, s_Fb.blue.length, s_Fb.transp.length, s_Fb.red.offset, s_Fb.green.offset, s_Fb.blue.offset, s_Fb.transp.offset);
 
     printf("I_InitGraphics: DOOM screen size: w x h: %d x %d\n", SCREENWIDTH, SCREENHEIGHT);
-
+*/
 
     i = M_CheckParmWithArgs("-scaling", 1);
     if (i > 0) {
@@ -416,6 +416,8 @@ void I_ReadScreen (byte* scr)
 void I_SetPalette (byte* palette)
 {
 	int i;
+    uint8_t r, g, b;
+    uint16_t evenColor, oddColor;
 	//col_t* c;
 
 	//for (i = 0; i < 256; i++)
@@ -433,12 +435,20 @@ void I_SetPalette (byte* palette)
 
     /* performance boost:
      * map to the right pixel format over here! */
+    for (i=0; i<128; ++i ) {
+        r = gammatable[usegamma][*palette++] >> 4;
+        g = gammatable[usegamma][*palette++] >> 4;
+        b = gammatable[usegamma][*palette++] >> 4;
 
-    for (i=0; i<256; ++i ) {
-        colors[i].a = 0;
-        colors[i].r = gammatable[usegamma][*palette++];
-        colors[i].g = gammatable[usegamma][*palette++];
-        colors[i].b = gammatable[usegamma][*palette++];
+        evenColor = r << 8 | g << 4 | b;
+
+        r = gammatable[usegamma][*palette++] >> 4;
+        g = gammatable[usegamma][*palette++] >> 4;
+        b = gammatable[usegamma][*palette++] >> 4;
+
+        oddColor = r << 8 | g << 4 | b;
+
+        colors[i] = oddColor << 16 | evenColor;
     }
 
 #ifdef CMAP256
@@ -449,7 +459,8 @@ void I_SetPalette (byte* palette)
 }
 
 // Given an RGB value, find the closest matching palette index.
-
+//I dont think this is used
+// 
 int I_GetPaletteIndex (int r, int g, int b)
 {
     int best, best_diff, diff;
@@ -458,32 +469,32 @@ int I_GetPaletteIndex (int r, int g, int b)
 
     printf("I_GetPaletteIndex\n");
 
-    best = 0;
-    best_diff = INT_MAX;
+    // best = 0;
+    // best_diff = INT_MAX;
 
-    for (i = 0; i < 256; ++i)
-    {
-    	color.r = GFX_RGB565_R(rgb565_palette[i]);
-    	color.g = GFX_RGB565_G(rgb565_palette[i]);
-    	color.b = GFX_RGB565_B(rgb565_palette[i]);
+    // for (i = 0; i < 256; ++i)
+    // {
+    // 	color.r = GFX_RGB565_R(rgb565_palette[i]);
+    // 	color.g = GFX_RGB565_G(rgb565_palette[i]);
+    // 	color.b = GFX_RGB565_B(rgb565_palette[i]);
 
-        diff = (r - color.r) * (r - color.r)
-             + (g - color.g) * (g - color.g)
-             + (b - color.b) * (b - color.b);
+    //     diff = (r - color.r) * (r - color.r)
+    //          + (g - color.g) * (g - color.g)
+    //          + (b - color.b) * (b - color.b);
 
-        if (diff < best_diff)
-        {
-            best = i;
-            best_diff = diff;
-        }
+    //     if (diff < best_diff)
+    //     {
+    //         best = i;
+    //         best_diff = diff;
+    //     }
 
-        if (diff == 0)
-        {
-            break;
-        }
-    }
+    //     if (diff == 0)
+    //     {
+    //         break;
+    //     }
+    // }
 
-    return best;
+    return 0;
 }
 
 void I_BeginRead (void)

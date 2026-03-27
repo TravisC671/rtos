@@ -25,10 +25,20 @@ BssStart=`grep __End_Data__ $1 | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
 BssEnd=`grep __End_Bss__ $1 | grep -v ASSERT | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
 printf "BSS:\t\t0x%X\t0x%X\t0x%X\n" $BssStart $((BssEnd - 1)) $((BssEnd - BssStart))
 
-StackStart=`grep __StackLimit $1 | grep -v ASSERT | grep -v \- | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
-StackEnd=`grep __StackTop $1 | grep -v '!provide'| cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
-printf "STACK:\t\t0x%X\t0x%X\t0x%X\n" $StackStart $((StackEnd - 1)) $((StackEnd - StackStart))
+# StackStart=`grep __StackLimit $1 | grep -v ASSERT | grep -v \- | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+# StackEnd=`grep __StackTop $1 | grep -v '!provide'| cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+# printf "STACK:\t\t0x%X\t0x%X\t0x%X\n" $StackStart $((StackEnd - 1)) $((StackEnd - StackStart))
 
-HeapTop=`grep HeapTop $1 | grep -v ASSERT | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
-HeapBase=`grep HeapBase $1 | grep -v ASSERT | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
-printf "\nMaximum heap size: 0x%X\n\n" $((HeapTop - HeapBase + 1))
+#HeapStart=`grep HeapBase $1 | grep -v ASSERT | grep -v \- | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+#HeapEnd=`grep HeapTop $1 | grep -v '!provide'| cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+
+HeapStart=`grep HeapBase $1 | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2 | head -1`
+HeapEnd=`grep HeapTop $1 | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2 | head -1`
+printf "HEAP:\t\t0x%X\t0x%X\t0x%X\n" $HeapStart $((HeapEnd - 1)) $((HeapEnd - HeapStart))
+
+
+
+# Used before heap was moved to DRAM
+# HeapTop=`grep HeapTop $1 | grep -v ASSERT | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+# HeapBase=`grep HeapBase $1 | grep -v ASSERT | cut -f 1 | sed 's/ \+/\t/g' | cut -f 2`
+# printf "\nMaximum heap size: 0x%X\n\n" $((HeapTop - HeapBase + 1))

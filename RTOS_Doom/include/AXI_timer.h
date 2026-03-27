@@ -1,6 +1,10 @@
 #ifndef AXI_TIMER_H
 #define AXI_TIMER_H
 
+// Interrupt handlers for the two timer devices.
+void AXI_TIMER_0_ISR();
+void AXI_TIMER_1_ISR();
+
 // If you add more AXI_timer devices to the design, then change this
 // define.  Each device supports two timers, and we currently have two
 // devices.
@@ -8,7 +12,7 @@
 
 // Our timers are driven by a 50 MHz clock. (The LL gives us 64 bits
 // to work with when calculating the count value.
-#define AXI_TIMER_CLOCK_FREQ 50000000LL
+#define AXI_TIMER_CLOCK_FREQ 100000000LL
 
 // Provide a convenience macro to convert microseconds into timer
 // counts.
