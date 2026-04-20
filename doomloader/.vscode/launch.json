@@ -1,0 +1,25 @@
+{
+    "_copyright": "Copyright (c) 2026 Larry Pyeatt.  All rights reserved.",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MicroBlaze V Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${workspaceFolderBasename}.elf",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "${workspaceFolder}/debug/riscv-gdb-wrapper.sh",
+            "miDebuggerServerAddress": "localhost:3334",
+            "stopAtEntry": true,
+            "postRemoteConnectCommands": [
+                {
+                    "description": "Load ELF to target",
+                    "text": "load",
+                    "ignoreFailures": false
+                }
+            ],
+            "preLaunchTask": "Start Debug Chain"
+        }
+    ]
+}

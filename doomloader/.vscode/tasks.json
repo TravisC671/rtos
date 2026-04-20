@@ -1,0 +1,48 @@
+{
+    "_copyright": "Copyright (c) 2026 Larry Pyeatt.  All rights reserved.",
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Debug Chain",
+            "type": "shell",
+            "command": "${workspaceFolder}/debug/start_debug_chain.sh",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "debug-chain",
+                "pattern": {
+                    "regexp": "^ERROR: (.*)$",
+                    "message": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^=== MicroBlaze V Debug Chain ===$",
+                    "endsPattern": "^DEBUG_CHAIN_READY$"
+                }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "panel": "dedicated",
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Stop Debug Chain",
+            "type": "shell",
+            "command": "${workspaceFolder}/debug/stop_debug_chain.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}

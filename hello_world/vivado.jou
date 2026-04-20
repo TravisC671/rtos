@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sun Apr 12 17:16:45 2026
+# Process ID         : 616769
+# Current directory  : /home/pyeatt/courses/CENG442/RISCV_pyeatt/hello_world
+# Command line       : vivado -mode batch -source /home/pyeatt/courses/CENG442/RISCV_pyeatt_ip/package_ip.tcl
+# Log file           : /home/pyeatt/courses/CENG442/RISCV_pyeatt/hello_world/vivado.log
+# Journal file       : /home/pyeatt/courses/CENG442/RISCV_pyeatt/hello_world/vivado.jou
+# Running On         : cerveza
+# Platform           : Gentoo
+# Operating System   : Gentoo Linux
+# Processor Detail   : AMD Ryzen Threadripper 1950X 16-Core Processor
+# CPU Frequency      : 3691.052 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 32
+# Host memory        : 67284 MB
+# Swap memory        : 68719 MB
+# Total Virtual      : 136003 MB
+# Available Virtual  : 98097 MB
+#-----------------------------------------------------------
+source /home/pyeatt/courses/CENG442/RISCV_pyeatt_ip/package_ip.tcl

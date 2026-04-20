@@ -1,0 +1,32 @@
+{
+    "_copyright": "Copyright (c) 2026 Larry Pyeatt.  All rights reserved.",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MicroBlaze V Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${workspaceFolderBasename}.elf",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "riscv32-unknown-elf-gdb",
+            "miDebuggerServerAddress": "localhost:3334",
+            "stopAtEntry": true,
+            "setupCommands": [
+                {
+                    "description": "Disable noack mode (required by gdb_proxy)",
+                    "text": "set remote noack-packet off",
+                    "ignoreFailures": false
+                }
+            ],
+            "postRemoteConnectCommands": [
+                {
+                    "description": "Load ELF to target",
+                    "text": "load",
+                    "ignoreFailures": false
+                }
+            ],
+            "preLaunchTask": "Start Debug Chain"
+        }
+    ]
+}

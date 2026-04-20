@@ -1,0 +1,17 @@
+Support for the 'QStartNoAckMode' packet on future remote targets is set to "off".
+0x0000d9c8 in prvCheckTasksWaitingTermination () at /home/pyeatt/courses/CENG448/sd_controller/software/sd_test_RISCV/FreeRTOS/tasks.c:3690
+3690	{
+Loading section .text, size 0x22338 lma 0x0
+Loading section .srodata.xISRStackTop, size 0x4 lma 0x22338
+Loading section .srodata.uxTimerIncrementsForOneTick, size 0x4 lma 0x2233c
+Loading section .srodata.uxTopUsedPriority, size 0x4 lma 0x22340
+Loading section .srodata.cst8, size 0x50 lma 0x22348
+Loading section .copy.table, size 0xc lma 0x22398
+Loading section .zero.table, size 0x8 lma 0x223a4
+Loading section .data, size 0x884 lma 0x223ac
+Start address 0x00000000, load size 142380
+Transfer rate: 10 KB/sec, 8898 bytes/write.
+Breakpoint 1 at 0x1418: file /home/pyeatt/courses/CENG448/sd_controller/software/sd_test_RISCV/src/main.c, line 160.
+Breakpoint 2 at 0x99f0: file /home/pyeatt/courses/CENG448/sd_controller/software/sd_test_RISCV/FreeRTOS/portable/GCC/RISC-V/portASM.S, line 284.
+debug/debug_mepc.gdb:13: Error in sourced command file:
+Remote connection closed

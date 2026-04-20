@@ -1,0 +1,75 @@
+FreeRTOS+FAT Setup for sd_fat
+==============================
+
+1. Obtain FreeRTOS+FAT
+----------------------
+Clone or download from GitHub:
+
+  git clone https://github.com/FreeRTOS/Lab-Project-FreeRTOS-FAT.git
+
+This is the "Lab" version maintained by the FreeRTOS project.
+
+
+2. Install into sd_fat
+-----------------------
+Create symlinks (or copy) so that the source and headers land here:
+
+  sd_fat/FreeRTOS-Plus-FAT/
+    include/         <- contains ff_headers.h, ff_stdio.h, etc.
+    ff_dir.c
+    ff_error.c
+    ff_fat.c
+    ff_file.c
+    ff_format.c
+    ff_ioman.c
+    ff_locking.c
+    ff_memory.c
+    ff_stdio.c
+    ff_string.c
+    ff_sys.c
+    ff_time.c
+    ff_crc.c
+
+Example using symlinks (from sd_fat/):
+
+  ln -s /path/to/Lab-Project-FreeRTOS-FAT FreeRTOS-Plus-FAT
+
+Or copy the necessary files:
+
+  mkdir -p FreeRTOS-Plus-FAT/include
+  cp /path/to/Lab-Project-FreeRTOS-FAT/include/*.h FreeRTOS-Plus-FAT/include/
+  cp /path/to/Lab-Project-FreeRTOS-FAT/*.c  FreeRTOS-Plus-FAT/
+
+
+3. Also need FreeRTOS and CMSIS (If using ARM)
+-------------------------------
+Same as sd_driver — symlink or copy into sd_fat/:
+
+  ln -s /path/to/FreeRTOS  FreeRTOS
+  ln -s /path/to/CMSIS     CMSIS
+
+
+4. Build
+--------
+  cd sd_fat
+  cmake .
+  make
+
+
+5. Files provided
+-----------------
+  include/
+    sd_driver.h            Public SD driver API (block IO)
+    sd_driver_private.h    Internal driver types and helpers
+    FreeRTOSFATConfig.h    FreeRTOS+FAT configuration
+    sd_fat_disk.h          Disk init / mount / format API
+
+  src/
+    main.c                 FAT test application (T01-T15)
+    sd_driver_task.c       Driver task + card init (with CMD9)
+    sd_driver_hw.c         Hardware abstraction layer
+    sd_driver_isr.c        Interrupt service routine
+    sd_driver_read.c       Block read functions
+    sd_driver_write.c      Block write functions
+    sd_driver_ff.c         Queue-based IO submission + FF callbacks
+    sd_fat_disk.c          FreeRTOS+FAT disk init / mount / format

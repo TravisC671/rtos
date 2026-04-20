@@ -1,0 +1,1 @@
+This project initializes the board, loads the doom project into ram from the SD Card, Resets the board, & runs the doom project
