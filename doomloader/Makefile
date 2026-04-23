@@ -456,6 +456,14 @@ src/hello_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/hello_task.c.s
 .PHONY : src/hello_task.c.s
 
+src/irq.obj: src/irq.S.obj
+.PHONY : src/irq.obj
+
+# target to build an object file
+src/irq.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/irq.S.obj
+.PHONY : src/irq.S.obj
+
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
 
@@ -576,6 +584,7 @@ help:
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
+	@echo "... src/irq.obj"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

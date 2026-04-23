@@ -78,7 +78,7 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 # Option 1: Optimize for debugging (keeps debug-friendly structure,
 # but enables optimizations that don't interfere with debugging)
 # message(STATUS "Optimize for debugging, with debug info")
-add_compile_options(-Og -g)
+add_compile_options(-g)
 
 # Option 2: Debugger may "jump around" in your C code   
 #message(STATUS "Maximum optimization for speed, with debug info")
@@ -130,6 +130,7 @@ file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/newlib_functions.c"
   "${CMAKE_SOURCE_DIR}/src/heap_useNewlib.c"
   "${CMAKE_SOURCE_DIR}/src/hello_task.c"
+  "${CMAKE_SOURCE_DIR}/src/irq.S"
   "${CMAKE_SOURCE_DIR}/Microblaze_V/interrupts.c"
   "${CMAKE_SOURCE_DIR}/Microblaze_V/trap_handler.S"
   "${CMAKE_SOURCE_DIR}/Microblaze_V/startup_RISCV.S"

@@ -6,6 +6,7 @@
 #include <AXI_timer.h>
 #include <hello_task.h>
 #include <stdio.h>
+#include <irq.h>
 
 // "screen /dev/ttyUSB1 57600"
 // Variables defined in FreeRTOS port.c for MTIME handling
@@ -15,9 +16,50 @@ extern volatile uint64_t *pullMachineTimerCompareRegister;
 
 #define STACK_SIZE 1024
 
+void vPortSetupTimerInterrupt( void ) {
+  volatile uint32_t *pulTimeHigh;
+  volatile uint32_t *pulTimeLow;
+  uint32_t hi, lo;
+  uint64_t now, cmp;
+
+  pulTimeHigh = (volatile uint32_t *)(configMTIME_BASE_ADDRESS + 4UL);
+  pulTimeLow = (volatile uint32_t *)(configMTIME_BASE_ADDRESS);
+
+  // Set MTIMECMP to the pre-calculated next compare value.
+  // This is one tick ahead of the compare value that triggered
+  // this interrupt.
+  cmp = ullNextTime;
+  // *pullMachineTimerCompareRegister = cmp;
+  // ullNextTime = cmp + (uint64_t)uxTimerIncrementsForOneTick;
+
+  // Read current MTIME (atomic 64-bit read on 32-bit RISC-V).
+  do
+  {
+    hi = *pulTimeHigh;
+    lo = *pulTimeLow;
+  } while (hi != *pulTimeHigh);
+  now = ((uint64_t)hi << 32) | (uint64_t)lo;
+
+  // If MTIME has already passed the compare value we just wrote,
+// the MTIME interrupt will immediately re-trigger after we
+  // return.  Since MTIME is IRQ 0 (highest priority in the AXI
+  // INTC), this would starve all other interrupts.  Advance
+  // MTIMECMP past the current MTIME to prevent this.
+  if (now >= cmp)
+  {
+    cmp = now + (uint64_t)uxTimerIncrementsForOneTick;
+    *(uint64_t *)configMTIMECMP_BASE_ADDRESS = cmp;
+    ullNextTime = cmp + (uint64_t)uxTimerIncrementsForOneTick;
+  }
+
+  uint32_t enabled_irq = irq_enabled_mask();
+  irq_enable(enabled_irq | IRQ_MTI_MASK);
+}
+// void vPortSetupTimerInterrupt( void ) __attribute__( ( weak ) );
 // Tick handler called from freertos_risc_v_application_interrupt_handler
 // via the INTC dispatch.  Updates MTIMECMP, increments the tick, and
 // requests a context switch if needed.
+__attribute__((interrupt))
 void mtime_tick_handler(void)
 {
   volatile uint32_t *pulTimeHigh;
@@ -32,8 +74,8 @@ void mtime_tick_handler(void)
   // This is one tick ahead of the compare value that triggered
   // this interrupt.
   cmp = ullNextTime;
-  *pullMachineTimerCompareRegister = cmp;
-  ullNextTime = cmp + (uint64_t)uxTimerIncrementsForOneTick;
+  // *pullMachineTimerCompareRegister = cmp;
+  // ullNextTime = cmp + (uint64_t)uxTimerIncrementsForOneTick;
 
   // Read current MTIME (atomic 64-bit read on 32-bit RISC-V).
   do
@@ -51,7 +93,7 @@ void mtime_tick_handler(void)
   if (now >= cmp)
   {
     cmp = now + (uint64_t)uxTimerIncrementsForOneTick;
-    *pullMachineTimerCompareRegister = cmp;
+    *(uint64_t *)configMTIMECMP_BASE_ADDRESS = cmp;
     ullNextTime = cmp + (uint64_t)uxTimerIncrementsForOneTick;
   }
 
@@ -70,7 +112,7 @@ int main(int argc, char **argv)
   // Reset the INTC to a known state.  The AXI INTC is not reset when
   // loading via the debugger, so stale IER/IVAR from a previous run
   // can cause spurious interrupts with garbage handler addresses.
-  INTC_Init();
+  // INTC_Init();
 
   // After a GDB reload, MTIME has been counting since power-on but
   // MTIMECMP retains a stale (old) value.  MTIME > MTIMECMP, so the
@@ -79,11 +121,8 @@ int main(int argc, char **argv)
   // initialized FreeRTOS data structures → crash.  Set MTIMECMP to
   // max so MTIME won't fire until the scheduler sets it properly.
 
-  volatile uint64_t *mtimecmp;
-  mtimecmp = (volatile uint64_t *)configMTIMECMP_BASE_ADDRESS;
-  *mtimecmp = 0xFFFFFFFFFFFFFFFFULL;
 
-  INTC_Enable_Global();
+  irq_global_enable();
 
   // Intitialize all UARTS
   UART_16550_init();
@@ -93,7 +132,7 @@ int main(int argc, char **argv)
 
   char buffer[64];
 
-  sprintf(buffer,"Hello World");
+  sprintf(buffer,"Hello World\r\n\r\n");
 
   UART_16550_write_string(UART0, buffer, portMAX_DELAY);
 

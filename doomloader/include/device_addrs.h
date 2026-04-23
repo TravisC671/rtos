@@ -2,25 +2,26 @@
 // for every device on the CENG 448 RTOS system.
 
 // IRQ number for the RISC-V Machine Timer
-#define MTIME_IRQ         0
+// #define MTIME_IRQ         0
+// IRQ number for UART 0 
+#define UART0_IRQ         0
+// IRQ number for UART 1
+#define UART1_IRQ         1
 // IRQ number for AXI Timer 0
-#define TIMER0_IRQ        1
+#define TIMER0_IRQ        2
 // IRQ number for AXI Timer 1
-#define TIMER1_IRQ        2
+#define TIMER1_IRQ        3
 // IRQ number for the PM device
-#define PM_IRQ            3
+#define PM_IRQ            7
 // IRQ number for GPIO 0 (push buttons)
 #define GPIO0_IRQ         4
 // IRQ number for GPIO 1 (slide switches and pmod header GPIO)
 #define GPIO1_IRQ         5
-// IRQ number for UART 0 
-#define UART0_IRQ         6 
-// IRQ number for UART 1
-#define UART1_IRQ         7
+#define GPIO2_IRQ         6
 // IRQ number for the VGA Controller
-#define VGA_IRQ           8
+#define VGA_IRQ           9
 // IRQ number for the SD Card Controller
-#define SD_IRQ            9
+#define SD_IRQ            8
 
 // The MTIME timer is used for systicks
 #define MTIME_TIMER  ((void*)0x44A00000)  

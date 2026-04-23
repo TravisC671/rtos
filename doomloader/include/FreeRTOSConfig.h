@@ -48,13 +48,13 @@
 
 
 
-#define configMTIME_BASE_ADDRESS     (0x44A10000)
-#define configMTIMECMP_BASE_ADDRESS  (0x44A10008)
+#define configMTIME_BASE_ADDRESS     (0x44A00000)
+#define configMTIMECMP_BASE_ADDRESS  (0x44A00008)
 #define MTIME_RATE_HZ                ((unsigned long)100000000)
 #define configTICK_CLOCK_HZ          ((unsigned long)100000000)
 #define portasmHAS_MTIME              1
 
-#define configISR_STACK_SIZE_WORDS ( 500 )
+#define configISR_STACK_SIZE_WORDS ( 1024 )
 // for RISCV
 #include <stddef.h>
 #include <interrupts.h>

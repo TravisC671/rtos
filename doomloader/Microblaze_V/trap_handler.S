@@ -168,7 +168,7 @@ _trap_handler:
 is_interrupt:	
 	la	t2, RISCV_InterruptVectorTable	
 is_exception:
-        slli	t1, t1, 4	/* Calculate offset to the vector */
+    slli	t1, t1, 4	/* Calculate offset to the vector */
 	add	t2, t2, t1	/* Get pointer to the vector */
 	lw	t2, 0(t2)	/* Load the vector */
 	jalr	t2		/* Jump to handler */
