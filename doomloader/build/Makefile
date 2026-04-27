@@ -224,6 +224,30 @@ FreeRTOS/portable/GCC/RISC-V/portASM.S.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 .PHONY : FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 
+FreeRTOS/portable/MemMang/heap_3.obj: FreeRTOS/portable/MemMang/heap_3.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_3.obj
+
+# target to build an object file
+FreeRTOS/portable/MemMang/heap_3.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.obj
+
+FreeRTOS/portable/MemMang/heap_3.i: FreeRTOS/portable/MemMang/heap_3.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_3.i
+
+# target to preprocess a source file
+FreeRTOS/portable/MemMang/heap_3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.i
+
+FreeRTOS/portable/MemMang/heap_3.s: FreeRTOS/portable/MemMang/heap_3.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_3.s
+
+# target to generate assembly for a file
+FreeRTOS/portable/MemMang/heap_3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.s
+
 FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
 .PHONY : FreeRTOS/queue.obj
 
@@ -320,45 +344,53 @@ FreeRTOS/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.s
 .PHONY : FreeRTOS/timers.c.s
 
-Microblaze_V/interrupts.obj: Microblaze_V/interrupts.c.obj
-.PHONY : Microblaze_V/interrupts.obj
+RISCV_pyeatt/interrupts.obj: RISCV_pyeatt/interrupts.c.obj
+.PHONY : RISCV_pyeatt/interrupts.obj
 
 # target to build an object file
-Microblaze_V/interrupts.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/Microblaze_V/interrupts.c.obj
-.PHONY : Microblaze_V/interrupts.c.obj
+RISCV_pyeatt/interrupts.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.obj
+.PHONY : RISCV_pyeatt/interrupts.c.obj
 
-Microblaze_V/interrupts.i: Microblaze_V/interrupts.c.i
-.PHONY : Microblaze_V/interrupts.i
+RISCV_pyeatt/interrupts.i: RISCV_pyeatt/interrupts.c.i
+.PHONY : RISCV_pyeatt/interrupts.i
 
 # target to preprocess a source file
-Microblaze_V/interrupts.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/Microblaze_V/interrupts.c.i
-.PHONY : Microblaze_V/interrupts.c.i
+RISCV_pyeatt/interrupts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.i
+.PHONY : RISCV_pyeatt/interrupts.c.i
 
-Microblaze_V/interrupts.s: Microblaze_V/interrupts.c.s
-.PHONY : Microblaze_V/interrupts.s
+RISCV_pyeatt/interrupts.s: RISCV_pyeatt/interrupts.c.s
+.PHONY : RISCV_pyeatt/interrupts.s
 
 # target to generate assembly for a file
-Microblaze_V/interrupts.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/Microblaze_V/interrupts.c.s
-.PHONY : Microblaze_V/interrupts.c.s
+RISCV_pyeatt/interrupts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.s
+.PHONY : RISCV_pyeatt/interrupts.c.s
 
-Microblaze_V/startup_RISCV.obj: Microblaze_V/startup_RISCV.S.obj
-.PHONY : Microblaze_V/startup_RISCV.obj
-
-# target to build an object file
-Microblaze_V/startup_RISCV.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/Microblaze_V/startup_RISCV.S.obj
-.PHONY : Microblaze_V/startup_RISCV.S.obj
-
-Microblaze_V/trap_handler.obj: Microblaze_V/trap_handler.S.obj
-.PHONY : Microblaze_V/trap_handler.obj
+RISCV_pyeatt/irq.obj: RISCV_pyeatt/irq.S.obj
+.PHONY : RISCV_pyeatt/irq.obj
 
 # target to build an object file
-Microblaze_V/trap_handler.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/Microblaze_V/trap_handler.S.obj
-.PHONY : Microblaze_V/trap_handler.S.obj
+RISCV_pyeatt/irq.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/irq.S.obj
+.PHONY : RISCV_pyeatt/irq.S.obj
+
+RISCV_pyeatt/newlib_functions.obj: RISCV_pyeatt/newlib_functions.S.obj
+.PHONY : RISCV_pyeatt/newlib_functions.obj
+
+# target to build an object file
+RISCV_pyeatt/newlib_functions.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/newlib_functions.S.obj
+.PHONY : RISCV_pyeatt/newlib_functions.S.obj
+
+RISCV_pyeatt/startup_RISCV_pyeatt.obj: RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
+.PHONY : RISCV_pyeatt/startup_RISCV_pyeatt.obj
+
+# target to build an object file
+RISCV_pyeatt/startup_RISCV_pyeatt.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
+.PHONY : RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
 
 src/AXI_timer.obj: src/AXI_timer.c.obj
 .PHONY : src/AXI_timer.obj
@@ -408,30 +440,6 @@ src/UART_16550.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/UART_16550.c.s
 .PHONY : src/UART_16550.c.s
 
-src/heap_useNewlib.obj: src/heap_useNewlib.c.obj
-.PHONY : src/heap_useNewlib.obj
-
-# target to build an object file
-src/heap_useNewlib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/heap_useNewlib.c.obj
-.PHONY : src/heap_useNewlib.c.obj
-
-src/heap_useNewlib.i: src/heap_useNewlib.c.i
-.PHONY : src/heap_useNewlib.i
-
-# target to preprocess a source file
-src/heap_useNewlib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/heap_useNewlib.c.i
-.PHONY : src/heap_useNewlib.c.i
-
-src/heap_useNewlib.s: src/heap_useNewlib.c.s
-.PHONY : src/heap_useNewlib.s
-
-# target to generate assembly for a file
-src/heap_useNewlib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/heap_useNewlib.c.s
-.PHONY : src/heap_useNewlib.c.s
-
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
@@ -455,14 +463,6 @@ src/hello_task.s: src/hello_task.c.s
 src/hello_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/hello_task.c.s
 .PHONY : src/hello_task.c.s
-
-src/irq.obj: src/irq.S.obj
-.PHONY : src/irq.obj
-
-# target to build an object file
-src/irq.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/irq.S.obj
-.PHONY : src/irq.S.obj
 
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
@@ -488,30 +488,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/newlib_functions.obj: src/newlib_functions.c.obj
-.PHONY : src/newlib_functions.obj
-
-# target to build an object file
-src/newlib_functions.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/newlib_functions.c.obj
-.PHONY : src/newlib_functions.c.obj
-
-src/newlib_functions.i: src/newlib_functions.c.i
-.PHONY : src/newlib_functions.i
-
-# target to preprocess a source file
-src/newlib_functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/newlib_functions.c.i
-.PHONY : src/newlib_functions.c.i
-
-src/newlib_functions.s: src/newlib_functions.c.s
-.PHONY : src/newlib_functions.s
-
-# target to generate assembly for a file
-src/newlib_functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/newlib_functions.c.s
-.PHONY : src/newlib_functions.c.s
-
 src/stats_task.obj: src/stats_task.c.obj
 .PHONY : src/stats_task.obj
 
@@ -536,6 +512,30 @@ src/stats_task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/stats_task.c.s
 .PHONY : src/stats_task.c.s
 
+src/uart.obj: src/uart.c.obj
+.PHONY : src/uart.obj
+
+# target to build an object file
+src/uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.obj
+.PHONY : src/uart.c.obj
+
+src/uart.i: src/uart.c.i
+.PHONY : src/uart.i
+
+# target to preprocess a source file
+src/uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.i
+.PHONY : src/uart.c.i
+
+src/uart.s: src/uart.c.s
+.PHONY : src/uart.s
+
+# target to generate assembly for a file
+src/uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.s
+.PHONY : src/uart.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -555,6 +555,9 @@ help:
 	@echo "... FreeRTOS/portable/GCC/RISC-V/port.i"
 	@echo "... FreeRTOS/portable/GCC/RISC-V/port.s"
 	@echo "... FreeRTOS/portable/GCC/RISC-V/portASM.obj"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.obj"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.i"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.s"
 	@echo "... FreeRTOS/queue.obj"
 	@echo "... FreeRTOS/queue.i"
 	@echo "... FreeRTOS/queue.s"
@@ -567,33 +570,30 @@ help:
 	@echo "... FreeRTOS/timers.obj"
 	@echo "... FreeRTOS/timers.i"
 	@echo "... FreeRTOS/timers.s"
-	@echo "... Microblaze_V/interrupts.obj"
-	@echo "... Microblaze_V/interrupts.i"
-	@echo "... Microblaze_V/interrupts.s"
-	@echo "... Microblaze_V/startup_RISCV.obj"
-	@echo "... Microblaze_V/trap_handler.obj"
+	@echo "... RISCV_pyeatt/interrupts.obj"
+	@echo "... RISCV_pyeatt/interrupts.i"
+	@echo "... RISCV_pyeatt/interrupts.s"
+	@echo "... RISCV_pyeatt/irq.obj"
+	@echo "... RISCV_pyeatt/newlib_functions.obj"
+	@echo "... RISCV_pyeatt/startup_RISCV_pyeatt.obj"
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
 	@echo "... src/UART_16550.obj"
 	@echo "... src/UART_16550.i"
 	@echo "... src/UART_16550.s"
-	@echo "... src/heap_useNewlib.obj"
-	@echo "... src/heap_useNewlib.i"
-	@echo "... src/heap_useNewlib.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
-	@echo "... src/irq.obj"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/newlib_functions.obj"
-	@echo "... src/newlib_functions.i"
-	@echo "... src/newlib_functions.s"
 	@echo "... src/stats_task.obj"
 	@echo "... src/stats_task.i"
 	@echo "... src/stats_task.s"
+	@echo "... src/uart.obj"
+	@echo "... src/uart.i"
+	@echo "... src/uart.s"
 .PHONY : help
 
 

@@ -22,6 +22,7 @@
 // IRQ number for the VGA controller
 #define VGA_IRQ           9
 
+
 // The MTIME timer is used for systicks (64 bits)
 #define MTIME_TIMER  ((void*)0x44A00000)  
 // The MTIME cmp register (64 bits)

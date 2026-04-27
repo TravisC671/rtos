@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/student/s101153258/rtos/doomloader
+CMAKE_SOURCE_DIR = /home/student/s101153258/rtos/Lab_2_solution_RISCV_pyeatt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/student/s101153258/rtos/doomloader
+CMAKE_BINARY_DIR = /home/student/s101153258/rtos/Lab_2_solution_RISCV_pyeatt
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/s101153258/rtos/doomloader/CMakeFiles /home/student/s101153258/rtos/doomloader//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/s101153258/rtos/Lab_2_solution_RISCV_pyeatt/CMakeFiles /home/student/s101153258/rtos/Lab_2_solution_RISCV_pyeatt//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/s101153258/rtos/doomloader/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/s101153258/rtos/Lab_2_solution_RISCV_pyeatt/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -156,24 +156,24 @@ tarfile/fast:
 .PHONY : tarfile/fast
 
 #=============================================================================
-# Target rules for targets named doomloader.elf
+# Target rules for targets named Lab_2_solution_RISCV_pyeatt.elf
 
 # Build rule for target.
-doomloader.elf: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doomloader.elf
-.PHONY : doomloader.elf
+Lab_2_solution_RISCV_pyeatt.elf: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lab_2_solution_RISCV_pyeatt.elf
+.PHONY : Lab_2_solution_RISCV_pyeatt.elf
 
 # fast build rule for target.
-doomloader.elf/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/build
-.PHONY : doomloader.elf/fast
+Lab_2_solution_RISCV_pyeatt.elf/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build
+.PHONY : Lab_2_solution_RISCV_pyeatt.elf/fast
 
 FreeRTOS/list.obj: FreeRTOS/list.c.obj
 .PHONY : FreeRTOS/list.obj
 
 # target to build an object file
 FreeRTOS/list.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/list.c.obj
 .PHONY : FreeRTOS/list.c.obj
 
 FreeRTOS/list.i: FreeRTOS/list.c.i
@@ -181,7 +181,7 @@ FreeRTOS/list.i: FreeRTOS/list.c.i
 
 # target to preprocess a source file
 FreeRTOS/list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/list.c.i
 .PHONY : FreeRTOS/list.c.i
 
 FreeRTOS/list.s: FreeRTOS/list.c.s
@@ -189,7 +189,7 @@ FreeRTOS/list.s: FreeRTOS/list.c.s
 
 # target to generate assembly for a file
 FreeRTOS/list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/list.c.s
 .PHONY : FreeRTOS/list.c.s
 
 FreeRTOS/portable/GCC/RISC-V/port.obj: FreeRTOS/portable/GCC/RISC-V/port.c.obj
@@ -197,7 +197,7 @@ FreeRTOS/portable/GCC/RISC-V/port.obj: FreeRTOS/portable/GCC/RISC-V/port.c.obj
 
 # target to build an object file
 FreeRTOS/portable/GCC/RISC-V/port.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj
 .PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.obj
 
 FreeRTOS/portable/GCC/RISC-V/port.i: FreeRTOS/portable/GCC/RISC-V/port.c.i
@@ -205,7 +205,7 @@ FreeRTOS/portable/GCC/RISC-V/port.i: FreeRTOS/portable/GCC/RISC-V/port.c.i
 
 # target to preprocess a source file
 FreeRTOS/portable/GCC/RISC-V/port.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.i
 .PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.i
 
 FreeRTOS/portable/GCC/RISC-V/port.s: FreeRTOS/portable/GCC/RISC-V/port.c.s
@@ -213,7 +213,7 @@ FreeRTOS/portable/GCC/RISC-V/port.s: FreeRTOS/portable/GCC/RISC-V/port.c.s
 
 # target to generate assembly for a file
 FreeRTOS/portable/GCC/RISC-V/port.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.s
 .PHONY : FreeRTOS/portable/GCC/RISC-V/port.c.s
 
 FreeRTOS/portable/GCC/RISC-V/portASM.obj: FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
@@ -221,7 +221,7 @@ FreeRTOS/portable/GCC/RISC-V/portASM.obj: FreeRTOS/portable/GCC/RISC-V/portASM.S
 
 # target to build an object file
 FreeRTOS/portable/GCC/RISC-V/portASM.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 .PHONY : FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 
 FreeRTOS/portable/MemMang/heap_3.obj: FreeRTOS/portable/MemMang/heap_3.c.obj
@@ -229,7 +229,7 @@ FreeRTOS/portable/MemMang/heap_3.obj: FreeRTOS/portable/MemMang/heap_3.c.obj
 
 # target to build an object file
 FreeRTOS/portable/MemMang/heap_3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj
 .PHONY : FreeRTOS/portable/MemMang/heap_3.c.obj
 
 FreeRTOS/portable/MemMang/heap_3.i: FreeRTOS/portable/MemMang/heap_3.c.i
@@ -237,7 +237,7 @@ FreeRTOS/portable/MemMang/heap_3.i: FreeRTOS/portable/MemMang/heap_3.c.i
 
 # target to preprocess a source file
 FreeRTOS/portable/MemMang/heap_3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.i
 .PHONY : FreeRTOS/portable/MemMang/heap_3.c.i
 
 FreeRTOS/portable/MemMang/heap_3.s: FreeRTOS/portable/MemMang/heap_3.c.s
@@ -245,7 +245,7 @@ FreeRTOS/portable/MemMang/heap_3.s: FreeRTOS/portable/MemMang/heap_3.c.s
 
 # target to generate assembly for a file
 FreeRTOS/portable/MemMang/heap_3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.s
 .PHONY : FreeRTOS/portable/MemMang/heap_3.c.s
 
 FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
@@ -253,7 +253,7 @@ FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
 
 # target to build an object file
 FreeRTOS/queue.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/queue.c.obj
 .PHONY : FreeRTOS/queue.c.obj
 
 FreeRTOS/queue.i: FreeRTOS/queue.c.i
@@ -261,7 +261,7 @@ FreeRTOS/queue.i: FreeRTOS/queue.c.i
 
 # target to preprocess a source file
 FreeRTOS/queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/queue.c.i
 .PHONY : FreeRTOS/queue.c.i
 
 FreeRTOS/queue.s: FreeRTOS/queue.c.s
@@ -269,39 +269,15 @@ FreeRTOS/queue.s: FreeRTOS/queue.c.s
 
 # target to generate assembly for a file
 FreeRTOS/queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/queue.c.s
 .PHONY : FreeRTOS/queue.c.s
-
-FreeRTOS/stream_buffer.obj: FreeRTOS/stream_buffer.c.obj
-.PHONY : FreeRTOS/stream_buffer.obj
-
-# target to build an object file
-FreeRTOS/stream_buffer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.obj
-.PHONY : FreeRTOS/stream_buffer.c.obj
-
-FreeRTOS/stream_buffer.i: FreeRTOS/stream_buffer.c.i
-.PHONY : FreeRTOS/stream_buffer.i
-
-# target to preprocess a source file
-FreeRTOS/stream_buffer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.i
-.PHONY : FreeRTOS/stream_buffer.c.i
-
-FreeRTOS/stream_buffer.s: FreeRTOS/stream_buffer.c.s
-.PHONY : FreeRTOS/stream_buffer.s
-
-# target to generate assembly for a file
-FreeRTOS/stream_buffer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.s
-.PHONY : FreeRTOS/stream_buffer.c.s
 
 FreeRTOS/tasks.obj: FreeRTOS/tasks.c.obj
 .PHONY : FreeRTOS/tasks.obj
 
 # target to build an object file
 FreeRTOS/tasks.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/tasks.c.obj
 .PHONY : FreeRTOS/tasks.c.obj
 
 FreeRTOS/tasks.i: FreeRTOS/tasks.c.i
@@ -309,7 +285,7 @@ FreeRTOS/tasks.i: FreeRTOS/tasks.c.i
 
 # target to preprocess a source file
 FreeRTOS/tasks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/tasks.c.i
 .PHONY : FreeRTOS/tasks.c.i
 
 FreeRTOS/tasks.s: FreeRTOS/tasks.c.s
@@ -317,7 +293,7 @@ FreeRTOS/tasks.s: FreeRTOS/tasks.c.s
 
 # target to generate assembly for a file
 FreeRTOS/tasks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/tasks.c.s
 .PHONY : FreeRTOS/tasks.c.s
 
 FreeRTOS/timers.obj: FreeRTOS/timers.c.obj
@@ -325,7 +301,7 @@ FreeRTOS/timers.obj: FreeRTOS/timers.c.obj
 
 # target to build an object file
 FreeRTOS/timers.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/timers.c.obj
 .PHONY : FreeRTOS/timers.c.obj
 
 FreeRTOS/timers.i: FreeRTOS/timers.c.i
@@ -333,7 +309,7 @@ FreeRTOS/timers.i: FreeRTOS/timers.c.i
 
 # target to preprocess a source file
 FreeRTOS/timers.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/timers.c.i
 .PHONY : FreeRTOS/timers.c.i
 
 FreeRTOS/timers.s: FreeRTOS/timers.c.s
@@ -341,7 +317,7 @@ FreeRTOS/timers.s: FreeRTOS/timers.c.s
 
 # target to generate assembly for a file
 FreeRTOS/timers.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/FreeRTOS/timers.c.s
 .PHONY : FreeRTOS/timers.c.s
 
 RISCV_pyeatt/interrupts.obj: RISCV_pyeatt/interrupts.c.obj
@@ -349,7 +325,7 @@ RISCV_pyeatt/interrupts.obj: RISCV_pyeatt/interrupts.c.obj
 
 # target to build an object file
 RISCV_pyeatt/interrupts.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/interrupts.c.obj
 .PHONY : RISCV_pyeatt/interrupts.c.obj
 
 RISCV_pyeatt/interrupts.i: RISCV_pyeatt/interrupts.c.i
@@ -357,7 +333,7 @@ RISCV_pyeatt/interrupts.i: RISCV_pyeatt/interrupts.c.i
 
 # target to preprocess a source file
 RISCV_pyeatt/interrupts.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/interrupts.c.i
 .PHONY : RISCV_pyeatt/interrupts.c.i
 
 RISCV_pyeatt/interrupts.s: RISCV_pyeatt/interrupts.c.s
@@ -365,7 +341,7 @@ RISCV_pyeatt/interrupts.s: RISCV_pyeatt/interrupts.c.s
 
 # target to generate assembly for a file
 RISCV_pyeatt/interrupts.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/interrupts.c.s
 .PHONY : RISCV_pyeatt/interrupts.c.s
 
 RISCV_pyeatt/irq.obj: RISCV_pyeatt/irq.S.obj
@@ -373,7 +349,7 @@ RISCV_pyeatt/irq.obj: RISCV_pyeatt/irq.S.obj
 
 # target to build an object file
 RISCV_pyeatt/irq.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/irq.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/irq.S.obj
 .PHONY : RISCV_pyeatt/irq.S.obj
 
 RISCV_pyeatt/newlib_functions.obj: RISCV_pyeatt/newlib_functions.S.obj
@@ -381,7 +357,7 @@ RISCV_pyeatt/newlib_functions.obj: RISCV_pyeatt/newlib_functions.S.obj
 
 # target to build an object file
 RISCV_pyeatt/newlib_functions.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/newlib_functions.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/newlib_functions.S.obj
 .PHONY : RISCV_pyeatt/newlib_functions.S.obj
 
 RISCV_pyeatt/startup_RISCV_pyeatt.obj: RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
@@ -389,7 +365,7 @@ RISCV_pyeatt/startup_RISCV_pyeatt.obj: RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
 
 # target to build an object file
 RISCV_pyeatt/startup_RISCV_pyeatt.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
 .PHONY : RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
 
 src/AXI_timer.obj: src/AXI_timer.c.obj
@@ -397,7 +373,7 @@ src/AXI_timer.obj: src/AXI_timer.c.obj
 
 # target to build an object file
 src/AXI_timer.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/AXI_timer.c.obj
 .PHONY : src/AXI_timer.c.obj
 
 src/AXI_timer.i: src/AXI_timer.c.i
@@ -405,7 +381,7 @@ src/AXI_timer.i: src/AXI_timer.c.i
 
 # target to preprocess a source file
 src/AXI_timer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/AXI_timer.c.i
 .PHONY : src/AXI_timer.c.i
 
 src/AXI_timer.s: src/AXI_timer.c.s
@@ -413,39 +389,15 @@ src/AXI_timer.s: src/AXI_timer.c.s
 
 # target to generate assembly for a file
 src/AXI_timer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/AXI_timer.c.s
 .PHONY : src/AXI_timer.c.s
-
-src/UART_16550.obj: src/UART_16550.c.obj
-.PHONY : src/UART_16550.obj
-
-# target to build an object file
-src/UART_16550.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/UART_16550.c.obj
-.PHONY : src/UART_16550.c.obj
-
-src/UART_16550.i: src/UART_16550.c.i
-.PHONY : src/UART_16550.i
-
-# target to preprocess a source file
-src/UART_16550.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/UART_16550.c.i
-.PHONY : src/UART_16550.c.i
-
-src/UART_16550.s: src/UART_16550.c.s
-.PHONY : src/UART_16550.s
-
-# target to generate assembly for a file
-src/UART_16550.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/UART_16550.c.s
-.PHONY : src/UART_16550.c.s
 
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
 # target to build an object file
 src/hello_task.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/hello_task.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/hello_task.c.obj
 .PHONY : src/hello_task.c.obj
 
 src/hello_task.i: src/hello_task.c.i
@@ -453,7 +405,7 @@ src/hello_task.i: src/hello_task.c.i
 
 # target to preprocess a source file
 src/hello_task.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/hello_task.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/hello_task.c.i
 .PHONY : src/hello_task.c.i
 
 src/hello_task.s: src/hello_task.c.s
@@ -461,7 +413,7 @@ src/hello_task.s: src/hello_task.c.s
 
 # target to generate assembly for a file
 src/hello_task.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/hello_task.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/hello_task.c.s
 .PHONY : src/hello_task.c.s
 
 src/main.obj: src/main.c.obj
@@ -469,7 +421,7 @@ src/main.obj: src/main.c.obj
 
 # target to build an object file
 src/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/main.c.obj
 .PHONY : src/main.c.obj
 
 src/main.i: src/main.c.i
@@ -477,7 +429,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/main.c.i
 .PHONY : src/main.c.i
 
 src/main.s: src/main.c.s
@@ -485,7 +437,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
 src/stats_task.obj: src/stats_task.c.obj
@@ -493,7 +445,7 @@ src/stats_task.obj: src/stats_task.c.obj
 
 # target to build an object file
 src/stats_task.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/stats_task.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/stats_task.c.obj
 .PHONY : src/stats_task.c.obj
 
 src/stats_task.i: src/stats_task.c.i
@@ -501,7 +453,7 @@ src/stats_task.i: src/stats_task.c.i
 
 # target to preprocess a source file
 src/stats_task.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/stats_task.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/stats_task.c.i
 .PHONY : src/stats_task.c.i
 
 src/stats_task.s: src/stats_task.c.s
@@ -509,7 +461,7 @@ src/stats_task.s: src/stats_task.c.s
 
 # target to generate assembly for a file
 src/stats_task.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/stats_task.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/stats_task.c.s
 .PHONY : src/stats_task.c.s
 
 src/uart.obj: src/uart.c.obj
@@ -517,7 +469,7 @@ src/uart.obj: src/uart.c.obj
 
 # target to build an object file
 src/uart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/uart.c.obj
 .PHONY : src/uart.c.obj
 
 src/uart.i: src/uart.c.i
@@ -525,7 +477,7 @@ src/uart.i: src/uart.c.i
 
 # target to preprocess a source file
 src/uart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/uart.c.i
 .PHONY : src/uart.c.i
 
 src/uart.s: src/uart.c.s
@@ -533,7 +485,7 @@ src/uart.s: src/uart.c.s
 
 # target to generate assembly for a file
 src/uart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doomloader.elf.dir/build.make CMakeFiles/doomloader.elf.dir/src/uart.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/build.make CMakeFiles/Lab_2_solution_RISCV_pyeatt.elf.dir/src/uart.c.s
 .PHONY : src/uart.c.s
 
 # Help Target
@@ -547,7 +499,7 @@ help:
 	@echo "... extra-clean"
 	@echo "... realclean"
 	@echo "... tarfile"
-	@echo "... doomloader.elf"
+	@echo "... Lab_2_solution_RISCV_pyeatt.elf"
 	@echo "... FreeRTOS/list.obj"
 	@echo "... FreeRTOS/list.i"
 	@echo "... FreeRTOS/list.s"
@@ -561,9 +513,6 @@ help:
 	@echo "... FreeRTOS/queue.obj"
 	@echo "... FreeRTOS/queue.i"
 	@echo "... FreeRTOS/queue.s"
-	@echo "... FreeRTOS/stream_buffer.obj"
-	@echo "... FreeRTOS/stream_buffer.i"
-	@echo "... FreeRTOS/stream_buffer.s"
 	@echo "... FreeRTOS/tasks.obj"
 	@echo "... FreeRTOS/tasks.i"
 	@echo "... FreeRTOS/tasks.s"
@@ -579,9 +528,6 @@ help:
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
-	@echo "... src/UART_16550.obj"
-	@echo "... src/UART_16550.i"
-	@echo "... src/UART_16550.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"

@@ -1,6 +1,7 @@
 #include <hello_task.h>
 #include <UART_16550.h>
 #include <stdio.h>
+#include <uart.h>
 
 void hello_task(void *pvParameters)
 {
@@ -29,7 +30,7 @@ void hello_task(void *pvParameters)
       loop_times++;
       sprintf(buffer,"Hello World %10lu %10lu %10lu\n\r",max_time,min_time,max_jitter);
       // acquire uart 
-      UART_16550_write_string(UART0,buffer,portMAX_DELAY);
+      uart_write_string(buffer);
       // release uart
 
       last_tick = ticks;

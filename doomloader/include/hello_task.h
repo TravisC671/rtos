@@ -9,7 +9,7 @@
 
 void hello_task(void *pvParameters);
 
-#define HELLO_STACK_SIZE 256
+#define HELLO_STACK_SIZE 1024
 
 extern StaticTask_t hello_TCB;
 

@@ -1,3 +1,7 @@
 **/CMakeFiles/
 **/.cmake/
 **/bin/
+**/FreeRTOS/
+**/MicroBlaze_V/
+doomloader/Microblaze_V/
+Lab_2_solution_RISCV_pyeatt/Microblaze_V/

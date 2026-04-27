@@ -3,10 +3,12 @@
 #include <task.h>
 #include <uart.h>
 #include <hello_task.h>
+#include <stats_task.h>
 #include <device_addrs.h>
 #include <interrupts.h>
 #include <AXI_timer.h>
-#include <stdio.h>
+
+// "screen /dev/ttyUSB1 9600"
 
 /* These globals live in the FreeRTOS RISC-V port (port.c).  The trap
    handler in portASM.S uses them to reload mtimecmp on every tick when
@@ -73,35 +75,56 @@ void vPortSetupTimerInterrupt(void)
   INTC_Enable_MTIMER_interrupt();
 }
 
-int main(int argc, char **argv)
+int main( void )
 {
   TaskHandle_t hello_handle = NULL;
+  TaskHandle_t stats_handle = NULL;
 
+  // The AXI MTIME/MTIMECMP and the MTI enable are programmed from
+  // vPortSetupTimerInterrupt(), which the scheduler calls during
+  // vTaskStartScheduler() after mtimecmp has been armed.
+ 
+  // INTC_SetVector(UART0_IRQ,UART0_handler);
+  // INTC_EnableIRQ(UART0_IRQ);
+
+  // INTC_SetVector(UART1_IRQ,UART1_handler);
+  // INTC_EnableIRQ(UART1_IRQ);
+
+  // INTC_SetVector(PM_IRQ,PM_handler);
+  // INTC_EnableIRQ(PM_IRQ);
+
+  // INTC_SetVector(TIMER0_IRQ, AXI_TIMER_0_ISR);
+  // INTC_EnableIRQ(TIMER0_IRQ);
+
+  // INTC_SetVector(TIMER1_IRQ, AXI_TIMER_1_ISR);
+  // INTC_EnableIRQ(TIMER1_IRQ);
+  
+  // INTC_Enable_Global();
+
+// INTC_SetVector(GPIO0_IRQ,GPIO_handler);
+
+
+
+  // configure the uart for 9600/N/8/2
   uart_init(57600);
-
-  char buffer[64];
-
-  sprintf(buffer,"Hello World\r\n\r\n");
-
-  uart_write_string(buffer);
-
-  xTaskCreateStatic(
-      hello_task,
-      "hello_task",
-      HELLO_STACK_SIZE,
-      NULL,
-      4,
-      hello_stack,
-      &hello_TCB);
-
+  
+  /* Create the task without using any dynamic memory allocation. */
+  hello_handle = xTaskCreateStatic(hello_task,"hello",HELLO_STACK_SIZE,
+				   NULL,3,hello_stack,&hello_TCB);
+			      
+  /* Create the task without using any dynamic memory allocation. */
+  stats_handle = xTaskCreateStatic(stats_task,"stats",STATS_STACK_SIZE,
+				   NULL,2,stats_stack,&stats_TCB);
+			      
+  /* start the scheduler */
   vTaskStartScheduler();
 
   /* we should never get to this point, but if we do, go into infinite
      loop */
-  while (1)
-  {
-  }
+  while(1);
 }
+
+
 
 /* Blatantly stolen from
    https://www.freertos.org/a00110.html#include_parameters

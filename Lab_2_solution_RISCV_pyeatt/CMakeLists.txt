@@ -94,30 +94,30 @@ file(GLOB FREERTOS_SOURCES
    "${CMAKE_SOURCE_DIR}/FreeRTOS/tasks.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/list.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
-   "${CMAKE_SOURCE_DIR}/FreeRTOS/queue.c"
-   "${CMAKE_SOURCE_DIR}/FreeRTOS/mutex.c"
-   "${CMAKE_SOURCE_DIR}/FreeRTOS/stream_buffer.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_3.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/port.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/portASM.S"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/queue.c"
+#   "${CMAKE_SOURCE_DIR}/FreeRTOS/mutex.c"
+#   "${CMAKE_SOURCE_DIR}/FreeRTOS/stream_buffer.c"
+#   "${CMAKE_SOURCE_DIR}/FreeRTOS/event_groups.c"
 # add more as needed
 )  
-
 
 # Sources for the executable
 file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/main.c"
+  "${CMAKE_SOURCE_DIR}/src/hello_task.c"
+  "${CMAKE_SOURCE_DIR}/src/uart.c"
   "${CMAKE_SOURCE_DIR}/src/stats_task.c"
   "${CMAKE_SOURCE_DIR}/src/AXI_timer.c"
-  "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
-  "${CMAKE_SOURCE_DIR}/src/UART_16550.c"
-  "${CMAKE_SOURCE_DIR}/src/uart.c"
-  "${CMAKE_SOURCE_DIR}/src/hello_task.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/interrupts.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/irq.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/newlib_functions.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/startup_RISCV_pyeatt.S"
 )
+
+set(ALL_SOURCES "${SOURCES}" "${PDCURSES_SOURCES}" "${FREERTOS_SOURCES}" "${NINVADERS_SOURCES}")
 
 # Define our linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
@@ -126,11 +126,12 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
 # add_link_options(-Wl,-wrap=malloc -Wl,-wrap=_malloc_r)
 add_link_options(-Wl,-gc-sections,--print-memory-usage)
 add_link_options(-Wl,-Map=bin/${PROJECT_NAME}.map)
+# add_link_options(-LMicroblaze_V/bsp/lib )
 add_link_options(-T ${LINKER_SCRIPT} --specs=nosys.specs -nostartfiles)
 
 # Define our target executable, and everything that it depends on
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${FREERTOS_SOURCES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${ALL_SOURCES} ${LINKER_SCRIPT})
 
 target_link_libraries(${PROJECT_NAME}.elf m)
 
@@ -139,7 +140,6 @@ set(HEX_FILE ${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_NAME}.bin)
 set(MAP_FILE ${PROJECT_NAME}.map)
 set(DIS_FILE ${PROJECT_NAME}.dis)
-
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
         COMMENT "Creating ${HEX_FILE}"
@@ -156,10 +156,10 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 	COMMAND ${CMAKE_OBJDUMP} -dS bin/${ELF_FILE} > bin/${DIS_FILE}
 	)
 
-# add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-# 	COMMENT "Memory Report"
-# 	COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}
-#  	)
+add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
+	COMMENT "Memory Report"
+	COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}
+ 	)
 
 set_property(
   TARGET ${PROJECT_NAME}.elf
