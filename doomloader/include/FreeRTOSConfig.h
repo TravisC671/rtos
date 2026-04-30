@@ -59,6 +59,8 @@
 #include <interrupts.h>
 #include <portmacro.h>
 
+#define configNUM_THREAD_LOCAL_STORAGE_POINTERS  3
+
 #define projCOVERAGE_TEST                          0
 
 #define configQUEUE_REGISTRY_SIZE                 20

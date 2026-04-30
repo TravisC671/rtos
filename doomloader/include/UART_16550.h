@@ -1,9 +1,6 @@
 #ifndef UART_16550_h
 #define UART_16550_h
 
-#include <stddef.h>
-#include <stdint.h>
-#include <FreeRTOSConfig.h>
 #include <FreeRTOS.h>
 
 #define UART0 0
@@ -22,11 +19,6 @@
 // should be called once during the OS initialisation phase of
 // bootup/reset.
 void UART_16550_init();
-
-// Interrupt handlers.  We have two UARTS.
-void UART0_handler();
-void UART1_handler();
-
 
 /* Set the baud, rate, parity, bits per frame, and number of stop bits
  * for the given UART.

@@ -51,9 +51,18 @@ __Vectors:
 	j       _unhandled      /* 0x10: reserved (cause 4) */
 	j       _unhandled      /* 0x14: reserved (cause 5) */
 	j       _unhandled      /* 0x18: reserved (cause 6) */
+	/* HARDWARE-BUG WORKAROUND: vectored dispatch can land an MTI
+	 * (cause 7) at base+4*8 instead of base+4*7 when the CPU is
+	 * stalled on a long AXI store at the moment the timer fires.
+	 * Mirroring MTI at slot 8 catches the off-by-one so the timer
+	 * handler runs either way; mcause still reads 7, so the handler
+	 * itself is unaffected.  Cause 8 is U-mode ECALL which can't
+	 * occur on an M-only design, so the slot is safe to repurpose.
+	 * Remove once the RTL race is fixed. */
 	/* 0x1C: MTI - machine timer interrupt */
 	j       freertos_risc_v_mtimer_interrupt_handler
-	j       _unhandled      /* 0x20: reserved (cause 8) */
+	/* 0x20: cause 8 mirror - MTI off-by-one workaround */
+	j       freertos_risc_v_mtimer_interrupt_handler
 	j       _unhandled      /* 0x24: reserved (cause 9) */
 	j       _unhandled      /* 0x28: reserved (cause 10) */
 	j       _unhandled      /* 0x2C: MEI - machine external interrupt */
@@ -61,15 +70,15 @@ __Vectors:
 	j       _unhandled      /* 0x34: reserved (cause 13) */
 	j       _unhandled      /* 0x38: reserved (cause 14) */
 	j       _unhandled      /* 0x3C: reserved (cause 15) */
-	j       _unhandled      /* 0x40: platform IRQ[0] UART 0 */
-	j       _unhandled      /* 0x44: platform IRQ[1] UART 1 */
+	j       UART0_handler   /* 0x40: platform IRQ[0] UART 0 */
+	j       UART1_handler   /* 0x44: platform IRQ[1] UART 1 */
 	j       AXI_TIMER_0_ISR /* 0x48: platform IRQ[2] AXI Timer 0 */
 	j       _unhandled      /* 0x4C: platform IRQ[3] AXI Timer 1 */
 	j       _unhandled      /* 0x50: platform IRQ[4] GPIO 0 */
 	j       _unhandled      /* 0x54: platform IRQ[5] GPIO 1 */
 	j       _unhandled      /* 0x58: platform IRQ[6] GPIO 2 */
-	j       _unhandled      /* 0x5C: platform IRQ[7] PM device */
-	j       _unhandled      /* 0x60: platform IRQ[8] SD controller */
+	j       _unhandled      /* 0x5C: platform IRQ[7]
+	j       SD_handler      /* 0x60: platform IRQ[8] SD controller */
 	j       _unhandled      /* 0x64: platform IRQ[9] VGA controller */
 	j       _unhandled      /* 0x68: platform IRQ[10] */
 	j       _unhandled      /* 0x6C: platform IRQ[11] */

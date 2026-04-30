@@ -1,18 +1,29 @@
 #ifndef AXI_TIMER_H
 #define AXI_TIMER_H
 
-// Interrupt handlers for the two timer devices.
-void AXI_TIMER_0_ISR();
-void AXI_TIMER_1_ISR();
+#include <FreeRTOS.h>
 
 // If you add more AXI_timer devices to the design, then change this
 // define.  Each device supports two timers, and we currently have two
 // devices.
 #define NUM_AXI_TIMERS 4
 
+/* AXI_TIMER_*_ISR are the vector entry points provided by the asm shim
+ * in RISCV_pyeatt/AXI_isr.S.  The shim does the FreeRTOS full-context
+ * save/restore around AXI_timer_handler so handlers may safely call
+ * FromISR APIs and unblock higher-priority tasks. */
+void AXI_TIMER_0_ISR(void);
+void AXI_TIMER_1_ISR(void);
+
+/* Signature of a user-supplied AXI timer interrupt handler.  pxWoken
+ * points to the HigherPriorityTaskWoken flag the asm shim will pass
+ * to vTaskSwitchContext on return; pass it through to any FromISR
+ * API the handler calls. */
+typedef void (*AXI_timer_handler_t)(BaseType_t *pxHigherPriorityTaskWoken);
+
 // Our timers are driven by a 50 MHz clock. (The LL gives us 64 bits
 // to work with when calculating the count value.
-#define AXI_TIMER_CLOCK_FREQ 100000000LL
+#define AXI_TIMER_CLOCK_FREQ 50000000LL
 
 // Provide a convenience macro to convert microseconds into timer
 // counts.
@@ -34,10 +45,13 @@ int AXI_TIMER_allocate();
 // Release a timer. 
 void AXI_TIMER_free(unsigned int timer);
 
-// Assign a functon to handle interrupts for the given timer. The
+// Assign a function to handle interrupts for the given timer. The
 // assigned function will be called when the given timer generates an
-// interrupt.
-void AXI_TIMER_set_handler(unsigned int timer, void (*handler)());
+// interrupt.  The handler receives a pointer to a HigherPriorityTask-
+// Woken flag, which it should pass to any FromISR API that wants to
+// unblock a task; the asm shim will yield to that task after the ISR
+// returns.
+void AXI_TIMER_set_handler(unsigned int timer, AXI_timer_handler_t handler);
 
 // start the timer
 void AXI_TIMER_enable(unsigned int timer);   

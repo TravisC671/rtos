@@ -1,110 +1,284 @@
 [
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/timers.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/timers.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/timers.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/timers.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/interrupts.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/AXI_isr.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/AXI_isr.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/AXI_isr.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/AXI_isr.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/PM_isr.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/PM_isr.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/PM_isr.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/PM_isr.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/SD_isr.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/SD_isr.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/SD_isr.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/SD_isr.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/UART_isr.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/UART_isr.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/UART_isr.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/UART_isr.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/interrupts.c",
   "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/interrupts.c",
   "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/interrupts.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/irq.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/irq.S",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/irq.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/irq.S",
   "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/irq.S",
   "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/irq.S.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/newlib_functions.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/newlib_functions.S",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/newlib_functions.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/newlib_functions.S",
   "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/newlib_functions.S",
   "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/newlib_functions.S.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/startup_RISCV_pyeatt.S",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_flush_dcache_range.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_flush_dcache_range.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_flush_dcache_range.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_flush_dcache_range.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_invalidate_dcache_range.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_invalidate_dcache_range.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_misalign_emul.c.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_misalign_emul.c",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_misalign_emul.c",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_misalign_emul.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_misalign_shim.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_misalign_shim.S",
+  "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/riscv_misalign_shim.S",
+  "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/riscv_misalign_shim.S.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj -c /home/student/s101153258/rtos/doomloader/RISCV_pyeatt/startup_RISCV_pyeatt.S",
   "file": "/home/student/s101153258/rtos/doomloader/RISCV_pyeatt/startup_RISCV_pyeatt.S",
   "output": "CMakeFiles/doomloader.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.obj -c /home/student/s101153258/rtos/doomloader/src/AXI_timer.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.obj -c /home/student/s101153258/rtos/doomloader/src/AXI_timer.c",
   "file": "/home/student/s101153258/rtos/doomloader/src/AXI_timer.c",
   "output": "CMakeFiles/doomloader.elf.dir/src/AXI_timer.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/UART_16550.c.obj -c /home/student/s101153258/rtos/doomloader/src/UART_16550.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/UART_16550.c.obj -c /home/student/s101153258/rtos/doomloader/src/UART_16550.c",
   "file": "/home/student/s101153258/rtos/doomloader/src/UART_16550.c",
   "output": "CMakeFiles/doomloader.elf.dir/src/UART_16550.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/hello_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/hello_task.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/hello_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/hello_task.c",
   "file": "/home/student/s101153258/rtos/doomloader/src/hello_task.c",
   "output": "CMakeFiles/doomloader.elf.dir/src/hello_task.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/main.c.obj -c /home/student/s101153258/rtos/doomloader/src/main.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/load_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/load_task.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/load_task.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/load_task.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/main.c.obj -c /home/student/s101153258/rtos/doomloader/src/main.c",
   "file": "/home/student/s101153258/rtos/doomloader/src/main.c",
   "output": "CMakeFiles/doomloader.elf.dir/src/main.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/stats_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/stats_task.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_ff.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_ff.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_ff.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_ff.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_hw.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_hw.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_hw.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_hw.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_isr.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_isr.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_isr.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_isr.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_read.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_read.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_read.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_read.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_task.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_task.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_task.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_write.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_write.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_driver_write.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_driver_write.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_fat_disk.c.obj -c /home/student/s101153258/rtos/doomloader/src/sd_driver/sd_fat_disk.c",
+  "file": "/home/student/s101153258/rtos/doomloader/src/sd_driver/sd_fat_disk.c",
+  "output": "CMakeFiles/doomloader.elf.dir/src/sd_driver/sd_fat_disk.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/src/stats_task.c.obj -c /home/student/s101153258/rtos/doomloader/src/stats_task.c",
   "file": "/home/student/s101153258/rtos/doomloader/src/stats_task.c",
   "output": "CMakeFiles/doomloader.elf.dir/src/stats_task.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/src/uart.c.obj -c /home/student/s101153258/rtos/doomloader/src/uart.c",
-  "file": "/home/student/s101153258/rtos/doomloader/src/uart.c",
-  "output": "CMakeFiles/doomloader.elf.dir/src/uart.c.obj"
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/event_groups.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/event_groups.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/event_groups.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/event_groups.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/list.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/list.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/list.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/list.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/port.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/port.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/port.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/port.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/portASM.S",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/portASM.S",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/portASM.S",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/MemMang/heap_3.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/portable/MemMang/heap_3.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/MemMang/heap_3.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/queue.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/queue.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/queue.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/queue.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/stream_buffer.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/stream_buffer.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/stream_buffer.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/stream_buffer.c.obj"
 },
 {
   "directory": "/home/student/s101153258/rtos/doomloader/build",
-  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/tasks.c",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS/tasks.c",
   "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS/tasks.c",
   "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS/tasks.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_crc.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_crc.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_crc.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_crc.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_dir.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_dir.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_dir.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_dir.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_error.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_error.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_error.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_error.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_fat.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_fat.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_fat.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_fat.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_file.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_file.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_file.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_file.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_format.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_format.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_format.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_format.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_ioman.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_ioman.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_ioman.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_ioman.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_locking.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_locking.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_locking.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_locking.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_memory.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_memory.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_memory.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_memory.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_stdio.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_stdio.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_stdio.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_stdio.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_string.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_string.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_string.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_string.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_sys.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_sys.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_sys.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_sys.c.obj"
+},
+{
+  "directory": "/home/student/s101153258/rtos/doomloader/build",
+  "command": "/usr/bin/riscv32-unknown-elf-gcc  -I/home/student/s101153258/rtos/doomloader/include -I/home/student/s101153258/rtos/doomloader/RISCV_pyeatt -I/home/student/s101153258/rtos/doomloader/FreeRTOS/include -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V -I/home/student/s101153258/rtos/doomloader/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions -I/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/include  -march=rv32im_zicsr_zifencei -mabi=ilp32 -g -std=gnu11 -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Os -g -o CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_time.c.obj -c /home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_time.c",
+  "file": "/home/student/s101153258/rtos/doomloader/FreeRTOS-Plus-Fat/ff_time.c",
+  "output": "CMakeFiles/doomloader.elf.dir/FreeRTOS-Plus-Fat/ff_time.c.obj"
 }
 ]

@@ -61,16 +61,16 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 # Choose optimization level.
 
 # Option 1: Debugger will follow your C code
-message(STATUS "Minimal optimization, with debug info")
-add_compile_options(-g)
+# message(STATUS "Minimal optimization, with debug info")
+# add_compile_options(-g)
 
 # Option 2: Debugger may "jump around" in your C code   
 #message(STATUS "Maximum optimization for speed, with debug info")
 #add_compile_options(-Ofast -g)
 
 # Option 3:
-#message(STATUS "Maximum optimization for size, with debug info")
-#add_compile_options(-Os -g)
+message(STATUS "Maximum optimization for size, with debug info")
+add_compile_options(-Os -g)
 
 # Option 4:
 #     message(STATUS "Maximum optimization for size, no debug info")
@@ -87,6 +87,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/FreeRTOS/include
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions
+  ${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/include
 )
 
 # list of FreeRTOS sources that we need
@@ -96,6 +97,7 @@ file(GLOB FREERTOS_SOURCES
    "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/queue.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/mutex.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/event_groups.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/stream_buffer.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_3.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/port.c"
@@ -103,21 +105,54 @@ file(GLOB FREERTOS_SOURCES
 # add more as needed
 )  
 
+# FreeRTOS+FAT sources (exclude ff_dev_support.c -- device-file nodes not needed)
+file(GLOB FAT_SOURCES
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_crc.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_dir.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_error.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_fat.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_file.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_format.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_ioman.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_locking.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_memory.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_stdio.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_string.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_sys.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_time.c"
+)
 
 # Sources for the executable
 file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/main.c"
   "${CMAKE_SOURCE_DIR}/src/stats_task.c"
+  "${CMAKE_SOURCE_DIR}/src/hello_task.c"
+  "${CMAKE_SOURCE_DIR}/src/load_task.c"
   "${CMAKE_SOURCE_DIR}/src/AXI_timer.c"
   "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
   "${CMAKE_SOURCE_DIR}/src/UART_16550.c"
-  "${CMAKE_SOURCE_DIR}/src/uart.c"
-  "${CMAKE_SOURCE_DIR}/src/hello_task.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_ff.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_hw.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_isr.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_read.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_task.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_write.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_fat_disk.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/interrupts.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/irq.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/newlib_functions.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/startup_RISCV_pyeatt.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_misalign_emul.c"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_misalign_shim.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_flush_dcache_range.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_invalidate_dcache_range.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/UART_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/AXI_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/PM_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/SD_isr.S"
 )
+
+set(ALL_SOURCES "${SOURCES}" "${FREERTOS_SOURCES}" "${FAT_SOURCES}")
 
 # Define our linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
@@ -130,7 +165,7 @@ add_link_options(-T ${LINKER_SCRIPT} --specs=nosys.specs -nostartfiles)
 
 # Define our target executable, and everything that it depends on
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${FREERTOS_SOURCES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${ALL_SOURCES} ${LINKER_SCRIPT})
 
 target_link_libraries(${PROJECT_NAME}.elf m)
 

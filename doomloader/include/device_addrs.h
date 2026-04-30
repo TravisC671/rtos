@@ -22,6 +22,7 @@
 // IRQ number for the VGA controller
 #define VGA_IRQ           9
 
+
 // The MTIME timer is used for systicks (64 bits)
 #define MTIME_TIMER  ((void*)0x44A00000)  
 // The MTIME cmp register (64 bits)
@@ -114,6 +115,10 @@
 
 // 16550D UARTs.  For more information, For more information on the
 // UARTs, read the AXI UART LogiCORE Product Guide.
+//
+// All 16550 cores are clocked from the system clock.  The driver in
+// UART_16550.c uses this constant to compute baud-rate divisors.
+// #define UART_16550_clk 100000000
 
 // UART0 is routed to the Digilent USB/UART device which routes the
 // signals through the USB cable.
@@ -136,11 +141,114 @@
 // UART1 TXD is on PMOD header JC pin 2
 #define UART1_base     ((void*)0x44A20000) 
 
-// The AXI SD controller
-#define SD_BASE        ((void*)0x44A40000)
+// VGA Controller
+#define VGA_BASE       0x48000000
 
-// The VGA controller
-#define VGA_BASE       ((void*)0x44800000)
+// SD Host Controller (SD Simplified Specification compatible)
+// For register access, use:
+//   REG32(addr) for 32-bit registers
+//   REG16(addr) for 16-bit registers
+//   REG8(addr)  for 8-bit registers
+#define REG32(a) (*(volatile uint32_t*)(a))
+#define REG16(a) (*(volatile uint16_t*)(a))
+#define REG8(a)  (*(volatile uint8_t*)(a))
+
+#define SD_BASE              0x44A40000
+#define SD_SDMA_ADDR         (SD_BASE + 0x00) // SDMA System Address (32-bit)
+#define SD_BLOCK_SIZE        (SD_BASE + 0x04) // Block Size (16-bit)
+#define SD_BLOCK_COUNT       (SD_BASE + 0x06) // Block Count (16-bit)
+#define SD_ARGUMENT          (SD_BASE + 0x08) // Command Argument (32-bit)
+#define SD_TRANSFER_MODE     (SD_BASE + 0x0C) // Transfer Mode (16-bit)
+#define SD_COMMAND           (SD_BASE + 0x0E) // Command Register (16-bit)
+#define SD_RESPONSE0         (SD_BASE + 0x10) // Response[31:0]
+#define SD_RESPONSE1         (SD_BASE + 0x14) // Response[63:32]
+#define SD_RESPONSE2         (SD_BASE + 0x18) // Response[95:64]
+#define SD_RESPONSE3         (SD_BASE + 0x1C) // Response[127:96]
+#define SD_BUFFER_PORT       (SD_BASE + 0x20) // Buffer Data Port (32-bit)
+#define SD_PRESENT_STATE     (SD_BASE + 0x24) // Present State (32-bit)
+#define SD_HOST_CTRL1        (SD_BASE + 0x28) // Host Control 1 (8-bit)
+#define SD_POWER_CTRL        (SD_BASE + 0x29) // Power Control (8-bit)
+#define SD_BLOCK_GAP_CTRL    (SD_BASE + 0x2A) // Block Gap Control (8-bit)
+#define SD_WAKEUP_CTRL       (SD_BASE + 0x2B) // Wakeup Control (8-bit)
+#define SD_CLOCK_CTRL        (SD_BASE + 0x2C) // Clock Control (16-bit)
+#define SD_TIMEOUT_CTRL      (SD_BASE + 0x2E) // Timeout Control (8-bit)
+#define SD_SW_RESET          (SD_BASE + 0x2F) // Software Reset (8-bit)
+#define SD_NORM_INT_STATUS   (SD_BASE + 0x30) // Normal Interrupt Status (16-bit)
+#define SD_ERR_INT_STATUS    (SD_BASE + 0x32) // Error Interrupt Status (16-bit)
+#define SD_NORM_INT_STAT_EN  (SD_BASE + 0x34) // Normal Int Status Enable (16-bit)
+#define SD_ERR_INT_STAT_EN   (SD_BASE + 0x36) // Error Int Status Enable (16-bit)
+#define SD_NORM_INT_SIG_EN   (SD_BASE + 0x38) // Normal Int Signal Enable (16-bit)
+#define SD_ERR_INT_SIG_EN    (SD_BASE + 0x3A) // Error Int Signal Enable (16-bit)
+#define SD_AUTO_CMD_ERR      (SD_BASE + 0x3C) // Auto CMD Error Status (16-bit, RO)
+#define SD_HOST_CONTROL_2    (SD_BASE + 0x3E) // Host Control 2 (16-bit)
+#define SD_CAPABILITIES_LOW  (SD_BASE + 0x40) // Capabilities [31:0]
+#define SD_CAPABILITIES_HIGH (SD_BASE + 0x44) // Capabilities [63:32]
+#define SD_CARD_INFO         (SD_BASE + 0xE0) // Card Info: RCA, Type, Status
+#define SD_VERSION           (SD_BASE + 0xFC) // Slot Int Status / Controller Version
+
+// SD Present State Register bit masks
+#define SD_STATE_CMD_INHIBIT      (1 << 0)  // Command Inhibit (CMD)
+#define SD_STATE_CMD_INHIBIT_DAT  (1 << 1)  // Command Inhibit (DAT)
+#define SD_STATE_DAT_INHIBIT      (1 << 1)  // Command Inhibit (DAT)
+#define SD_STATE_DAT_ACTIVE       (1 << 2)  // DAT Line Active
+#define SD_STATE_WRITE_ACTIVE     (1 << 8)  // Write Transfer Active
+#define SD_STATE_READ_ACTIVE      (1 << 9)  // Read Transfer Active
+#define SD_STATE_BUF_WRITE_EN     (1 << 10) // Buffer Write Enable
+#define SD_STATE_BUF_READ_EN      (1 << 11) // Buffer Read Enable
+#define SD_STATE_CARD_INSERTED    (1 << 16) // Card Inserted
+#define SD_STATE_CARD_STABLE      (1 << 17) // Card State Stable
+#define SD_STATE_CARD_DETECT_PIN  (1 << 18) // Card Detect Pin Level
+#define SD_STATE_WRITE_PROTECT    (1 << 19) // Write Protect Switch Level
+#define SD_STATE_DAT_LEVEL        (0xF << 20) // DAT[3:0] Line Level
+#define SD_STATE_CMD_LEVEL        (1 << 24) // CMD Line Level
+
+// SD Normal Interrupt Status bits
+#define SD_INT_CMD_COMPLETE       (1 << 0)  // Command Complete
+#define SD_INT_XFER_COMPLETE      (1 << 1)  // Transfer Complete
+#define SD_INT_DMA_INT            (1 << 3)  // DMA Interrupt
+#define SD_INT_BUF_WRITE_READY    (1 << 4)  // Buffer Write Ready
+#define SD_INT_BUF_READ_READY     (1 << 5)  // Buffer Read Ready
+#define SD_INT_CARD_INSERT        (1 << 6)  // Card Insertion
+#define SD_INT_CARD_REMOVE        (1 << 7)  // Card Removal
+#define SD_INT_ERROR              (1 << 15) // Error Interrupt
+
+// SD Transfer Mode register bit masks
+#define SD_TM_DMA_ENABLE          (1 << 0)  // DMA Enable
+#define SD_TM_BLOCK_COUNT_EN      (1 << 1)  // Block Count Enable
+#define SD_TM_AUTO_CMD12_EN       (1 << 2)  // Auto CMD12 Enable
+#define SD_TM_DATA_DIR_READ       (1 << 4)  // Data Transfer Direction: 1=read
+#define SD_TM_MULTI_BLOCK         (1 << 5)  // Multi Block Select
+
+// SD Error Interrupt Status bits
+#define SD_ERR_CMD_TIMEOUT        (1 << 0)  // Command Timeout Error
+#define SD_ERR_CMD_CRC            (1 << 1)  // Command CRC Error
+#define SD_ERR_CMD_END_BIT        (1 << 2)  // Command End Bit Error
+#define SD_ERR_CMD_INDEX          (1 << 3)  // Command Index Error
+#define SD_ERR_DATA_TIMEOUT       (1 << 4)  // Data Timeout Error
+#define SD_ERR_DATA_CRC           (1 << 5)  // Data CRC Error
+#define SD_ERR_DATA_END_BIT       (1 << 6)  // Data End Bit Error
+#define SD_ERR_AUTO_CMD12         (1 << 8)  // Auto CMD12 Error
+
+// SD Software Reset bits
+#define SD_RESET_ALL              0x01
+#define SD_RESET_CMD              0x02
+#define SD_RESET_DAT              0x04
+
+// SD Clock Control bits
+#define SD_CLK_INT_EN             (1 << 0)  // Internal Clock Enable
+#define SD_CLK_INT_STABLE         (1 << 1)  // Internal Clock Stable (read-only)
+#define SD_CLK_SD_EN              (1 << 2)  // SD Clock Enable
+
+// SD Card Info register fields (register 0xE0)
+// NOTE: With software initialization, this register reads as zero.
+// These defines are retained for reference only.
+#define SD_CARD_INFO_RCA_MASK     0x0000FFFF // RCA (bits 15:0) — unused
+#define SD_CARD_INFO_RCA_SHIFT    0
+#define SD_CARD_INFO_TYPE_MASK    0x00030000 // Card type (bits 17:16) — unused
+#define SD_CARD_INFO_TYPE_SHIFT   16
+#define SD_CARD_INFO_INIT_BUSY    (1 << 18)  // unused (no HW init controller)
+#define SD_CARD_INFO_INIT_DONE    (1 << 19)  // unused (no HW init controller)
+#define SD_CARD_INFO_INIT_ERROR   (1 << 20)  // unused (no HW init controller)
 
 // DDR memory
 #define DDR_BASE       ((void*)0x10000000)

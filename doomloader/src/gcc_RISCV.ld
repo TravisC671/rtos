@@ -15,20 +15,27 @@ __STACK_SIZE = 0x00001000;
 /* __HeapStart = 0x10000000; */
 /* __HeapTop   = 0x10100000; */
 
-__HEAP_SIZE =   0x108000;
-/* DIAGNOSTIC: moved __HeapStart from 0x10000000 to 0x20000000 to test
- * whether the deterministic crash-target tracks the heap-base symbol.
- * If next crash lands at 0x20000000 it confirms a load of __HeapStart
- * is being used as a return/jump target. */
-__HeapStart = 0x20000000;
-__HeapTop   = 0x20100000;
+/* Static task stacks/TCBs that don't fit in 64 KB of internal RAM
+ * live in their own region of DDR.  Kept distinct from the heap so
+ * a runaway malloc cannot trample a task stack and a stack overflow
+ * cannot eat the heap. */
+__TASKS_BASE = 0x10000000;
+__TASKS_SIZE = 0x00100000;          /* 1 MB */
+
+__HEAP_SIZE =  0x00F00000;
+__HeapStart = __TASKS_BASE + __TASKS_SIZE;
+__HeapTop   = __HeapStart + __HEAP_SIZE;
+/* heap_useNewlib.c uses __HeapBase as the heap-base symbol; alias
+ * it so we do not have to edit the upstream driver. */
+__HeapBase  = __HeapStart;
 
 
 MEMORY
 {
-  ROM   (rx)   : ORIGIN = __ROM_BASE,  LENGTH = __ROM_SIZE
-  RAM   (rwx)  : ORIGIN = __RAM_BASE,  LENGTH = __RAM_SIZE
-  HEAP  (rwx)  : ORIGIN = __HeapStart, LENGTH = __HEAP_SIZE
+  ROM   (rx)   : ORIGIN = __ROM_BASE,    LENGTH = __ROM_SIZE
+  RAM   (rwx)  : ORIGIN = __RAM_BASE,    LENGTH = __RAM_SIZE
+  TASKS (rwx)  : ORIGIN = __TASKS_BASE,  LENGTH = __TASKS_SIZE
+  HEAP  (rwx)  : ORIGIN = __HeapStart,   LENGTH = __HEAP_SIZE
   /*  THEME (r)    : ORIGIN = 0x80000000, LENGTH = 0x200000 */
   /*   DEBUG (r)   : ORIGIN = 0x80200000, LENGTH = 0x200000 */
 }
@@ -299,6 +306,20 @@ SECTIONS
 */
 
 
+
+  /* Task stacks and TCBs that opt in via __attribute__((section(".tasks")))
+   * land in DDR rather than internal RAM.  NOLOAD because there is
+   * nothing to copy at boot; the C runtime (or FreeRTOS port) writes
+   * the initial stack frame at task creation. */
+  .tasks (NOLOAD) :
+  {
+    . = ALIGN(8);
+    __tasks_start__ = .;
+    *(.tasks)
+    *(.tasks.*)
+    . = ALIGN(8);
+    __tasks_end__ = .;
+  } > TASKS
 
   .heap (ORIGIN(HEAP)) (COPY):
   {

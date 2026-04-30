@@ -1,12 +1,14 @@
 
 #include <FreeRTOS.h>
 #include <task.h>
-#include <uart.h>
+#include <UART_16550.h>
 #include <hello_task.h>
 #include <device_addrs.h>
 #include <interrupts.h>
 #include <AXI_timer.h>
 #include <stdio.h>
+#include <load_task.h>
+#include <sd_driver.h>
 
 /* These globals live in the FreeRTOS RISC-V port (port.c).  The trap
    handler in portASM.S uses them to reload mtimecmp on every tick when
@@ -16,24 +18,6 @@ extern volatile uint64_t  *pullMachineTimerCompareRegister;
 extern uint64_t            ullNextTime;
 extern const size_t        uxTimerIncrementsForOneTick;
 extern const uint32_t      ullMachineTimerCompareRegisterBase;
-
-/* Per-mret ring buffer.  Each entry is [mstatus, mcause].
-   [0] = next write byte-offset (wraps at 1024 = 64 entries x 8 bytes) */
-volatile uint32_t mstatus_log[129] = {0};
-
-/* Per-trap-entry ring buffer.  Each entry is
-   [mepc, saved_mstatus, mcause, pxCurrentTCB].
-   [0] = next write byte-offset (wraps at 512 = 32 entries x 16 bytes).
-   Written in portcontextSAVE_CONTEXT_INTERNAL.  The pair
-   (mstatus_log entry N) -> (save_log entry N+1) gives the mret
-   target / next trap correlation that exposes which mret left MIE=0. */
-volatile uint32_t save_log[129] = {0};
-
-/* Counter incremented at the very top of portcontextSAVE_CONTEXT_INTERNAL,
-   before any work that could fault.  If save_entered_count exceeds the
-   number of save_log entries after a hang, then save started but failed
-   to reach the per-trap log update at the tail of the macro. */
-volatile uint32_t save_entered_count = 0;
 
 void vPortSetupTimerInterrupt(void)
 {
@@ -75,32 +59,43 @@ void vPortSetupTimerInterrupt(void)
 
 int main(int argc, char **argv)
 {
-  TaskHandle_t hello_handle = NULL;
+   TaskHandle_t hello_handle = NULL;
 
-  uart_init(57600);
+   sd_driver_add_dma_region(0x08000000, 0x08000000);
 
-  char buffer[64];
+   sd_driver_init();
 
-  sprintf(buffer,"Hello World\r\n\r\n");
+   UART_16550_init();
 
-  uart_write_string(buffer);
+   UART_16550_configure(UART0,57600,UART_PARITY_NONE,8,1);
+   UART_16550_configure(UART1,57600,UART_PARITY_NONE,8,1);
 
-  xTaskCreateStatic(
-      hello_task,
-      "hello_task",
-      HELLO_STACK_SIZE,
-      NULL,
-      4,
-      hello_stack,
-      &hello_TCB);
+   char buffer[64];
 
-  vTaskStartScheduler();
+   sprintf(buffer, "Hello World\r\n\r\n");
 
-  /* we should never get to this point, but if we do, go into infinite
-     loop */
-  while (1)
-  {
-  }
+   UART_16550_write_string( UART0, buffer, portMAX_DELAY);
+
+   // xTaskCreateStatic(
+   //     hello_task,
+   //     "hello_task",
+   //     HELLO_STACK_SIZE,
+   //     NULL,
+   //     4,
+   //     hello_stack,
+   //     &hello_TCB);
+
+   xTaskCreateStatic(load_task, "load",
+                     LOAD_STACK_SIZE, NULL, 2,
+                     load_stack, &load_TCB);
+
+   vTaskStartScheduler();
+
+   /* we should never get to this point, but if we do, go into infinite
+      loop */
+   while (1)
+   {
+   }
 }
 
 /* Blatantly stolen from
