@@ -79,7 +79,7 @@ __Vectors:
 	j       _unhandled      /* 0x58: platform IRQ[6] GPIO 2 */
 	j       _unhandled      /* 0x5C: platform IRQ[7]
 	j       SD_handler      /* 0x60: platform IRQ[8] SD controller */
-	j       _unhandled      /* 0x64: platform IRQ[9] VGA controller */
+	j       SD_handler      /* 0x64: platform IRQ[9] VGA controller */
 	j       _unhandled      /* 0x68: platform IRQ[10] */
 	j       _unhandled      /* 0x6C: platform IRQ[11] */
 	j       _unhandled      /* 0x70: platform IRQ[12] */

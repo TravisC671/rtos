@@ -19,8 +19,8 @@ __STACK_SIZE = 0x00001000;
  * live in their own region of DDR.  Kept distinct from the heap so
  * a runaway malloc cannot trample a task stack and a stack overflow
  * cannot eat the heap. */
-__TASKS_BASE = 0x10000000;
-__TASKS_SIZE = 0x00100000;          /* 1 MB */
+/*__TASKS_BASE = 0x10000000;
+__TASKS_SIZE = 0x00100000;*/          /* 1 MB */
 
 __HEAP_SIZE =  0x00F00000;
 __HeapStart = __TASKS_BASE + __TASKS_SIZE;
@@ -29,15 +29,19 @@ __HeapTop   = __HeapStart + __HEAP_SIZE;
  * it so we do not have to edit the upstream driver. */
 __HeapBase  = __HeapStart;
 
+/* 1. Definitions */
+/*__WAD_BASE  = 0x11000000;
+__WAD_SIZE  = 0x02000000; */ /* 32MB */
+
+__DOOM_BASE = 0x10000000; 
+__DOOM_SIZE = 0x01000000; /* 32MB */
 
 MEMORY
 {
   ROM   (rx)   : ORIGIN = __ROM_BASE,    LENGTH = __ROM_SIZE
   RAM   (rwx)  : ORIGIN = __RAM_BASE,    LENGTH = __RAM_SIZE
-  TASKS (rwx)  : ORIGIN = __TASKS_BASE,  LENGTH = __TASKS_SIZE
   HEAP  (rwx)  : ORIGIN = __HeapStart,   LENGTH = __HEAP_SIZE
-  /*  THEME (r)    : ORIGIN = 0x80000000, LENGTH = 0x200000 */
-  /*   DEBUG (r)   : ORIGIN = 0x80200000, LENGTH = 0x200000 */
+  DOOM_SPACE (rwx) : ORIGIN = __DOOM_BASE, LENGTH = __DOOM_SIZE
 }
 
 
@@ -311,7 +315,7 @@ SECTIONS
    * land in DDR rather than internal RAM.  NOLOAD because there is
    * nothing to copy at boot; the C runtime (or FreeRTOS port) writes
    * the initial stack frame at task creation. */
-  .tasks (NOLOAD) :
+  /*.tasks (NOLOAD) :
   {
     . = ALIGN(8);
     __tasks_start__ = .;
@@ -319,7 +323,7 @@ SECTIONS
     *(.tasks.*)
     . = ALIGN(8);
     __tasks_end__ = .;
-  } > TASKS
+  } > TASKS */
 
   .heap (ORIGIN(HEAP)) (COPY):
   {
@@ -345,5 +349,20 @@ SECTIONS
  /* 
  ASSERT(__StackLimit > __HeapTop, "Data/BSS overflowed with stack")
 */
+  .wad_area (NOLOAD) :
+  {
+    . = ALIGN(4);
+    __wad_start = .;  /* This will now be 0x11000000 */
+    . = . + __WAD_SIZE;
+    __wad_end = .;
+  } > WAD_SPACE
+
+  .doom_area (NOLOAD) :
+  {
+    . = ALIGN(4);
+    __doom_start = .; /* This will now be 0x13000000 */
+    . = . + __DOOM_SIZE;
+    __doom_end = .;
+  } > DOOM_SPACE
 
 }

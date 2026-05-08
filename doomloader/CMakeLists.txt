@@ -190,7 +190,7 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 	COMMENT "Creating ${DIS_FILE}"
 	COMMAND ${CMAKE_OBJDUMP} -dS bin/${ELF_FILE} > bin/${DIS_FILE}
 	)
-
+  
 # add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 # 	COMMENT "Memory Report"
 # 	COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}

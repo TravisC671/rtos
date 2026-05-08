@@ -8,7 +8,7 @@
 
 void load_task(void *pvParameters);
 
-#define LOAD_STACK_SIZE 8192
+#define LOAD_STACK_SIZE 4096
 
 extern StaticTask_t load_TCB;
 

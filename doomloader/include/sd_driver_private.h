@@ -6,6 +6,7 @@
 #define SD_DRIVER_PRIVATE_H
 
 #include <stdint.h>
+#include <FreeRTOSFATConfig.h>
 #include <FreeRTOS.h>
 #include <queue.h>
 #include <semphr.h>
@@ -90,7 +91,7 @@ extern QueueHandle_t sd_arg_queue;
 // -----------------------------------------------------------------------
 // Task priority and stack size
 // -----------------------------------------------------------------------
-#define SD_DRIVER_TASK_PRIORITY    4
+#define SD_DRIVER_TASK_PRIORITY    3
 #define SD_DRIVER_STACK_SIZE     2048
 
 // -----------------------------------------------------------------------

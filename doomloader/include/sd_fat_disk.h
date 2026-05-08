@@ -26,4 +26,7 @@ FF_Disk_t *sd_fat_disk_init(void);
 // Returns FF_ERR_NONE on success.
 FF_Error_t sd_fat_disk_format(FF_Disk_t *pxDisk);
 
+void unmount_disk();
+
+
 #endif // SD_FAT_DISK_H

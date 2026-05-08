@@ -161,7 +161,7 @@ UART_16550_descriptor_t uart[]={
 
 // END of UART definitions and descriptor definitions.
 // -----------------------------------------------------------------------
-//             BEGINNING OF CODE 
+ //             BEGINNING OF CODE 
 /*****************************************************************************/
 // This function is the ISR for transmitter interrupts.
 static void handle_tx_interrupt(UART_16550_descriptor_t *device,
@@ -693,4 +693,9 @@ int UART_16550_chars_available(int UART_number)
 void UART_16550_flush_rx(int UART_number)
 {
   xStreamBufferReset(uart[UART_number].RX_buffer);
+}
+
+void print(const char *s)
+{
+    UART_16550_write_string(UART0, (char *)s, portMAX_DELAY);
 }

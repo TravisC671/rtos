@@ -12,6 +12,8 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <FreeRTOSConfig.h>
+#include <FreeRTOSFATConfig.h>
 #include <FreeRTOS.h>
 #include <queue.h>
 #include <task.h>
@@ -22,6 +24,9 @@
 // Cache management for DMA coherency (MicroBlaze V dcache is always on)
 extern void riscv_flush_dcache_range(unsigned int addr, unsigned int len);
 extern void riscv_invalidate_dcache_range(unsigned int addr, unsigned int len);
+
+SemaphoreHandle_t sd_semaphore = NULL;
+StaticSemaphore_t sdMutexBuffer;
 
 // -----------------------------------------------------------------------
 // Queue handles  (declared extern in sd_driver_private.h)
@@ -102,7 +107,7 @@ static int sd_card_init(void)
     uint32_t read_bl_len;
     uint32_t csd_struct;
 
-    // sd_dbg_print("  sd_drv: starting card init\r\n");
+    sd_dbg_print("  sd_drv: starting card init\r\n");
 
     // -- CMD0: GO_IDLE_STATE (no response) -- send twice
     sd_hw_send_cmd(sd_hw_make_cmd(0, 0, 0, 0),
@@ -261,6 +266,9 @@ static int sd_card_init(void)
 
     sd_card.initialised = 1;
     // sd_dbg_print("  sd_drv: card init OK\r\n");
+    // xSemaphoreGive( sd_semaphore );
+    xSemaphoreGive( sd_semaphore );
+
     return 1;
 }
 
@@ -817,6 +825,9 @@ int sd_driver_init(void)
     // Initialise card state
     memset(&sd_card, 0, sizeof(sd_card));
 
+    sd_semaphore = xSemaphoreCreateMutexStatic( &sdMutexBuffer);
+    xSemaphoreTake( sd_semaphore, portMAX_DELAY );
+    
     // Create queues (static allocation)
     sd_event_queue = xQueueCreateStatic(
         SD_EVENT_QUEUE_LEN, sizeof(uint8_t),

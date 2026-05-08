@@ -26,7 +26,13 @@
 #ifndef SD_DRIVER_H
 #define SD_DRIVER_H
 
+#include <FreeRTOS.h>
 #include <stdint.h>
+#include <task.h>
+#include <queue.h>
+#include <semphr.h>
+
+extern SemaphoreHandle_t sd_semaphore;
 
 // -----------------------------------------------------------------------
 // DMA region table

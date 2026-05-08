@@ -60,22 +60,25 @@ void vPortSetupTimerInterrupt(void)
 int main(int argc, char **argv)
 {
    TaskHandle_t hello_handle = NULL;
-
-   sd_driver_add_dma_region(0x08000000, 0x08000000);
-
-   sd_driver_init();
+   char buffer[64];
 
    UART_16550_init();
 
    UART_16550_configure(UART0,57600,UART_PARITY_NONE,8,1);
    UART_16550_configure(UART1,57600,UART_PARITY_NONE,8,1);
 
-   char buffer[64];
+   //1 gb of storage
+   sd_driver_add_dma_region(0x10000000, 0x40000000);
+   
+   sd_driver_init();
 
-   sprintf(buffer, "Hello World\r\n\r\n");
-
-   UART_16550_write_string( UART0, buffer, portMAX_DELAY);
-
+   //hide cursor
+   print("\033[?25l");
+   
+   print("╔══════════════════════════╗\r\n");
+   print("║ Initializing Doom Loader ║\r\n");
+   print("╚══════════════════════════╝\r\n");
+   
    // xTaskCreateStatic(
    //     hello_task,
    //     "hello_task",
@@ -86,7 +89,7 @@ int main(int argc, char **argv)
    //     &hello_TCB);
 
    xTaskCreateStatic(load_task, "load",
-                     LOAD_STACK_SIZE, NULL, 2,
+                     LOAD_STACK_SIZE, NULL, 4,
                      load_stack, &load_TCB);
 
    vTaskStartScheduler();

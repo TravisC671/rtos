@@ -20,8 +20,8 @@
 // -----------------------------------------------------------------------
 
 // Sector cache: ffconfigCACHE_SIZE sectors × 512 bytes each
-#define SD_CACHE_SIZE  (ffconfigCACHE_SIZE * ffconfigSECTOR_SIZE)
-static uint8_t ucCacheMemory[SD_CACHE_SIZE];
+#define SD_CACHE_SIZE ((ffconfigCACHE_SIZE * ffconfigSECTOR_SIZE) + 1024)
+static uint8_t ucCacheMemory[SD_CACHE_SIZE] __attribute__((aligned(32)));;
 
 // FF_Disk_t — the disk descriptor
 static FF_Disk_t xDisk;
@@ -34,6 +34,8 @@ static FF_Disk_t xDisk;
 // -----------------------------------------------------------------------
 extern void sd_dbg_print(const char *s);
 extern void sd_dbg_printf(const char *fmt_str, ...);
+
+StaticSemaphore_t pvBuffer;
 
 // -----------------------------------------------------------------------
 // Public: initialise the disk and attempt to mount
@@ -69,7 +71,7 @@ FF_Disk_t *sd_fat_disk_init(void)
     xParams.fnWriteBlocks  = sd_ff_write_blocks;
     xParams.fnReadBlocks   = sd_ff_read_blocks;
     xParams.pxDisk         = &xDisk;
-    xParams.pvSemaphore    = xSemaphoreCreateRecursiveMutex();
+    xParams.pvSemaphore    = xSemaphoreCreateRecursiveMutexStatic(&pvBuffer);
     if (xParams.pvSemaphore == NULL) {
         sd_dbg_print("  fat: failed to create IO manager semaphore\r\n");
         return NULL;
@@ -162,4 +164,21 @@ FF_Error_t sd_fat_disk_format(FF_Disk_t *pxDisk)
     sd_dbg_print("  fat: mounted after format\r\n");
     pxDisk->xStatus.bPartitionNumber = 0;
     return FF_ERR_NONE;
+}
+
+void unmount_disk()
+{
+    FF_Error_t xError = FF_Unmount(&xDisk);
+
+    vTaskDelay(pdMS_TO_TICKS(3000));
+    
+    if (FF_isERR(xError))
+    {
+        sd_dbg_printf("  fat: mount failed (0x%lX) \r\n", xError);
+    }
+    else
+    {
+        sd_dbg_printf("  fat: successfully unmounted drive \r\n", xError);
+    }
+
 }
