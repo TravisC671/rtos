@@ -1,241 +1,155 @@
-
-__RAM_BASE = 0x10000000;
-__RAM_SIZE = 0x01000000;
-
-/* __RAM_BASE = __ROM_BASE + __ROM_SIZE; */
-/* __RAM_SIZE = 0x00200000; */
-
-__STACK_SIZE = 0x00001000;
-
 /*
-__TASKS_BASE = __RAM_BASE + __RAM_SIZE;
-__TASKS_SIZE = 0x00100000;*/          /* 1 MB */
+ * Linker script for RISC-V / FreeRTOS / Doom on Nexys A7 DDR2
+ *
+ * Physical DDR2 map (128 MB total):
+ *   0x10000000 – 0x11000000   16 MB  cached   (code + data + heap)
+ *   0x11000000 – 0x18000000  112 MB  uncached  (framebuffer, audio, etc.)
+ *
+ * Cached window layout:
+ *   0x10000000  .text / .rodata / .data / .bss     ~2 MB  (PRG_SIZE)
+ *   0x10200000 – 0x10200FFF  stack (4 KB, grows down from 0x10201000)
+ *   0x10201000 – 0x10FFFFFF  FreeRTOS heap (~14 MB, WAD lives here)
+ */
 
-__HEAP_SIZE =  0x00E00000;
-__HeapStart = 0x10080000;
-__HeapTop   = 0x11000000 - __STACK_SIZE;
+/* ── sizes ──────────────────────────────────────────────────────── */
+__STACK_SIZE = 0x00001000;   /*   4 KB – IRQ / main stack              */
+__PRG_SIZE   = 0x00200000;   /*   2 MB – code+data+bss budget          */
+
+/* ── derived addresses ──────────────────────────────────────────── */
+__RAM_BASE   = 0x10000000;
+__STACK_TOP  = __RAM_BASE + __PRG_SIZE;           /* 0x10200000 */
+__STACK_BASE = __STACK_TOP - __STACK_SIZE;        /* 0x101FF000 */
+__HEAP_BASE  = __STACK_TOP;                       /* 0x10200000 ... */
+                                                  /* ... grows up    */
+__HEAP_TOP   = 0x11000000;
+__HEAP_SIZE  = __HEAP_TOP - __HEAP_BASE;          /* ~14 MB          */
+
+/* ── uncached window (available for framebuffer / scratch) ──────── */
+__UNCACHED_BASE = 0x11000000;
+__UNCACHED_SIZE = 0x07000000;   /* 112 MB */
 
 MEMORY
 {
-  RAM   (rwx)  : ORIGIN = __RAM_BASE,    LENGTH = __RAM_SIZE
-  /* ROM   (rx)   : ORIGIN = __ROM_BASE,    LENGTH = __ROM_SIZE
-  TASKS (rwx)  : ORIGIN = __TASKS_BASE,  LENGTH = __TASKS_SIZE */
-  HEAP  (rwx)  : ORIGIN = __HeapStart,   LENGTH = __HEAP_SIZE
+  /* 2 MB cached window: code, data, bss, stack */
+  PRG   (rwx) : ORIGIN = __RAM_BASE,  LENGTH = __PRG_SIZE
+
+  /* ~14 MB cached: FreeRTOS heap, WAD data */
+  HEAP  (rwx) : ORIGIN = __HEAP_BASE, LENGTH = __HEAP_SIZE
+
+  /* 112 MB uncached: framebuffer, DMA buffers, audio */
+  UNCACHED (rwx) : ORIGIN = __UNCACHED_BASE, LENGTH = __UNCACHED_SIZE
 }
 
-
-/* Linker script to place sections and symbol values. Should be used together
- * with other linker script that defines memory regions ROM and RAM.
- * It references following symbols, which must be defined in code:
- *   Reset_Handler : Entry of reset handler
- *
- * It defines following symbols, which code can use without definition:
- *   __exidx_start
- *   __exidx_end
- *   __copy_table_start__
- *   __copy_table_end__
- *   __zero_table_start__
- *   __zero_table_end__
- *   __etext
- *   __data_start__
- *   __preinit_array_start
- *   __preinit_array_end
- *   __init_array_start
- *   __init_array_end
- *   __fini_array_start
- *   __fini_array_end
- *   __data_end__
- *   __bss_start__
- *   __bss_end__
- *   __end__
- *   end
- *   __HeapLimit
- *   __StackLimit
- *   __StackTop
- *   __stack
- */
-ENTRY(_Reset_Handler) 
+ENTRY(_Reset_Handler)
 
 SECTIONS
 {
+  /* ── reset vector ── must be at 0x10000000 ── */
+  .reset_entry :
+  {
+    KEEP(*(.reset_entry))
+  } > PRG
+
+  /* ── interrupt vector table ── 128-byte aligned for vectored mtvec ── */
+  . = ALIGN(128);
+  .vectors :
+  {
+    KEEP(*(.vectors))
+  } > PRG
+
+  /* ── code ── */
   .text :
   {
-    /* Hardware reset entry must be at ROM base (PC = 0x00000000).
-       It holds a single "j _Reset_Handler" instruction. */
-    KEEP(*(.reset_entry))
-    /* The trap vector table follows.  mtvec[1:0] = 01 (vectored) and
-       bits [31:2] form the base, so the table just needs 4-byte
-       alignment; 128 bytes keeps all 32 entries contiguous within
-       one natural region. */
-    . = ALIGN(128);
-    KEEP(*(.vectors))
     KEEP(*(.resetHandler*))
     . = ALIGN(4);
-    *(.text*)
+    *(.text .text.*)
     . = ALIGN(4);
-    *(.fini*)
+    *(.fini .fini.*)
     . = ALIGN(4);
-    *(.rodata*) 
-    . = ALIGN(4);
-    *(.srodata*) 
-    . = ALIGN(4);
-  } > RAM
+  } > PRG
 
-/*  . = ALIGN(4);
-  .copy.table (READONLY):
+  /* ── read-only data ── */
+  .rodata :
   {
     . = ALIGN(4);
-    __copy_table_start__ = .;
-
-    LONG (__etext)
+    *(.rodata .rodata.*)
+    *(.srodata .srodata.*)
     . = ALIGN(4);
+  } > PRG
 
-    LONG (__data_start__)
-    . = ALIGN(4);
-
-    LONG ((__data_end__ - __data_start__) / 4)
-    . = ALIGN(4); */
-
-    /* Add each additional data section here */
-    /*
-    LONG (__etext2)
-    LONG (__data2_start__)
-    LONG ((__data2_end__ - __data2_start__) / 4)
-    . = ALIGN(4);
-    */
-    /*. = ALIGN(4);
-    __copy_table_end__ = .;
-  } > ROM */
-
-  .zero.table (READONLY):
+  /* ── zero-table (used by startup to clear .bss) ── */
+  .zero.table :
   {
     . = ALIGN(4);
     __zero_table_start__ = .;
-    LONG (__bss_start__)
-    LONG ((__bss_end__ - __bss_start__) / 4)
-    /* Add each additional bss section here */
-    /*
-    LONG (__bss2_start__)
-    LONG ((__bss2_end__ - __bss2_start__) / 4)
-    */
+    LONG(__bss_start__)
+    LONG((__bss_end__ - __bss_start__) / 4)
     . = ALIGN(4);
     __zero_table_end__ = .;
-  } > RAM
+  } > PRG
 
-  . = ALIGN(4);
+  __etext = .;   /* end of ROM-style content; LMA == VMA here */
 
-  __etext = .;
-  __End_Text__ = .;
-
-  /**
-   * Location counter can end up 2byte aligned with narrow Thumb code but
-   * __etext is assumed by startup code to be the LMA of a section in RAM
-   * which must be 4byte aligned 
-   */
-  . = ALIGN(4);
-  .data : AT (__etext) 
+  /* ── initialised data (already in RAM, no copy needed) ── */
+  .data :
   {
     . = ALIGN(4);
-    /* __Begin_Data__ = .; */
     __data_start__ = .;
-    *(.data)
-    *(.data*)
-    . = ALIGN(4);
-    *(.sdata*)
+    *(.data .data.*)
+    *(.sdata .sdata.*)
     . = ALIGN(4);
     __data_end__ = .;
-    __End_Data__ = .;
-  } > RAM 
+  } > PRG
 
-  /* add any special data sections here and add to copy table above */
-
-  /* __edata is the end of last data section */
-  __edata = .;
-  .bss :
+  /* ── zero-initialised data ── */
+  .bss (NOLOAD) :
   {
     . = ALIGN(4);
     __bss_start__ = .;
-    *(.bss*)
-    . = ALIGN(4);
-    *(.sbss*)
-    . = ALIGN(4);
+    *(.bss .bss.*)
+    *(.sbss .sbss.*)
     *(COMMON)
     . = ALIGN(4);
     __bss_end__ = .;
-  } > RAM 
+  } > PRG
 
-  /* add any special bss sections here and add to .zero table above */
+  __end_of_static = .;   /* first free byte after bss */
 
-  /* __ebss is the end of last bss section */
-  __ebss = .;
-  __End_Bss__ = .;
-
-  .stack (ORIGIN(RAM) + LENGTH(RAM) - __STACK_SIZE ) (COPY) :
+  /* ── stack ── placed at top of PRG region, grows downward ── */
+  .stack (NOLOAD) :
   {
-    . = ALIGN(4);
+    . = ALIGN(8);
     __StackLimit = .;
-    . = . + __STACK_SIZE;
+    . += __STACK_SIZE;
     . = ALIGN(8);
     __StackTop = .;
-  } > RAM
-  PROVIDE(__freertos_irq_stack_top = __StackTop); 
+  } > PRG
+  /* FreeRTOS uses this symbol for the initial IRQ stack */
+  PROVIDE(__freertos_irq_stack_top = __StackTop);
 
-  /* The heap can use all of the space between the end of the .bss
-     section(s) and the beginning of the stack */
-  
-  /* By default, Newlib uses "end" to find where the heap starts.  In
-   *  our case, It is at the end of the last bss section. 
-   *  Some implementations of malloc/free use _end or __end */
   /*
-  end = __ebss;
-  .heap (COPY) :
+   * Sanity check: if static data + bss has grown past the stack base
+   * the linker will error here.
+   */
+  ASSERT(__end_of_static <= __STACK_BASE,
+         "ERROR: .bss overflows into stack – increase __PRG_SIZE")
+
+  /* ── FreeRTOS heap (~14 MB, WAD data lives here) ── */
+  .heap (NOLOAD) :
   {
     . = ALIGN(8);
-    __end__ = .;
-    PROVIDE(end = .); 
-    PROVIDE(_end = .);
-    PROVIDE(__end = __ebss);
-    . = . + __HEAP_SIZE;
-    . = ALIGN(8);
-    __HeapTop = .;
-  } > RAM
-  */
-  
-    . = ALIGN(8);
-    __end__ = .;
-    PROVIDE(_end = .);
-    PROVIDE(__end = __ebss);
-
-  /* Task stacks and TCBs that opt in via __attribute__((section(".tasks")))
-   * land in DDR rather than internal RAM.  NOLOAD because there is
-   * nothing to copy at boot; the C runtime (or FreeRTOS port) writes
-   * the initial stack frame at task creation. */
-/*  .tasks (NOLOAD) :
-  {
-    . = ALIGN(8);
-    __tasks_start__ = .;
-    *(.tasks)
-    *(.tasks.*)
-    . = ALIGN(8);
-    __tasks_end__ = .;
-  } > TASKS */
-
-  .heap (ORIGIN(HEAP)) (COPY):
-  {
-    . = ALIGN(4);
-    end = .;
-    PROVIDE( _HeapStart = . );   
-
+    __HeapStart = .;
+    PROVIDE(end   = .);   /* Newlib sbrk() starts here */
+    PROVIDE(_end  = .);
+    PROVIDE(__end = .);
     . += __HEAP_SIZE;
-    
-    __Heap_End = .;
-
-    PROVIDE( _HeapTop = . );   
-
-    . = ALIGN(4);
-
-  /* /\*   PROVIDE(_end = .); *\/ */
-  /* /\*   PROVIDE(__end = .); *\/ */
-  /* /\*   PROVIDE(end = .); *\/ */
+    . = ALIGN(8);
+    __HeapEnd = .;
   } > HEAP
+  PROVIDE(_HeapStart = __HeapStart);
+  PROVIDE(_HeapTop   = __HeapEnd);
+
+  /* ── uncached region symbols (no sections, just landmarks) ── */
+  __uncached_start = ORIGIN(UNCACHED);
+  __uncached_end   = ORIGIN(UNCACHED) + LENGTH(UNCACHED);
 }

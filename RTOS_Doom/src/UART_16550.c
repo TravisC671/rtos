@@ -1,7 +1,7 @@
 // This file implements the API for the 16550 UART driver.
 
 // comment or delete the next line when you start part 4 of the lab
-// #define ORIGINAL_PUT_CHAR
+#define ORIGINAL_PUT_CHAR
 
 #define UART_16550_USE_STATIC_ALLOCATION
 #define UART_16550_RX_BUFFER_SIZE 128

@@ -28,7 +28,7 @@ _start_reset:
 	la t0, __Vectors        # load vector table first
 	csrw mtvec, t0 
 
-	j       _Reset_Handler
+	tail       _Reset_Handler
 
 	/* =================================================================
 	* Vectored interrupt table (32 entries, 128-byte aligned)
@@ -48,13 +48,13 @@ __Vectors:
 	 * handler that recognises ECALL and performs the context
 	 * switch, and forwards everything else to
 	 * freertos_risc_v_application_exception_handler. */
-	j       freertos_risc_v_exception_handler
-	j       _unhandled      /* 0x04: reserved (cause 1) */
-	j       _unhandled      /* 0x08: reserved (cause 2) */
-	j       _unhandled      /* 0x0C: MSI */
-	j       _unhandled      /* 0x10: reserved (cause 4) */
-	j       _unhandled      /* 0x14: reserved (cause 5) */
-	j       _unhandled      /* 0x18: reserved (cause 6) */
+	tail       freertos_risc_v_exception_handler
+	tail       _unhandled      /* 0x04: reserved (cause 1) */
+	tail       _unhandled      /* 0x08: reserved (cause 2) */
+	tail       _unhandled      /* 0x0C: MSI */
+	tail       _unhandled      /* 0x10: reserved (cause 4) */
+	tail       _unhandled      /* 0x14: reserved (cause 5) */
+	tail       _unhandled      /* 0x18: reserved (cause 6) */
 	/* HARDWARE-BUG WORKAROUND: vectored dispatch can land an MTI
 	 * (cause 7) at base+4*8 instead of base+4*7 when the CPU is
 	 * stalled on a long AXI store at the moment the timer fires.
@@ -64,32 +64,32 @@ __Vectors:
 	 * occur on an M-only design, so the slot is safe to repurpose.
 	 * Remove once the RTL race is fixed. */
 	/* 0x1C: MTI - machine timer interrupt */
-	j       freertos_risc_v_mtimer_interrupt_handler
+	tail       freertos_risc_v_mtimer_interrupt_handler
 	/* 0x20: cause 8 mirror - MTI off-by-one workaround */
-	j       freertos_risc_v_mtimer_interrupt_handler
-	j       _unhandled      /* 0x24: reserved (cause 9) */
-	j       _unhandled      /* 0x28: reserved (cause 10) */
-	j       _unhandled      /* 0x2C: MEI - machine external interrupt */
-	j       _unhandled      /* 0x30: reserved (cause 12) */
-	j       _unhandled      /* 0x34: reserved (cause 13) */
-	j       _unhandled      /* 0x38: reserved (cause 14) */
-	j       _unhandled      /* 0x3C: reserved (cause 15) */
-	j       UART0_handler   /* 0x40: platform IRQ[0] UART 0 */
-	j       UART1_handler   /* 0x44: platform IRQ[1] UART 1 */
-	j       AXI_TIMER_0_ISR /* 0x48: platform IRQ[2] AXI Timer 0 */
-	j       AXI_TIMER_1_ISR /* 0x4C: platform IRQ[3] AXI Timer 1 */
-	j       _unhandled      /* 0x50: platform IRQ[4] GPIO 0 */
-	j       _unhandled      /* 0x54: platform IRQ[5] GPIO 1 */
-	j       _unhandled      /* 0x58: platform IRQ[6] GPIO 2 */
-	j       _unhandled      /* 0x5C: platform IRQ[7]
-	j       SD_handler      /* 0x60: platform IRQ[8] SD controller */
-	j       SD_handler      /* 0x64: platform IRQ[9] VGA controller */
-	j       _unhandled      /* 0x68: platform IRQ[10] */
-	j       _unhandled      /* 0x6C: platform IRQ[11] */
-	j       _unhandled      /* 0x70: platform IRQ[12] */
-	j       _unhandled      /* 0x74: platform IRQ[13] */
-	j       _unhandled      /* 0x78: platform IRQ[14] */
-	j       _unhandled      /* 0x7C: platform IRQ[15] */
+	tail       freertos_risc_v_mtimer_interrupt_handler
+	tail       _unhandled      /* 0x24: reserved (cause 9) */
+	tail       _unhandled      /* 0x28: reserved (cause 10) */
+	tail       _unhandled      /* 0x2C: MEI - machine external interrupt */
+	tail       _unhandled      /* 0x30: reserved (cause 12) */
+	tail       _unhandled      /* 0x34: reserved (cause 13) */
+	tail       _unhandled      /* 0x38: reserved (cause 14) */
+	tail       _unhandled      /* 0x3C: reserved (cause 15) */
+	tail       UART0_handler   /* 0x40: platform IRQ[0] UART 0 */
+	tail       UART1_handler   /* 0x44: platform IRQ[1] UART 1 */
+	tail       AXI_TIMER_0_ISR /* 0x48: platform IRQ[2] AXI Timer 0 */
+	tail       AXI_TIMER_1_ISR /* 0x4C: platform IRQ[3] AXI Timer 1 */
+	tail       _unhandled      /* 0x50: platform IRQ[4] GPIO 0 */
+	tail       _unhandled      /* 0x54: platform IRQ[5] GPIO 1 */
+	tail       _unhandled      /* 0x58: platform IRQ[6] GPIO 2 */
+	tail       _unhandled      /* 0x5C: platform IRQ[7]
+	tail       SD_handler      /* 0x60: platform IRQ[8] SD controller */
+	tail       SD_handler      /* 0x64: platform IRQ[9] VGA controller */
+	tail       _unhandled      /* 0x68: platform IRQ[10] */
+	tail       _unhandled      /* 0x6C: platform IRQ[11] */
+	tail       _unhandled      /* 0x70: platform IRQ[12] */
+	tail       _unhandled      /* 0x74: platform IRQ[13] */
+	tail       _unhandled      /* 0x78: platform IRQ[14] */
+	tail       _unhandled      /* 0x7C: platform IRQ[15] */
 
 	/* =================================================================
 	* Main startup
@@ -167,10 +167,10 @@ movedata:
 	fence.i  */
 
 call_main:
-        jal   main
-hang:   j     hang
+        call   main
+hang:   tail     hang
         .endfunc
 
 _unhandled:
 	ebreak                  /* DIAG: catch any unhandled vector dispatch */
-	j       _unhandled
+	tail       _unhandled

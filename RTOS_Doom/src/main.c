@@ -66,10 +66,10 @@ int main( int argc, char **argv )
    UART_16550_init();
 
    UART_16550_configure(UART0, 57600, UART_PARITY_NONE, 8, 1);
-   UART_16550_configure(UART1, 57600, UART_PARITY_NONE, 8, 1);
+   // UART_16550_configure(UART1, 57600, UART_PARITY_NONE, 8, 1);
 
-   //Change this to the 14mb for the WAD
-   sd_driver_add_dma_region(0x10000000, 0x40000000);
+   //14 mb for the wad
+   sd_driver_add_dma_region(0x12000000, 0x0E00000); 
 
    sd_driver_init();
 
@@ -86,7 +86,7 @@ int main( int argc, char **argv )
    //  print("║ Doom is Loaded!!! ║\r\n");
    //  print("╚═══════════════════╝\r\n");
 
-   doom_handle = xTaskCreateStatic(doom_task, "doom", DOOM_STACK_SIZE, NULL, 4, doom_stack, &doom_TCB);
+   doom_handle = xTaskCreateStatic(doom_task, "doom", DOOM_STACK_SIZE, NULL, 3, doom_stack, &doom_TCB);
 
    stats_handle = xTaskCreateStatic(stats_task, "stats", STATS_STACK_SIZE,
                                     NULL, 3, stats_stack, &stats_TCB);

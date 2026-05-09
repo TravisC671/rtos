@@ -3,8 +3,8 @@
 #include <FreeRTOSConfig.h>
 #include <FreeRTOS.h>
 #include <task.h>
-// #include <doomgeneric.h>
-// #include <doomgeneric_freertos.h>
+#include <doomgeneric_freertos.h>
+#include <doomgeneric.h>
 #include <task.h>
 #include <UART_16550.h>
 #include <stdio.h>
@@ -52,9 +52,10 @@ void doom_task(void *pvParameters)
     char buffer[50];
 
     // get user input later
-    char *argv[] = {"doom", "-iwad", "/sd/doom.wad", NULL};
+    char *argv[] = {"doom", "-iwad", "/sd/doom1.wad", NULL};
     int argc = sizeof(argv) / sizeof(argv[0]) - 1;
 
+    uart0_print("\033[H\033[2J");
     //ascii art from https://www.gamers.org/dhs/helpdocs/dmsp1666.html
     uart0_print("=================     ===============     ===============   ================\r\n");
     uart0_print("\\\\ . . . . . . .\\\\   //. . . . . . .\\\\   //. . . . . . .\\\\  \\\\. . .\\\\// . .//\r\n");
@@ -84,6 +85,7 @@ void doom_task(void *pvParameters)
 
         uart0_print(buffer);
     }
+    uart0_print("\r\n");
 
     // mount the SD card first
     xSemaphoreTake(sd_semaphore, portMAX_DELAY);
@@ -98,7 +100,7 @@ void doom_task(void *pvParameters)
         return;
     }
 
-    // doomgeneric_Create(argc, argv);
+    doomgeneric_Create(argc, argv);
 
     while (1)
     {
