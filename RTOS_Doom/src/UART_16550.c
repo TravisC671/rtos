@@ -702,7 +702,17 @@ void UART_16550_flush_rx(int UART_number)
   xStreamBufferReset(uart[UART_number].RX_buffer);
 }
 
-void print(const char *s)
+void uart0_print(const char *s)
 {
     UART_16550_write_string(UART0, (char *)s, portMAX_DELAY);
 }
+
+// void uart0_printf(const char *fmt_str, ...)
+// {
+//     va_list ap;
+
+//     va_start(ap, fmt_str);
+//     vsnprintf(dbg_buf, sizeof(dbg_buf), fmt_str, ap);
+//     va_end(ap);
+//     sd_dbg_print(dbg_buf);
+// }

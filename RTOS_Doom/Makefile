@@ -168,6 +168,318 @@ RTOS_Doom.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/build
 .PHONY : RTOS_Doom.elf/fast
 
+FreeRTOS-Plus-Fat/ff_crc.obj: FreeRTOS-Plus-Fat/ff_crc.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_crc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_crc.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.c.obj
+
+FreeRTOS-Plus-Fat/ff_crc.i: FreeRTOS-Plus-Fat/ff_crc.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_crc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_crc.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.c.i
+
+FreeRTOS-Plus-Fat/ff_crc.s: FreeRTOS-Plus-Fat/ff_crc.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_crc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_crc.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_crc.c.s
+
+FreeRTOS-Plus-Fat/ff_dir.obj: FreeRTOS-Plus-Fat/ff_dir.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_dir.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_dir.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.c.obj
+
+FreeRTOS-Plus-Fat/ff_dir.i: FreeRTOS-Plus-Fat/ff_dir.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_dir.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_dir.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.c.i
+
+FreeRTOS-Plus-Fat/ff_dir.s: FreeRTOS-Plus-Fat/ff_dir.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_dir.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_dir.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_dir.c.s
+
+FreeRTOS-Plus-Fat/ff_error.obj: FreeRTOS-Plus-Fat/ff_error.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_error.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_error.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_error.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_error.c.obj
+
+FreeRTOS-Plus-Fat/ff_error.i: FreeRTOS-Plus-Fat/ff_error.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_error.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_error.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_error.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_error.c.i
+
+FreeRTOS-Plus-Fat/ff_error.s: FreeRTOS-Plus-Fat/ff_error.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_error.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_error.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_error.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_error.c.s
+
+FreeRTOS-Plus-Fat/ff_fat.obj: FreeRTOS-Plus-Fat/ff_fat.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_fat.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_fat.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.c.obj
+
+FreeRTOS-Plus-Fat/ff_fat.i: FreeRTOS-Plus-Fat/ff_fat.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_fat.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_fat.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.c.i
+
+FreeRTOS-Plus-Fat/ff_fat.s: FreeRTOS-Plus-Fat/ff_fat.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_fat.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_fat.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_fat.c.s
+
+FreeRTOS-Plus-Fat/ff_file.obj: FreeRTOS-Plus-Fat/ff_file.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_file.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_file.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_file.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_file.c.obj
+
+FreeRTOS-Plus-Fat/ff_file.i: FreeRTOS-Plus-Fat/ff_file.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_file.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_file.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_file.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_file.c.i
+
+FreeRTOS-Plus-Fat/ff_file.s: FreeRTOS-Plus-Fat/ff_file.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_file.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_file.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_file.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_file.c.s
+
+FreeRTOS-Plus-Fat/ff_format.obj: FreeRTOS-Plus-Fat/ff_format.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_format.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_format.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_format.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_format.c.obj
+
+FreeRTOS-Plus-Fat/ff_format.i: FreeRTOS-Plus-Fat/ff_format.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_format.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_format.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_format.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_format.c.i
+
+FreeRTOS-Plus-Fat/ff_format.s: FreeRTOS-Plus-Fat/ff_format.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_format.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_format.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_format.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_format.c.s
+
+FreeRTOS-Plus-Fat/ff_ioman.obj: FreeRTOS-Plus-Fat/ff_ioman.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_ioman.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_ioman.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.c.obj
+
+FreeRTOS-Plus-Fat/ff_ioman.i: FreeRTOS-Plus-Fat/ff_ioman.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_ioman.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_ioman.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.c.i
+
+FreeRTOS-Plus-Fat/ff_ioman.s: FreeRTOS-Plus-Fat/ff_ioman.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_ioman.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_ioman.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_ioman.c.s
+
+FreeRTOS-Plus-Fat/ff_locking.obj: FreeRTOS-Plus-Fat/ff_locking.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_locking.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_locking.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.c.obj
+
+FreeRTOS-Plus-Fat/ff_locking.i: FreeRTOS-Plus-Fat/ff_locking.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_locking.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_locking.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.c.i
+
+FreeRTOS-Plus-Fat/ff_locking.s: FreeRTOS-Plus-Fat/ff_locking.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_locking.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_locking.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_locking.c.s
+
+FreeRTOS-Plus-Fat/ff_memory.obj: FreeRTOS-Plus-Fat/ff_memory.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_memory.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_memory.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.c.obj
+
+FreeRTOS-Plus-Fat/ff_memory.i: FreeRTOS-Plus-Fat/ff_memory.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_memory.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_memory.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.c.i
+
+FreeRTOS-Plus-Fat/ff_memory.s: FreeRTOS-Plus-Fat/ff_memory.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_memory.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_memory.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_memory.c.s
+
+FreeRTOS-Plus-Fat/ff_stdio.obj: FreeRTOS-Plus-Fat/ff_stdio.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_stdio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_stdio.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.c.obj
+
+FreeRTOS-Plus-Fat/ff_stdio.i: FreeRTOS-Plus-Fat/ff_stdio.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_stdio.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.c.i
+
+FreeRTOS-Plus-Fat/ff_stdio.s: FreeRTOS-Plus-Fat/ff_stdio.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_stdio.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_stdio.c.s
+
+FreeRTOS-Plus-Fat/ff_string.obj: FreeRTOS-Plus-Fat/ff_string.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_string.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_string.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_string.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_string.c.obj
+
+FreeRTOS-Plus-Fat/ff_string.i: FreeRTOS-Plus-Fat/ff_string.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_string.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_string.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_string.c.i
+
+FreeRTOS-Plus-Fat/ff_string.s: FreeRTOS-Plus-Fat/ff_string.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_string.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_string.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_string.c.s
+
+FreeRTOS-Plus-Fat/ff_sys.obj: FreeRTOS-Plus-Fat/ff_sys.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_sys.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_sys.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.c.obj
+
+FreeRTOS-Plus-Fat/ff_sys.i: FreeRTOS-Plus-Fat/ff_sys.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_sys.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_sys.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.c.i
+
+FreeRTOS-Plus-Fat/ff_sys.s: FreeRTOS-Plus-Fat/ff_sys.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_sys.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_sys.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_sys.c.s
+
+FreeRTOS-Plus-Fat/ff_time.obj: FreeRTOS-Plus-Fat/ff_time.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_time.obj
+
+# target to build an object file
+FreeRTOS-Plus-Fat/ff_time.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_time.c.obj
+.PHONY : FreeRTOS-Plus-Fat/ff_time.c.obj
+
+FreeRTOS-Plus-Fat/ff_time.i: FreeRTOS-Plus-Fat/ff_time.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_time.i
+
+# target to preprocess a source file
+FreeRTOS-Plus-Fat/ff_time.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_time.c.i
+.PHONY : FreeRTOS-Plus-Fat/ff_time.c.i
+
+FreeRTOS-Plus-Fat/ff_time.s: FreeRTOS-Plus-Fat/ff_time.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_time.s
+
+# target to generate assembly for a file
+FreeRTOS-Plus-Fat/ff_time.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS-Plus-Fat/ff_time.c.s
+.PHONY : FreeRTOS-Plus-Fat/ff_time.c.s
+
 FreeRTOS/event_groups.obj: FreeRTOS/event_groups.c.obj
 .PHONY : FreeRTOS/event_groups.obj
 
@@ -383,6 +695,14 @@ RISCV_pyeatt/PM_isr.obj: RISCV_pyeatt/PM_isr.S.obj
 RISCV_pyeatt/PM_isr.S.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/PM_isr.S.obj
 .PHONY : RISCV_pyeatt/PM_isr.S.obj
+
+RISCV_pyeatt/SD_isr.obj: RISCV_pyeatt/SD_isr.S.obj
+.PHONY : RISCV_pyeatt/SD_isr.obj
+
+# target to build an object file
+RISCV_pyeatt/SD_isr.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/SD_isr.S.obj
+.PHONY : RISCV_pyeatt/SD_isr.S.obj
 
 RISCV_pyeatt/UART_isr.obj: RISCV_pyeatt/UART_isr.S.obj
 .PHONY : RISCV_pyeatt/UART_isr.obj
@@ -2624,6 +2944,198 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/newlib_fs.obj: src/newlib_fs.c.obj
+.PHONY : src/newlib_fs.obj
+
+# target to build an object file
+src/newlib_fs.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_fs.c.obj
+.PHONY : src/newlib_fs.c.obj
+
+src/newlib_fs.i: src/newlib_fs.c.i
+.PHONY : src/newlib_fs.i
+
+# target to preprocess a source file
+src/newlib_fs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_fs.c.i
+.PHONY : src/newlib_fs.c.i
+
+src/newlib_fs.s: src/newlib_fs.c.s
+.PHONY : src/newlib_fs.s
+
+# target to generate assembly for a file
+src/newlib_fs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_fs.c.s
+.PHONY : src/newlib_fs.c.s
+
+src/sd_driver/sd_driver_ff.obj: src/sd_driver/sd_driver_ff.c.obj
+.PHONY : src/sd_driver/sd_driver_ff.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_ff.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_ff.c.obj
+.PHONY : src/sd_driver/sd_driver_ff.c.obj
+
+src/sd_driver/sd_driver_ff.i: src/sd_driver/sd_driver_ff.c.i
+.PHONY : src/sd_driver/sd_driver_ff.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_ff.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_ff.c.i
+.PHONY : src/sd_driver/sd_driver_ff.c.i
+
+src/sd_driver/sd_driver_ff.s: src/sd_driver/sd_driver_ff.c.s
+.PHONY : src/sd_driver/sd_driver_ff.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_ff.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_ff.c.s
+.PHONY : src/sd_driver/sd_driver_ff.c.s
+
+src/sd_driver/sd_driver_hw.obj: src/sd_driver/sd_driver_hw.c.obj
+.PHONY : src/sd_driver/sd_driver_hw.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_hw.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_hw.c.obj
+.PHONY : src/sd_driver/sd_driver_hw.c.obj
+
+src/sd_driver/sd_driver_hw.i: src/sd_driver/sd_driver_hw.c.i
+.PHONY : src/sd_driver/sd_driver_hw.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_hw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_hw.c.i
+.PHONY : src/sd_driver/sd_driver_hw.c.i
+
+src/sd_driver/sd_driver_hw.s: src/sd_driver/sd_driver_hw.c.s
+.PHONY : src/sd_driver/sd_driver_hw.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_hw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_hw.c.s
+.PHONY : src/sd_driver/sd_driver_hw.c.s
+
+src/sd_driver/sd_driver_isr.obj: src/sd_driver/sd_driver_isr.c.obj
+.PHONY : src/sd_driver/sd_driver_isr.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_isr.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_isr.c.obj
+.PHONY : src/sd_driver/sd_driver_isr.c.obj
+
+src/sd_driver/sd_driver_isr.i: src/sd_driver/sd_driver_isr.c.i
+.PHONY : src/sd_driver/sd_driver_isr.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_isr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_isr.c.i
+.PHONY : src/sd_driver/sd_driver_isr.c.i
+
+src/sd_driver/sd_driver_isr.s: src/sd_driver/sd_driver_isr.c.s
+.PHONY : src/sd_driver/sd_driver_isr.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_isr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_isr.c.s
+.PHONY : src/sd_driver/sd_driver_isr.c.s
+
+src/sd_driver/sd_driver_read.obj: src/sd_driver/sd_driver_read.c.obj
+.PHONY : src/sd_driver/sd_driver_read.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_read.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_read.c.obj
+.PHONY : src/sd_driver/sd_driver_read.c.obj
+
+src/sd_driver/sd_driver_read.i: src/sd_driver/sd_driver_read.c.i
+.PHONY : src/sd_driver/sd_driver_read.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_read.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_read.c.i
+.PHONY : src/sd_driver/sd_driver_read.c.i
+
+src/sd_driver/sd_driver_read.s: src/sd_driver/sd_driver_read.c.s
+.PHONY : src/sd_driver/sd_driver_read.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_read.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_read.c.s
+.PHONY : src/sd_driver/sd_driver_read.c.s
+
+src/sd_driver/sd_driver_task.obj: src/sd_driver/sd_driver_task.c.obj
+.PHONY : src/sd_driver/sd_driver_task.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_task.c.obj
+.PHONY : src/sd_driver/sd_driver_task.c.obj
+
+src/sd_driver/sd_driver_task.i: src/sd_driver/sd_driver_task.c.i
+.PHONY : src/sd_driver/sd_driver_task.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_task.c.i
+.PHONY : src/sd_driver/sd_driver_task.c.i
+
+src/sd_driver/sd_driver_task.s: src/sd_driver/sd_driver_task.c.s
+.PHONY : src/sd_driver/sd_driver_task.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_task.c.s
+.PHONY : src/sd_driver/sd_driver_task.c.s
+
+src/sd_driver/sd_driver_write.obj: src/sd_driver/sd_driver_write.c.obj
+.PHONY : src/sd_driver/sd_driver_write.obj
+
+# target to build an object file
+src/sd_driver/sd_driver_write.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_write.c.obj
+.PHONY : src/sd_driver/sd_driver_write.c.obj
+
+src/sd_driver/sd_driver_write.i: src/sd_driver/sd_driver_write.c.i
+.PHONY : src/sd_driver/sd_driver_write.i
+
+# target to preprocess a source file
+src/sd_driver/sd_driver_write.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_write.c.i
+.PHONY : src/sd_driver/sd_driver_write.c.i
+
+src/sd_driver/sd_driver_write.s: src/sd_driver/sd_driver_write.c.s
+.PHONY : src/sd_driver/sd_driver_write.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_driver_write.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_driver_write.c.s
+.PHONY : src/sd_driver/sd_driver_write.c.s
+
+src/sd_driver/sd_fat_disk.obj: src/sd_driver/sd_fat_disk.c.obj
+.PHONY : src/sd_driver/sd_fat_disk.obj
+
+# target to build an object file
+src/sd_driver/sd_fat_disk.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_fat_disk.c.obj
+.PHONY : src/sd_driver/sd_fat_disk.c.obj
+
+src/sd_driver/sd_fat_disk.i: src/sd_driver/sd_fat_disk.c.i
+.PHONY : src/sd_driver/sd_fat_disk.i
+
+# target to preprocess a source file
+src/sd_driver/sd_fat_disk.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_fat_disk.c.i
+.PHONY : src/sd_driver/sd_fat_disk.c.i
+
+src/sd_driver/sd_fat_disk.s: src/sd_driver/sd_fat_disk.c.s
+.PHONY : src/sd_driver/sd_fat_disk.s
+
+# target to generate assembly for a file
+src/sd_driver/sd_fat_disk.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/sd_driver/sd_fat_disk.c.s
+.PHONY : src/sd_driver/sd_fat_disk.c.s
+
 src/stats_task.obj: src/stats_task.c.obj
 .PHONY : src/stats_task.obj
 
@@ -2660,6 +3172,45 @@ help:
 	@echo "... realclean"
 	@echo "... tarfile"
 	@echo "... RTOS_Doom.elf"
+	@echo "... FreeRTOS-Plus-Fat/ff_crc.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_crc.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_crc.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_dir.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_dir.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_dir.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_error.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_error.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_error.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_fat.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_fat.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_fat.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_file.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_file.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_file.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_format.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_format.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_format.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_ioman.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_ioman.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_ioman.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_locking.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_locking.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_locking.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_memory.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_memory.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_memory.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_stdio.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_stdio.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_stdio.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_string.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_string.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_string.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_sys.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_sys.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_sys.s"
+	@echo "... FreeRTOS-Plus-Fat/ff_time.obj"
+	@echo "... FreeRTOS-Plus-Fat/ff_time.i"
+	@echo "... FreeRTOS-Plus-Fat/ff_time.s"
 	@echo "... FreeRTOS/event_groups.obj"
 	@echo "... FreeRTOS/event_groups.i"
 	@echo "... FreeRTOS/event_groups.s"
@@ -2687,6 +3238,7 @@ help:
 	@echo "... FreeRTOS/timers.s"
 	@echo "... RISCV_pyeatt/AXI_isr.obj"
 	@echo "... RISCV_pyeatt/PM_isr.obj"
+	@echo "... RISCV_pyeatt/SD_isr.obj"
 	@echo "... RISCV_pyeatt/UART_isr.obj"
 	@echo "... RISCV_pyeatt/interrupts.obj"
 	@echo "... RISCV_pyeatt/interrupts.i"
@@ -2967,6 +3519,30 @@ help:
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/newlib_fs.obj"
+	@echo "... src/newlib_fs.i"
+	@echo "... src/newlib_fs.s"
+	@echo "... src/sd_driver/sd_driver_ff.obj"
+	@echo "... src/sd_driver/sd_driver_ff.i"
+	@echo "... src/sd_driver/sd_driver_ff.s"
+	@echo "... src/sd_driver/sd_driver_hw.obj"
+	@echo "... src/sd_driver/sd_driver_hw.i"
+	@echo "... src/sd_driver/sd_driver_hw.s"
+	@echo "... src/sd_driver/sd_driver_isr.obj"
+	@echo "... src/sd_driver/sd_driver_isr.i"
+	@echo "... src/sd_driver/sd_driver_isr.s"
+	@echo "... src/sd_driver/sd_driver_read.obj"
+	@echo "... src/sd_driver/sd_driver_read.i"
+	@echo "... src/sd_driver/sd_driver_read.s"
+	@echo "... src/sd_driver/sd_driver_task.obj"
+	@echo "... src/sd_driver/sd_driver_task.i"
+	@echo "... src/sd_driver/sd_driver_task.s"
+	@echo "... src/sd_driver/sd_driver_write.obj"
+	@echo "... src/sd_driver/sd_driver_write.i"
+	@echo "... src/sd_driver/sd_driver_write.s"
+	@echo "... src/sd_driver/sd_fat_disk.obj"
+	@echo "... src/sd_driver/sd_fat_disk.i"
+	@echo "... src/sd_driver/sd_fat_disk.s"
 	@echo "... src/stats_task.obj"
 	@echo "... src/stats_task.i"
 	@echo "... src/stats_task.s"

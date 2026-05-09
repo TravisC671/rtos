@@ -4,8 +4,10 @@
 #include <UART_16550.h>
 #include <hello_task.h>
 #include <stats_task.h>
+#include <doom_task.h>
 #include <device_addrs.h>
 #include <AXI_timer.h>
+#include <sd_driver.h>
 
 /* These globals live in the FreeRTOS RISC-V port (port.c).  The trap
    handler in portASM.S uses them to reload mtimecmp on every tick when
@@ -57,37 +59,46 @@ void vPortSetupTimerInterrupt(void)
 
 int main( int argc, char **argv )
 {
+   TaskHandle_t doom_handle = NULL;
    TaskHandle_t stats_handle = NULL;
    char buffer[64];
 
    UART_16550_init();
 
-   UART_16550_configure(UART0,57600,UART_PARITY_NONE,8,1);
-   UART_16550_configure(UART1,57600,UART_PARITY_NONE,8,1);
+   UART_16550_configure(UART0, 57600, UART_PARITY_NONE, 8, 1);
+   UART_16550_configure(UART1, 57600, UART_PARITY_NONE, 8, 1);
 
+   //Change this to the 14mb for the WAD
+   sd_driver_add_dma_region(0x10000000, 0x40000000);
 
-  // Set up the AXI timer that is used as MTIME and MTIMECMP.
-  // Since portasmHAS_MTIME=0, the FreeRTOS trap handler does NOT
-  // handle cause 7 directly.  The MTIME interrupt comes through the
-  // AXI INTC as an external interrupt (cause 11).  We dispatch it
-  // to mtime_tick_handler via IVAR.
+   sd_driver_init();
 
-   //hide cursor
-  //  print("\033[?25l");
-   
-  //  print("╔═══════════════════╗\r\n");
-  //  print("║ Doom is Loaded!!! ║\r\n");
-  //  print("╚═══════════════════╝\r\n");
+   // Set up the AXI timer that is used as MTIME and MTIMECMP.
+   // Since portasmHAS_MTIME=0, the FreeRTOS trap handler does NOT
+   // handle cause 7 directly.  The MTIME interrupt comes through the
+   // AXI INTC as an external interrupt (cause 11).  We dispatch it
+   // to mtime_tick_handler via IVAR.
 
-  stats_handle = xTaskCreateStatic(stats_task, "stats", STATS_STACK_SIZE,
-                                   NULL, 3, stats_stack, &stats_TCB);
+   // hide cursor
+   //  print("\033[?25l");
 
-  /* start the scheduler */
-  vTaskStartScheduler();
+   //  print("╔═══════════════════╗\r\n");
+   //  print("║ Doom is Loaded!!! ║\r\n");
+   //  print("╚═══════════════════╝\r\n");
 
-  /* we should never get to this point, but if we do, go into infinite
-     loop */
-  while(1) {}
+   doom_handle = xTaskCreateStatic(doom_task, "doom", DOOM_STACK_SIZE, NULL, 4, doom_stack, &doom_TCB);
+
+   stats_handle = xTaskCreateStatic(stats_task, "stats", STATS_STACK_SIZE,
+                                    NULL, 3, stats_stack, &stats_TCB);
+
+   /* start the scheduler */
+   vTaskStartScheduler();
+
+   /* we should never get to this point, but if we do, go into infinite
+      loop */
+   while (1)
+   {
+   }
 }
 
 
@@ -125,70 +136,64 @@ static StackType_t uxIdleTaskStack[ configMINIMAL_STACK_SIZE ];
 }
 /*-----------------------------------------------------------*/
 
+
 /* configSUPPORT_STATIC_ALLOCATION is set to 1, so the application
 must provide an implementation of vApplicationGetTimerTaskMemory() to
 provide the memory that is used by the Timer task. */
-void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimeTaskTCBBuffer,
-                                    StackType_t **ppxTimeTaskStackBuffer,
-                                    uint32_t *pulTimeTaskStackSize )
+void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
+                                    StackType_t **ppxTimerTaskStackBuffer,
+                                    uint32_t *pulTimerTaskStackSize )
 {
-/* If the buffers to be provided to the Time task are declared inside
+/* If the buffers to be provided to the Timer task are declared inside
 this function then they must be declared static - otherwise they will
 be allocated on the stack and so not exists after this function
 exits. */
-static StaticTask_t xTimeTaskTCB;
-static StackType_t uxTimeTaskStack[ configTIMER_TASK_STACK_DEPTH ];
+static StaticTask_t xTimerTaskTCB;
+static StackType_t uxTimerTaskStack[ configMINIMAL_STACK_SIZE ];
 
     /* Pass out a pointer to the StaticTask_t structure in which the
-    Time task's state will be stored. */
-    *ppxTimeTaskTCBBuffer = &xTimeTaskTCB;
+    Timer task's state will be stored. */
+    *ppxTimerTaskTCBBuffer = &xTimerTaskTCB;
 
-    /* Pass out the array that will be used as the Time task's stack. */
-    *ppxTimeTaskStackBuffer = uxTimeTaskStack;
+    /* Pass out the array that will be used as the Timer task's stack. */
+    *ppxTimerTaskStackBuffer = uxTimerTaskStack;
 
-    /* Pass out the size of the array pointed to by *ppxTimeTaskStackBuffer.
+    /* Pass out the size of the array pointed to by *ppxTimerTaskStackBuffer.
     Note that, as the array is necessarily of type StackType_t,
     configMINIMAL_STACK_SIZE is specified in words, not bytes. */
-    *pulTimeTaskStackSize = configTIMER_TASK_STACK_DEPTH;
+    *pulTimerTaskStackSize = configMINIMAL_STACK_SIZE;
 }
 /*-----------------------------------------------------------*/
+
+
+/* DIAG: idle hook called on every iteration of prvIdleTask's loop.
+ * Detects the MIE-stuck-at-0 mret bug: if MIE is 0 here, the most
+ * recent restore failed to leave MIE=1.  Instead of halting, set MIE
+ * back on and increment a recovery counter so the system keeps running
+ * and we can watch how often the bug fires.  The mstatus value seen
+ * BEFORE the recovery is captured so we can post-mortem the exact bit
+ * pattern. */
+volatile uint32_t idle_hook_count          = 0;
+volatile uint32_t idle_hook_last_mstatus   = 0;
+volatile uint32_t idle_mie_recovery_count  = 0;
+volatile uint32_t idle_mie_recovery_last   = 0;
+
+void vApplicationIdleHook(void)
+{
+    uint32_t mst;
+    asm volatile("csrr %0, mstatus" : "=r"(mst));
+    idle_hook_last_mstatus = mst;
+    idle_hook_count++;
+    if ((mst & 0x8) == 0) {
+        idle_mie_recovery_last  = mst;
+        idle_mie_recovery_count++;
+        /* Force MIE=1 to recover from the hardware mret-MIE bug. */
+        asm volatile("csrsi mstatus, 8");
+    }
+}
+
 
 void vAssertCalled( unsigned line, const char * const filename )
-{
-  unsigned uSetToNonZeroInDebuggerToContinue=0;
-    taskENTER_CRITICAL();
-    {
-        /* You can step out of this function to debug the assertion by using
-        the debugger to set ulSetToNonZeroInDebuggerToContinue to a non-zero
-        value. */
-        while(uSetToNonZeroInDebuggerToContinue == 0)
-        {
-        }
-    }
-    taskEXIT_CRITICAL();
-}
-
-void malloc_failed()
-{
-  unsigned uSetToNonZeroInDebuggerToContinue=0;
-    taskENTER_CRITICAL();
-    {
-        /* You can step out of this function to debug the assertion by using
-        the debugger to set ulSetToNonZeroInDebuggerToContinue to a non-zero
-        value. */
-        while(uSetToNonZeroInDebuggerToContinue == 0)
-        {
-        }
-    }
-    taskEXIT_CRITICAL();
-}
-
-
-
-/*-----------------------------------------------------------*/
-
-
-void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName )
 {
   unsigned uSetToNonZeroInDebuggerToContinue=0;
     taskENTER_CRITICAL();

@@ -14,3 +14,5 @@
 Current model:
 Loader freeRTOS: initializes freertos project & critical systems, then loads doom exe from SD card
 doom freertos: initializes itself in ddr2 and & then takes over running
+
+figure out linker script

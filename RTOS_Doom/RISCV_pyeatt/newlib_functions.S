@@ -60,17 +60,11 @@
   .global _write_r
   .endfunc
   
-_close_r: 
-_fstat_r: 
 _getpid_r:  
 _isatty_r:  
 _link_r:  
-_open_r:  
 _unlink_r:  
 _kill_r:  
-_lseek_r: 
-_read_r:  
-_write_r:
 
 hangup: 
   j   hangup

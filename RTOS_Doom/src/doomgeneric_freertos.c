@@ -16,9 +16,6 @@ uint32_t DG_GetTicksMs() {
     return pdTICKS_TO_MS(ticks);
 }
 
-/*
-    I'm thinking of using pipes to get these
-*/
 int DG_GetKey(int* pressed, unsigned char* key) {
 
 }

@@ -67,7 +67,7 @@ int main(int argc, char **argv)
    UART_16550_configure(UART0,57600,UART_PARITY_NONE,8,1);
    UART_16550_configure(UART1,57600,UART_PARITY_NONE,8,1);
 
-   //1 gb of storage
+   //Change this to the 14mb for the WAD
    sd_driver_add_dma_region(0x10000000, 0x40000000);
    
    sd_driver_init();

@@ -32,9 +32,9 @@ void stats_task(void *pvParameters)
     {
       vTaskGetRunTimeStats(stats_buffer);
       
-      UART_16550_write_string(UART0, "hello!!", portMAX_DELAY);
+      // UART_16550_write_string(UART0, "hello!!", portMAX_DELAY);
       // lock uart
-      UART_16550_write_string(UART0,stats_buffer,portMAX_DELAY);
+      // UART_16550_write_string(UART0,stats_buffer,portMAX_DELAY);
       // unlock uart
       vTaskDelay(pdMS_TO_TICKS( 5000 ));
     }

@@ -45,7 +45,7 @@ __Vectors:
 	 * switch, and forwards everything else to
 	 * freertos_risc_v_application_exception_handler. */
 	j       freertos_risc_v_exception_handler
-	j       _unhandled      /* 0x04: reserved (cause 1) */
+	j       freertos_risc_v_exception_handler  /* 0x04: reserved (cause 1) */
 	j       _unhandled      /* 0x08: reserved (cause 2) */
 	j       _unhandled      /* 0x0C: MSI */
 	j       _unhandled      /* 0x10: reserved (cause 4) */

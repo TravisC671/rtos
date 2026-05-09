@@ -13,7 +13,7 @@ number of bytes. For example, if each stack item is 32-bits, and this
 is set to 100, then 400 bytes (100 * 32-bits) will be allocated. */
 #define HELLO_STACK_SIZE 256
 
-/* Structure that will hold the TCB of the task being created. */
+/* Structure that will hold the TCB sof the task being created. */
 extern StaticTask_t hello_TCB;
 
 /* Buffer that the task being created will use as its stack. Note this

@@ -82,6 +82,7 @@ int UART_16550_chars_available(int UART_number);
 // Flush the UART receiver
 void UART_16550_flush_rx(int UART_number);
 
-void print(const char *s);
+void uart0_print(const char *s);
+// void uart0_printf(const char *fmt_str, ...);
 
 #endif

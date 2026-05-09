@@ -92,6 +92,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/src/doomgeneric
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions
+  ${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/include
 )
 
 # list of FreeRTOS sources that we need
@@ -109,6 +110,22 @@ file(GLOB FREERTOS_SOURCES
 # add more as needed
 )  
 
+# FreeRTOS+FAT sources (exclude ff_dev_support.c -- device-file nodes not needed)
+file(GLOB FAT_SOURCES
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_crc.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_dir.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_error.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_fat.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_file.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_format.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_ioman.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_locking.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_memory.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_stdio.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_string.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_sys.c"
+    "${CMAKE_SOURCE_DIR}/FreeRTOS-Plus-Fat/ff_time.c"
+)
 
 # Sources for the executable
 file(GLOB SOURCES
@@ -121,6 +138,14 @@ file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/AXI_timer.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
   "${CMAKE_SOURCE_DIR}/src/UART_16550.c"
+  "${CMAKE_SOURCE_DIR}/src/newlib_fs.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_ff.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_hw.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_isr.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_read.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_task.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_driver_write.c"
+  "${CMAKE_SOURCE_DIR}/src/sd_driver/sd_fat_disk.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/interrupts.c"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/irq.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/newlib_functions.S"
@@ -132,7 +157,10 @@ file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/UART_isr.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/AXI_isr.S"
   "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/PM_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/SD_isr.S"
 )
+
+set(ALL_SOURCES "${SOURCES}" "${FREERTOS_SOURCES}" "${FAT_SOURCES}")
 
 # Define our linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
@@ -144,7 +172,9 @@ add_link_options(-T ${LINKER_SCRIPT} --specs=nosys.specs -nostartfiles)
 
 # Define our target executable, and everything that it depends on
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${FREERTOS_SOURCES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${ALL_SOURCES} ${LINKER_SCRIPT})
+
+target_link_libraries(${PROJECT_NAME}.elf m)
 
 set(ELF_FILE ${PROJECT_NAME}.elf)
 set(HEX_FILE ${PROJECT_NAME}.hex)

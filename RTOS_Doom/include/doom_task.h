@@ -7,7 +7,7 @@
 void doom_task(void *pvParameters);
 
 //! I highly doubt this is large enough
-#define DOOM_STACK_SIZE 512
+#define DOOM_STACK_SIZE 4096
 
 /* Structure that will hold the TCB of the task being created. */
 extern StaticTask_t doom_TCB;

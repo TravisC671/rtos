@@ -34,7 +34,7 @@ __HeapBase  = __HeapStart;
 __WAD_SIZE  = 0x02000000; (/) /* 32MB */
 
 __DOOM_BASE = 0x10000000; 
-__DOOM_SIZE = 0x01000000; /* 32MB */
+__DOOM_SIZE = 0x01000000; /* 16MB */
 
 MEMORY
 {

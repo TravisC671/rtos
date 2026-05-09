@@ -53,10 +53,13 @@
 #define MTIME_RATE_HZ                ((unsigned long)100000000)
 #define configTICK_CLOCK_HZ          ((unsigned long)100000000)
 #define portasmHAS_CLINT              0
+#define configISR_STACK_SIZE_WORDS    2048
 // for RISCV
 #include <stddef.h>
 #include <interrupts.h>
 #include <portmacro.h>
+
+#define configNUM_THREAD_LOCAL_STORAGE_POINTERS  3
 
 #define projCOVERAGE_TEST                          0
 
@@ -81,7 +84,7 @@
     Heap Limit (default __HeapLimit): end address of heap
     Heap size (default __heap_size): size of the heap memory in bytes */
 
-#define configUSE_HEAP_SCHEME                            (6)
+#define configUSE_HEAP_SCHEME                            (3)
 
 /* TOTAL_HEAP_SIZE is not used with heap scheme 6 */
 #define configTOTAL_HEAP_SIZE                            ((size_t)(0x8000))
@@ -101,14 +104,14 @@
 #define configUSE_COUNTING_SEMAPHORES                    0
 #define configSUPPORT_STATIC_ALLOCATION                  1
 #define configSTREAM_BUFFER_TRIGGER_LEVEL_TEST_MARGIN    2
-#define configCHECK_FOR_STACK_OVERFLOW                   1
+#define configCHECK_FOR_STACK_OVERFLOW                   0
 
 
-#define configUSE_MALLOC_FAILED_HOOK                     1
+#define configUSE_MALLOC_FAILED_HOOK                     0
 extern void malloc_failed();
 #define vApplicationMallocFailedHook(x)     malloc_failed()
 
-#define configUSE_IDLE_HOOK                              0
+#define configUSE_IDLE_HOOK                              1
 #define configUSE_TICK_HOOK                              0
 #define configUSE_DAEMON_TASK_STARTUP_HOOK               0
 
@@ -125,7 +128,7 @@ void vAssertCalled( unsigned line, const char * const filename );
 #define configUSE_MUTEXES                         1
 #define configUSE_RECURSIVE_MUTEXES               1
 #define configUSE_TIMERS                          1
-#define configTIMER_TASK_STACK_DEPTH              (512)
+#define configTIMER_TASK_STACK_DEPTH              (1024)
 
 // Set up everything needed for statistics reporting.  All af the
 // following must be set to get the runtime stats task to run
