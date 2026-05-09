@@ -19,8 +19,8 @@ __STACK_SIZE = 0x00001000;
  * live in their own region of DDR.  Kept distinct from the heap so
  * a runaway malloc cannot trample a task stack and a stack overflow
  * cannot eat the heap. */
-/*__TASKS_BASE = 0x10000000;
-__TASKS_SIZE = 0x00100000;*/          /* 1 MB */
+__TASKS_BASE = 0x11000000;
+__TASKS_SIZE = 0x00100000;         /* 1 MB */
 
 __HEAP_SIZE =  0x00F00000;
 __HeapStart = __TASKS_BASE + __TASKS_SIZE;
@@ -31,7 +31,7 @@ __HeapBase  = __HeapStart;
 
 /* 1. Definitions */
 /*__WAD_BASE  = 0x11000000;
-__WAD_SIZE  = 0x02000000; */ /* 32MB */
+__WAD_SIZE  = 0x02000000; (/) /* 32MB */
 
 __DOOM_BASE = 0x10000000; 
 __DOOM_SIZE = 0x01000000; /* 32MB */
@@ -42,6 +42,7 @@ MEMORY
   RAM   (rwx)  : ORIGIN = __RAM_BASE,    LENGTH = __RAM_SIZE
   HEAP  (rwx)  : ORIGIN = __HeapStart,   LENGTH = __HEAP_SIZE
   DOOM_SPACE (rwx) : ORIGIN = __DOOM_BASE, LENGTH = __DOOM_SIZE
+  /* WAD_SPACE (rwx) : ORIGIN = __WAD_BASE, LENGTH = __WAD_SIZE */
 }
 
 
@@ -349,13 +350,13 @@ SECTIONS
  /* 
  ASSERT(__StackLimit > __HeapTop, "Data/BSS overflowed with stack")
 */
-  .wad_area (NOLOAD) :
+  /*.wad_area (NOLOAD) :
   {
     . = ALIGN(4);
-    __wad_start = .;  /* This will now be 0x11000000 */
+    __wad_start = .;
     . = . + __WAD_SIZE;
     __wad_end = .;
-  } > WAD_SPACE
+  } > WAD_SPACE */
 
   .doom_area (NOLOAD) :
   {

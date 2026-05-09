@@ -5,7 +5,7 @@
 #include "sd_driver.h"
 #include "sd_fat_disk.h"
 
-#define CHUNK_SIZE 4096
+#define CHUNK_SIZE 1024
 
 extern uint8_t __wad_start;
 extern uint8_t __doom_start;
@@ -117,12 +117,10 @@ uint32_t transfer_large_file(const char *pcFileName, uint8_t *destination)
         while ((xBytesRead = ff_fread(destination, 1, CHUNK_SIZE, pxFile)) > 0)
         {
             totalBytesRead += xBytesRead;
-            destination += xBytesRead;
+            // destination += xBytesRead;
             update_loading_bar(totalBytesRead, fileSize);
 
             // Safety break: if we read less than CHUNK_SIZE, we are definitely done.
-            if (xBytesRead < CHUNK_SIZE)
-                break;
         }
 
         asm volatile ("fence rw, rw"); // Ensure all writes are completed to memory

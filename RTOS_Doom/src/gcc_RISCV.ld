@@ -1,26 +1,26 @@
 
-__ROM_BASE = 0x00000000;
-__ROM_SIZE = 0x80000;
+__RAM_BASE = 0x10000000;
+__RAM_SIZE = 0x01000000;
 
-__RAM_BASE = 0x08000000;
-__RAM_SIZE = 0x8000000;
+/* __RAM_BASE = __ROM_BASE + __ROM_SIZE; */
+/* __RAM_SIZE = 0x00100000; */
 
-/* we will put the stack at the end of RAM so it can grow downwards */
 __STACK_SIZE = 0x00001000;
 
-/* FreeRTOS allocates the heap in .bss or .data, so no space is
-   required here but we may want to check memory usage. */
-__HeapStart = 0x08100000;
-__HeapTop   = __RAM_BASE + __RAM_SIZE - __STACK_SIZE;
-__HEAP_SIZE = __HeapTop - __HeapStart;
+/*
+__TASKS_BASE = __RAM_BASE + __RAM_SIZE;
+__TASKS_SIZE = 0x00100000;*/          /* 1 MB */
+
+__HEAP_SIZE =  0x00E00000;
+__HeapStart = 0x10080000;
+__HeapTop   = 0x11000000 - __STACK_SIZE;
 
 MEMORY
 {
-  ROM   (rx)   : ORIGIN = __ROM_BASE,  LENGTH = __ROM_SIZE
-  RAM   (rwx)  : ORIGIN = __RAM_BASE,  LENGTH = __RAM_SIZE
-  HEAP  (rwx)  : ORIGIN = __HeapStart, LENGTH = __HEAP_SIZE
-  /*  THEME (r)    : ORIGIN = 0x80000000, LENGTH = 0x200000 */
-  /*   DEBUG (r)   : ORIGIN = 0x80200000, LENGTH = 0x200000 */
+  RAM   (rwx)  : ORIGIN = __RAM_BASE,    LENGTH = __RAM_SIZE
+  /* ROM   (rx)   : ORIGIN = __ROM_BASE,    LENGTH = __ROM_SIZE
+  TASKS (rwx)  : ORIGIN = __TASKS_BASE,  LENGTH = __TASKS_SIZE */
+  HEAP  (rwx)  : ORIGIN = __HeapStart,   LENGTH = __HEAP_SIZE
 }
 
 
@@ -58,57 +58,30 @@ ENTRY(_Reset_Handler)
 
 SECTIONS
 {
-  /* .vectors : */
-  /* { */
-  /*   KEEP(*(.vectors)) */
-  /* } > ROM */
-
-  /* .init : */
-  /* { */
-  /*   KEEP(*(.init)) */
-  /* } > ROM */
-
   .text :
   {
-    __Begin_Text__ = .;
-    KEEP(*(.init))
-    KEEP(*(.text*))
-    KEEP(*(.fini))
+    /* Hardware reset entry must be at ROM base (PC = 0x00000000).
+       It holds a single "j _Reset_Handler" instruction. */
+    KEEP(*(.reset_entry))
+    /* The trap vector table follows.  mtvec[1:0] = 01 (vectored) and
+       bits [31:2] form the base, so the table just needs 4-byte
+       alignment; 128 bytes keeps all 32 entries contiguous within
+       one natural region. */
+    . = ALIGN(128);
+    KEEP(*(.vectors))
+    KEEP(*(.resetHandler*))
     . = ALIGN(4);
-    /* DO NOT include .rodata here */
-    __End_Text__ = .;
-  } > ROM
-
-  . = ALIGN(4);
-  .rodata (NOLOAD) :
-  {
+    *(.text*)
     . = ALIGN(4);
-    __rodata_start__ = .;
-    *(.rodata*)
+    *(.fini*)
     . = ALIGN(4);
-    __rodata_end__ = .;
+    *(.rodata*) 
+    . = ALIGN(4);
+    *(.srodata*) 
+    . = ALIGN(4);
   } > RAM
-  . = ALIGN(4);
 
-  .data (NOLOAD) :
-  {
-    . = ALIGN(4);
-    __data_start__ = .;
-    *(.data*)
-    *(.sdata*)
-    . = ALIGN(4);
-    __data_end__ = .;
-  } > RAM
-  /* __exidx_start and __exidx_end need to be defined */
-  __exidx_start = .;
-  .ARM.exidx :
-  {
-    *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    . = ALIGN(4);
-  } > ROM
-  __exidx_end = .;
-
-  . = ALIGN(4);
+/*  . = ALIGN(4);
   .copy.table (READONLY):
   {
     . = ALIGN(4);
@@ -121,16 +94,18 @@ SECTIONS
     . = ALIGN(4);
 
     LONG ((__data_end__ - __data_start__) / 4)
+    . = ALIGN(4); */
 
     /* Add each additional data section here */
     /*
     LONG (__etext2)
     LONG (__data2_start__)
     LONG ((__data2_end__ - __data2_start__) / 4)
-    */
     . = ALIGN(4);
+    */
+    /*. = ALIGN(4);
     __copy_table_end__ = .;
-  } > ROM
+  } > ROM */
 
   .zero.table (READONLY):
   {
@@ -145,7 +120,7 @@ SECTIONS
     */
     . = ALIGN(4);
     __zero_table_end__ = .;
-  } > ROM
+  } > RAM
 
   . = ALIGN(4);
 
@@ -161,12 +136,12 @@ SECTIONS
   .data : AT (__etext) 
   {
     . = ALIGN(4);
-    __Begin_Data__ = .;
+    /* __Begin_Data__ = .; */
     __data_start__ = .;
     *(.data)
-    *(.data.*)
-    *(.sdata)
-    *(.sdata.*)
+    *(.data*)
+    . = ALIGN(4);
+    *(.sdata*)
     . = ALIGN(4);
     __data_end__ = .;
     __End_Data__ = .;
@@ -180,56 +155,33 @@ SECTIONS
   {
     . = ALIGN(4);
     __bss_start__ = .;
-    *(.bss)
-    *(.bss.*)
-    *(.sbss)
-    *(.sbss.*)
+    *(.bss*)
+    . = ALIGN(4);
+    *(.sbss*)
+    . = ALIGN(4);
     *(COMMON)
     . = ALIGN(4);
     __bss_end__ = .;
-  } > RAM
+  } > RAM 
 
   /* add any special bss sections here and add to .zero table above */
-
 
   /* __ebss is the end of last bss section */
   __ebss = .;
   __End_Bss__ = .;
-  /* .stack (ORIGIN(RAM) + LENGTH(RAM) - __STACK_SIZE) (COPY) : */
-  /* { */
-  /*   . = ALIGN(8); */
-  /*   __StackLimit = .; */
-  /*   . = . + __STACK_SIZE; */
-  /*   . = ALIGN(8); */
-  /*   PROVIDE(__StackTop = .); */
-  /* } > RAM */
-  /* PROVIDE(__stack = __StackTop); */
 
-  /* Put the system stack at the end of memory */
-  .stack (ORIGIN(RAM) + LENGTH(RAM) - __STACK_SIZE) (COPY) :
+  .stack (ORIGIN(RAM) + LENGTH(RAM) - __STACK_SIZE ) (COPY) :
   {
     . = ALIGN(4);
     __StackLimit = .;
     . = . + __STACK_SIZE;
     . = ALIGN(8);
-    __StackTop = .;    
+    __StackTop = .;
   } > RAM
   PROVIDE(__freertos_irq_stack_top = __StackTop); 
 
-/* .heap (COPY) : */
-  /* { */
-  /*   . = ALIGN(8); */
-  /*   __end__ = .; */
-  /*   PROVIDE(end = .); /\* used by default newlib sbrk *\/ */
-  /*   PROVIDE(_end = .); */
-  /*   . = . + __HEAP_SIZE; */
-  /*   . = ALIGN(8); */
-  /*   __HeapLimit = .; */
-  /* } > RAM */
-
   /* The heap can use all of the space between the end of the .bss
      section(s) and the beginning of the stack */
-
   
   /* By default, Newlib uses "end" to find where the heap starts.  In
    *  our case, It is at the end of the last bss section. 
@@ -254,66 +206,36 @@ SECTIONS
     PROVIDE(_end = .);
     PROVIDE(__end = __ebss);
 
-
-/* We can also use the heap_useNewlib.c heap code, which replaces
-     the default Newlib sbrk.c with a better implementation.  It needs
-     __Heapbase and __HeapTop to be defined, and can make sure that
-     the heap does not overflow the system stack.  You can turn on
-     stack checking in FreeRTOS to (hopefully) also detect the system
-     stack overflowing the heap. */
-  /* __HeapBase = __ebss; */
-
-  /* .heap (COPY) : */
-  /* { */
-  /*   /\* . = HeapTop; *\/ */
-  /*   PROVIDE(end = .);  */
-  /*   . = . + __HEAP_SIZE; */
-  /* } > HEAP */
-
-/*  .theme : 
+  /* Task stacks and TCBs that opt in via __attribute__((section(".tasks")))
+   * land in DDR rather than internal RAM.  NOLOAD because there is
+   * nothing to copy at boot; the C runtime (or FreeRTOS port) writes
+   * the initial stack frame at task creation. */
+/*  .tasks (NOLOAD) :
   {
-    KEEP(*(.theme))
     . = ALIGN(8);
-  } > THEME
-*/
+    __tasks_start__ = .;
+    *(.tasks)
+    *(.tasks.*)
+    . = ALIGN(8);
+    __tasks_end__ = .;
+  } > TASKS */
 
-/*
-  .debug (ORIGIN(DEBUG)) : 
+  .heap (ORIGIN(HEAP)) (COPY):
   {
-    KEEP(*(.debug))
-    KEEP(*(.debug_abbrev))
-    KEEP(*(.debug_str))
-    KEEP(*(.comment))
-    KEEP(*(.ARM.attributes))
-    KEEP(*(.debug_loc))
-    . = ALIGN(8);
-  } > DEBUG
-*/
+    . = ALIGN(4);
+    end = .;
+    PROVIDE( _HeapStart = . );   
 
-
-
-  /* .heap (ORIGIN(HEAP)) : */
-  /* { */
-  /*   /\*    . = __HeapStart; *\/ */
-  /*   . = ALIGN(4); */
-  /*   PROVIDE( _HeapStart = . );    */
-
-  /*   . += __HEAP_SIZE; */
+    . += __HEAP_SIZE;
     
-  /*   __Heap_End = .; */
+    __Heap_End = .;
 
-  /*   PROVIDE( _HeapTop = . );    */
+    PROVIDE( _HeapTop = . );   
 
-  /*   . = ALIGN(4); */
+    . = ALIGN(4);
 
-  /* /\* /\\*   PROVIDE(_end = .); *\\/ *\/ */
-  /* /\* /\\*   PROVIDE(__end = .); *\\/ *\/ */
-  /* /\* /\\*   PROVIDE(end = .); *\\/ *\/ */
-  /* } > HEAP */
-
-
- /* 
- ASSERT(__StackLimit > __HeapTop, "Data/BSS overflowed with stack")
-*/
-
+  /* /\*   PROVIDE(_end = .); *\/ */
+  /* /\*   PROVIDE(__end = .); *\/ */
+  /* /\*   PROVIDE(end = .); *\/ */
+  } > HEAP
 }

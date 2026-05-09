@@ -168,6 +168,30 @@ RTOS_Doom.elf/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/build
 .PHONY : RTOS_Doom.elf/fast
 
+FreeRTOS/event_groups.obj: FreeRTOS/event_groups.c.obj
+.PHONY : FreeRTOS/event_groups.obj
+
+# target to build an object file
+FreeRTOS/event_groups.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/event_groups.c.obj
+.PHONY : FreeRTOS/event_groups.c.obj
+
+FreeRTOS/event_groups.i: FreeRTOS/event_groups.c.i
+.PHONY : FreeRTOS/event_groups.i
+
+# target to preprocess a source file
+FreeRTOS/event_groups.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/event_groups.c.i
+.PHONY : FreeRTOS/event_groups.c.i
+
+FreeRTOS/event_groups.s: FreeRTOS/event_groups.c.s
+.PHONY : FreeRTOS/event_groups.s
+
+# target to generate assembly for a file
+FreeRTOS/event_groups.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/event_groups.c.s
+.PHONY : FreeRTOS/event_groups.c.s
+
 FreeRTOS/list.obj: FreeRTOS/list.c.obj
 .PHONY : FreeRTOS/list.obj
 
@@ -223,6 +247,30 @@ FreeRTOS/portable/GCC/RISC-V/portASM.obj: FreeRTOS/portable/GCC/RISC-V/portASM.S
 FreeRTOS/portable/GCC/RISC-V/portASM.S.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
 .PHONY : FreeRTOS/portable/GCC/RISC-V/portASM.S.obj
+
+FreeRTOS/portable/MemMang/heap_3.obj: FreeRTOS/portable/MemMang/heap_3.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_3.obj
+
+# target to build an object file
+FreeRTOS/portable/MemMang/heap_3.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.obj
+
+FreeRTOS/portable/MemMang/heap_3.i: FreeRTOS/portable/MemMang/heap_3.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_3.i
+
+# target to preprocess a source file
+FreeRTOS/portable/MemMang/heap_3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.i
+
+FreeRTOS/portable/MemMang/heap_3.s: FreeRTOS/portable/MemMang/heap_3.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_3.s
+
+# target to generate assembly for a file
+FreeRTOS/portable/MemMang/heap_3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/portable/MemMang/heap_3.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_3.c.s
 
 FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
 .PHONY : FreeRTOS/queue.obj
@@ -320,45 +368,125 @@ FreeRTOS/timers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/FreeRTOS/timers.c.s
 .PHONY : FreeRTOS/timers.c.s
 
-Microblaze_V/interrupts.obj: Microblaze_V/interrupts.c.obj
-.PHONY : Microblaze_V/interrupts.obj
+RISCV_pyeatt/AXI_isr.obj: RISCV_pyeatt/AXI_isr.S.obj
+.PHONY : RISCV_pyeatt/AXI_isr.obj
 
 # target to build an object file
-Microblaze_V/interrupts.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.obj
-.PHONY : Microblaze_V/interrupts.c.obj
+RISCV_pyeatt/AXI_isr.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/AXI_isr.S.obj
+.PHONY : RISCV_pyeatt/AXI_isr.S.obj
 
-Microblaze_V/interrupts.i: Microblaze_V/interrupts.c.i
-.PHONY : Microblaze_V/interrupts.i
+RISCV_pyeatt/PM_isr.obj: RISCV_pyeatt/PM_isr.S.obj
+.PHONY : RISCV_pyeatt/PM_isr.obj
+
+# target to build an object file
+RISCV_pyeatt/PM_isr.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/PM_isr.S.obj
+.PHONY : RISCV_pyeatt/PM_isr.S.obj
+
+RISCV_pyeatt/UART_isr.obj: RISCV_pyeatt/UART_isr.S.obj
+.PHONY : RISCV_pyeatt/UART_isr.obj
+
+# target to build an object file
+RISCV_pyeatt/UART_isr.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/UART_isr.S.obj
+.PHONY : RISCV_pyeatt/UART_isr.S.obj
+
+RISCV_pyeatt/interrupts.obj: RISCV_pyeatt/interrupts.c.obj
+.PHONY : RISCV_pyeatt/interrupts.obj
+
+# target to build an object file
+RISCV_pyeatt/interrupts.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/interrupts.c.obj
+.PHONY : RISCV_pyeatt/interrupts.c.obj
+
+RISCV_pyeatt/interrupts.i: RISCV_pyeatt/interrupts.c.i
+.PHONY : RISCV_pyeatt/interrupts.i
 
 # target to preprocess a source file
-Microblaze_V/interrupts.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.i
-.PHONY : Microblaze_V/interrupts.c.i
+RISCV_pyeatt/interrupts.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/interrupts.c.i
+.PHONY : RISCV_pyeatt/interrupts.c.i
 
-Microblaze_V/interrupts.s: Microblaze_V/interrupts.c.s
-.PHONY : Microblaze_V/interrupts.s
+RISCV_pyeatt/interrupts.s: RISCV_pyeatt/interrupts.c.s
+.PHONY : RISCV_pyeatt/interrupts.s
 
 # target to generate assembly for a file
-Microblaze_V/interrupts.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/interrupts.c.s
-.PHONY : Microblaze_V/interrupts.c.s
+RISCV_pyeatt/interrupts.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/interrupts.c.s
+.PHONY : RISCV_pyeatt/interrupts.c.s
 
-Microblaze_V/startup_RISCV.obj: Microblaze_V/startup_RISCV.S.obj
-.PHONY : Microblaze_V/startup_RISCV.obj
-
-# target to build an object file
-Microblaze_V/startup_RISCV.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/startup_RISCV.S.obj
-.PHONY : Microblaze_V/startup_RISCV.S.obj
-
-Microblaze_V/trap_handler.obj: Microblaze_V/trap_handler.S.obj
-.PHONY : Microblaze_V/trap_handler.obj
+RISCV_pyeatt/irq.obj: RISCV_pyeatt/irq.S.obj
+.PHONY : RISCV_pyeatt/irq.obj
 
 # target to build an object file
-Microblaze_V/trap_handler.S.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/Microblaze_V/trap_handler.S.obj
-.PHONY : Microblaze_V/trap_handler.S.obj
+RISCV_pyeatt/irq.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/irq.S.obj
+.PHONY : RISCV_pyeatt/irq.S.obj
+
+RISCV_pyeatt/newlib_functions.obj: RISCV_pyeatt/newlib_functions.S.obj
+.PHONY : RISCV_pyeatt/newlib_functions.obj
+
+# target to build an object file
+RISCV_pyeatt/newlib_functions.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/newlib_functions.S.obj
+.PHONY : RISCV_pyeatt/newlib_functions.S.obj
+
+RISCV_pyeatt/riscv_flush_dcache_range.obj: RISCV_pyeatt/riscv_flush_dcache_range.S.obj
+.PHONY : RISCV_pyeatt/riscv_flush_dcache_range.obj
+
+# target to build an object file
+RISCV_pyeatt/riscv_flush_dcache_range.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_flush_dcache_range.S.obj
+.PHONY : RISCV_pyeatt/riscv_flush_dcache_range.S.obj
+
+RISCV_pyeatt/riscv_invalidate_dcache_range.obj: RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj
+.PHONY : RISCV_pyeatt/riscv_invalidate_dcache_range.obj
+
+# target to build an object file
+RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj
+.PHONY : RISCV_pyeatt/riscv_invalidate_dcache_range.S.obj
+
+RISCV_pyeatt/riscv_misalign_emul.obj: RISCV_pyeatt/riscv_misalign_emul.c.obj
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.obj
+
+# target to build an object file
+RISCV_pyeatt/riscv_misalign_emul.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_misalign_emul.c.obj
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.c.obj
+
+RISCV_pyeatt/riscv_misalign_emul.i: RISCV_pyeatt/riscv_misalign_emul.c.i
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.i
+
+# target to preprocess a source file
+RISCV_pyeatt/riscv_misalign_emul.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_misalign_emul.c.i
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.c.i
+
+RISCV_pyeatt/riscv_misalign_emul.s: RISCV_pyeatt/riscv_misalign_emul.c.s
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.s
+
+# target to generate assembly for a file
+RISCV_pyeatt/riscv_misalign_emul.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_misalign_emul.c.s
+.PHONY : RISCV_pyeatt/riscv_misalign_emul.c.s
+
+RISCV_pyeatt/riscv_misalign_shim.obj: RISCV_pyeatt/riscv_misalign_shim.S.obj
+.PHONY : RISCV_pyeatt/riscv_misalign_shim.obj
+
+# target to build an object file
+RISCV_pyeatt/riscv_misalign_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/riscv_misalign_shim.S.obj
+.PHONY : RISCV_pyeatt/riscv_misalign_shim.S.obj
+
+RISCV_pyeatt/startup_RISCV_pyeatt.obj: RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
+.PHONY : RISCV_pyeatt/startup_RISCV_pyeatt.obj
+
+# target to build an object file
+RISCV_pyeatt/startup_RISCV_pyeatt.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
+.PHONY : RISCV_pyeatt/startup_RISCV_pyeatt.S.obj
 
 src/AXI_timer.obj: src/AXI_timer.c.obj
 .PHONY : src/AXI_timer.obj
@@ -2448,30 +2576,6 @@ src/doomgeneric_freertos.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/doomgeneric_freertos.c.s
 .PHONY : src/doomgeneric_freertos.c.s
 
-src/heap_useNewlib.obj: src/heap_useNewlib.c.obj
-.PHONY : src/heap_useNewlib.obj
-
-# target to build an object file
-src/heap_useNewlib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.obj
-.PHONY : src/heap_useNewlib.c.obj
-
-src/heap_useNewlib.i: src/heap_useNewlib.c.i
-.PHONY : src/heap_useNewlib.i
-
-# target to preprocess a source file
-src/heap_useNewlib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.i
-.PHONY : src/heap_useNewlib.c.i
-
-src/heap_useNewlib.s: src/heap_useNewlib.c.s
-.PHONY : src/heap_useNewlib.s
-
-# target to generate assembly for a file
-src/heap_useNewlib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/heap_useNewlib.c.s
-.PHONY : src/heap_useNewlib.c.s
-
 src/hello_task.obj: src/hello_task.c.obj
 .PHONY : src/hello_task.obj
 
@@ -2520,30 +2624,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/newlib_functions.obj: src/newlib_functions.c.obj
-.PHONY : src/newlib_functions.obj
-
-# target to build an object file
-src/newlib_functions.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.obj
-.PHONY : src/newlib_functions.c.obj
-
-src/newlib_functions.i: src/newlib_functions.c.i
-.PHONY : src/newlib_functions.i
-
-# target to preprocess a source file
-src/newlib_functions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.i
-.PHONY : src/newlib_functions.c.i
-
-src/newlib_functions.s: src/newlib_functions.c.s
-.PHONY : src/newlib_functions.s
-
-# target to generate assembly for a file
-src/newlib_functions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RTOS_Doom.elf.dir/build.make CMakeFiles/RTOS_Doom.elf.dir/src/newlib_functions.c.s
-.PHONY : src/newlib_functions.c.s
-
 src/stats_task.obj: src/stats_task.c.obj
 .PHONY : src/stats_task.obj
 
@@ -2580,6 +2660,9 @@ help:
 	@echo "... realclean"
 	@echo "... tarfile"
 	@echo "... RTOS_Doom.elf"
+	@echo "... FreeRTOS/event_groups.obj"
+	@echo "... FreeRTOS/event_groups.i"
+	@echo "... FreeRTOS/event_groups.s"
 	@echo "... FreeRTOS/list.obj"
 	@echo "... FreeRTOS/list.i"
 	@echo "... FreeRTOS/list.s"
@@ -2587,6 +2670,9 @@ help:
 	@echo "... FreeRTOS/portable/GCC/RISC-V/port.i"
 	@echo "... FreeRTOS/portable/GCC/RISC-V/port.s"
 	@echo "... FreeRTOS/portable/GCC/RISC-V/portASM.obj"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.obj"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.i"
+	@echo "... FreeRTOS/portable/MemMang/heap_3.s"
 	@echo "... FreeRTOS/queue.obj"
 	@echo "... FreeRTOS/queue.i"
 	@echo "... FreeRTOS/queue.s"
@@ -2599,11 +2685,21 @@ help:
 	@echo "... FreeRTOS/timers.obj"
 	@echo "... FreeRTOS/timers.i"
 	@echo "... FreeRTOS/timers.s"
-	@echo "... Microblaze_V/interrupts.obj"
-	@echo "... Microblaze_V/interrupts.i"
-	@echo "... Microblaze_V/interrupts.s"
-	@echo "... Microblaze_V/startup_RISCV.obj"
-	@echo "... Microblaze_V/trap_handler.obj"
+	@echo "... RISCV_pyeatt/AXI_isr.obj"
+	@echo "... RISCV_pyeatt/PM_isr.obj"
+	@echo "... RISCV_pyeatt/UART_isr.obj"
+	@echo "... RISCV_pyeatt/interrupts.obj"
+	@echo "... RISCV_pyeatt/interrupts.i"
+	@echo "... RISCV_pyeatt/interrupts.s"
+	@echo "... RISCV_pyeatt/irq.obj"
+	@echo "... RISCV_pyeatt/newlib_functions.obj"
+	@echo "... RISCV_pyeatt/riscv_flush_dcache_range.obj"
+	@echo "... RISCV_pyeatt/riscv_invalidate_dcache_range.obj"
+	@echo "... RISCV_pyeatt/riscv_misalign_emul.obj"
+	@echo "... RISCV_pyeatt/riscv_misalign_emul.i"
+	@echo "... RISCV_pyeatt/riscv_misalign_emul.s"
+	@echo "... RISCV_pyeatt/riscv_misalign_shim.obj"
+	@echo "... RISCV_pyeatt/startup_RISCV_pyeatt.obj"
 	@echo "... src/AXI_timer.obj"
 	@echo "... src/AXI_timer.i"
 	@echo "... src/AXI_timer.s"
@@ -2865,18 +2961,12 @@ help:
 	@echo "... src/doomgeneric_freertos.obj"
 	@echo "... src/doomgeneric_freertos.i"
 	@echo "... src/doomgeneric_freertos.s"
-	@echo "... src/heap_useNewlib.obj"
-	@echo "... src/heap_useNewlib.i"
-	@echo "... src/heap_useNewlib.s"
 	@echo "... src/hello_task.obj"
 	@echo "... src/hello_task.i"
 	@echo "... src/hello_task.s"
 	@echo "... src/main.obj"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/newlib_functions.obj"
-	@echo "... src/newlib_functions.i"
-	@echo "... src/newlib_functions.s"
 	@echo "... src/stats_task.obj"
 	@echo "... src/stats_task.i"
 	@echo "... src/stats_task.s"

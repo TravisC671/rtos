@@ -55,48 +55,48 @@ typedef struct{
 // handler will be called by the handler for the device that contains
 // it. The final handlers for the individual timers can be set at
 // run-time. We can define a struct for the timer device, which has
-// two timers in it, and is hard-wired to one of the IRQ pins on the
-// Cortex-M3.
+// two timers in it, and is hard-wired to one of the IRQ lines on
+// the RISCV_pyeatt interrupt controller.
 typedef struct{
   // Each individual timer (channel) may have an owner
   TaskHandle_t  owner[2];
   // Each individual timer (channel) can have a handler that the owner
   // sets at run-time.
-  void (*handler[2])(); // Each individual timer can have its own hander
+  AXI_timer_handler_t handler[2];
   // Each individual timer (channel) has its own unique base address.
-  volatile AXI_timer_t *device[2]; 
+  volatile AXI_timer_t *device[2];
   int IRQ_NUM;  // The IRQ pin that this timer is tied to.
 }AXI_timer_device_t;
 
-// Now we can create an array of timer devices.  Each entry in this
-// array represents a device that contains two timers. If you add more
-// timer devices to the design, then add more lines.
-static volatile AXI_timer_device_t timer_device[NUM_AXI_TIMERS/2] = {
-  {NULL,NULL,NULL,NULL,TIMER0,TIMER0+0x10,TIMER0_IRQ},
-  {NULL,NULL,NULL,NULL,TIMER1,TIMER1+0x10,TIMER1_IRQ}
+/* The asm shim in RISCV_pyeatt/AXI_isr.S addresses entry [0] / [1] of
+ * this array directly, so the layout must stay stable.  Keep the
+ * array non-static / globally visible. */
+volatile AXI_timer_device_t timer_device[NUM_AXI_TIMERS/2] = {
+  {{NULL,NULL},{NULL,NULL},{TIMER0,TIMER0+0x10},TIMER0_IRQ},
+  {{NULL,NULL},{NULL,NULL},{TIMER1,TIMER1+0x10},TIMER1_IRQ}
 };
 
 
-// This function handles interrupts for a timer device.  The device
-// has two timers in it, so we have to check them both to see where
-// the interrupt is coming from.  It is possible that they are BOTH
-// signalling an interrupt.
-void AXI_timer_handler(volatile AXI_timer_device_t *device) 
+/* Handle interrupts for one timer device.  Called from the asm shim
+ * (AXI_TIMER_0_ISR / AXI_TIMER_1_ISR in AXI_isr.S) inside the
+ * FreeRTOS-aware save/restore wrapper.  The shim provides
+ * pxHigherPriorityTaskWoken; we pass it through to user handlers so
+ * they can plumb it into FromISR APIs, and return its final value so
+ * the shim knows whether to call vTaskSwitchContext before mret. */
+BaseType_t AXI_timer_handler(volatile AXI_timer_device_t *device)
 {
+  BaseType_t xWoken = pdFALSE;
   int i;
   // Examine the device to see which timer is signalling an interrupt.
-  // It could be both, so lets do a loop.  We could unroll the loop
-  // to get more speed, but the code would probably be longer.  You
-  // can optimize for speed or code size.  In this case I chose to
-  // minimize code size.
+  // It could be both, so lets do a loop.
   for(i = 0;i<2;i++)
     {
-      // If timer i is signalling an interruptt, 
+      // If timer i is signalling an interrupt,
       if(device->device[i]->TCSR.bits.TINT)
         {
           //then call its handler (if it has one)
           if(device->handler[i] != NULL)
-            device->handler[i]();
+            device->handler[i](&xWoken);
 	  // else
 	  // it should be disabled.  There is a problem.
 
@@ -104,29 +104,18 @@ void AXI_timer_handler(volatile AXI_timer_device_t *device)
           device->device[i]->TCSR.bits.TINT = 1;
         }
     }
-  // clear the interrupt in the Cortex M3 timer. Timer 0 is on hardware
-  // interrupt 0
+  // Clear the interrupt in the interrupt controller.
   INTC_ClearPendingIRQ(device->IRQ_NUM);
+  return xWoken;
 }
 
-
-// Define the ISR for timer device 0. This is the first thing that
-// gets called when timer device 0 generates an interrupt.
-void AXI_TIMER_0_ISR()
-{
-  volatile AXI_timer_device_t *dev = &(timer_device[0]);
-  // Call the timer device handler and give it the timer 0 struct
-  AXI_timer_handler(dev);
-}
-
-// Define the ISR for timer device 1 This is the first thing that
-// gets called when timer device 1 generates an interrupt.
-void AXI_TIMER_1_ISR()
-{
-  volatile AXI_timer_device_t *dev = &(timer_device[1]);
-  // Call the timer device handler and give it the timer 1 struct
-  AXI_timer_handler(dev);
-}
+/* AXI_TIMER_0_ISR / AXI_TIMER_1_ISR are now provided by
+ * RISCV_pyeatt/AXI_isr.S as proper FreeRTOS-aware asm shims that call
+ * portcontextSAVE_INTERRUPT_CONTEXT, invoke AXI_timer_handler, do
+ * vTaskSwitchContext when it returns pdTRUE, and
+ * portcontextRESTORE_CONTEXT.  The previous __attribute__((interrupt))
+ * C versions only saved caller-saved registers and could not safely
+ * trigger a context switch from a user handler. */
 
 /* AXI_timer_t *get_device_ptr(int timer) */
 /* { */
@@ -174,7 +163,7 @@ void AXI_TIMER_free(unsigned int timer)
 // Assign a functon to handle interrupts for the given timer. The
 // assigned function will be called when the given timer generates an
 // interrupt.
-void AXI_TIMER_set_handler(unsigned int timer, void (*handler)())
+void AXI_TIMER_set_handler(unsigned int timer, AXI_timer_handler_t handler)
 {
   int dev = timer>>1;
   int channel = timer&1;
@@ -243,7 +232,7 @@ void AXI_TIMER_disable_interrupt(unsigned int timer)
   ASSERT(timer_device[dev].owner[channel] == xTaskGetCurrentTaskHandle());
   timer_device[dev].device[channel]->TCSR.bits.ENIT = 0; // disable interrupts
   // TODO: If the other channel also has interrupts disabled, then
-  // turn off interrupts in the interrupt controller.
+  // turn off interrupts in the interrupt controller
 }
 
 // In the following two functions, value is set in clock cycles. Use
@@ -285,6 +274,3 @@ void AXI_TIMER_set_oneshot(unsigned int timer, int count)
 // that point, but we are not going to implement them now.
 // void AXI_TIMER_set_count_up(int timer);
 // void AXI_TIMER_set_count_down(int timer);
-
-
-

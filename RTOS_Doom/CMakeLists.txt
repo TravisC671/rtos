@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.17)
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
-SET(CMAKE_SYSTEM_PROCESSOR microblaze-v) # Can be 'microblaze-v' or similar
+SET(CMAKE_SYSTEM_PROCESSOR RISCV_pyeatt)
 
 # specify cross compilers and tools
 set(CMAKE_C_COMPILER riscv32-unknown-elf-gcc)
@@ -15,12 +15,6 @@ set(CMAKE_OBJDUMP riscv32-unknown-elf-objdump)
 set(SIZE riscv32-unknown-elf-size)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
-# Enable compiler-based dependency tracking for cross-compilation.
-# Without this, CMake does not detect header changes and skips
-# recompilation of affected source files.
-set(CMAKE_C_DEPENDS_USE_COMPILER TRUE)
-set(CMAKE_CXX_DEPENDS_USE_COMPILER TRUE)
-
 # project settings
 get_filename_component(DirName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 project(${DirName} C ASM)
@@ -28,10 +22,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 set(PROJECT_BINARY_DIR ${DirName}/bin)
 
-# set the target CPU
-# set(MCPU cortex-m3)
-
-SET(CPU_ARCH_FLAGS "-march=rv32imc_zicsr -mabi=ilp32 -mstrict-align")
+#SET(CPU_ARCH_FLAGS "-march=rv32ic_zicsr -mabi=ilp32")
+SET(CPU_ARCH_FLAGS "-march=rv32im_zicsr_zifencei -mabi=ilp32")
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CPU_ARCH_FLAGS}")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CPU_ARCH_FLAGS}")
 SET(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${CPU_ARCH_FLAGS}")
@@ -56,19 +48,11 @@ add_custom_target(extra-clean
 # out FreeRTOS and CMSIS
 add_custom_target(tarfile
   COMMAND make extra-clean
-  COMMAND /bin/bash -c "pushd ..\; tar --exclude='CMakeCache.txt' --exclude='CMakeFiles/*' --exclude='CMSIS/*' --exclude='FreeRTOS/*' --exclude='CMSIS' --exclude='FreeRTOS' --exclude='Makefile' -czf ${DirName}.tgz ${DirName}\; popd"
+  COMMAND pushd ..\; tar --exclude='CMakeCache.txt' --exclude='CMakeFiles/*' --exclude='CMSIS/*' --exclude='FreeRTOS/*' --exclude='CMSIS' --exclude='FreeRTOS' --exclude='Makefile' -czf ${DirName}.tgz ${DirName}\; popd
   COMMENT Make realclean, then create a tgz file in the parent directory
   )
 
-#Uncomment for hardware floating point
-#add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
-#add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
-#add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 
-#Uncomment for software floating point
-#add_compile_options(-mfloat-abi=soft)
-
-# add_compile_options(-mcpu=${MCPU} -mthumb -mthumb-interwork)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 
 # uncomment to mitigate c++17 absolute addresses warnings
@@ -84,7 +68,7 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 
 # Option 2: Debugger may "jump around" in your C code   
 #message(STATUS "Maximum optimization for speed, with debug info")
-#add_compile_options(-Ofast -g)
+add_compile_options(-g)
 
 # Option 3:
 #message(STATUS "Maximum optimization for size, with debug info")
@@ -92,7 +76,7 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 
 # Option 4:
 # message(STATUS "Maximum optimization for size, no debug info")
-add_compile_options(-Os)
+# add_compile_options(-Os)
 
 # Option 5: 
 #     message(STATUS "Maximum optimization for speed, no debug info")
@@ -103,20 +87,23 @@ add_compile_options(-DUSE_FREERTOS)
 # List of directories containing header files.
 include_directories( 
   ${CMAKE_SOURCE_DIR}/include
+  ${CMAKE_SOURCE_DIR}/RISCV_pyeatt
   ${CMAKE_SOURCE_DIR}/FreeRTOS/include
   ${CMAKE_SOURCE_DIR}/src/doomgeneric
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V
   ${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RISCV_no_extensions
-  ${CMAKE_SOURCE_DIR}/Microblaze_V
 )
 
 # list of FreeRTOS sources that we need
 file(GLOB FREERTOS_SOURCES
    "${CMAKE_SOURCE_DIR}/FreeRTOS/tasks.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/list.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/queue.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/mutex.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/event_groups.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/stream_buffer.c"
+   "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/MemMang/heap_3.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/port.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/portable/GCC/RISC-V/portASM.S"
 # add more as needed
@@ -125,6 +112,7 @@ file(GLOB FREERTOS_SOURCES
 
 # Sources for the executable
 file(GLOB SOURCES
+"${CMAKE_SOURCE_DIR}/src/doomgeneric/*.c"
   "${CMAKE_SOURCE_DIR}/src/main.c"
   "${CMAKE_SOURCE_DIR}/src/hello_task.c"
   "${CMAKE_SOURCE_DIR}/src/stats_task.c"
@@ -133,19 +121,23 @@ file(GLOB SOURCES
   "${CMAKE_SOURCE_DIR}/src/AXI_timer.c"
    "${CMAKE_SOURCE_DIR}/FreeRTOS/timers.c"
   "${CMAKE_SOURCE_DIR}/src/UART_16550.c"
-  "${CMAKE_SOURCE_DIR}/src/doomgeneric/*.c"
-  "${CMAKE_SOURCE_DIR}/src/newlib_functions.c"
-  "${CMAKE_SOURCE_DIR}/src/heap_useNewlib.c"
-  "${CMAKE_SOURCE_DIR}/Microblaze_V/interrupts.c"
-  "${CMAKE_SOURCE_DIR}/Microblaze_V/trap_handler.S"
-  "${CMAKE_SOURCE_DIR}/Microblaze_V/startup_RISCV.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/interrupts.c"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/irq.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/newlib_functions.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/startup_RISCV_pyeatt.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_misalign_emul.c"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_misalign_shim.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_flush_dcache_range.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/riscv_invalidate_dcache_range.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/UART_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/AXI_isr.S"
+  "${CMAKE_SOURCE_DIR}/RISCV_pyeatt/PM_isr.S"
 )
 
 # Define our linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/src/gcc_RISCV.ld)
 
 # Additional options for the GNU linker
-add_link_options(-Wl,-wrap=malloc -Wl,-wrap=_malloc_r)
 add_link_options(-Wl,-gc-sections,--print-memory-usage)
 add_link_options(-Wl,-Map=bin/${PROJECT_NAME}.map)
 add_link_options(-T ${LINKER_SCRIPT} --specs=nosys.specs -nostartfiles)
@@ -174,11 +166,6 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 	COMMENT "Creating ${DIS_FILE}"
 	COMMAND ${CMAKE_OBJDUMP} -dS bin/${ELF_FILE} > bin/${DIS_FILE}
 	)
-
-add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-	COMMENT "Memory Report"
-	COMMAND scripts/report_sections.sh ${CMAKE_SOURCE_DIR}/bin/${MAP_FILE}
- 	)
 
 set_property(
   TARGET ${PROJECT_NAME}.elf
