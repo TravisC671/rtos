@@ -8,6 +8,7 @@
 #include <device_addrs.h>
 #include <AXI_timer.h>
 #include <sd_driver.h>
+#include <vga_driver.h>
 
 /* These globals live in the FreeRTOS RISC-V port (port.c).  The trap
    handler in portASM.S uses them to reload mtimecmp on every tick when
@@ -56,12 +57,15 @@ void vPortSetupTimerInterrupt(void)
   INTC_Enable_MTIMER_interrupt();
 }
 
+SemaphoreHandle_t dma_semaphore = NULL;
 
 int main( int argc, char **argv )
 {
    TaskHandle_t doom_handle = NULL;
    TaskHandle_t stats_handle = NULL;
    char buffer[64];
+   
+   dma_semaphore = xSemaphoreCreateBinary();
 
    UART_16550_init();
 

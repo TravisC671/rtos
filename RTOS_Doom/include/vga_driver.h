@@ -18,13 +18,14 @@
 //------------------------------------------------------------------------------
 
 // Base addresses
-#define VGA_FRAMEBUFFER_BASE    0x48000000
-#define VGA_PALETTE_BASE        0x48040000
-#define VGA_CONTROL_REG         0x48040200
-#define VGA_DISPLAY_BUF_REG     0x48040204
-#define VGA_IRQ_ENABLE_REG      0x48040208  // VSIEN in bit 0 (R/W)
-#define VGA_IRQ_CLEAR_REG       0x4804020C  // VSIA  in bit 0 (R/W1C)
-
+#define VGA_FRAMEBUFFER_BASE    0x48001000
+#define VGA_PALETTE_BASE        0x48040800
+#define VGA_CONTROL_REG         0x48000000
+#define VGA_DISPLAY_BUF_REG     0x48000004
+#define VGA_IRQ_ENABLE_REG      0x48000008  // VSIEN in bit 0 (R/W)
+#define VGA_IRQ_CLEAR_REG       0x4800000C  // VSIA  in bit 0 (R/W1C)
+#define VGA_DMA_SRC_ADDR_REG    0x48000010  
+#define VGA_DMA_LENGTH_REG      0x48000014
 // Framebuffer size for 640x400 mode
 #define FRAMEBUFFER_WIDTH       640
 #define FRAMEBUFFER_HEIGHT      400
@@ -38,23 +39,18 @@
 
 // IRQ Enable Register bits
 #define VGA_IRQ_VSIEN           (1 << 0)  // vertical sync interrupt enable
+#define VGA_IRQ_DMAEN           (1 << 0)  // DMA done interrupt enable
 
 // IRQ Clear/Status Register bits
 #define VGA_IRQ_VSIA            (1 << 0)  // W1C: write 1 to clear pending flag
+#define VGA_IRQ_DMAIA            (1 << 1)  // W1C: write 1 to clear pending flag
                                           // Read: 1 = interrupt pending
 
 //------------------------------------------------------------------------------
 // Global Semaphores
 //------------------------------------------------------------------------------
 
-extern SemaphoreHandle_t vsync_semaphore;
-extern SemaphoreHandle_t draw_frame_semaphore;
-
-//------------------------------------------------------------------------------
-// Shared Video Buffer
-//------------------------------------------------------------------------------
-
-extern uint8_t *video_buffer;
+extern SemaphoreHandle_t dma_semaphore;
 
 //------------------------------------------------------------------------------
 // Assembly fast-fill and fast-copy -- see include/asm_string.h
@@ -72,7 +68,7 @@ extern uint8_t *video_buffer;
 void vga_init(void);
 
 // VGA interrupt service routine
-void vga_isr(void);
+void VGA_handler_body(void);
 
 // FreeRTOS tasks
 void vga_update_task(void *pvParameters);

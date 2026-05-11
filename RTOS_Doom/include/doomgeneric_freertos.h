@@ -1,5 +1,6 @@
 #ifndef DOOMGENERIC_FREERTOS_H
 #define DOOMGENERIC_FREERTOS_H
+#include <FreeRTOSConfig.h>
 #include <FreeRTOS.h>
 #include <task.h>
 #include <device_addrs.h>
@@ -8,8 +9,8 @@
 #define CMAP256
 
 // ! Change these
-#define DOOMGENERIC_RESX 320
-#define DOOMGENERIC_RESY 200
+#define DOOMGENERIC_RESX 640
+#define DOOMGENERIC_RESY 400
 
 // removed allegro audio files
 

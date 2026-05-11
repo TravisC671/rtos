@@ -81,9 +81,9 @@ __Vectors:
 	tail       _unhandled      /* 0x50: platform IRQ[4] GPIO 0 */
 	tail       _unhandled      /* 0x54: platform IRQ[5] GPIO 1 */
 	tail       _unhandled      /* 0x58: platform IRQ[6] GPIO 2 */
-	tail       _unhandled      /* 0x5C: platform IRQ[7]
+	tail       _unhandled      /* 0x5C: platform IRQ[7] */
 	tail       SD_handler      /* 0x60: platform IRQ[8] SD controller */
-	tail       SD_handler      /* 0x64: platform IRQ[9] VGA controller */
+	tail       VGA_handler      /* 0x64: platform IRQ[9] VGA controller */
 	tail       _unhandled      /* 0x68: platform IRQ[10] */
 	tail       _unhandled      /* 0x6C: platform IRQ[11] */
 	tail       _unhandled      /* 0x70: platform IRQ[12] */

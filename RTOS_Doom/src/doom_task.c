@@ -1,7 +1,6 @@
-
-#include <doom_task.h>
+#include <FreeRTOSFATConfig.h>
 #include <FreeRTOSConfig.h>
-#include <FreeRTOS.h>
+#include <doom_task.h>
 #include <task.h>
 #include <doomgeneric_freertos.h>
 #include <doomgeneric.h>
